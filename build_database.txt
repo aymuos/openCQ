@@ -1,0 +1,9 @@
+1. go to phpmyadmin
+2. if there is already a database named mcq
+	drop all the columns from it
+3. else create a new database and name it mcq
+4. select mcq database 
+5. go to sql pane
+6. copy everything from mcq.sql and paste in the sql pane
+7. click go
+8. voila!! mcq database is ready.
