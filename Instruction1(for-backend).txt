@@ -1,0 +1,17 @@
+This is the instruction file that will help the back-end developers to connect 
+with the front end. Please follow each step carefully. All the files are in
+MCQ folder.
+
+Security issue for the page will be provided by the front end developers for 
+each page and the back-end developers need not worry about it.
+
+1. add-a-chap.php:
+Nothing to do in this file.
+
+2. add-a-chap2.php:
+This file contains the name of the new chapter which is to be added
+to the database. Please open the file to get more information.
+
+3. add-a-chap3.php:
+Nothing to do with this file. This file simply display "chapter 
+has been added successfully".
