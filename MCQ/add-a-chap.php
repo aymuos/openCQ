@@ -1,5 +1,32 @@
+<?php
 
 
+//This page simply takes the chapter's name and sends it to add-a-chap2.php
+
+
+
+session_start();
+if ( isset($_SESSION['loggedinmaster']) == false ){
+echo ' 
+<html>
+<head>
+  <title>Oops!!!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
+<body>
+	<div class="well-lg">
+		<div class="alert alert-danger">
+			<p class="text-center">Please <a href="master.html">Login</a> first</p>
+		</div>
+	</div>
+</body>
+</html>
+';
+}
+else {
+	echo '
 
 
 <html>
@@ -41,33 +68,29 @@
 
 	
 <div class="container">
-  <form class="form-inline" method="post"  action="#">
+  <form class="form-inline" method="post"  action="add-a-chap2.php">
     <div class="form-group">
-      <label for="email">Chapter's Name <span style="color:red;">*</span></label>
+      <label>Chapter\'s Name <span style="color:red;">*</span></label>
       <input type="text" class="form-control" name="chapter-name" required >
     </div>
 	<div class="button-container">
-		<button class="btn btn-danger" onclick="location.href='master-dashboard.php'">Cancel</button>
+		<button class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
 		<button type="submit" class="btn btn-success">Add</button>
 	</div>
   </form>
 </div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 </body>
 </html>
 
 
 
+';
 
+
+}
+
+
+?>
 
 
 
