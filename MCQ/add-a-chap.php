@@ -2,7 +2,7 @@
 
 
 //This page simply takes the chapter's name and sends it to add-a-chap2.php
-
+//Back end developers need not alter this file.
 
 
 session_start();
