@@ -1,8 +1,8 @@
 <?php
 
 
-//This page simply display that the chapter has been added successfully.
-
+//This page simply display that the chapter has been added to the database successfully.
+//Back-end developers need not alter this file.
 
 
 session_start();
