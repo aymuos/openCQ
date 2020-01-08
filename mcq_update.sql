@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2020 at 07:46 PM
+-- Generation Time: Jan 08, 2020 at 12:51 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -56,8 +56,6 @@ CREATE TABLE `exam` (
   `question_id` int(11) NOT NULL,
   `exam_id` int(11) NOT NULL,
   `attempt` int(11) DEFAULT NULL,
-  `is_right` enum('0','1') NOT NULL,
-  `marks` int(11) DEFAULT NULL,
   `question_statement` varchar(500) NOT NULL,
   `solution_statement` varchar(500) NOT NULL,
   `attempt_statement` varchar(500) NOT NULL
@@ -73,6 +71,19 @@ CREATE TABLE `question` (
   `question_id` int(11) NOT NULL,
   `chapter` varchar(50) NOT NULL,
   `question` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result`
+--
+
+CREATE TABLE `result` (
+  `user_id` varchar(15) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `marks` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -121,6 +132,12 @@ ALTER TABLE `question`
   ADD KEY `chapter` (`chapter`);
 
 --
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`user_id`,`question_id`,`exam_id`);
+
+--
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
@@ -144,19 +161,25 @@ ALTER TABLE `question`
 -- Constraints for table `choice`
 --
 ALTER TABLE `choice`
-  ADD CONSTRAINT `choice_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`);
+  ADD CONSTRAINT `choice_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `exam`
 --
 ALTER TABLE `exam`
-  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`);
+  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`chapter`) REFERENCES `chapters` (`chapter`);
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`chapter`) REFERENCES `chapters` (`chapter`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `result`
+--
+ALTER TABLE `result`
+  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
