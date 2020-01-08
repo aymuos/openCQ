@@ -1,7 +1,26 @@
-
-
-
-
+<?php
+session_start();
+if ( isset($_SESSION['loggedinmaster']) == false ){
+echo ' 
+<html>
+<head>
+  <title>Oops!!!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
+<body>
+<div class="well-lg">
+<div class="alert alert-danger">
+<p class="text-center">Please <a href="master.html">Login</a> first</p>
+</div>
+</div>
+</body>
+</html>
+';
+}
+else {
+	echo '
 <html>
 <head>
 <title>Welcome</title>
@@ -39,52 +58,19 @@
 	
 	<div class="button-container">
 	<div class="btn-group-vertical">
-		<button type="button" class="btn btn-primary " onclick="location.href='add-a-chap.php'">Add a chapter</button>
-		<button type="button" class="btn btn-primary" onclick="location.href='del-a-chap.php'">Delete a chapter</button>
-		<button type="button" class="btn btn-primary" onclick="location.href='add-a-ques.php'">Add a question</button>
-		<button type="button" class="btn btn-primary">Modify a question</button>
+		<button type="button" class="btn btn-primary " onclick="location.href=\'add-a-chap.php\'">Add a chapter</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-chap.php\'">Delete a chapter</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'add-a-ques.php\'">Add a question</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'">Modify a question</button>
 		<button type="button" class="btn btn-primary">Delete a question</button>
 		<button type="button" class="btn btn-primary">View Result</button>
 		<button type="button" class="btn btn-primary">Test dashboard</button>
 		<button type="button" class="btn btn-primary">Password Reset</button>
 	</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 </body>
 </html>
+';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
