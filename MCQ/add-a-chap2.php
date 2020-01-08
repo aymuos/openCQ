@@ -32,7 +32,11 @@ else {
 	//"name" variable here contains the name of the chapter which is to be
 	//added to the database.
 
-
+	
+	
+	//Please add the chapter to the database here..........
+	
+	
  
 	header('location: add-a-chap3.php');
 	//After updating the database this file redirects the page 
