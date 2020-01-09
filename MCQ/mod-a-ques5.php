@@ -1,24 +1,19 @@
 <?php
+
+
+//This page simply display that the question has been updated successfully.
+//No need to modify this.
+
+
 session_start();
-
-
-
-
-//This file takes the chapter name from a database and then redirects 
-//it to mod-a-ques2.php. Please jump directly to else part .
-
-
-
-
-
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
 <html>
 <head>
-	<title>Oops!!!</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Oops!!!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
 <body>
 	<div class="well-lg">
@@ -32,16 +27,19 @@ echo '
 }
 else {
 	echo '
+
+
+
 <html>
 <head>
-<title>Modify a question</title>
+<title>Add a Chapter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="destroy.css">
 </head>
-<body id="page10">
+<body id="page7">
 	<div class="some" >
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -66,64 +64,17 @@ else {
 		</nav>
 	</div>
 	
-	<h1><b>Modify a Question</b></h1>
-	
-
-<div class="container">
-  <form class="form-inline" method="post"  action="mod-a-ques2.php">
-    <div class="form-group">
-      <label for="email">Select the chapter <span style="color:red;">*</span></label>
-        <select class="del-form-control" name="chapter-del">
-	
-						
-			
-';
-
-
-
-
-
-
-
-
-			
-	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
-	//Simply take all the chapter's name from the database and display it.
-	
-	$len = 5;	//"len" contains the total no of chapters to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
-		echo '<option>';
-		
-		
-		//Please put the chapter's name in this echo statement.
-		echo $i;
-		
-		
-		echo '</option>';
-	}
-			
-			
-			
-	//Rest of the part remains same.
-
-
-
-
-
-
-	echo '
-			
-		</select>
-    </div>
-	
-	<div class="button-container">
-		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
-		<button type="submit" class="btn btn-success">Go</button>
+	<div class="well-lg">
+		<div class="alert alert-success">
+			<p class="text-center">Question successfully updated.</p>
+		</div>
 	</div>
-  </form>
-</div>
-
 	
+	<div class="container">
+	<div class="button-container">
+		<button class="btn btn-success" onclick="location.href=\'master-dashboard.php\'">Ok</button>
+	</div>
+	</div>
 	
 	
 
@@ -131,10 +82,7 @@ else {
 </html>
 
 
-
-
 ';
-
 }
 
 ?>
