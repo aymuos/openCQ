@@ -1,16 +1,12 @@
 <?php
+
+//This will take all the question of a particular chapter from the database and will show
+//it in the screen so that if any modification is to be done 
+//it can easily be implemented. Proceed to else part directly.
+
+
+
 session_start();
-
-
-
-
-//This file takes the chapter name from a database and then redirects 
-//it to mod-a-ques2.php. Please jump directly to else part .
-
-
-
-
-
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
 <html>
@@ -31,17 +27,46 @@ echo '
 ';
 }
 else {
+
+
+
+
+	$chname = $_POST["chapter-del"];	//This contains the chapter name whose questions is to be displayed.
+
+
+
+
+
+
+
 	echo '
+
 <html>
 <head>
-<title>Modify a question</title>
+<title>Add a Question</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="destroy.css">
+<script type="text/javascript">
+
+ $(document).ready(function () {	
+	$("#table-main tbody").on("click", "tr", function() {
+		//get row contents into an array
+		var tableData = $(this).children("td").map(function() {
+		return $(this).text();
+    }).get();
+	var td=tableData[0];
+	window.location.href = "mod-a-ques3.php?ques_id=" + td + "&chapter_del=" +';echo $chname;echo ' ;
+
+	});
+});	
+
+
+</script>
 </head>
-<body id="page10">
+<body id="page11">
 	<div class="some" >
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -66,63 +91,108 @@ else {
 		</nav>
 	</div>
 	
-	<h1><b>Modify a Question</b></h1>
+	<h1><b>Modify a Questions</b></h1>
 	
-
-<div class="container">
-  <form class="form-inline" method="post"  action="mod-a-ques2.php">
-    <div class="form-group">
-      <label for="email">Select the chapter <span style="color:red;">*</span></label>
-        <select class="del-form-control" name="chapter-del">
 	
-						
-			
-';
-
-
-
-
-
-
-
-
-			
-	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
-	//Simply take all the chapter's name from the database and display it.
 	
-	$len = 5;	//"len" contains the total no of chapters to be displayed.
+	
+	
+	
+	
+	<div class="container">
+	<form id="myForm" method="get" action="mod-a-ques3.php">
+	<select class="del-form-control" name="chapter-del" hidden>
+		<option>';	
+		echo $chname;
+		echo '</option>
+	</select>
+	<table class="table table-hover" id="table-main">
+    <thead>
+      <tr>
+        <th hidden>Id</th>
+        <th>Questions</th>
+      </tr>
+    </thead>
+    <tbody>
+	
+	';
+	
+	
+	
+	
+	
+	
+	
+	//***Please modify this portion to display all the questions in the table.***\\\
+	//Simply take all the chapter's question from the database and display it.
+	
+	$len = 5;	//"len" contains the total no of question to be displayed.
+	
+	
 	for($i = 1; $i <= $len ; $i+=1){		
-		echo '<option>';
+		echo '<tr class="tblRows">';
+		echo '<td hidden>';
 		
 		
-		//Please put the chapter's name in this echo statement.
+		
+		
+        //Please put the question's ID in this echo statement.
 		echo $i;
 		
 		
-		echo '</option>';
+		
+		
+		echo '</td>';
+        echo '<td>';
+		
+		
+		
+		
+		//Please put the question's statement in this echo statement.
+		echo $i;
+		
+		
+		
+		
+		echo '</td>';
+		echo '</tr>';
 	}
+			
+			
+			
+			
+			
 			
 			
 			
 	//Rest of the part remains same.
 
+	
+	
+	
+echo '	
+	
+    </tbody>
+  </table>
+  </form>
+	</div>
+	
+	
 
-
-
-
-
-	echo '
-			
-		</select>
-    </div>
+	
 	
 	<div class="button-container">
 		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
-		<button type="submit" class="btn btn-success">Go</button>
+		
 	</div>
   </form>
 </div>
 
+	
+	
+	
+	
+	
 	
 	
 	
@@ -131,10 +201,22 @@ else {
 </html>
 
 
-
-
 ';
-
 }
 
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,8 +4,16 @@ function OpenCon()
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
- $db = "login-database";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ $db = "mcq";
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
+ if($conn->connect_error){
+ 	exit("Error in connecting to database");
+ }
+
+
+
+
+ #echo "Connected Successfully";
  
  return $conn;
  }

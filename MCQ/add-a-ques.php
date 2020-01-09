@@ -1,15 +1,59 @@
+<?php
+
+
+//This file takes the question statement and options from the user.
+//Please proceed to the else part directly.
+
+
+include 'db_connection.php';
+session_start();
+if ( isset($_SESSION['loggedinmaster']) == false ){
+echo ' 
+<html>
+<head>
+  <title>Oops!!!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
+<body>
+	<div class="well-lg">
+		<div class="alert alert-danger">
+			<p class="text-center">Please <a href="master.html">Login</a> first</p>
+		</div>
+	</div>
+</body>
+</html>
+';
+}
+else {
 
 
 
+echo '
 
 <html>
 <head>
-<title>Add a Chapter</title>
+<title>Add a Question</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="destroy.css">
+		<script>
+		function func(){
+			var x = document.getElementById("prob-stm").value;
+			var a = document.getElementById("1").value;
+			var b = document.getElementById("2").value;
+			var c = document.getElementById("3").value;
+			var d = document.getElementById("4").value;
+			document.getElementById("p1").value = x;
+			document.getElementById("opt1").innerHTML = "a) "+ a;
+			document.getElementById("opt2").innerHTML = "b) "+b;
+			document.getElementById("opt3").innerHTML = "c) "+c;
+			document.getElementById("opt4").innerHTML = "d) "+d;
+		}
+		</script>
 </head>
 <body id="page9">
 	<div class="some" >
@@ -40,47 +84,126 @@
 	
 
 <div class="container">
-  <form class="form-inline" method="post"  action="#">
+  <form class="form-inline" method="post"  action="add-a-ques2.php">
     <div class="form-group">
       <label for="email">Select the chapter <span style="color:red;">*</span></label>
-        <select class="del-form-control" name="chapter-del">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-		</select>
+        <select class="del-form-control" name="chapter-name">
+		
+		
+		
+		
+		';
+		
+		
+		
+		
+	$conn = OpenCon();
+ 	$conn->set_charset("utf8mb4");
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+	try{
+		$stmt = $conn->prepare("SELECT * FROM chapters");
+		$stmt->bind_param("");
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$len = $result->num_rows;
+		while($row = $result->fetch_assoc()){
+			$id[] = $row['chapter_id'];
+			$chapter[] = $row['chapter'];
+		}
+
+		foreach($chapter as $value){		
+			echo '<option>';
+			
+			
+			//Please put the chapter's name in this echo statement.
+			echo $value;
+			
+			
+			echo '</option>';
+		}
+
+	} 
+	#$len = 5;	//"len" contains the total no of chapters to be displayed.
+	catch(Exception $e){
+		#echo $e->get_message();
+	}
+			
+			
+	$stmt->close();
+	CloseCon($conn);
+	//Rest of the part need not be modified.
+
+
+	echo '	
+	</select>
     </div>
 	<div>
 	<label class="ques">Question:</label>
-	<textarea class="box" type="text" placeholder="Problem Statement......"></textarea>
+	<textarea id="prob-stm" class="box" type="text" placeholder="Problem Statement......" name="problem-statement"></textarea>
 	</div>
 	<div class="ans">
-		<label class="opt">Correct Option :</label>
-		<input type="text" size="24" placeholder="Correct option"></textarea>
+		<label class="opt">Correct Option <span style="color:red;">* </span>:</label>
+		<input type="text" size="24" placeholder="Correct option" name="correct" required>
 	</div>
 	
 	<div class="tans">
 		<label class="opt">Incorrect Options :</label>
-			<input type="text" size="24" placeholder="Incorrect option 1"></textarea>
-			<input type="text" size="24" placeholder="Incorrect option 2"></textarea>
-			<input type="text" size="24" placeholder="Incorrect option 3"></textarea>
+			<input type="text" size="24" placeholder="Incorrect option 1" name="incorrect1">
+			<input type="text" size="24" placeholder="Incorrect option 2" name="incorrect2">
+			<input type="text" size="24" placeholder="Incorrect option 3" name="incorrect3">
 	</div>
 	
 	
 	<div class="button-container">
-		<button type="button" class="btn btn-danger" onclick="location.href='master-dashboard.php'">Cancel</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="func()">Preview</button>
+		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
 		<button type="submit" class="btn btn-success">Add</button>
 	</div>
   </form>
 </div>
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Preview</h4>
+      </div>
+      <div class="modal-body">
+        <textarea id="p1" class="box" type="text" placeholder="Problem Statement......" name="problem-statement" disabled></textarea>
+      	<p id="opt1"></p>
+	<p id="opt2"></p>
+	<p id="opt3"></p>
+	<p id="opt4"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 </body>
@@ -88,21 +211,9 @@
 
 
 
+';
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>

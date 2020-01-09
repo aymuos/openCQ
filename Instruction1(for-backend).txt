@@ -1,0 +1,58 @@
+This is the instruction file that will help the back-end developers to connect 
+with the front end. Please follow each step carefully. All the files are in
+MCQ folder.
+
+Security issue for the page will be provided by the front end developers for 
+each page and the back-end developers need not worry about it.
+
+1. add-a-chap.php:
+Nothing to do in this file.
+
+2. add-a-chap2.php:
+This file contains the name of the new chapter which is to be added
+to the database. Please open the file to get more information.
+
+3. add-a-chap3.php:
+Nothing to do with this file. This file simply display "chapter 
+has been added successfully".
+
+4. del-a-chap.php:
+This file displays the chapter's name in the database to the user so that
+the user can select the chapter to delete. Please read all the comments and
+then do the needful changes.
+
+5.del-a-chap2.php:
+This chapter actually deletes the chapter from the database. Please read
+the commented lines and then proceed.
+
+6.del-a-chap3.php:
+This simply displays that the chapter has been deleted. No need to 
+modify this file.
+
+7.add-a-ques.php:
+This will take the problem statement and option from user. Please see the
+commented area to display the chapter's name. Instruction is provided in the 
+comments
+
+8.add-a-ques2.php
+This actually adds the question to the database. Please read the comments.
+
+9.add-a-ques3.php:
+Simply display that the question has been added successfully. No need to modify this file.
+
+10.mod-a-ques.php:
+This file takes the chapter name from a database and then diaplays it. The user
+selects the desired chapter and then it redirects 
+it to mod-a-ques2.php. Please jump directly to else part and follow the comments.
+
+11.mod-a-ques2.php:
+Displays questions of a particular chapter.Please jump directly to else part and follow the comments.
+
+12.mod-a-ques3.php
+Displays the selected question from "mod-a-ques2.php". Please jump directly to else part and follow the comments.
+
+13.mod-a-ques4.php:
+The database is updated here. Please jump directly to else part and follow the comments.
+
+14.mod-a-ques4.php:
+Simply displays that update has been successfull. No need to make any change.
