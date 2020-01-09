@@ -5,7 +5,7 @@
 //Please proceed to the else part directly.
 
 
-
+include 'db_connection.php';
 session_start();
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
@@ -90,23 +90,40 @@ echo '
 		
 		
 		
-	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
-	
-	//Simply take all the chapter's name from the database and display it.
-	
-	$len = 5;	//"len" contains the total no of chapters to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
-		echo '<option>';
-		
-		
-		//Please put the chapter's name in this echo statement.
-		echo $i;
-		
-		
-		echo '</option>';
-	}		
+	$conn = OpenCon();
+ 	$conn->set_charset("utf8mb4");
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+	try{
+		$stmt = $conn->prepare("SELECT * FROM chapters");
+		$stmt->bind_param("");
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$len = $result->num_rows;
+		while($row = $result->fetch_assoc()){
+			$id[] = $row['chapter_id'];
+			$chapter[] = $row['chapter'];
+		}
 
+		foreach($chapter as $value){		
+			echo '<option>';
+			
+			
+			//Please put the chapter's name in this echo statement.
+			echo $value;
+			
+			
+			echo '</option>';
+		}
 
+	} 
+	#$len = 5;	//"len" contains the total no of chapters to be displayed.
+	catch(Exception $e){
+		#echo $e->get_message();
+	}
+			
+			
+	$stmt->close();
+	CloseCon($conn);
 	//Rest of the part need not be modified.
 
 
