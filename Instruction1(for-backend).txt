@@ -15,3 +15,16 @@ to the database. Please open the file to get more information.
 3. add-a-chap3.php:
 Nothing to do with this file. This file simply display "chapter 
 has been added successfully".
+
+4. del-a-chap.php:
+This file displays the chapter's name in the database to the user so that
+the user can select the chapter to delete. Please read all the comments and
+then do the needful changes.
+
+5.del-a-chap2.php:
+This chapter actually deletes the chapter from the database. Please read
+the commented lines and then proceed.
+
+6.del-a-chap3.php:
+This simply displays that the chapter has been deleted. No need to 
+modify this file.
