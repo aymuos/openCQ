@@ -39,3 +39,20 @@ This actually adds the question to the database. Please read the comments.
 
 9.add-a-ques3.php:
 Simply display that the question has been added successfully. No need to modify this file.
+
+10.mod-a-ques.php:
+This file takes the chapter name from a database and then diaplays it. The user
+selects the desired chapter and then it redirects 
+it to mod-a-ques2.php. Please jump directly to else part and follow the comments.
+
+11.mod-a-ques2.php:
+Displays questions of a particular chapter.Please jump directly to else part and follow the comments.
+
+12.mod-a-ques3.php
+Displays the selected question from "mod-a-ques2.php". Please jump directly to else part and follow the comments.
+
+13.mod-a-ques4.php:
+The database is updated here. Please jump directly to else part and follow the comments.
+
+14.mod-a-ques4.php:
+Simply displays that update has been successfull. No need to make any change.
