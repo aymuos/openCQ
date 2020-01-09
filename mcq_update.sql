@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2020 at 12:51 PM
+-- Generation Time: Jan 09, 2020 at 11:51 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chapters` (
-  `chapter` varchar(500) NOT NULL
+  `chapter_id` varchar(100) NOT NULL,
+  `chapter` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -39,9 +40,9 @@ CREATE TABLE `chapters` (
 --
 
 CREATE TABLE `choice` (
-  `question_id` int(11) NOT NULL,
-  `choice_id` int(11) NOT NULL,
-  `choice` varchar(50) NOT NULL,
+  `question_id` varchar(200) NOT NULL,
+  `choice_id` varchar(200) NOT NULL,
+  `choice` varchar(200) NOT NULL,
   `is_right_choice` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,12 +54,12 @@ CREATE TABLE `choice` (
 
 CREATE TABLE `exam` (
   `user_id` varchar(15) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `attempt` int(11) DEFAULT NULL,
-  `question_statement` varchar(500) NOT NULL,
-  `solution_statement` varchar(500) NOT NULL,
-  `attempt_statement` varchar(500) NOT NULL
+  `question_id` varchar(200) NOT NULL,
+  `exam_id` varchar(200) NOT NULL,
+  `attempt` varchar(200) NOT NULL,
+  `question_statement` varchar(200) NOT NULL,
+  `sol_statement` varchar(200) NOT NULL,
+  `attempt_statement` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -68,9 +69,20 @@ CREATE TABLE `exam` (
 --
 
 CREATE TABLE `question` (
-  `question_id` int(11) NOT NULL,
-  `chapter` varchar(50) NOT NULL,
-  `question` varchar(500) NOT NULL
+  `question_id` varchar(200) NOT NULL,
+  `question` varchar(200) NOT NULL,
+  `chapter_id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question_ids`
+--
+
+CREATE TABLE `question_ids` (
+  `question_id` varchar(200) NOT NULL,
+  `chapter_id` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -81,9 +93,9 @@ CREATE TABLE `question` (
 
 CREATE TABLE `result` (
   `user_id` varchar(15) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `marks` int(11) DEFAULT NULL
+  `question_id` varchar(200) NOT NULL,
+  `exam_id` varchar(200) NOT NULL,
+  `marks` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -108,28 +120,33 @@ CREATE TABLE `student` (
 -- Indexes for table `chapters`
 --
 ALTER TABLE `chapters`
-  ADD PRIMARY KEY (`chapter`);
+  ADD PRIMARY KEY (`chapter_id`);
 
 --
 -- Indexes for table `choice`
 --
 ALTER TABLE `choice`
-  ADD PRIMARY KEY (`question_id`,`choice_id`),
-  ADD KEY `question_id` (`question_id`);
+  ADD PRIMARY KEY (`question_id`,`choice_id`);
 
 --
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
-  ADD PRIMARY KEY (`user_id`,`question_id`,`exam_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`user_id`,`question_id`,`exam_id`);
 
 --
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`question_id`),
-  ADD KEY `chapter` (`chapter`);
+  ADD KEY `chapter_id` (`chapter_id`);
+
+--
+-- Indexes for table `question_ids`
+--
+ALTER TABLE `question_ids`
+  ADD PRIMARY KEY (`question_id`,`chapter_id`),
+  ADD KEY `chapter_id` (`chapter_id`);
 
 --
 -- Indexes for table `result`
@@ -144,16 +161,6 @@ ALTER TABLE `student`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Constraints for dumped tables
 --
 
@@ -161,7 +168,7 @@ ALTER TABLE `question`
 -- Constraints for table `choice`
 --
 ALTER TABLE `choice`
-  ADD CONSTRAINT `choice_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `choice_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `exam`
@@ -173,7 +180,14 @@ ALTER TABLE `exam`
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`chapter`) REFERENCES `chapters` (`chapter`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`chapter_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `question_ids`
+--
+ALTER TABLE `question_ids`
+  ADD CONSTRAINT `question_ids_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `question_ids_ibfk_2` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`chapter_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `result`
