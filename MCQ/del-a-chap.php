@@ -46,7 +46,7 @@ else {
 			<script>
 				function myFunc(){
 				    var x;
-					if (confirm("Copy all files?") == true)
+					if (confirm("Are you sure want to delete?") == true)
 					{
 						x = "You pressed OK!";/*Want this to run the .bat*/
 						document.getElementById("my-form").submit();
