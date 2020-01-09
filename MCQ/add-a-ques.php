@@ -43,8 +43,15 @@ echo '
 		<script>
 		function func(){
 			var x = document.getElementById("prob-stm").value;
-			//alert(x);
+			var a = document.getElementById("1").value;
+			var b = document.getElementById("2").value;
+			var c = document.getElementById("3").value;
+			var d = document.getElementById("4").value;
 			document.getElementById("p1").value = x;
+			document.getElementById("opt1").innerHTML = "a) "+ a;
+			document.getElementById("opt2").innerHTML = "b) "+b;
+			document.getElementById("opt3").innerHTML = "c) "+c;
+			document.getElementById("opt4").innerHTML = "d) "+d;
 		}
 		</script>
 </head>
@@ -171,6 +178,10 @@ echo '
       </div>
       <div class="modal-body">
         <textarea id="p1" class="box" type="text" placeholder="Problem Statement......" name="problem-statement" disabled></textarea>
+      	<p id="opt1"></p>
+	<p id="opt2"></p>
+	<p id="opt3"></p>
+	<p id="opt4"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
