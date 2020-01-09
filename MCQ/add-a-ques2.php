@@ -25,7 +25,7 @@ echo '
 }
 else {
 
-
+	$chname = $_POST["chapter-name"]; 		//This is the chapter name
 	$statement = $_POST["problem-statement"];	//This has the problem statement
 	$co = $_POST["correct"];					//This is the correct option
 	$ico = $_POST["incorrect1"];				//This is the incorrect option 1
