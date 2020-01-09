@@ -28,3 +28,14 @@ the commented lines and then proceed.
 6.del-a-chap3.php:
 This simply displays that the chapter has been deleted. No need to 
 modify this file.
+
+7.add-a-ques.php:
+This will take the problem statement and option from user. Please see the
+commented area to display the chapter's name. Instruction is provided in the 
+comments
+
+8.add-a-ques2.php
+This actually adds the question to the database. Please read the comments.
+
+9.add-a-ques3.php:
+Simply display that the question has been added successfully. No need to modify this file.
