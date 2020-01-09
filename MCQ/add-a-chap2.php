@@ -45,7 +45,7 @@ else {
 	}
 	catch(Exception $e){
 		if($conn->errno === 1062){
-			echo "Duplicate Entry ";
+			#echo "Duplicate Entry ";
 		}
 		else{
 			echo $e->getMessage();
