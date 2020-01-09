@@ -2,7 +2,7 @@
 
 //This file will delete the chapter from the database.
 //please proceed to the else part directly.
-
+include 'db_connection.php';
 session_start();
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
@@ -27,10 +27,21 @@ else {
 
 
 	$name = $_POST["chapter-del"];	//This has the chapter's name that has to be deleted
+	$id = preg_replace('/\s/','',$name);
+	$conn = OpenCon();
+ 	$conn->set_charset("utf8mb4");
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+	try{
+		$stmt = $conn->prepare("DELETE FROM chapters WHERE chapter_id = ?");
+		$stmt->bind_param("s",$id);
+		$stmt->execute();
+	}
+	catch(Exception $e){
+		#echo $e->get_message();
+	}
 
-
-	
-
+	$stmt->close();
+	CloseCon($conn);
 
 
 	//*****Modify the database here.*****\\
