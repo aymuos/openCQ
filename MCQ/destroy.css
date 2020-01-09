@@ -1062,6 +1062,11 @@ body#page9{
 #page9 .btn{
 	width: 100px;
 }
+#page9 .modal-footer{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 
@@ -1157,6 +1162,350 @@ body#page9{
 		text-align: center;
 		width: 500px;
 	}
+	#page9 .modal{
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page10{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page10 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page10 .header1{
+	padding-top: 60px;
+}
+#page10 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+
+#page10 .container{
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#page10 .form-inline{
+	text-align: center;
+	width: 800px;
+	background-color: #ffeb99;
+}
+#page10 .del-form-control{
+	text-align: center;
+	width: 800px;
+}
+
+
+
+#page10 .btn{
+	width: 100px;
+}
+#page10 .button-container{
+	padding-top: 25px;
+}
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page10 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page10 .form-inline{
+		text-align: center;
+		width: 600px;
+	}
+	#page10 .del-form-control{
+		text-align: center;
+		width: 300px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page10 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page10 .form-group{
+		text-align: left;
+		width: 200px;
+	}
+	#page10 .container{
+		padding-top: 00px;
+		width: 350px;
+	}
+	#page10 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 320px;
+		/*background-color: lightblue;*/
+	}
+	#page10 .del-form-control{
+		background-color: white;
+		text-align: left;
+		width: 320px;
+	}
+	#page10 h1{
+		font-size: 25;
+		padding-top: 00px;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	#page10 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 800px;
+	}
+	#page10 .del-form-control{
+		text-align: center;
+		width: 500px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page11{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page11 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page11 .header1{
+	padding-top: 60px;
+}
+#page11 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+
+#page11 .container{
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#page11 .form-inline{
+	text-align: center;
+	width: 800px;
+	background-color: #ffeb99;
+}
+#page11 .del-form-control{
+	text-align: center;
+	width: 800px;
+}
+
+#page11 .btn{
+	width: 100px;
+}
+
+#page11 .button-container{
+	text-align: center;
+}
+#page11 .table-hover{
+	cursor: pointer;
+}
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page11 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page11 .form-inline{
+		text-align: center;
+		width: 600px;
+	}
+	#page11 .del-form-control{
+		text-align: center;
+		width: 300px;
+	}
+	#page11 .tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11 .box{
+		text-align: left;
+		width: 600px;
+		height: 100px;
+	}
+	#page11 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page11 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page11 .form-group{
+		text-align: left;
+		width: 200px;
+	}
+	#page11 .box{
+		text-align: left;
+		width: 320px;
+		height: 100px;
+	}
+	#page11 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11	.tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11 .container{
+		padding-top: 00px;
+		width: 350px;
+	}
+	#page11 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 320px;
+		/*background-color: lightblue;*/
+	}
+	#page11 .del-form-control{
+		background-color: white;
+		text-align: left;
+		width: 320px;
+	}
+	#page11 h1{
+		font-size: 25;
+		padding-top: 00px;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	#page11 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 800px;
+	}
+	#page11 .del-form-control{
+		text-align: center;
+		width: 500px;
+	}
+}
+
 
 
