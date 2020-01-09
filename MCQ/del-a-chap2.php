@@ -28,6 +28,7 @@ else {
 
 	$name = $_POST["chapter-del"];	//This has the chapter's name that has to be deleted
 	$id = preg_replace('/\s/','',$name);
+	$id = strtolower($id);
 	$conn = OpenCon();
  	$conn->set_charset("utf8mb4");
 	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
