@@ -8,30 +8,50 @@
 
 
 <?php
+
 include 'db_connection.php';
+/*set_error_handler(function($errno,$errstr,$errfile,$errline){
+	throw new Exception("$errstr with $errno on $errfile in $errline");
+})*/
+
+
+
+
+
 $conn = OpenCon();
-
+ $conn->set_charset("utf8mb4");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
 $username=$_POST['uname']; 
-$password=$_POST['psw']; 
+$password=$_POST['psw'];
 
-// To protect MySQL injection (more detail about MySQL injection)
-$sql="SELECT * FROM `id` WHERE USERNAME='$username' and PASSWORD='$password'";
-$result=mysqli_query($conn,$sql);
+#echo "\nhello Rashed";
+try{
 
-// Mysql_num_row is counting table row
-$count=mysqli_num_rows($result);
+	$stmt = $conn->prepare("SELECT * FROM student WHERE user_id = ? and password = ? ");
+	$stmt->bind_param("ss",$username,$password);
+	$stmt->execute();
 
-// If result matched $username and $password, table row must be 1 row
-if($count==1){
-    session_start();
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $username;
-    echo "Connected Successfully";
-    header('location: student-dashboard.php');
+	$stmt->store_result();
+	if($stmt->num_rows === 0){
+		#echo "Not connected";
+		header('location: tests.php');
+	} 
+	else{
+		$stmt->bind_result($user_id,$pass,$name,$dept,$year);
+		$stmt->fetch();
+		#echo "Connected Successfully";
+		session_start();
+		$_SESSION['loggedin'] = true;
+		$_SESSION['username'] = $username;
+		
+		header('location: student-dashboard.php');
+	} 
 }
-else {
-    header('location: tests.php'); 
+catch(Exception $e){
+	echo $e->get_message();
+
 }
 
+$stmt->close();
 CloseCon($conn);
 ?>
