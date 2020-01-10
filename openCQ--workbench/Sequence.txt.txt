@@ -5,4 +5,8 @@ This will describe the sequence of most html files.
 NB:
 To remove bullets in password field replace type="password" by "password1" or other name.
 3. Creation of New Account: createaccount2.html Corresponding CSS: <TO BE UPDATED>
+4.Description of test:testdescrip.html Corresponding CSS: <TO BE UPDATED>
+5.Select test form list:selectlist.html
+NB: Formatting problem in the css: Selecttest.html
+
 

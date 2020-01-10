@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="" >
+  <title>TEST DESCRIPTION</title>
+  <meta charset="utf-8"/>
+  </head>
+ <body>
+       
+<form action="" method="post"> <!--add action="php filename-->
+  <fieldset>
+    <legend> Description of the Test</legend>
+      <p>Enter Test ID:<input type="text" name="field1" placeholder="Test ID"><br></p>
+      
+        <p>Click To Enter Date:
+      <!-- <button onclick="myFunction()">Click to set date</button> -->
+</p>
+<!--
+<script>
+function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "date");
+  x.setAttribute("value", "2020-01-01");
+  document.body.appendChild(x);
+}
+</script>
+-->
+
+
+
+<input type="date" id="dt" onchange="mydate1();" hidden/>
+<input type="text" id="ndt"  onclick="mydate();" hidden />
+<input type="button" Value="Date" onclick="mydate();" />
+<script>
+function mydate()
+{
+  //alert("");
+document.getElementById("dt").hidden=false;
+document.getElementById("ndt").hidden=true;
+}
+function mydate1()
+{
+ d=new Date(document.getElementById("dt").value);
+dt=d.getDate();
+mn=d.getMonth();
+mn++;
+yy=d.getFullYear();
+document.getElementById("ndt").value=dt+"/"+mn+"/"+yy
+document.getElementById("ndt").hidden=false;
+document.getElementById("dt").hidden=true;
+}
+</script>
+
+
+
+      <p>Enter Description:<textarea type="text" name="field4" placeholder="Description" width="48" height="48"></textarea><br></p>
+      </form>
+      </body>

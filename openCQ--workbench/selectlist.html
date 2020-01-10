@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="selectlist.css" >
+<link rel="stylesheet" href="" >
  <title>Selection page</title>
  </head>
  <body>
+ <p>
 <h2> GOVERNMENT COLLEGE OF ENGINEERING AND CERAMIC TECHNOLOGY , KOLKATA
-</h2>
+</h2></p>
+<br>
+
  <h1>
  Select option from list
  </h1>
+ <br>
+  
+ 
+ <form action= ""><!--define php page here --> 
+ <fieldset>
+ <legend> Choice of Tests</legend>
  <h2 style="text-align:center;"> Select your test</h2>
- <select autofocus>
-  <option value="option1">OPTION1</option>
+ <p>
+ <select name =testoption >
+  <option value="none" selected></option> <!--keeping an empty selection-->
+  <option value="option1">TESTTYPE1</option>
   <option value="option1">OPTION2</option>
   <option value="option3">OPTION3</option>
   <option value="option4">OPTION4</option>
 </select>
+</p>
+</legend>
+ <button type="button">Cancel</button> 
+  <button type="button">ok</button> 
+  <!--should add javascript function like onClick()-->
         </body>
         
