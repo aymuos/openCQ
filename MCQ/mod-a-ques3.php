@@ -30,7 +30,7 @@ else {
 
 
 	$id = $_GET['ques_id']; 			//id has the question id which will be displayed 
-	$chname = $_GET["chapter_del"];	//This contains the chapter name of the question.
+	$chname = $_GET["chapter_del"];		//This contains the chapter name of the question.
 	
 
 echo '
@@ -72,6 +72,7 @@ echo '
 <div class="container">
   <form class="form-inline" method="post"  action="mod-a-ques4.php">
 	<div>
+	<input type="text" size="24" placeholder="Correct option" name="ques_id" value="hello" disabled hidden>
 	<label for="email">Chapter <span style="color:red;">*</span></label>
 	<select class="del-form-control" name="chapter-del">';
 	
