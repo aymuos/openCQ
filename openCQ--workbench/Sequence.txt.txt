@@ -1,0 +1,8 @@
+This will describe the sequence of most html files.
+
+1. Questions test page for student : workpg.html Corresponding CSS: style.css Generated Js file: Style.js
+2. Login reset page for student: resetpsswd.html Corresponding CSS: resetpsswd.css
+NB:
+To remove bullets in password field replace type="password" by "password1" or other name.
+3. Creation of New Account: createaccount2.html Corresponding CSS: <TO BE UPDATED>
+

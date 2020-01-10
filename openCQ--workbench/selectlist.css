@@ -1,0 +1,17 @@
+ :root {
+    --body_gradient_left:#FFEB99;
+    --body_gradient_right:#64ED99;
+    background-image: linear-gradient(to bottom right, gold, rgb(252, 167, 57));    }
+    body {
+        /* make the body full height*/
+        height: 5vh;
+        /* set our custom font */
+        font-family: 'Segoe UI',sans-serif;
+        /* create a linear gradient*/
+        background-size: contain;
+        background-image: linear-gradient(to right, var(--body_gradient_left), var(--body_gradient_right));
+        display:flex;
+    }
+   h2{
+
+   }
