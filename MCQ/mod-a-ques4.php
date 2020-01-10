@@ -33,6 +33,7 @@ echo '
 }
 else {
 
+	$id = $_POST["ques_id"];					//question id
 	$updated_chapter = $_POST["chapter-del"];	//modified chapter's name
 	$updated_problem = $_POST["mod_stat"];		//modified problem statement
 	$updated_correct = $_POST["cropt"];			//modified correct option
