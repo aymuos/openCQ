@@ -65,7 +65,7 @@ else {
 		<button type="button" class="btn btn-primary">Delete a question</button>
 		<button type="button" class="btn btn-primary">View Result</button>
 		<button type="button" class="btn btn-primary">Test dashboard</button>
-		<button type="button" class="btn btn-primary">Password Reset</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'">Password Reset</button>
 	</div>
 	</div>
 </body>
