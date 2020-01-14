@@ -83,4 +83,4 @@ not submitted then it redirects back to "workpg.php" where the student can resum
 text else it is redirected to "test-end.php".
 
 21.test-end.php:
-Simply displays test is over.
+Simply displays test is over. No need to make any changes in it.
