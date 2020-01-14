@@ -84,3 +84,20 @@ text else it is redirected to "test-end.php".
 
 21.test-end.php:
 Simply displays test is over. No need to make any changes in it.
+
+22.del-a-ques.php:
+This file takes the chapter name from a database and then diaplays it. The user
+selects the desired chapter and then it redirects 
+it to del-a-ques2.php. Please jump directly to else part and follow the comments.
+
+23.del-a-ques2.php:
+Displays questions of a particular chapter.Please jump directly to else part and follow the comments.
+
+24.del-a-ques3.php
+Displays the selected question from "del-a-ques2.php". Please jump directly to else part and follow the comments.
+
+25.del-a-ques4.php:
+The database is updated here. Please jump directly to else part and follow the comments.
+
+26.del-a-ques4.php:
+Simply displays that update has been successfull. No need to make any change in this file.
