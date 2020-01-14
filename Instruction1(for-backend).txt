@@ -63,3 +63,24 @@ No need to make any changes in it. This simply takes the username of the account
 16.pssw.php:
 This is the file where password has to be updated in the database. Please see the comments to get more details. Set the new password to "12345678"
 
+17.student-dashboard.php:
+This page has the start button which will begin the test. Please read the comments and 
+make necessary changes. If the student has already submitted the test or if no pending 
+test is present then the button will be disabled, hence the student will not be allowed 
+to take the test.
+
+18.student-test-begin:
+When a student clicks on "start test" then this page is called. Here generate all the 
+questions and store it in database. This questions will be displayed in the next page.
+
+19.workpg.php:
+This is the main page. Students will give the test here. Put all the questions here
+as mentioned in the comments.
+
+20.save-opt.php:
+Here the options are saved to the database. Please read the comments. If the student has 
+not submitted then it redirects back to "workpg.php" where the student can resume its 
+text else it is redirected to "test-end.php".
+
+21.test-end.php:
+Simply displays test is over.
