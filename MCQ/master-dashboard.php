@@ -62,7 +62,7 @@ else {
 		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-chap.php\'">Delete a chapter</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'add-a-ques.php\'">Add a question</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'">Modify a question</button>
-		<button type="button" class="btn btn-primary">Delete a question</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-ques.php\'">Delete a question</button>
 		<button type="button" class="btn btn-primary">View Result</button>
 		<button type="button" class="btn btn-primary">Test dashboard</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'">Password Reset</button>
