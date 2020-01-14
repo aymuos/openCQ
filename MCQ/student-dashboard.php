@@ -74,7 +74,23 @@ else {
 					<li>The person sitting next to you has a different question set, so no point of disturbing him.</li>
 				</ol>
                 </font>
-                <div class="id1"><a class="btn-success btn display-7 btn-lg">Start test</a></div>
+                <div class="id1"><a class="btn-success btn display-7 btn-lg" href="student-test-begin.php"';
+				
+				
+				
+				
+				
+				//****please modify this portion*****\\
+				
+				$ch = 1;
+				if( $ch == 0 ){		//If the condition is satisfied then the student won't be allowed to take the test.
+					echo 'disabled';
+				}
+				
+				
+				
+				
+				echo '>Start test</a></div>
             </div>
         </div>
     </div>
