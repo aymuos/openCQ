@@ -56,3 +56,10 @@ The database is updated here. Please jump directly to else part and follow the c
 
 14.mod-a-ques4.php:
 Simply displays that update has been successfull. No need to make any change.
+
+15.resetpsswd.php:
+No need to make any changes in it. This simply takes the username of the account whose password has to be changed.
+
+16.pssw.php:
+This is the file where password has to be updated in the database. Please see the comments to get more details. Set the new password to "12345678"
+
