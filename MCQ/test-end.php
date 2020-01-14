@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+//Nothing to do in this file.
+//simply shows that test is over.
+
+
 if ( isset($_SESSION['loggedin']) == false ){
 echo ' 
 
