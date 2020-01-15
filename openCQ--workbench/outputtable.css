@@ -1,10 +1,22 @@
-
 body{
     background-image: linear-gradient(to right,#FFEB99,#64ED99);
     font-family: 'Segoe UI',
         sans-serif;
 }
-h2{
+
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: rgb(231, 243, 239);
+    backface-visibility: hidden;
+  }
+  .Neur {
+    border-spacing: 5px;
+    border: 2px;
+    border-style: none;
+  }
+  h2{
     background-color: navy;
     color: white;
     text-align:center;
@@ -19,10 +31,12 @@ h2{
   padding-bottom: 50px;
   padding-left: 80px;
 }
-p{
-	text-align:center;
-	border: black;
+.ffq{
+    align-content: center;
+    align-self: center;
 }
-.ER{
+.crjk{
     text-align: center;
+    text-decoration: underline;
+    color: brown;
 }
