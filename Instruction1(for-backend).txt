@@ -100,4 +100,41 @@ Displays the selected question from "del-a-ques2.php". Please jump directly to e
 The database is updated here. Please jump directly to else part and follow the comments.
 
 26.del-a-ques4.php:
-Simply displays that update has been successfull. No need to make any change in this file.
+Simply displays that update has been successfull. No need to make any change in this 
+file.
+
+27.test-dashboard.php:
+This file takes input from the user of what he wants to do, either create a new test, or 
+begin a test or end a test.
+
+28.test-dashboard-create.php:
+This will take input from user of date, no of questions, the chapters to include for the 
+test. Please provide the newly test id generated in this file.
+
+29.test-dashboard-create2.php:
+This actually makes changes to the database to create a test. Please follow the 
+comments.
+
+30.test-dashboard-create3.php:
+Simply displays that the test has been created successfully. No need to modify this 
+file.
+
+31.test-dashboard-start.php:
+This file displays all the created test id. Simply take all the test id that has not 
+been ended and  display it. Please read the comments for more info.
+
+32.test-dashboard-start2.php:
+Make necessary changes to the database to start the test. Please read the comments.
+
+32.test-dashboard-start3.php:
+Simply displays that the test has been started. No need to make any changes in this file.
+
+33.test-dashboard-end.php:
+This file displays the test id that is running. Simply take all the test id that is
+running and  display it. Please read the comments for more info.
+
+34.test-dashboard-end2.php:
+Make necessary changes to the database to end the test. Please read the comments.
+
+32.test-dashboard-end3.php:
+Simply displays that the test has been ended. No need to make any changes in this file.
