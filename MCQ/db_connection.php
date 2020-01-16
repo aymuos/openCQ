@@ -12,13 +12,40 @@ function OpenCon()
 
 
 
-
+$conn->set_charset("utf8mb4");
  #echo "Connected Successfully";
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  
  return $conn;
  }
+
+ function execute(&$conn,$query,$types,$inarr,&$stmt){
+ 	$stmt = $conn->prepare($query);
+	if($types === ""){
+		;
+	}
+	else{
+		$stmt->bind_param($types, ...$inarr);
+	}
+	$stmt->execute();
+	#echo $conn->errno;
+	#return $stmt;
+ }
+
  
-function CloseCon($conn)
+function get_data(&$stmt){
+	return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
+
+function close(&$stmt){
+	$stmt->close();
+}
+
+function get_id($a){
+	return strtolower(preg_replace('/\s/','',$a));
+}
+
+function CloseCon(&$conn)
  {
  $conn -> close();
  }

@@ -1,4 +1,5 @@
 <?php
+include 'db_connection.php';
 session_start();
 
 
@@ -30,8 +31,10 @@ else {
 
 
 	$id = $_GET['ques_id']; 			//id has the question id which will be displayed 
-	$chname = $_GET["chapter_del"];		//This contains the chapter name of the question.
-	
+	$chname = "Maths";#$_GET["chapter_del"];		//This contains the chapter name of the question.
+	$chid = get_id($chname);
+	$correct = "1";
+	$incorrect = "0";
 
 echo '
 
@@ -72,13 +75,48 @@ echo '
 <div class="container">
   <form class="form-inline" method="post"  action="mod-a-ques4.php">
 	<div>
-	<input type="text" size="24" placeholder="Correct option" name="ques_id" value="hello" disabled hidden>
+<input type="text" size="24" name="old_chap" value="';
+ echo $chname;
+ echo '" readonly hidden>
+ <input type="text" size="24" name="ques_id" value="';
+ 
+
+ 
+ 
+ //Please put the question id here.
+ echo $id;
+ 
+ 
+ 
+ echo '" readonly hidden>
 	<label for="email">Chapter <span style="color:red;">*</span></label>
 	<select class="del-form-control" name="chapter-del">';
 	
 	
 	
-	
+	$conn = OpenCon();
+	try{
+		$query = "SELECT chapter FROM chapters";
+		execute($conn,$query,"",[],$stmt);
+		$chapters = get_data($stmt);
+		close($stmt);
+		#CloseCon($conn);
+		$query = "SELECT question FROM questions WHERE question_id = ?";
+		execute($conn,$query,"s",[$id],$stmt);
+		$questions = get_data($stmt);
+		close($stmt);
+		$query = "SELECT choice FROM choices WHERE question_id = ? AND is_right = ?";
+		execute($conn,$query,"ss",[$id,$correct],$stmt);
+		$choices = get_data($stmt);
+		close($stmt);
+		execute($conn,$query,"ss",[$id,$incorrect],$stmt);
+		$choices = array_merge($choices,get_data($stmt));
+		close($stmt);
+		CloseCon($conn);
+	}
+	catch(Exception $e){
+		exit($e->getMessage());
+	}
 	
 	
 	
@@ -88,13 +126,13 @@ echo '
 	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
 	//Simply take all the chapter's name from the database and display it.
 	
-	$len = 5;	//"len" contains the total no of chapters to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
+	#$len = 5;	//"len" contains the total no of chapters to be displayed.
+	foreach($chapters as $row){		
 		
 		
 		
 		//"$current_chapter" contains name of the chapter in the ith iteration.
-		$current_chapter = $i;
+		$current_chapter = $row['chapter'];
 		if($current_chapter == $chname){
 			echo '<option selected>';
 		}
@@ -106,7 +144,7 @@ echo '
 		
 		
 		//Please put the i th chapter's name in this echo statement.
-		echo $i;
+		echo $row['chapter'];
 		
 		
 		echo '</option>';
@@ -128,7 +166,7 @@ echo '
 
 
 	//********Put the problem statement in this echo statement.*********\\
-	echo 'This is the question';
+	echo $questions[0]['question'];
 
 
 
@@ -149,7 +187,7 @@ echo '
 		
 		
 		//********Put the correct option in this echo statement.*********\\
-		echo 'This is correct option"';
+		echo $choices[0]['choice'];
 
 
 
@@ -173,7 +211,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 1 in this echo statement.*********\\
-			echo 'This is incorrect option1';
+			echo $choices[1]['choice'];
 			
 			
 			
@@ -190,7 +228,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 2 in this echo statement.*********\\
-			echo 'This is incorrect option2';
+			echo $choices[2]['choice'];
 			
 			
 			
@@ -207,7 +245,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 3 in this echo statement.*********\\
-			echo 'This is incorrect option3';
+			echo $choices[3]['choice'];
 			
 			
 			

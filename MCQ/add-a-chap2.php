@@ -29,31 +29,31 @@ echo '
 else {
 
 	$name = $_POST["chapter-name"];
+	$chapter_id = get_id($name);
 	//"name" variable here contains the name of the chapter which is to be
 	//added to the database.
 	//Please add the chapter to the database here..........
-	$id = preg_replace('/\s/','',$name);
-	$id = strtolower($id);
 	$conn = OpenCon();
- 	$conn->set_charset("utf8mb4");
-	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
 	try{
-		$stmt = $conn->prepare("INSERT INTO chapters (chapter_id, chapter) VALUES (?, ?)");
-		$stmt->bind_param("ss",$id,$name);
-		$stmt->execute();
+		$query = "INSERT INTO chapters (chapter_id , chapter) VALUES (?, ?)";
+		execute($conn,$query,"ss",[$chapter_id,$name],$stmt);
+		close($stmt);
+		CloseCon($conn);
 		header('location: add-a-chap3.php');
 	}
 	catch(Exception $e){
+		#echo $conn->errno;
 		if($conn->errno === 1062){
-			#echo "Duplicate Entry ";
+			CloseCon($conn);
+			close($stmt);
+			exit("Duplicate Entry");
 		}
 		else{
-			echo $e->getMessage();
+			CloseCon($conn);
+			close($stmt);
+			exit($e->getMessage());
 		}
 	}
-	
-	$stmt->close();
- 	CloseCon($conn);
 	
 	//After updating the database this file redirects the page 
 	//to "add-a-chap3.php".

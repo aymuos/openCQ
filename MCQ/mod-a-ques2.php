@@ -1,5 +1,5 @@
 <?php
-
+include 'db_connection.php';
 //This will take all the question of a particular chapter from the database and will show
 //it in the screen so that if any modification is to be done 
 //it can easily be implemented. Proceed to else part directly.
@@ -33,7 +33,7 @@ else {
 
 	$chname = $_POST["chapter-del"];	//This contains the chapter name whose questions is to be displayed.
 
-
+	$chid = get_id($chname);
 
 
 
@@ -58,7 +58,7 @@ else {
 		return $(this).text();
     }).get();
 	var td=tableData[0];
-	window.location.href = "mod-a-ques3.php?ques_id=" + td + "&chapter_del=" +';echo $chname;echo ' ;
+	window.location.href = "mod-a-ques3.php?ques_id=" + td + "&chapter_del=" + "';echo $chname;echo '";
 
 	});
 });	
@@ -121,15 +121,26 @@ else {
 	
 	
 	
-	
+	$conn = OpenCon();
+
+	try{
+		$query = "SELECT question_id, question FROM questions WHERE chapter_id = ?";
+		execute($conn,$query,"s",[$chid],$stmt);
+		$questions = get_data($stmt);
+		close($stmt);
+		CloseCon($conn);
+	}
+	catch(Exception $e){
+		exit($e->getMessage());
+	}
 	
 	//***Please modify this portion to display all the questions in the table.***\\\
 	//Simply take all the chapter's question from the database and display it.
 	
-	$len = 5;	//"len" contains the total no of question to be displayed.
+	#$len = 5;	//"len" contains the total no of question to be displayed.
 	
 	
-	for($i = 1; $i <= $len ; $i+=1){		
+	foreach($questions as $row){		
 		echo '<tr class="tblRows">';
 		echo '<td hidden>';
 		
@@ -137,7 +148,7 @@ else {
 		
 		
         //Please put the question's ID in this echo statement.
-		echo $i;
+		echo $row['question_id'];
 		
 		
 		
@@ -149,7 +160,7 @@ else {
 		
 		
 		//Please put the question's statement in this echo statement.
-		echo $i;
+		echo $row['question'];
 		
 		
 		
@@ -168,7 +179,7 @@ else {
 	//Rest of the part remains same.
 
 	
-	
+
 	
 echo '	
 	
@@ -203,7 +214,7 @@ echo '
 
 ';
 }
-
+#echo "Hello";
 
 ?>
 
