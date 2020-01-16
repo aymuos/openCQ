@@ -126,15 +126,15 @@ been ended and  display it. Please read the comments for more info.
 32.test-dashboard-start2.php:
 Make necessary changes to the database to start the test. Please read the comments.
 
-32.test-dashboard-start3.php:
+33.test-dashboard-start3.php:
 Simply displays that the test has been started. No need to make any changes in this file.
 
-33.test-dashboard-end.php:
+34.test-dashboard-end.php:
 This file displays the test id that is running. Simply take all the test id that is
 running and  display it. Please read the comments for more info.
 
-34.test-dashboard-end2.php:
+35.test-dashboard-end2.php:
 Make necessary changes to the database to end the test. Please read the comments.
 
-32.test-dashboard-end3.php:
+36.test-dashboard-end3.php:
 Simply displays that the test has been ended. No need to make any changes in this file.
