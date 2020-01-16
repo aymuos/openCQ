@@ -1,20 +1,25 @@
 <?php
 session_start();
+
+
+//This is the test dashboard. user can either create, or start or end a test.
+//No need to modify this file.
+
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
 <html>
 <head>
-  <title>Oops!!!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>Oops!!!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
 <body>
-<div class="well-lg">
-<div class="alert alert-danger">
-<p class="text-center">Please <a href="master.html">Login</a> first</p>
-</div>
-</div>
+	<div class="well-lg">
+		<div class="alert alert-danger">
+			<p class="text-center">Please <a href="master.html">Login</a> first</p>
+		</div>
+	</div>
 </body>
 </html>
 ';
@@ -23,14 +28,14 @@ else {
 	echo '
 <html>
 <head>
-<title>Welcome</title>
+<title>Test Dashboard</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="destroy.css">
 </head>
-<body id="page6">
+<body id="page10">
 	<div class="some" >
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -43,6 +48,7 @@ else {
 					</button>
 					
 					<font face="verdana" color="white" size="6.5px" > Dashboard</font>
+					<a href="master-dashboard.php" style="text-decoration: none;opacity: 0.8"><font face="verdana" color="white" size="3px"  > &emsp;Home</font></a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
@@ -54,23 +60,29 @@ else {
 		</nav>
 	</div>
 	
-	<h1><b>Welcome.....Please choose an action.</b></h1>
+	<h1><b>Test Dashboard</b></h1>
 	
+
+<div class="container">
 	<div class="button-container">
-	<div class="btn-group-vertical">
-		<button type="button" class="btn btn-primary " onclick="location.href=\'add-a-chap.php\'">Add a chapter</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-chap.php\'">Delete a chapter</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'add-a-ques.php\'">Add a question</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'">Modify a question</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-ques.php\'">Delete a question</button>
-		<button type="button" class="btn btn-primary">View Result</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'test-dashboard.php\'">Test dashboard</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'">Password Reset</button>
+		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
+	<!--	<button type="button" class="btn btn-primary">update</button>  -->
+		<button type="button" class="btn btn-primary" onclick="location.href=\'test-dashboard-create.php\'">Create New</button>
+		<button type="button" class="btn btn-success" onclick="location.href=\'test-dashboard-start.php\'">Start a Test</button>
+		<button type="button" class="btn btn-danger" onclick="location.href=\'test-dashboard-end.php\'">End a Test</button>
 	</div>
-	</div>
+</div>
+
+	
+
 </body>
 </html>
+
+
+
+
 ';
+
 }
 
 ?>

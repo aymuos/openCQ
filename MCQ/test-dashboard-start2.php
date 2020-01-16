@@ -1,0 +1,51 @@
+<?php
+session_start();
+
+
+
+
+
+//Test id will be provided. Please start the corresponding test.
+//Proceed to the else part directly.
+
+
+
+
+
+if ( isset($_SESSION['loggedinmaster']) == false ){
+echo ' 
+<html>
+<head>
+	<title>Oops!!!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
+<body>
+	<div class="well-lg">
+		<div class="alert alert-danger">
+			<p class="text-center">Please <a href="master.html">Login</a> first</p>
+		</div>
+	</div>
+</body>
+</html>
+';
+}
+else {
+	
+
+	$test_id = $_POST["ti"];	//Contains test id to start a test
+	
+	
+	
+	
+	//Make necessary changes in the database here..............
+	
+	
+	
+	
+	//Simply redirects to test-dashboard-start3.php
+	header("Location: test-dashboard-start3.php");
+}	
+?>
+	
