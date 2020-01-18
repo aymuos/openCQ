@@ -1,0 +1,49 @@
+body{
+    background-image: linear-gradient(to right,#FFEB99,#64ED99);
+    font-family: 'Segoe UI',
+        sans-serif;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(231, 243, 239);
+    backface-visibility: hidden;
+  }
+  .Neur {
+    border-spacing: 5px;
+    border: 2px;
+    border-style: none;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  h2{
+    background-color: navy;
+    color: white;
+    text-align:center;
+    margin:7px 7px;
+    text-shadow:none;
+    border-style: solid;
+    border-color: crimson;
+    border-radius: 15px 50px; /*for assymetrical boders*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+.ffq{
+    align-content: center;
+    align-self: center;
+}
+.crjk{
+    text-align: center;
+    text-decoration: underline;
+    color: brown;
+}
+td {
+    cursor: pointer;
+}
+
