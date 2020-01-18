@@ -138,3 +138,17 @@ Make necessary changes to the database to end the test. Please read the comments
 
 36.test-dashboard-end3.php:
 Simply displays that the test has been ended. No need to make any changes in this file.
+
+37.View-result.php:
+Takes the input of which test's result has to be displayed.
+Simply displays all the test's id that has been ended.
+
+38.view-result2.php:
+Shows the description of the test. user can change if the test doesnot
+matches. Please read the commented section.
+
+39.view-result3.php:
+diaplays the result of all the student.
+
+40.view-result4.php:
+Displays the answer script of individual student of the selected test.
