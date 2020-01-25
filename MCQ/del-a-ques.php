@@ -1,4 +1,6 @@
 <?php
+include 'db_connection.php';
+
 session_start();
 
 
@@ -84,20 +86,30 @@ else {
 
 
 
+	$conn = OpenCon();
 
+	try{
+		$query = "SELECT chapter FROM chapters";
+		execute($conn,$query,"",[],$stmt);
+		$chapters = get_data($stmt);
+		close($stmt);
+		CloseCon($conn);
+	}
+	catch(Exception $e){
+		exit($e->getMessage());
+	}
 
 
 			
 	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
 	//Simply take all the chapter's name from the database and display it.
 	
-	$len = 5;	//"len" contains the total no of chapters to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
+	foreach($chapters as $row){		
 		echo '<option>';
 		
 		
 		//Please put the chapter's name in this echo statement.
-		echo $i;
+		echo $row['chapter'];
 		
 		
 		echo '</option>';

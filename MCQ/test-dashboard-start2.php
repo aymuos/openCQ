@@ -1,4 +1,6 @@
 <?php
+include 'db_connection.php';
+
 session_start();
 
 
@@ -40,10 +42,19 @@ else {
 	
 	
 	//Make necessary changes in the database here..............
+	$conn = OpenCon();
+
+	try{
+		$query = "UPDATE exam SET is_active = '1' WHERE exam_id = ?";
+		execute($conn,$query,"i",[$test_id],$stmt);
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 	
-	
-	
-	
+	CloseCon($conn);
 	//Simply redirects to test-dashboard-start3.php
 	header("Location: test-dashboard-start3.php");
 }	

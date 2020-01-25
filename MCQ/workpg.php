@@ -1,5 +1,9 @@
 <?php
+include 'db_connection.php';
 session_start();
+
+
+
 
 if ( isset($_SESSION['loggedin']) == false ){
 echo ' 
@@ -24,6 +28,46 @@ echo '
 ';
 }
 else {
+
+	$conn = OpenCon();
+
+	try{
+		$query = "SELECT * FROM exam WHERE is_active='1'";
+		execute($conn,$query,"",[],$stmt);
+		$result = get_data($stmt);
+		close($stmt);
+		$query = "SELECT exam_marks.user_id AS user_id FROM exam_marks INNER JOIN exam ON exam.exam_id = exam_marks.exam_id WHERE exam.is_active = '1' AND exam_marks.user_id = ?";
+		execute($conn,$query,"s",[get_user()],$stmt);
+		//print(get_user());
+		$result1= get_data($stmt);
+		close($stmt);
+		$n = 0;
+		if(!$result){
+			exit("No exam is live");
+		}
+		else{
+			$n = $result[0]['num'];
+		}
+		if($result1){
+			exit("You have already taken this exam");
+		}
+		$query = "SELECT exam_choices.question AS q,exam_choices.choice AS c,exam_choices.is_marked AS m,exam_choices.is_right AS r FROM exam_choices INNER JOIN exam ON exam_choices.exam_id=exam.exam_id WHERE exam.is_active='1' AND exam_choices.user_id = ?";
+		execute($conn,$query,"s",[get_user()],$stmt);
+		$raw_paper = get_data($stmt);
+		close($stmt);
+		if(!$raw_paper){
+			exit("Question Paper is not ready");
+		}
+		$paper = paper($raw_paper);
+
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
+
+
+
 	echo '
 
 
@@ -53,9 +97,9 @@ else {
 
 	function saveFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <= 10 ; j++ ){
+		for( var j = 1 ; j <='. $n .'; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + id[0].value +"&";
+			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
 			var temp = "-1";
 			for (var i = 0, length = radios.length; i < length; i++) {
@@ -64,7 +108,7 @@ else {
 					break;
 				}
 			}
-			str = str + "ques" + j + "=" + temp + "&";
+			str = str + "ques" + j + "=" + encodeURIComponent(temp) + "&";
 		}
 		window.location.href = str + "submit=0";
 	}
@@ -74,9 +118,9 @@ else {
 	
 	function submitFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <= 10 ; j++ ){
+		for( var j = 1 ; j <='. $n .'; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + id[0].value +"&";
+			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
 			var temp = "-1";
 			for (var i = 0, length = radios.length; i < length; i++) {
@@ -85,7 +129,7 @@ else {
 					break;
 				}
 			}
-			str = str + "ques" + j + "=" + temp + "&";
+			str = str + "ques" + j + "=" + encodeURIComponent(temp) + "&";
 		}
 		window.location.href = str + "submit=1";
 	}
@@ -123,19 +167,19 @@ echo '
 
 echo '<div id="form_wrapper">';
 
-
+	
 	$ct=1;	//Do not delete this variable....
 	
-	
+
 	//This loop prints 10 question along with its answer
-	for($ch=1;$ch<=10;$ch+=1){
+	foreach($paper as $key=>$value){
 		//Do not do anything
 		echo '<div class="w3-panel w3-border w3-round-xlarge option_cont"> <p><b>Question '.$ct.' :</b></p><br><input name="quesid'.$ct.'" type="text" value="';
 		
 		
 		
 		//Please put the question id of the i th question in this echo statement..............
-		echo 'hello';
+		echo $key;
 		
 		
 		//Do not do anything
@@ -145,10 +189,10 @@ echo '<div id="form_wrapper">';
 		
 		
 		//Put the question ststement in this echo statement.
-		echo 'This is a question statement ';
+		echo $key;
 		
 		
-		
+		$value = choice_ordering($value);
 		
 		
 		//Do not do anything
@@ -158,14 +202,14 @@ echo '<div id="form_wrapper">';
 				
 				
 		//Please put option 1 here......
-		echo 'First option';
+		echo $value[0][0];
 				
 
 
 				
 				
 		//If option 1 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if($value[0][1]=="1"){
 			echo '" checked >';
 		}
 		else{
@@ -175,7 +219,7 @@ echo '<div id="form_wrapper">';
 		
 				
 		//please put option 1 here again......It is not a mistake.
-		echo ' First option';
+		echo $value[0][0];
 
 				
 
@@ -189,12 +233,12 @@ echo '<div id="form_wrapper">';
 
 		
 		//Please put option 2 here......
-		echo 'Second option';
+		echo $value[1][0];
 		
 				
 				
 		//If option 2 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if($value[1][1]=="1" ){
 			echo '" checked >';
 		}
 		else{
@@ -203,7 +247,7 @@ echo '<div id="form_wrapper">';
 				
 
 		//please put option 2 here again......It is not a mistake.
-		echo ' Second option';
+		echo $value[1][0];
 		
 		
 		
@@ -216,7 +260,7 @@ echo '<div id="form_wrapper">';
 				
 			
 		//Please put option 3 here......
-		echo 'Third option';
+		echo $value[2][0];
 		
 				
 				
@@ -224,7 +268,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 3 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if($value[2][1] == "1"){
 			echo '" checked >';
 		}
 		else{
@@ -237,7 +281,7 @@ echo '<div id="form_wrapper">';
 				
 			
 		//please put option 3 here again......It is not a mistake.
-		echo ' Third option';
+		echo $value[2][0];
 		
 				
 		
@@ -249,12 +293,12 @@ echo '<div id="form_wrapper">';
 		
 		
 		//please put option 4 here.
-		echo 'Fourth option';
+		echo $value[3][0];
 		
 				
 				
 		//If option 4 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if( $value[3][1] == "1"){
 			echo '" checked >';
 		}
 		else{
@@ -266,7 +310,7 @@ echo '<div id="form_wrapper">';
 		
 		
 		//please put option 4 here again......It is not a mistake.
-		echo ' Fourth option';
+		echo $value[3][0];
 		
 				
 				
@@ -302,7 +346,7 @@ echo '
 
 
 ';
-
+CloseCon($conn);
 }
 
 ?>

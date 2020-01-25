@@ -1,4 +1,6 @@
 <?php
+
+include 'db_connection.php';
 session_start();
 
 
@@ -88,8 +90,21 @@ else {
 			
 ';
 
+	$conn = OpenCon();
 
-
+	try{
+		$query = "SELECT * FROM exam WHERE is_active = '1'";
+		execute($conn,$query,"",[],$stmt);
+		$exam = get_data($stmt);
+		if(!$exam){
+			exit("No exam is live");
+		}
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 
 
 
@@ -99,13 +114,13 @@ else {
 	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
 	//Simply take the test id that is running and display it.
 	
-	$len = 5;	//"len" contains the total no of test id to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
+	$len = 1;	//"len" contains the total no of test id to be displayed.
+	for($i = 1; $i <= 1 ; $i+=1){		
 		echo '<option>';
 		
 		
 		//Please put the test id in this echo statement.
-		echo 'Hello world &yo';
+		echo $exam[0]['exam_id'];
 		
 		
 		echo '</option>';
@@ -115,7 +130,7 @@ else {
 			
 	//Rest of the part remains same.
 
-
+	CloseCon($conn);
 
 
 

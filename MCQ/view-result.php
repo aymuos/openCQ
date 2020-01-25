@@ -1,12 +1,11 @@
 <?php
 
 
-
+include 'db_connection.php';
 
 
 //This page helps user to select the test whose result he wants to view.
 //Please proceed to the else part............
-
 
 session_start();
 if ( isset($_SESSION['loggedinmaster']) == false ){
@@ -55,16 +54,29 @@ else {
 						<select name ="testoption" class="selection-list" >';
 						
 						
+							$conn = OpenCon();
+
+							try{
+								$query = "SELECT * FROM exam WHERE is_active = '0'";
+								execute($conn,$query,"",[],$stmt);
+								$exams = get_data($stmt);
+								close($stmt);
+							}
+							catch(Exception $e){
+								report($e);
+								exit("Error");
+							}
+
+							CloseCon($conn);	
 							
 							
-							
-							for($i=1;$i<=5;$i++){
+							foreach($exams as $value){
 								echo '<option value="';
 								
 								
 								
 								//Put test id of the test that has been ended.........
-								echo 'test id '.$i;
+								echo $value['exam_id'];
 								
 								
 								
@@ -73,7 +85,7 @@ else {
 								
 								
 								//Put test id of the test that has been ended AGAIN............
-								echo 'test id '.$i;
+								echo $value['exam_id'];
 								
 								
 								echo '</option>';

@@ -1,4 +1,5 @@
 <?php
+include 'db_connection.php';
 session_start();
 
 
@@ -77,11 +78,11 @@ else {
 	<label style="float: left;">Test Id : &emsp;</label><input name="ti" style="float: left;" value="';
 	
 	
-	
+	$stamp = time();
 	
 	
 	//Put newly generated test id in this echo statement
-	echo "Test_id";
+	echo $stamp;
 
 
 
@@ -112,14 +113,25 @@ else {
     <tbody>';
 	
 	
-	
+	$conn = OpenCon();
+
+	try{
+		$query = "SELECT chapter FROM chapters";
+		execute($conn,$query,"",[],$stmt);
+		$chapters = get_data($stmt);
+		close($stmt); 
+	}
+	catch(Exception $e){
+		report($e);
+		exit("Error");
+	}
 	
 	//please do not delete this variable.
 	$ct = 1;
 	
 	
 	//Loops till the total no of chapter.
-	for ($i = 1; $i <= 10 ; $i++){
+	foreach ($chapters as $value){
 	echo '
       <tr>
         <td>';
@@ -127,7 +139,7 @@ else {
 		
 		
 		//Please put the chapter's name in this echo statement.
-		echo 'chapter\'s name';
+		echo $value['chapter'];
 		
 		
 		
@@ -141,7 +153,7 @@ else {
 
 	
 		//Please put the chapter's names AGAIN in this echo statement
-		echo 'please put the chapter\'s name here'.$i;
+		echo $value['chapter'];
 		
 		
 		
@@ -156,7 +168,7 @@ else {
 	}
        	  
 	  //Rest of the code remains same
-	  
+	  CLoseCon($conn);
 	  
 	  
 	echo '

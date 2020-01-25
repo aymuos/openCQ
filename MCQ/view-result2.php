@@ -1,4 +1,7 @@
 <?php
+
+include 'db_connection.php';
+
 session_start();
 
 
@@ -33,7 +36,18 @@ else {
 	
 	$test_id = $_POST["testoption"]; //This contains the test id whose details has to be displayed.
 
-	
+	$conn = OpenCon();
+
+	try{
+		$query = "SELECT * FROM exam WHERE exam_id = ?";
+		execute($conn,$query,"i",[$test_id],$stmt);
+		$exam = get_data($stmt);
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 	
 	echo '<!DOCTYPE html>
 <html>
@@ -57,7 +71,7 @@ else {
 			
 			
 			//Please Enter the date of the corresponding test..........
-			echo '16/01/2020';
+			echo $exam[0]['user_date'];
 			
 			
 			
@@ -69,7 +83,7 @@ else {
 			
 			
 			//Please enter the no of question of that test...............
-			echo '10';
+			echo $exam[0]['num'];
 			
 			
 			
@@ -83,7 +97,7 @@ else {
 			
 			
 			//Please put the description of the test here........
-			echo 'This is a good test';
+			echo $exam[0]['description'];
 			
 			
 			

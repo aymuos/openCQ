@@ -1,11 +1,9 @@
 <?php
+include 'db_connection.php';
 session_start();
 
 
-
-
-
-//This file displays the question that has been selected in del-a-ques2.php
+//This file displays the question that has been selected in mod-a-ques2.php
 //Please proceed to the else part.
 
 
@@ -32,9 +30,11 @@ else {
 
 
 
-	$id = $_GET['ques_id']; 			//$id has the question id which will be displayed 
-	$chname = $_GET["chapter_del"];		//$chname contains the chapter name of the question.
-	
+	$id = $_GET['ques_id']; 			//id has the question id which will be displayed 
+	$chname = $_GET["chapter_del"];		//This contains the chapter name of the question.
+	$chid = get_id($chname);
+	$correct = "1";
+	$incorrect = "0";
 
 echo '
 
@@ -82,12 +82,84 @@ echo '
 	</div>
 	<h1><b>Delete a Question</b></h1>
 <div class="container">
-  <form id="my-form" class="form-inline" method="post"  action="del-a-ques4.php">
+  <form class="form-inline" method="post"  action="del-a-ques4.php">
 	<div>
-	<input type="text" size="24" placeholder="Correct option" name="ques_id" value="hello" disabled hidden>
-	<label for="email">Chapter :</label>
-	<input type="text" value="'.$chname.'" disabled><label class="ques">Question:</label>
-	<textarea class="box" type="text" placeholder="Problem Statement......" name="mod_stat" disabled>';
+<input type="text" size="24" name="old_chap" value="';
+ echo $chname;
+ echo '" readonly hidden>
+ <input type="text" size="24" name="ques_id" value="';
+ 
+
+ 
+ 
+ //Please put the question id here.
+ echo $id;
+ 
+ 
+ 
+ echo '" readonly hidden>
+	<label for="email">Chapter <span style="color:red;">*</span></label>
+	<select class="del-form-control" name="chapter-del">';
+	
+	
+	
+	$conn = OpenCon();
+	try{
+		$query = "SELECT chapter FROM chapters";
+		execute($conn,$query,"",[],$stmt);
+		$chapters = get_data($stmt);
+		close($stmt);
+		#CloseCon($conn);
+		$query = "SELECT question FROM questions WHERE question_id = ?";
+		execute($conn,$query,"s",[$id],$stmt);
+		$questions = get_data($stmt);
+		close($stmt);
+		$query = "SELECT choice FROM choices WHERE question_id = ? AND is_right = ?";
+		execute($conn,$query,"ss",[$id,$correct],$stmt);
+		$choices = get_data($stmt);
+		close($stmt);
+		execute($conn,$query,"ss",[$id,$incorrect],$stmt);
+		$choices = array_merge($choices,get_data($stmt));
+		close($stmt);
+		CloseCon($conn);
+	}
+	catch(Exception $e){
+		exit($e->getMessage());
+	}
+	
+	
+	
+	
+	
+	
+	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
+	//Simply take all the chapter's name from the database and display it.
+	
+	#$len = 5;	//"len" contains the total no of chapters to be displayed.
+	for($it=1;$it<=1;$it=$it+1){		
+		
+		
+		
+		//"$current_chapter" contains name of the chapter in the ith iteration.
+
+		
+		echo '<option>';
+		
+		
+		//Please put the i th chapter's name in this echo statement.
+		echo $chname;
+		
+		
+		echo '</option>';
+	}
+			
+			
+
+	
+	
+	
+	echo '</select><label class="ques">Question:</label>
+	<textarea class="box" type="text" placeholder="Problem Statement......" name="mod_stat" >';
 
 
 
@@ -97,7 +169,7 @@ echo '
 
 
 	//********Put the problem statement in this echo statement.*********\\
-	echo 'This is the question';
+	echo $questions[0]['question'];
 
 
 
@@ -109,7 +181,7 @@ echo '
 	</textarea>
 	</div>
 	<div class="ans">
-		<label class="opt">Correct Option :</label>
+		<label class="opt">Correct Option<span style="color:red;"> *</span> :</label>
 		<input type="text" size="24" placeholder="Correct option" name="cropt" value="';
 		
 		
@@ -118,7 +190,7 @@ echo '
 		
 		
 		//********Put the correct option in this echo statement.*********\\
-		echo 'This is correct option"';
+		echo $choices[0]['choice'];
 
 
 
@@ -128,7 +200,7 @@ echo '
 
 
 
-		echo '" disabled>
+		echo '" required>
 	</div>
 	<div class="tans">
 		<label class="opt">Incorrect Options :</label>
@@ -142,7 +214,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 1 in this echo statement.*********\\
-			echo 'This is incorrect option1';
+			echo $choices[1]['choice'];
 			
 			
 			
@@ -151,7 +223,7 @@ echo '
 			
 			
 			
-			echo '" disabled>
+			echo '"></textarea>
 			<input type="text" size="24" placeholder= "Incorrect option 2" name="incropt2" value="';
 			
 			
@@ -159,7 +231,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 2 in this echo statement.*********\\
-			echo 'This is incorrect option2';
+			echo $choices[2]['choice'];
 			
 			
 			
@@ -168,7 +240,7 @@ echo '
 			
 			
 			
-			echo '" disabled>
+			echo '"></textarea>
 			<input type="text" size="24" placeholder="Incorrect option 3" name="incropt3" value="';
 			
 			
@@ -176,7 +248,7 @@ echo '
 			
 			
 			//********Put the Incorrect option 3 in this echo statement.*********\\
-			echo 'This is incorrect option3';
+			echo $choices[3]['choice'];
 			
 			
 			
@@ -192,13 +264,13 @@ echo '
 			//Rest of the code remains unchanged.
 			
 			
-			echo '" disabled>
+			echo '"></textarea>
 	</div>
 	
 	
 	<div class="button-container">
 		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
-		<button type="button" class="btn btn-success" onclick="myFunc()">Delete</button>
+		<button type="submit" class="btn btn-success">Delete</button>
 	</div>
   </form>
 </div>	

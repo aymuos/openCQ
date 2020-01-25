@@ -1,4 +1,5 @@
 <?php
+include 'db_connection.php';
 session_start();
 
 if ( isset($_SESSION['loggedin']) == false ){
@@ -74,23 +75,37 @@ else {
 					<li>The person sitting next to you has a different question set, so no point of disturbing him.</li>
 				</ol>
                 </font>
-                <div class="id1"><a class="btn-success btn display-7 btn-lg" href="student-test-begin.php"';
+                <div class="id1">
+ <button type="button" class="btn btn-success btn-lg" onclick="location.href=\'student-test-begin.php\'"';
 				
 				
-				
+				$conn = OpenCon();
 				
 				
 				//****please modify this portion*****\\
-				
-				$ch = 1;
-				if( $ch == 0 ){		//If the condition is satisfied then the student won't be allowed to take the test.
+				try{
+					$query = "SELECT exam_marks.user_id AS user_id FROM exam_marks INNER JOIN exam ON exam.exam_id = exam_marks.exam_id WHERE exam.is_active = '1' AND exam_marks.user_id = ?";
+					execute($conn,$query,"s",[get_user()],$stmt);
+					//print(get_user());
+					$result1= get_data($stmt);
+					close($stmt);
+					$query = "SELECT exam_id FROM exam where is_active = '1'";
+					execute($conn,$query,"",[],$stmt);
+					$result2= get_data($stmt);
+					close($stmt);
+				}
+				catch(Exception $e){
+					report($e);
+					exit("Error");
+				}
+				if( $result1 or !$result2 ){		//If the condition is satisfied then the student won't be allowed to take the test.
 					echo 'disabled';
 				}
 				
+				CloseCon($conn);
 				
 				
-				
-				echo '>Start test</a></div>
+				echo '>Start test</button></div>
             </div>
         </div>
     </div>

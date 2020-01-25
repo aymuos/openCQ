@@ -1,4 +1,6 @@
 <?php
+include 'db_connection.php';
+
 session_start();
 
 
@@ -45,9 +47,21 @@ else {
 	
 	
 	//Make necessary changes in the database here............
+	$conn = OpenCon();
+	try{
+		$query = "DELETE FROM questions WHERE question_id = ?";
+		execute($conn,$query,"s",[$id],$stmt);
+		close($stmt);
+
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 	
+
 	
-	
+	CloseCon($conn);
 	
 	//Redirects to "del-a-ques5.php"
 	header('location: del-a-ques5.php');

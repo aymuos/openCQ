@@ -1,7 +1,7 @@
 <?php
 
 
-
+include 'db_connection.php';
 
 
 //This page diaplays the results of all the students in a tabular form.
@@ -31,8 +31,19 @@ else {
 	
 	$test_id = $_POST["test_id"];
 
+	$conn = OpenCon();
 	
-	
+	try{
+		$query = "SELECT student.user_id AS user, student.name AS name, student.department AS dept, SUM(exam_marks.marks) AS m FROM exam_marks INNER JOIN student ON exam_marks.user_id = student.user_id WHERE exam_marks.exam_id = ? GROUP BY student.user_id,student.name,student.department,student.year  ORDER BY m DESC;  ";
+		execute($conn,$query,"i",[$test_id],$stmt);
+		$result = get_data($stmt);
+		close($stmt);
+
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 	
 echo '
 
@@ -90,26 +101,26 @@ echo '
 		
 		
 		
-		for($i=0;$i<=10;$i++){
+		foreach($result as $value){
 			echo '<tr><td>';
 			
 			
 			//Please Enter the roll no here.........
-			echo 'GCECTB-R17-3018';
+			echo $value['user'];
 			
 			
 			echo '</td><td>';
 			
 			
 			//Please enter the name here..........
-			echo 'Rashed Mehdi';
+			echo $value['name'];
 			
 			
 			echo '</td><td>';
 			
 			
 			//Please enter the department here..........
-			echo 'CSE';
+			echo $value['dept'];
 			
 			echo '</td><td>';
 			
@@ -117,13 +128,13 @@ echo '
 			
 			
 			//Please enter the MARKS here..........
-			echo '8.73';
+			echo $value['m'];
 			
 			
 			echo '</td></tr>';
 			
 		}
-
+		CloseCon($conn);
 		
 		echo '
 		</tbody>

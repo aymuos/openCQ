@@ -1,4 +1,7 @@
 <?php
+
+include 'db_connection.php';
+
 session_start();
 
 
@@ -84,20 +87,35 @@ else {
 
 
 
+	$conn = OpenCon();
+	try{
+		$query = "SELECT * FROM exam WHERE is_active = '2'";
+		execute($conn,$query,"",[],$stmt);
+		$exams = get_data($stmt);
+		close($stmt);
+		$query = "SELECT * FROM exam WHERE is_active = '1'";
+		execute($conn,$query,"",[],$stmt);
+		$live = get_data($stmt);
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+		exit("Error");
+	}
+
+		
 
 
-
-			
 	//***Please modify this portion to display all the test available in the dropdown list.***\\\
 	//Simply take all the test id  from the database which has not ended and display it.
 	
 	$len = 5;	//"len" contains the total no of test id to be displayed.
-	for($i = 1; $i <= $len ; $i+=1){		
+	foreach($exams as $value){		
 		echo '<option>';
 		
 		
 		//Please put the test id in this echo statement.
-		echo 'Hello world &yo';
+		echo $value['exam_id'];
 		
 		
 		echo '</option>';
@@ -119,14 +137,14 @@ else {
 
 	
 	$ct = 0;
-	if($ct == 1 ){		//If this condition is satisfied then user cannot start a test as button will be disabled.
+	if($live){		//If this condition is satisfied then user cannot start a test as button will be disabled.
 		echo 'disabled';
 	}
 
 
 
 		//Rest of the code remains same.
-
+		CloseCon($conn);
 
 		echo '>Start</button>
 	</div>
