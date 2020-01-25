@@ -137,7 +137,7 @@ else {
 
 	
 	$ct = 0;
-	if($live){		//If this condition is satisfied then user cannot start a test as button will be disabled.
+	if($live or !$exams){		//If this condition is satisfied then user cannot start a test as button will be disabled.
 		echo 'disabled';
 	}
 

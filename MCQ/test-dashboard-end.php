@@ -110,8 +110,8 @@ else {
 			
 	//***Please modify this portion to display all the chapters in the dropdown list.***\\\
 	//Simply take the test id that is running and display it.
-	
-	$len = 1;	//"len" contains the total no of test id to be displayed.
+	if($exam){
+		$len = 1;	//"len" contains the total no of test id to be displayed.
 	for($i = 1; $i <= 1 ; $i+=1){		
 		echo '<option>';
 		
@@ -121,7 +121,9 @@ else {
 		
 		
 		echo '</option>';
+	}	
 	}
+
 			
 			
 			
