@@ -96,9 +96,6 @@ else {
 		$query = "SELECT * FROM exam WHERE is_active = '1'";
 		execute($conn,$query,"",[],$stmt);
 		$exam = get_data($stmt);
-		if(!$exam){
-			exit("No exam is live");
-		}
 		close($stmt);
 	}
 	catch(Exception $e){
@@ -146,7 +143,7 @@ else {
 
 		
 		$ct = 0;
-		if($ct == 1){		//If no test is running then this if statement is satisfied and the button gets disabled.
+		if(!$exam){		//If no test is running then this if statement is satisfied and the button gets disabled.
 			echo 'disabled';
 		}
 		

@@ -45,6 +45,13 @@ else {
 	$conn = OpenCon();
 
 	try{
+		$query = "SELECT * FROM exam WHERE is_active = '1'";
+		execute($conn,$query,"",[],$stmt);
+		$live=get_data($stmt);
+		close($stmt);
+		if($live){
+			exit("An exam is already live");
+		}
 		$query = "UPDATE exam SET is_active = '1' WHERE exam_id = ?";
 		execute($conn,$query,"i",[$test_id],$stmt);
 		close($stmt);

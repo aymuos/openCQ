@@ -55,6 +55,15 @@ try{
 		exit("Exam Paper is Already Submitted");
 	}
 
+	$query = "SELECT question, cquestion FROM exam_questions WHERE user_id = ? AND exam_id = ?";
+	execute($conn,$query,"ss",[get_user(),$eid],$stmt);
+	$questions = get_data($stmt);
+	close($stmt);
+	$quest =[];
+	foreach($questions as $value){
+		$quest[$value['cquestion']]=$value['question'];
+	}
+
 }
 catch(Exception $e){
 	report($e);
@@ -68,10 +77,18 @@ catch(Exception $e){
 //   $answer[0][0] --> contains question id of first question.
 //   $answer[0][1] --> contains the marked answer. If it is "-1" then no answer is marked.
 $ct = 1;
+
+
+
+
 $answer = [];
 for($i=1 ; $i <= $n ; $i = $i + 1){
-	$answer[]=[$_GET["quesid"."$i"],$_GET["ques"."$i"]];
+	$answer[]=[$quest[$_GET["quesid"."$i"]],get_id($_GET["ques"."$i"])];
 }
+
+
+
+
 
 /*$answer = array(
 				array($_GET["quesid1"],$_GET["ques1"]),
@@ -100,7 +117,7 @@ try{
 			;
 		}
 		else{
-			$query = "UPDATE exam_choices SET is_marked = '1' WHERE user_id = ? AND exam_id = ? AND question = ? AND choice = ?";
+			$query = "UPDATE exam_choices SET is_marked = '1' WHERE user_id = ? AND exam_id = ? AND question = ? AND cchoice = ?";
 			execute($conn,$query,"siss",[get_user(),$eid,$value[0],$value[1]],$stmt);
 			//err("For question ".$value[0]." : Number of rows affected = ".strval($stmt->affected_rows)."\n");
 			close($stmt);

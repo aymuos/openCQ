@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2020 at 01:24 PM
+-- Generation Time: Jan 25, 2020 at 01:01 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chapters` (
-  `chapter_id` varchar(100) NOT NULL,
-  `chapter` varchar(100) NOT NULL
+  `chapter_id` varchar(200) NOT NULL,
+  `chapter` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,8 +42,7 @@ INSERT INTO `chapters` (`chapter_id`, `chapter`) VALUES
 ('c++', 'C++'),
 ('maths', 'Maths'),
 ('movies', 'Movies'),
-('physics', 'Physics'),
-('sqlanditsapplication', 'SQL And Its Application');
+('physics', 'Physics');
 
 -- --------------------------------------------------------
 
@@ -52,9 +51,9 @@ INSERT INTO `chapters` (`chapter_id`, `chapter`) VALUES
 --
 
 CREATE TABLE `choices` (
-  `question_id` varchar(100) NOT NULL,
-  `choice_id` varchar(100) NOT NULL,
-  `choice` varchar(100) NOT NULL,
+  `question_id` varchar(200) NOT NULL,
+  `choice_id` varchar(200) NOT NULL,
+  `choice` varchar(200) NOT NULL,
   `is_right` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,6 +90,14 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'depends', 'Depends', '0'),
 ('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'neutron', 'Neutron', '0'),
 ('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'positron', 'Positron', '1'),
+('firstdigitof(1!+2!+...+100!)is', '0', '0', '0'),
+('firstdigitof(1!+2!+...+100!)is', '2', '2', '0'),
+('firstdigitof(1!+2!+...+100!)is', '3', '3', '1'),
+('firstdigitof(1!+2!+...+100!)is', '9', '9', '0'),
+('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million604', '14 million  604', '0'),
+('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million605', '14 million 605', '1'),
+('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million606', '14 million 606', '0'),
+('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million607', '14 million 607', '0'),
 ('howmanyorientationsdoesandroidsupport?', '10', '10', '0'),
 ('howmanyorientationsdoesandroidsupport?', '2', '2', '0'),
 ('howmanyorientationsdoesandroidsupport?', '4', '4', '1'),
@@ -103,26 +110,38 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('howtostoreheavystructureddatainandroid?', 'noneoftheabove', 'None of the above', '0'),
 ('howtostoreheavystructureddatainandroid?', 'sharedpreferences', 'Shared Preferences', '0'),
 ('howtostoreheavystructureddatainandroid?', 'sqlitedatabase', 'SQlite database ', '1'),
+('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingasiflooselyboundbridgeisnotbrokenbytheresonancecausedbythefootstepsoflargenumberofp', 'To prevent breaking as if loosely bound bridge is not broken  by the resonance caused by the footste', '1'),
+('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingaslotofmovementmaycausethecoefficientofrigidityofwoodmayreduce', 'To prevent breaking as lot of movement may cause the coefficient of rigidity of wood may reduce', '0'),
+('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingaswoodismadeofcellulose', 'To prevent breaking as wood is made of cellulose', '0'),
+('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingofthebridgebyincreasedweightofthepeople', 'To prevent breaking of the bridge by increased weight of the people', '0'),
 ('nameofthepresentgraphicsapiusedinandroid9andabove?', 'directx', 'DirectX', '0'),
 ('nameofthepresentgraphicsapiusedinandroid9andabove?', 'metal', 'Metal', '0'),
 ('nameofthepresentgraphicsapiusedinandroid9andabove?', 'openglapi', 'OpenGL API', '0'),
 ('nameofthepresentgraphicsapiusedinandroid9andabove?', 'vulkanapi', 'Vulkan API', '1'),
+('nametheelementthattonystarkdiscovered?', 'adamantium', 'Adamantium', '0'),
+('nametheelementthattonystarkdiscovered?', 'gold', 'Gold', '0'),
+('nametheelementthattonystarkdiscovered?', 'palladium', 'Palladium', '0'),
+('nametheelementthattonystarkdiscovered?', 'vibranium', 'Vibranium', '1'),
 ('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'atomhasasingleelectronsystem', 'atom has a single electron system', '1'),
 ('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'atomisareducer', 'atom is a reducer', '0'),
 ('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'hasamultielectronsystem', 'has a multi electron system', '0'),
 ('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'iftheatomhasnoneutron', 'if the atom has no neutron', '0'),
+('numberoftrailingzerosin100!is', '10', '10', '0'),
+('numberoftrailingzerosin100!is', '24', '24', '1'),
+('numberoftrailingzerosin100!is', '26', '26', '0'),
+('numberoftrailingzerosin100!is', '30', '30', '0'),
 ('opticalfiberisadevicebasedontheprincipleof', 'noneofthese', 'none of these', '0'),
 ('opticalfiberisadevicebasedontheprincipleof', 'scattering', 'scattering', '0'),
 ('opticalfiberisadevicebasedontheprincipleof', 'totalinternalreflection', 'total internal reflection', '1'),
 ('opticalfiberisadevicebasedontheprincipleof', 'totalinternalrefraction', 'total internal refraction', '0'),
+('pitchisapropertyof', 'amplitude', 'Amplitude', '0'),
+('pitchisapropertyof', 'beat', 'Beat', '0'),
+('pitchisapropertyof', 'frequency', 'Frequency', '1'),
+('pitchisapropertyof', 'interference', 'Interference', '0'),
 ('runtimepolymorphismisdoneusing', 'friendfunction', 'Friend function', '0'),
 ('runtimepolymorphismisdoneusing', 'functionoverloading', 'Function overloading', '0'),
 ('runtimepolymorphismisdoneusing', 'virtualclasses', 'Virtual classes', '0'),
 ('runtimepolymorphismisdoneusing', 'virtualfunctions', 'Virtual functions', '1'),
-('sethasorder', 'depends', 'Depends', '0'),
-('sethasorder', 'false', 'False', '1'),
-('sethasorder', 'true', 'True', '0'),
-('sethasorder', 'usercandefineorder', 'user can define order', '0'),
 ('thedefaultaccessspecifierfortheclassmembersis', 'noneoftheabove', 'None of the above', '0'),
 ('thedefaultaccessspecifierfortheclassmembersis', 'private', 'private', '1'),
 ('thedefaultaccessspecifierfortheclassmembersis', 'protected', 'protected', '0'),
@@ -139,10 +158,22 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('whatisbroadcastreceiverinandroid?', 'itwillpassthedatabetweenactivities', 'It will pass the data between activities', '0'),
 ('whatisbroadcastreceiverinandroid?', 'itwillreactonbroadcastannouncements', 'It will react on broadcast announcements', '1'),
 ('whatisbroadcastreceiverinandroid?', 'noneoftheabove', 'None of the above', '0'),
+('whatisthefullformofshield?', 'strategichomelandimposition,enforcementandlogisticdivision', 'Strategic Homeland Imposition, Enforcement and Logistic Division', '0'),
+('whatisthefullformofshield?', 'strategichomelandintervention,enforcementandlogisticdivision', 'Strategic Homeland Intervention, Enforcement and Logistic Division', '1'),
+('whatisthefullformofshield?', 'strategichomelandintervention,extortingandlogisticdivision', 'Strategic Homeland Intervention, Extorting and Logistic Division', '0'),
+('whatisthefullformofshield?', 'strategichomelandinvestigation,enforcementandlogisticdivision', 'Strategic Homeland Investigation, Enforcement and Logistic Division', '0'),
 ('whatisthefullformofstl?', 'noneoftheabove.', 'None of the above.', '0'),
 ('whatisthefullformofstl?', 'standardtemplatelibrary.', 'Standard template library.', '1'),
 ('whatisthefullformofstl?', 'standardtopicslibrary.', 'Standard topics library.', '0'),
 ('whatisthefullformofstl?', 'systemtemplatelibrary.', 'System template library.', '0'),
+('whatisthenameofblackwidows\'sister?', 'melina', 'Melina', '0'),
+('whatisthenameofblackwidows\'sister?', 'natalia', 'Natalia', '0'),
+('whatisthenameofblackwidows\'sister?', 'noneoftheabove', 'None of the above', '0'),
+('whatisthenameofblackwidows\'sister?', 'yelena', 'Yelena', '1'),
+('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'erikkillmonger', 'Erik killmonger', '1'),
+('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'klawkillmonger', 'Klaw killmonger', '0'),
+('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'noneoftheabove', 'None of the above', '0'),
+('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'zhurikillmonger', 'Zhuri killmonger', '0'),
 ('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'compileerror', 'Compile error', '0'),
 ('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'fine', 'Fine', '0'),
 ('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'nine', 'Nine', '1'),
@@ -159,6 +190,14 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('whatistransientdatainandroid?', 'permanentdata', 'Permanent data', '0'),
 ('whatistransientdatainandroid?', 'securedata', 'Secure data', '0'),
 ('whatistransientdatainandroid?', 'temporarydata', 'Temporary data', '0'),
+('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'denmark', 'Denmark', '0'),
+('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'iceland', 'Iceland', '0'),
+('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'norway', 'Norway', '1'),
+('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'sweden', 'Sweden', '0'),
+('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'kolkata', 'Kolkata', '1'),
+('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'london', 'London', '0'),
+('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'nairobi', 'Nairobi', '0'),
+('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'newyork', 'NewYork', '0'),
 ('whichcoloroflightraysgetsscatteredthemost?', 'blue', 'blue', '1'),
 ('whichcoloroflightraysgetsscatteredthemost?', 'green', 'green', '0'),
 ('whichcoloroflightraysgetsscatteredthemost?', 'red', 'red', '0'),
@@ -171,10 +210,6 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'getgps().', 'getGPS().', '0'),
 ('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'getgpsstatus()', 'getGPSStatus()', '0'),
 ('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'onproviderdisable()', 'onProviderDisable()', '1'),
-('whichofthefollowingsqlclausesisusedtodeletetuplesfromadatabasetable?', 'clear', 'CLEAR', '0'),
-('whichofthefollowingsqlclausesisusedtodeletetuplesfromadatabasetable?', 'delete', 'DELETE', '1'),
-('whichofthefollowingsqlclausesisusedtodeletetuplesfromadatabasetable?', 'drop', 'DROP', '0'),
-('whichofthefollowingsqlclausesisusedtodeletetuplesfromadatabasetable?', 'remove', 'REMOVE', '0'),
 ('whichoperatorcannotbeoverloadedinc++?', '+', '+', '0'),
 ('whichoperatorcannotbeoverloadedinc++?', '=', '=', '0'),
 ('whichoperatorcannotbeoverloadedinc++?', '==', '==', '0'),
@@ -183,6 +218,14 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 ('whohasthesuperpowerattheendofstrangerthingsseason3?', 'lucas', 'Lucas', '0'),
 ('whohasthesuperpowerattheendofstrangerthingsseason3?', 'mike', 'Mike', '0'),
 ('whohasthesuperpowerattheendofstrangerthingsseason3?', 'none', 'None', '1'),
+('whoisthefatherofnatasharomanoff?', 'adrikromanoff', 'Adrik Romanoff', '0'),
+('whoisthefatherofnatasharomanoff?', 'ivanromanoff', 'Ivan Romanoff', '1'),
+('whoisthefatherofnatasharomanoff?', 'mikhailromanoff', 'Mikhail Romanoff', '0'),
+('whoisthefatherofnatasharomanoff?', 'viratkohli', 'Virat Kohli', '0'),
+('whoisthefatherofthanos?', 'a\'lars', 'A\'lars', '1'),
+('whoisthefatherofthanos?', 'kronos', 'Kronos', '0'),
+('whoisthefatherofthanos?', 'thena', 'Thena', '0'),
+('whoisthefatherofthanos?', 'zuras', 'Zuras', '0'),
 ('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemisdesignedontheprincipleofforcemultipier', 'pulley system is designed on the principle of force multipier', '0'),
 ('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemmainlyreducestheweightoftheobjectbeinglifted', 'pulley system mainly reduces the weight of the object being lifted', '0'),
 ('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemworksontheprincipleoffriction', 'pulley system works on the principle of friction', '0'),
@@ -199,18 +242,12 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 --
 
 CREATE TABLE `exam` (
-  `exam_id` varchar(100) NOT NULL,
+  `exam_id` int(10) UNSIGNED NOT NULL,
   `is_active` enum('0','1','2') NOT NULL,
-  `num` int(11) NOT NULL
+  `num` int(11) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `user_date` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exam`
---
-
-INSERT INTO `exam` (`exam_id`, `is_active`, `num`) VALUES
-('sour', '0', 10),
-('sweet', '1', 10);
 
 -- --------------------------------------------------------
 
@@ -220,11 +257,12 @@ INSERT INTO `exam` (`exam_id`, `is_active`, `num`) VALUES
 
 CREATE TABLE `exam_choices` (
   `user_id` varchar(15) NOT NULL,
-  `exam_id` varchar(100) NOT NULL,
+  `exam_id` int(10) UNSIGNED NOT NULL,
   `question` varchar(500) NOT NULL,
-  `choice` varchar(100) NOT NULL,
+  `choice` varchar(200) NOT NULL,
   `is_marked` enum('0','1') NOT NULL DEFAULT '0',
-  `is_right` enum('0','1') NOT NULL
+  `is_right` enum('0','1') NOT NULL,
+  `cchoice` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -235,9 +273,9 @@ CREATE TABLE `exam_choices` (
 
 CREATE TABLE `exam_marks` (
   `user_id` varchar(15) NOT NULL,
-  `exam_id` varchar(100) NOT NULL,
+  `exam_id` int(10) UNSIGNED NOT NULL,
   `question` varchar(500) NOT NULL,
-  `marks` int(11) NOT NULL
+  `marks` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -248,36 +286,11 @@ CREATE TABLE `exam_marks` (
 
 CREATE TABLE `exam_questions` (
   `user_id` varchar(15) NOT NULL,
-  `exam_id` varchar(100) NOT NULL,
+  `exam_id` int(10) UNSIGNED NOT NULL,
   `question` varchar(500) NOT NULL,
-  `question_id` int(11) DEFAULT NULL
+  `question_id` int(11) DEFAULT NULL,
+  `cquestion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exam_questions`
---
-
-INSERT INTO `exam_questions` (`user_id`, `exam_id`, `question`, `question_id`) VALUES
-('root', 'sweet', ' How to store heavy structured data in android?', 1),
-('root', 'sweet', 'Can a class be immutable in android ?\r\n  ', 2),
-('root', 'sweet', 'Deviation of electronic spectral lines in an external electric field is called', 3),
-('root', 'sweet', 'During alpha radiation splitting , the nucleus is split into 1 positron and 1 neutron thus out of these two which particle has more velocity of emission than the other', 4),
-('root', 'sweet', 'How to kill an activity in Android?', 5),
-('root', 'sweet', 'Neil Bohr\'s theory of the structure of atom is only valid if', 6),
-('root', 'sweet', 'Optical fiber is a device based on the principle of', 7),
-('root', 'sweet', 'The graph of photoelectric effect on a metal is a straight line having a constant of', 8),
-('root', 'sweet', 'What is transient data in android?', 9),
-('root', 'sweet', 'Which color of light rays gets scattered the most ?', 10),
-('toor', 'sweet', ' How to store heavy structured data in android?', 1),
-('toor', 'sweet', 'An AC generator works due the change in ', 2),
-('toor', 'sweet', 'Android Web Browser Is Based On ', 3),
-('toor', 'sweet', 'Deviation of electronic spectral lines in an external electric field is called', 4),
-('toor', 'sweet', 'Name of the present Graphics API used in Android 9 and above ?', 5),
-('toor', 'sweet', 'Neil Bohr\'s theory of the structure of atom is only valid if', 6),
-('toor', 'sweet', 'What is the package name of HTTP client in android?', 7),
-('toor', 'sweet', 'What is transient data in android?', 8),
-('toor', 'sweet', 'Which color of light rays gets scattered the most ?', 9),
-('toor', 'sweet', 'Work is form of energy which is dependent on', 10);
 
 -- --------------------------------------------------------
 
@@ -286,9 +299,9 @@ INSERT INTO `exam_questions` (`user_id`, `exam_id`, `question`, `question_id`) V
 --
 
 CREATE TABLE `questions` (
-  `question_id` varchar(100) NOT NULL,
+  `question_id` varchar(200) NOT NULL,
   `question` varchar(500) NOT NULL,
-  `chapter_id` varchar(100) NOT NULL
+  `chapter_id` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -303,29 +316,40 @@ INSERT INTO `questions` (`question_id`, `question`, `chapter_id`) VALUES
 ('canaclassbeimmutableinandroid?', 'Can a class be immutable in android ?\r\n ', 'android'),
 ('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'Deviation of electronic spectral lines in an external electric field is called', 'physics'),
 ('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'During alpha radiation splitting , the nucleus is split into 1 positron and 1 neutron thus out of these two which particle has more velocity of emission than the other', 'physics'),
+('firstdigitof(1!+2!+...+100!)is', 'First digit of (1! + 2! + . . . + 100!) is ', 'maths'),
+('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', 'How many alternate futures did Dr strange saw for the outcome of coming conflict with Thanos ?', 'movies'),
 ('howmanyorientationsdoesandroidsupport?', ' How many orientations does android support?', 'android'),
 ('howtokillanactivityinandroid?', 'How to kill an activity in Android?', 'android'),
 ('howtostoreheavystructureddatainandroid?', ' How to store heavy structured data in android?', 'android'),
+('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'In olden days wood bridges to cross mountains were never made tightly bound on each side for large number of people to pass. It was done so as', 'physics'),
 ('nameofthepresentgraphicsapiusedinandroid9andabove?', 'Name of the present Graphics API used in Android 9 and above ?', 'android'),
+('nametheelementthattonystarkdiscovered?', 'Name the element that Tony stark discovered?', 'movies'),
 ('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'Neil Bohr\'s theory of the structure of atom is only valid if', 'physics'),
+('numberoftrailingzerosin100!is', 'Number of trailing zeros in 100! is ', 'maths'),
 ('opticalfiberisadevicebasedontheprincipleof', 'Optical fiber is a device based on the principle of', 'physics'),
+('pitchisapropertyof', 'Pitch is a property of', 'physics'),
 ('runtimepolymorphismisdoneusing', ' Runtime polymorphism is done using ', 'c++'),
-('sethasorder', 'SET has order ', 'sqlanditsapplication'),
 ('thedefaultaccessspecifierfortheclassmembersis', 'The default access specifier for the class members is', 'c++'),
 ('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', 'The graph of photoelectric effect on a metal is a straight line having a constant of', 'physics'),
 ('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'The pointer which stores always the current active object address is __', 'c++'),
 ('whatisbroadcastreceiverinandroid?', 'What is broadcast receiver in android?', 'android'),
+('whatisthefullformofshield?', 'What is the full form of SHIELD?', 'movies'),
 ('whatisthefullformofstl?', 'What is the full form of STL ?\r\n ', 'c++'),
+('whatisthenameofblackwidows\'sister?', 'What is the name of black widows\' sister?', 'movies'),
+('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'What is the name of T\'challa\'s cousin who fought with him for the throne?\r\n ', 'maths'),
 ('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'What is the output of the following program?\r\n\r\n#include<iostream>\r\n\r\nusing namespace std;\r\nmain() {\r\n   char s[] = \"Fine\";\r\n  *s = \'N\';\r\n   \r\n   cout<<s<<endl;\r\n}', 'c++'),
 ('whatisthepackagenameofhttpclientinandroid?', 'What is the package name of HTTP client in android?', 'android'),
 ('whatistheunitdigitof(1!+2!+3!+...+100!)?', 'What is the unit digit of ( 1! + 2! + 3 ! + . . . + 100! ) ?', 'maths'),
 ('whatistransientdatainandroid?', 'What is transient data in android?', 'android'),
+('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'Where did Thor settle down with the rest of the Asgardians after the initial snap?', 'movies'),
+('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'Where was Bruce Banner hiding when the SHIELD tried to summon him in the first Avenger movie?', 'movies'),
 ('whichcoloroflightraysgetsscatteredthemost?', 'Which color of light rays gets scattered the most ?', 'physics'),
 ('whichfeatureoftheoopsgivestheconceptofre-usability?', 'Which feature of the OOPS gives the concept of re-usability?', 'c++'),
 ('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', ' Which method is used to find GPS enabled or disabled pro-grammatically in android?', 'android'),
-('whichofthefollowingsqlclausesisusedtodeletetuplesfromadatabasetable?', 'Which of the following SQL clauses is used to DELETE tuples from a database table?', 'sqlanditsapplication'),
 ('whichoperatorcannotbeoverloadedinc++?', 'Which operator can not be overloaded in C++ ?', 'c++'),
 ('whohasthesuperpowerattheendofstrangerthingsseason3?', 'Who has the superpower at the end of Stranger Things Season 3 ?', 'movies'),
+('whoisthefatherofnatasharomanoff?', 'Who is the father of Natasha Romanoff?', 'movies'),
+('whoisthefatherofthanos?', 'Who is the father of Thanos ?', 'movies'),
 ('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'Why does the pulley system in machines helps us to reduce our effort of lifting objects ?', 'physics'),
 ('workisformofenergywhichisdependenton', 'Work is form of energy which is dependent on', 'physics');
 
@@ -348,8 +372,11 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`user_id`, `password`, `name`, `department`, `year`) VALUES
-('root', '123456789', 'root', 'root', '3'),
-('toor', 'root', 'Saranya', 'CSE', '3');
+('GCECTB-R17-3018', '171130110018', 'Rashed Mehdi', 'CSE', '3'),
+('GCECTB-R17-3019', '171130110019', 'Rishav Banerjee', 'CSE', '3'),
+('GCECTB-R17-3024', '171130110024', 'Saranya Naha Roy', 'CSE', '3'),
+('GCECTB-R17-3035', '171130110035', 'Soumya Mukherjee', 'CSE', '3'),
+('root', 'root', 'root', 'root', '3');
 
 -- --------------------------------------------------------
 
@@ -358,28 +385,9 @@ INSERT INTO `student` (`user_id`, `password`, `name`, `department`, `year`) VALU
 --
 
 CREATE TABLE `syllabus` (
-  `exam_id` varchar(100) NOT NULL,
-  `chapter` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `syllabus`
---
-
-INSERT INTO `syllabus` (`exam_id`, `chapter`) VALUES
-('sour', 'Android'),
-('sour', 'C++'),
-('sweet', 'Android'),
-('sweet', 'Physics');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `temp`
---
-
-CREATE TABLE `temp` (
-  `id` int(11) DEFAULT NULL
+  `exam_id` int(10) UNSIGNED NOT NULL,
+  `chapter` varchar(200) NOT NULL,
+  `cchapter` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -422,7 +430,8 @@ ALTER TABLE `exam_marks`
 -- Indexes for table `exam_questions`
 --
 ALTER TABLE `exam_questions`
-  ADD PRIMARY KEY (`user_id`,`exam_id`,`question`);
+  ADD PRIMARY KEY (`user_id`,`exam_id`,`question`),
+  ADD KEY `exam_id` (`exam_id`);
 
 --
 -- Indexes for table `questions`
@@ -466,6 +475,13 @@ ALTER TABLE `exam_choices`
 ALTER TABLE `exam_marks`
   ADD CONSTRAINT `exam_marks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `exam_marks_ibfk_2` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `exam_questions`
+--
+ALTER TABLE `exam_questions`
+  ADD CONSTRAINT `exam_questions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `exam_questions_ibfk_3` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `questions`

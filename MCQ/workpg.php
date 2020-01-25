@@ -179,7 +179,7 @@ echo '<div id="form_wrapper">';
 		
 		
 		//Please put the question id of the i th question in this echo statement..............
-		echo $key;
+		echo get_id($key);
 		
 		
 		//Do not do anything

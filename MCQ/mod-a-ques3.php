@@ -31,10 +31,12 @@ else {
 
 
 	$id = $_GET['ques_id']; 			//id has the question id which will be displayed 
-	$chname = "Maths";#$_GET["chapter_del"];		//This contains the chapter name of the question.
+	$chname = $_GET["chapter_del"];		//This contains the chapter name of the question.
 	$chid = get_id($chname);
 	$correct = "1";
 	$incorrect = "0";
+	err("id = ".$id."\n");
+	err("chname = ".$chname."\n");
 
 echo '
 

@@ -84,6 +84,7 @@ else {
 			#echo $chname;
 			$chappy[]=$test_id;
 			$chappy[]=$chname;
+			$chappy[]=get_id($chname);
 			$n = $n + 1;
 			
 		}
@@ -102,14 +103,14 @@ else {
 		$query = "INSERT INTO exam (exam_id, is_active, num, description, user_date) VALUES (?,'2',?,?,?)";
 		execute($conn,$query,"iiss",[$test_id,$total_questions,$test_desc,$date],$stmt);
 		close($stmt);
-		$clause = implode(',', array_fill(0, $len, '(?,?)'));
-		$types = str_repeat('is', $len);
+		$clause = implode(',', array_fill(0, $len, '(?,?,?)'));
+		$types = str_repeat('iss', $len);
 		//err($clause."\n");
 		//err($types."\n");
 		/*foreach($chappy as $x){
 			//err($x." ");
 		}*/
-		$query = "INSERT INTO syllabus (exam_id,chapter) VALUES $clause";
+		$query = "INSERT INTO syllabus (exam_id,chapter,cchapter) VALUES $clause";
 		execute($conn,$query,$types,$chappy,$stmt);
 		close($stmt);
 		$conn->autocommit(TRUE);
