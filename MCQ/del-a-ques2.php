@@ -58,7 +58,7 @@ else {
 		return $(this).text();
     }).get();
 	var td=tableData[0];
-	window.location.href = "mod-a-ques3.php?ques_id=" + td + "&chapter_del=" + encodeURIComponent("';echo $chname;echo '") ;
+	window.location.href = "mod-a-ques3.php?ques_id=" + encodeURIComponent(td) + "&chapter_del=" + encodeURIComponent("';echo $chname;echo '") ;
 
 	});
 });	
