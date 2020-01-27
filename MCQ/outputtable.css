@@ -46,4 +46,22 @@ table, th, td {
 td {
     cursor: pointer;
 }
-
+.btn{
+	width: 90px;
+	height: 40px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.btn:hover{
+	opacity: 0.9;
+}
+.btn-danger{
+	background-color: #ff3333;
+	color: white;
+	border: #ff3333;
+}
+.btn-success{
+	background-color: #2eb82e;
+	color: white;
+	border: #2eb82e;
+}
