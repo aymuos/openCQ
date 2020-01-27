@@ -61,8 +61,10 @@ try{
 	close($stmt);
 	$quest =[];
 	foreach($questions as $value){
-		$quest[$value['cquestion']]=$value['question'];
+		$quest[]=$value['question'];
 	}
+
+
 
 	$query = "SELECT question AS q, choice AS c, is_marked AS m, is_right AS r FROM exam_choices WHERE user_id = ? AND exam_id = ?";
 	execute($conn,$query,"si",[get_user(),$eid],$stmt);
@@ -84,14 +86,25 @@ catch(Exception $e){
 $ct = 1;
 
 
+#foreach ($quest as $key => $value) {
+#	err("key = ".$key." , ".$value."\n");
+#}
 
 
 $answer = [];
-for($i=1 ; $i <= $n ; $i = $i + 1){
-	$answer[]=[$quest[$_GET["quesid"."$i"]],get_id($_GET["ques"."$i"])];
+for($i=0 ; $i < $n ; $i = $i + 1){
+	#err($quest[$_GET["quesid"."$i"]]."\n");
+	#err($_GET["quesid"."$i"]."\n");
+	$a = $quest[$i];
+	#err($a."\n");
+	$j = $i + 1;
+	$b = $_GET["ques"."$j"];
+	$answer[]=[$a,$b];
 }
 
-
+#foreach($answer as $value){
+#	err($value[0]." ".$value[1]."\n");
+#}
 
 
 
@@ -118,12 +131,20 @@ try{
 	execute($conn,$query,"si",[get_user(),$eid],$stmt);
 	close($stmt);
 	foreach($answer as $value){
-		if($value[1] === "-1"){
+		if($value[1] === "0"){
 			;
 		}
 		else{
+			#err("question = "."\n".$value[0]);
+			$arr = $paper[$value[0]];
+			$arr = choice_ordering($arr);
+			#foreach($arr as $y){
+			#	err("choice = ".$y[0]."\n");
+			#}
+			$check = get_id($arr[$value[1]-1][0]);
+			#err($check."\n");
 			$query = "UPDATE exam_choices SET is_marked = '1' WHERE user_id = ? AND exam_id = ? AND question = ? AND cchoice = ?";
-			execute($conn,$query,"siss",[get_user(),$eid,$value[0],$value[1]],$stmt);
+			execute($conn,$query,"siss",[get_user(),$eid,$value[0],$check],$stmt);
 			//err("For question ".$value[0]." : Number of rows affected = ".strval($stmt->affected_rows)."\n");
 			close($stmt);
 		}
