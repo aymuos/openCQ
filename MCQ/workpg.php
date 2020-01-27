@@ -101,10 +101,10 @@ else {
 			var id = document.getElementsByName(\'quesid\'+j);
 			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "-1";
+			var temp = "0";
 			for (var i = 0, length = radios.length; i < length; i++) {
 				if (radios[i].checked) {;
-					temp = radios[i].value ;
+					temp = i+1 ;
 					break;
 				}
 			}
@@ -122,10 +122,10 @@ else {
 			var id = document.getElementsByName(\'quesid\'+j);
 			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "-1";
+			var temp = "0";
 			for (var i = 0, length = radios.length; i < length; i++) {
 				if (radios[i].checked) {;
-					temp = radios[i].value ;
+					temp = i+1 ;
 					break;
 				}
 			}
