@@ -145,7 +145,9 @@ echo '
 	
     </tbody>
   </table>
-
+	<div class="button-container" style="text-align:center;">
+		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
+	</div>
 
 </body>
 </html>
