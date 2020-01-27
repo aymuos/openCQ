@@ -1,6 +1,6 @@
 <?php
 
-
+include 'db_connection.php';
 //This page dispalys the answer script of a student for the given test...
 //Please proceed to the else part......
 
@@ -33,7 +33,28 @@ else {
 	$roll = $_GET["st_id"];				//Roll no/username of the student whose answer script is to be dispalyed
 	$test_id = $_GET["test_id"];		//test id
 
+	$conn = OpenCon();
 
+
+	try{
+		$query1 = "SELECT question AS q, choice AS c, is_marked AS m, is_right AS r FROM exam_choices WHERE user_id = ? AND exam_id = ?";
+		$query2 = "SELECT user_id AS roll, name , department AS dept FROM student WHERE user_id = ?";
+		$query3 = "SELECT SUM(marks) AS mark FROM exam_marks WHERE user_id = ? AND exam_id = ?";
+		execute($conn,$query1,"si",[$roll,$test_id],$stmt);
+		$raw_paper = get_data($stmt);
+		close($stmt);
+		$paper = paper($raw_paper);
+		execute($conn,$query2,"s",[$roll],$stmt);
+		$user = get_data($stmt);
+		close($stmt);
+		execute($conn,$query3,"si",[$roll,$test_id],$stmt);
+		$res = get_data($stmt);
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+		exit("error");
+	}
 	
 	
 	echo '
@@ -60,8 +81,7 @@ else {
 		
 		
 		//Please put the students name here...........
-		echo 'Rashed Mehdi';
-		
+		echo $user[0]['roll'];
 		
 		
 		 echo '</font></b></p>
@@ -70,7 +90,7 @@ else {
 		
 		
 		//Please put the department of the student.........
-		echo 'CSE';
+		echo $user[0]['dept'];
 		
 		
 		
@@ -79,7 +99,7 @@ else {
 		
 		
 		//Please put the marks achieved by the student here..........
-		echo '10';
+		echo $res[0]['mark'];
 		
 		
 		
@@ -97,14 +117,14 @@ echo '<div id="form_wrapper">';
 	
 	
 	//This loop prints 10 question along with its answer
-	for($ch=1;$ch<=10;$ch+=1){
+	foreach($paper as $key=>$value){
 		//Do not do anything
 		echo '<div class="w3-panel w3-border w3-round-xlarge option_cont"> <p><b>Question... :</b></p><br><input type="text" value="';
 		
 		
 		
 		//Please put the question id of the i th question in this echo statement..............
-		echo 'hello';
+		echo 'Soumya';
 		
 		
 		//Do not do anything
@@ -114,9 +134,9 @@ echo '<div id="form_wrapper">';
 		
 		
 		//Put the question ststement in this echo statement.
-		echo 'This is a question statement ';
+		echo $key;
 		
-		
+		$choices = choice_ordering($value);
 		
 		
 		
@@ -125,7 +145,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 1 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == $ch){
+		if( $choices[0][1] == "1"){
 			echo ' checked disabled>';
 		}
 		else{
@@ -135,7 +155,7 @@ echo '<div id="form_wrapper">';
 		
 				
 		//please put option 1 here......
-		echo ' First option';
+		echo $choices[0][0];
 
 				
 
@@ -148,7 +168,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 2 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if($choices[1][1] == "1" ){
 			echo ' checked disabled>';
 		}
 		else{
@@ -157,7 +177,7 @@ echo '<div id="form_wrapper">';
 				
 
 		//please put option 2 here.......
-		echo ' Second option';
+		echo $choices[1][0];
 		
 		
 		
@@ -170,7 +190,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 3 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if( $choices[2][1] == "1"){
 			echo ' checked disabled>';
 		}
 		else{
@@ -183,7 +203,7 @@ echo '<div id="form_wrapper">';
 				
 			
 		//please put option 3 here.......
-		echo ' Third option';
+		echo $choices[2][0] ;
 		
 				
 		
@@ -195,7 +215,7 @@ echo '<div id="form_wrapper">';
 
 				
 		//If option 4 has to be marked then please put a condition in the if statement that is true.
-		if( $ct == 0){
+		if( $choices[3][1] == "1"){
 			echo ' checked disabled>';
 		}
 		else{
@@ -207,9 +227,22 @@ echo '<div id="form_wrapper">';
 		
 		
 		//please put option 4 here .......
-		echo ' Fourth option';
+		echo $choices[3][0];
 		
-				
+		$ca;
+		$ver = 0;
+		
+		foreach($choices as $x){
+
+			if($x[2] == "1"){
+				$ca=$x[0];
+				if($x[1] == "1"){
+					$ver = 1;
+				}
+				break;
+			}
+
+		}
 				
 				
 				
@@ -219,7 +252,7 @@ echo '<div id="form_wrapper">';
 		
 		
 		//Please put the correct answer here...........
-		echo 'Please put the correct answer here.';
+		echo $ca;
 		
 		
 		
@@ -230,7 +263,7 @@ echo '<div id="form_wrapper">';
 		
 		
 		//If the student  marks the answer correctly then this if statement is satisfied..........
-		if($ct == 2){
+		if($ver == 1){
 			echo '<font size="4" color="green">Correct</font></b>';
 		}
 		else{

@@ -64,6 +64,11 @@ try{
 		$quest[$value['cquestion']]=$value['question'];
 	}
 
+	$query = "SELECT question AS q, choice AS c, is_marked AS m, is_right AS r FROM exam_choices WHERE user_id = ? AND exam_id = ?";
+	execute($conn,$query,"si",[get_user(),$eid],$stmt);
+	$paper = paper(get_data($stmt));
+	close($stmt);
+
 }
 catch(Exception $e){
 	report($e);
