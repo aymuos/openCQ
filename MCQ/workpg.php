@@ -1,10 +1,6 @@
 <?php
 include 'db_connection.php';
 session_start();
-
-
-
-
 if ( isset($_SESSION['loggedin']) == false ){
 echo ' 
 
@@ -28,7 +24,6 @@ echo '
 ';
 }
 else {
-
 	$conn = OpenCon();
 
 	try{
@@ -66,8 +61,6 @@ else {
 		exit("error");
 	}
 
-
-
 	echo '
 
 
@@ -77,7 +70,7 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="workpgcuss.css" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -97,18 +90,18 @@ else {
 
 	function saveFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <='. $n .'; j++ ){
+		for( var j = 1 ; j <= 10 ; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
+			str = str + "quesid" + j + "=" + id[0].value +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "0";
+			var temp = "-1";
 			for (var i = 0, length = radios.length; i < length; i++) {
 				if (radios[i].checked) {;
-					temp = i+1 ;
+					temp = radios[i].value ;
 					break;
 				}
 			}
-			str = str + "ques" + j + "=" + encodeURIComponent(temp) + "&";
+			str = str + "ques" + j + "=" + temp + "&";
 		}
 		window.location.href = str + "submit=0";
 	}
@@ -118,18 +111,18 @@ else {
 	
 	function submitFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <='. $n .'; j++ ){
+		for( var j = 1 ; j <= 10 ; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
+			str = str + "quesid" + j + "=" + id[0].value +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "0";
+			var temp = "-1";
 			for (var i = 0, length = radios.length; i < length; i++) {
 				if (radios[i].checked) {;
-					temp = i+1 ;
+					temp = radios[i].value ;
 					break;
 				}
 			}
-			str = str + "ques" + j + "=" + encodeURIComponent(temp) + "&";
+			str = str + "ques" + j + "=" + temp + "&";
 		}
 		window.location.href = str + "submit=1";
 	}
@@ -146,11 +139,11 @@ else {
 
 
 <body>
-<h2> GOVERNMENT COLLEGE OF ENGINEERING AND CERAMIC TECHNOLOGY , KOLKATA
+	<h2> GOVERNMENT COLLEGE OF ENGINEERING AND CERAMIC TECHNOLOGY , KOLKATA
 </h2>
 <top_res>Welcome to Online MCQ test Platform</top_res>
  
-<h1> ATTEMPT THE FOLLOWING 10 QUESTIONS </h1>
+<h1 class="hi"> ATTEMPT THE FOLLOWING QUESTIONS </h1>
 
 ';
 
@@ -167,14 +160,14 @@ echo '
 
 echo '<div id="form_wrapper">';
 
-	
+
 	$ct=1;	//Do not delete this variable....
 	
-
+	
 	//This loop prints 10 question along with its answer
-	foreach($paper as $key=>$value){
+	for($ch=1;$ch<=10;$ch+=1){
 		//Do not do anything
-		echo '<div class="w3-panel w3-border w3-round-xlarge option_cont"> <p><b>Question '.$ct.' :</b></p><br><input name="quesid'.$ct.'" type="text" value="';
+		echo '<div class="w3-panel w3-border w3-round-xlarge option_cont"> <p class="experiment"><b>Question '.$ct.' :</b></p><br><input name="quesid'.$ct.'" type="text" value="';
 		
 		
 		
@@ -195,6 +188,9 @@ echo '<div id="form_wrapper">';
 		$value = choice_ordering($value);
 		
 		
+		
+		
+		
 		//Do not do anything
 		echo '</textarea><br><br><form id="form'.$ct.'"><input type="radio" name="question'.$ct.'" value="'; 
 				
@@ -209,7 +205,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 1 has to be marked then please put a condition in the if statement that is true.
-		if($value[0][1]=="1"){
+		if( $value[0][1]=="1"){
 			echo '" checked >';
 		}
 		else{
@@ -219,7 +215,7 @@ echo '<div id="form_wrapper">';
 		
 				
 		//please put option 1 here again......It is not a mistake.
-		echo $value[0][0];
+		echo $value[0][0];;
 
 				
 
@@ -238,7 +234,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 2 has to be marked then please put a condition in the if statement that is true.
-		if($value[1][1]=="1" ){
+		if( $value[1][1]=="1"){
 			echo '" checked >';
 		}
 		else{
@@ -268,7 +264,7 @@ echo '<div id="form_wrapper">';
 				
 				
 		//If option 3 has to be marked then please put a condition in the if statement that is true.
-		if($value[2][1] == "1"){
+		if( $value[2][1] == "1"){
 			echo '" checked >';
 		}
 		else{
@@ -293,12 +289,12 @@ echo '<div id="form_wrapper">';
 		
 		
 		//please put option 4 here.
-		echo $value[3][0];
+		echo $value[3][0];;
 		
 				
 				
 		//If option 4 has to be marked then please put a condition in the if statement that is true.
-		if( $value[3][1] == "1"){
+		if( $value[3][1]=="1"){
 			echo '" checked >';
 		}
 		else{
@@ -345,6 +341,10 @@ echo '
 
 
 
+';
+echo'
+<p class="footer">
+OpenCQ test platform by Rashed Mehdi,Rishav Banerjee,Saranya Naha Roy,Soumya Mukherjee</p>
 ';
 CloseCon($conn);
 }

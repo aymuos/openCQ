@@ -5,20 +5,21 @@
 }
 
 body{
-	background-color: #ffeb99;
+	background-color: #ffffff;
 }
 
 top_res { display: block;
-    background: linear-gradient(rgb(146, 251, 255),white);
-  color:#1A1410;
+  background-image: linear-gradient( #6366f5,#f8f0f7);
+  color:hsl(16, 79%, 20%);
   text-align: center;
-  text-shadow: 2px 1px grey;
+  text-shadow: 2px 1px rgb(245, 237, 237);
   text-emphasis-color: white;
+  font-size:10vw;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight:bold;
 
   margin: auto;
-  font-size: 30px;
+  font-size: 50px;
     padding-top: 50px;
   padding-right: 30px;
   padding-bottom: 50px;
@@ -30,9 +31,9 @@ top_res { display: block;
 /*defining div css*/
 div {
     text-align: center;
-    background-image: linear-gradient(rgb(245, 243, 243), rgb(255, 222, 113));
+    background-image: linear-gradient(rgb(245, 243, 243), #e7ddff);
   width: auto;
-  border: 5px solid red;
+  border: 3px solid rgb(28, 101, 238);
   padding: 50px;
   margin: 20px;
   font-family: "Segoe UI" , Helvetica , "Trebuchet MS" ; /*Fallback font styles*/
@@ -108,40 +109,42 @@ div {
   transform: rotate(45deg);
 }
 
-
+/*-----------------------checkboxes end*/
 
 h2{
-    background-color: navy;
+    background-color: hsl(209, 86%, 23%);
     color: white;
     text-align:center;
     margin:7px 7px;
-    text-shadow:none;
-    border-style: solid;
+    text-shadow: rgb(168, 248, 175);
+    border-style:ridge;
     border-color: crimson;
-    border-radius: 15px 50px; /*for assymetrical boders*/
+    border-radius: 15px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;
+    font-size:2vw;
+    padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
-h1{
-   box-align: center;
-    background-color: navy;
-    color: white;
+.hi{
+  text-align: center;
+    /*background-color: #ebebf5;*/
+    color: #1d0404;
     text-align:center;
-    margin:7px 7px;
+   margin:7px 7px;
     text-shadow:none;
-    border-style: solid;
-    border-color: crimson;
-    border-radius:5px 5px 5px 5px; /*for assymetrical boders*/
+    border-left: 16px solid red;
+  background-color: rgb(168, 248, 175);
+  /*    border-radius:5px 5px 5px 5px; /*for assymetrical boders*/
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    
   display:inline-block;
   padding:15px;
-  border:5px solid #f00;
-  font-size:140%;
-  font-weight:bold;
+  /*
+  border:5px solid #f00;*/
+  font-size:140%;/*
+  font-weight:bold;*/
 }
 * {
     padding: 0;
@@ -153,22 +156,23 @@ h1{
     height:auto;
     /* this will help us center it*/
     margin:none;
-    background-color: palegoldenrod;
+    background-color: rgb(252, 234, 41);
     border-radius: 50px;
-    /* make it a grid container*/
-    display: block;
+    /*this will change the type of form display*/
+    display: contents;
     /* with two columns of same width*/
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 3fr;
     /* with a small gap in between them*/
-    grid-gap: 5vw;
+    grid-gap: 10vw;
     /* add some padding around */
-    padding: 5vh 15px;
+    padding: 15vh 25px;
+    
 
 }
 .button {
   border-radius: 10px;
   border: none;
-  color: #FFFFFF;
+  color: #3e3ca1;
   text-align: center;
   font-size: 20px;
   padding: 10px;
@@ -212,6 +216,33 @@ h3{
 .alert-success{
 	background-image: none;
 }
+.experiment{
+  background-color: rgb(28, 109, 98);
+  color: white;
+  text-align:center;
+  /*margin:7px 7px;*/
+  text-shadow:none;
+  border-style:none;
+ /* border-color: crimson;*/
+  /*border-radius: 15px 50px;for assymetrical boders*/
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:2vw;
+  border-left: 6px solid red;
+  border-right: 6px solid red;
+  border-radius: 5px 5px 5px 5px;
+}
+.footer {
+  position:fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  background-color: #22044963;
+  color: white;
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
 
 
 
@@ -239,5 +270,5 @@ h3{
 		width: 1080px;
 	}
 }
-*/
+
 
