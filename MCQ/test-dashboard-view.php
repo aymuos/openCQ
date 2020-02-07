@@ -57,7 +57,7 @@ else {
 							$conn = OpenCon();
 
 							try{
-								$query = "SELECT * FROM exam WHERE is_active = '0'";
+								$query = "SELECT * FROM exam WHERE is_active = '1'";
 								execute($conn,$query,"",[],$stmt);
 								$exams = get_data($stmt);
 								close($stmt);
