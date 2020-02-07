@@ -162,3 +162,7 @@ This makes changes to the database regarding the new account.
 
 43.create3.html:
 Simply displays that the new account has been created.
+
+44.test-dashboard-view.php:
+The main objective is to show the teacher all the students who are undertaking the test.
+This simply displays the test that is running. Please read the comments and proceed.
