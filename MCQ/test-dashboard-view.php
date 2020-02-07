@@ -97,7 +97,16 @@ else {
 				</legend>
 				<p class="ZX">
 					<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button> 
-					<button type="submit" class="btn btn-success">Go</button> 
+					<button type="submit" class="btn btn-success"';
+	
+	
+		if(!$exam){		//If no test is running then this if statement is satisfied and the button gets disabled.
+			echo 'disabled';
+		}
+	
+	
+	
+	echo '>Go</button> 
 				<!--should add javascript function like onClick()-->
 				</p>
 		</form>
