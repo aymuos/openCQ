@@ -69,6 +69,7 @@ else {
 	<!--	<button type="button" class="btn btn-primary">update</button>  -->
 		<button type="button" class="btn btn-primary" onclick="location.href=\'test-dashboard-create.php\'">Create New</button>
 		<button type="button" class="btn btn-success" onclick="location.href=\'test-dashboard-start.php\'">Start a Test</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'test-dashboard-view.php\'">View a Test</button>
 		<button type="button" class="btn btn-danger" onclick="location.href=\'test-dashboard-end.php\'">End a Test</button>
 	</div>
 </div>
