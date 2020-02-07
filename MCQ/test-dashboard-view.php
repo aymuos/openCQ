@@ -46,7 +46,7 @@ else {
 			Select option from list
 		</h1>
 		<br>
-		<form method="post" action="view-result2.php"><!--define php page here --> 
+		<form method="post" action="test-dashboard-view2.php"><!--define php page here --> 
 			<fieldset>
 				<legend> Choice of Tests</legend>
 					<h1 style="text-align:center;"> Select the Test</h1>
