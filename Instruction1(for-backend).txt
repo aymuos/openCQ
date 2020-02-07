@@ -164,7 +164,7 @@ This makes changes to the database regarding the new account.
 Simply displays that the new account has been created.
 
 
--------------------------****---------------------------****------------------------------------
+-------------------------****-----NEW UPDATE----------****------------------------------------
 
 
 44.test-dashboard-view.php:
