@@ -109,7 +109,7 @@ else {
 			<br><br>
 			<div class="disv" >
 				<button type="button" class="btn btn-danger" onclick="location.href=\'test-dashboard-view.php\'">Change Test</button> 
-				<button type="submit" class="btn btn-success">View Result</button>
+				<button type="submit" class="btn btn-success">View</button>
 			</div>
 	  </form>
 	  </div>
