@@ -78,7 +78,6 @@ echo '
 			<th>ROLL NUMBER</th>
 			<th>NAME</th>
 			<th>DEPARTMENT</th>
-			<th>MARKS</th>
 		</tr>
 		</thead>
 		<tbody>';
@@ -106,13 +105,7 @@ echo '
 			//Please enter the department here..........
 			echo $value['dept'];
 			
-			echo '</td><td>';
 			
-				
-			
-			
-			//Please enter the MARKS here..........
-			echo $value['m'];
 			
 			
 			echo '</td></tr>';
