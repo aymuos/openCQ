@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_destroy(); 
 
 if ( isset($_SESSION['loggedin']) == false ){
 echo ' 
@@ -29,10 +30,10 @@ else {
 	
 	
 	
-	
+
 	
 	//Uncomment this line at the end.
-	//header('location: student-dashboard.php');
+	header('location: student-dashboard.php');
 
 
 }

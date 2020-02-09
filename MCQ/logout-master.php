@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+session_destroy();
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
 
@@ -32,7 +32,7 @@ else {
 	
 	
 	//Uncomment this line at the end.
-	//header('location: master-dashboard.php');
+	header('location: master-dashboard.php');
 
 
 }
