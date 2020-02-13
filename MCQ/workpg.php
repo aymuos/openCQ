@@ -46,7 +46,7 @@ else {
 		if($result1){
 			exit("You have already taken this exam");
 		}
-		$query = "SELECT exam_choices.question AS q,exam_choices.choice AS c,exam_choices.is_marked AS m,exam_choices.is_right AS r FROM exam_choices INNER JOIN exam ON exam_choices.exam_id=exam.exam_id WHERE exam.is_active='1' AND exam_choices.user_id = ?";
+		$query = "SELECT exam_choices.question AS q,exam_choices.choice AS c,exam_choices.is_marked AS m,exam_choices.is_right AS r FROM exam_choices INNER JOIN exam_questions ON exam_questions.question=exam_choices.question INNER JOIN exam ON exam_choices.exam_id=exam.exam_id WHERE exam.is_active='1' AND exam_choices.user_id = ? ORDER BY exam_questions.question_id";
 		execute($conn,$query,"s",[get_user()],$stmt);
 		$raw_paper = get_data($stmt);
 		close($stmt);
@@ -54,6 +54,7 @@ else {
 			exit("Question Paper is not ready");
 		}
 		$paper = paper($raw_paper);
+
 
 	}
 	catch(Exception $e){
@@ -90,14 +91,14 @@ else {
 
 	function saveFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <= 10 ; j++ ){
+		for( var j = 1 ; j <= '.$n.' ; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + id[0].value +"&";
+			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "-1";
+			var temp = "0";
 			for (var i = 0, length = radios.length; i < length; i++) {
-				if (radios[i].checked) {;
-					temp = radios[i].value ;
+				if (radios[i].checked) {
+					temp = i+1 ;
 					break;
 				}
 			}
@@ -111,14 +112,14 @@ else {
 	
 	function submitFunc(){
 		var str = "save-opt.php?";
-		for( var j = 1 ; j <= 10 ; j++ ){
+		for( var j = 1 ; j <= '.$n.' ; j++ ){
 			var id = document.getElementsByName(\'quesid\'+j);
-			str = str + "quesid" + j + "=" + id[0].value +"&";
+			str = str + "quesid" + j + "=" + encodeURIComponent(id[0].value) +"&";
 			var radios = document.getElementsByName(\'question\'+j);
-			var temp = "-1";
+			var temp = "0";
 			for (var i = 0, length = radios.length; i < length; i++) {
-				if (radios[i].checked) {;
-					temp = radios[i].value ;
+				if (radios[i].checked) {
+					temp = i+1 ;
 					break;
 				}
 			}
@@ -165,7 +166,7 @@ echo '<div id="form_wrapper">';
 	
 	
 	//This loop prints 10 question along with its answer
-	for($ch=1;$ch<=10;$ch+=1){
+	foreach($paper as $key=>$value){
 		//Do not do anything
 		echo '<div class="w3-panel w3-border w3-round-xlarge option_cont"> <p class="experiment"><b>Question '.$ct.' :</b></p><br><input name="quesid'.$ct.'" type="text" value="';
 		

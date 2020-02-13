@@ -27,23 +27,27 @@ $password=$_POST['psw'];
 #echo "\nhello Rashed";
 try{
 
-	$stmt = $conn->prepare("SELECT * FROM student WHERE user_id = ? and password = ? ");
-	$stmt->bind_param("ss",$username,$password);
-	$stmt->execute();
+	$query = "SELECT * FROM student WHERE user_id = ? and password = ? ";
+	execute($conn,$query,"ss",[$username,$password],$stmt);
+	$student = get_data($stmt);
+	close($stmt);
+	//$stmt = $conn->prepare("");
+	//$stmt->bind_param("ss",$username,$password);
+	//$stmt->execute();
 
-	$stmt->store_result();
-	if($stmt->num_rows === 0){
+	//$stmt->store_result();
+	if(!$student){
 		#echo "Not connected";
 		header('location: tests.php');
 	} 
 	else{
-		$stmt->bind_result($user_id,$pass,$name,$dept,$year);
-		$stmt->fetch();
+		//$stmt->bind_result($user_id,$pass,$name,$dept,$year);
+		//$stmt->fetch();
 		#echo "Connected Successfully";
 		session_start();
 		$_SESSION['loggedin'] = true;
 		$_SESSION['username'] = $username;
-		
+		err("connected");
 		header('location: student-dashboard.php');
 	} 
 }

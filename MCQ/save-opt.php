@@ -55,7 +55,7 @@ try{
 		exit("Exam Paper is Already Submitted");
 	}
 
-	$query = "SELECT question, cquestion FROM exam_questions WHERE user_id = ? AND exam_id = ?";
+	$query = "SELECT question, cquestion FROM exam_questions WHERE user_id = ? AND exam_id = ? ORDER BY question_id";
 	execute($conn,$query,"ss",[get_user(),$eid],$stmt);
 	$questions = get_data($stmt);
 	close($stmt);
@@ -99,6 +99,7 @@ for($i=0 ; $i < $n ; $i = $i + 1){
 	#err($a."\n");
 	$j = $i + 1;
 	$b = $_GET["ques"."$j"];
+	#err($a." ".$b."\n");
 	$answer[]=[$a,$b];
 }
 

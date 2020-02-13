@@ -100,7 +100,7 @@ else {
 					<button type="submit" class="btn btn-success"';
 	
 	
-		if(!$exam){		//If no test is running then this if statement is satisfied and the button gets disabled.
+		if(!$exams){		//If no test is running then this if statement is satisfied and the button gets disabled.
 			echo 'disabled';
 		}
 	

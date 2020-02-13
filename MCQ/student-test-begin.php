@@ -65,7 +65,7 @@ else {
 			$query = "UPDATE exam_questions SET question_id = @num := (@num+1) WHERE question_id IS NULL;";
 			execute($conn,$query,"",[],$stmt);
 			close($stmt);
-			$query = "INSERT INTO exam_choices(user_id, exam_id, question, choice, is_right, cchoice) SELECT exam_questions.user_id AS user_id, exam.exam_id AS exam_id, exam_questions.question AS question, choices.choice AS choice, choices.is_right AS is_right, choices.choice_id AS cchoice FROM exam_questions INNER JOIN  choices ON exam_questions.cquestion = choices.question_id INNER JOIN exam ON exam.exam_id=exam_questions.exam_id WHERE exam.is_active='1' AND exam_questions.user_id = ?;";
+			$query = "INSERT INTO exam_choices(user_id, exam_id, question, choice, is_right, cchoice) SELECT exam_questions.user_id AS user_id, exam.exam_id AS exam_id, exam_questions.question AS question, choices.choice AS choice, choices.is_right AS is_right, choices.choice_id AS cchoice FROM exam_questions INNER JOIN  choices ON exam_questions.cquestion = choices.question_id INNER JOIN exam ON exam.exam_id=exam_questions.exam_id WHERE exam.is_active='1' AND exam_questions.user_id = ? ORDER BY exam_questions.question_id;";
 			execute($conn,$query,"s",[get_user()],$stmt);
 			close($stmt);
 		}
