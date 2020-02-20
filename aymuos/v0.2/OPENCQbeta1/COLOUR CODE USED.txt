@@ -1,0 +1,3 @@
+
+Information on Colour code used --------
+ SuperBoss Page ie Admin page has black header with fade lavender background. This indicates restricted background image

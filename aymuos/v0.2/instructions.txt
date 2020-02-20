@@ -1,0 +1,12 @@
+							hierarchy of pages
+										
+								1. Login page
+									|
+									|
+								2.Dashboard
+									|
+									|
+                                                   
+							--------------------------------
+
+				3.Running Exams           4. Add and view subject codes     5.Edit teacher details

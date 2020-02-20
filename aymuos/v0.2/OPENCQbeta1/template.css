@@ -1,0 +1,128 @@
+
+body{
+	background-color: hsl(287, 37%, 93%);	/*Background colour for body*/
+}
+.some{							/*Background style for the header*/
+	border-color: #73cf27;
+	background-color: #000066;
+}
+.navbar{						/*This is for the whole header........change the background-color to see the effects*/
+	border-color: #000066;
+	background-color: hsl(26, 47%, 6%);
+}
+.navbar-toggle{					/*This is for the menu icon on the right side........change the background-color to see the effects*/
+	border-color: #000066;
+	background-color: #000066;
+}
+.logo{							/*Fix the width and the height of the logo on the top-left corner*/
+	border: 8px solid #000066;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+.header1{
+	padding-top: 60px;
+	padding-right: 20px;
+}
+.id1{
+	text-align: center;
+	padding-top: 40px;
+}
+.container{
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	
+	
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is made small (i.e width of the browser is between
+	700px and 601px*/
+	
+	
+	/*Uncomment the following line and try to change the width of the browser*/
+	/*body{
+		background-color: red;	
+	}*/
+	
+ .container { 
+		width: 400px;
+		background-color: #ffeb99;
+	}
+ .logo{
+		border: 8px solid #000066;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	
+	
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is made very small (i.e width of the browser is below
+	600px. That is for mobile phone screen*/
+	
+	
+	/*Uncomment the following line and try to change the width of the browser*/
+	/*body{
+		background-color: green;	
+	}*/	
+	
+	
+ .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+ .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+ .header1{
+		padding-top: 10px;
+	}					
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is large (i.e width of the browser is greater than
+	1200px.....That is for desktop screen*/
+		
+		
+		/*Uncomment the following line and try to change the width of the browser*/
+		/*body{
+			background-color: blue;	
+		}*/
+
+	
+ .container {
+		width: 700px;
+		background-color: #ffeb99;
+	} 
+}
+
+
+/* stuff for time inside coerunningexams*/
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: rgb(17, 60, 70);
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 7px;
+   
+
+
+}
