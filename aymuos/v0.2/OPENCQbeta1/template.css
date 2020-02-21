@@ -78,8 +78,7 @@ body{
 	
  .container { 
 		width: 350px;
-		background-color: #ffeb99;
-	}
+			}
  .id1{
 		text-align: center;
 		padding-top: 40px;	
@@ -106,8 +105,8 @@ body{
 
 	
  .container {
-		width: 700px;
-		background-color: #ffeb99;
+		/* width: 700px; */
+		/*background-color: #ffeb99; */
 	} 
 }
 

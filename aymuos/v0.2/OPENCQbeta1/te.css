@@ -1,0 +1,34 @@
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, #232397 35%, rgba(0,212,255,1) 100%);/*Background colour for body*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.navbar{						/*This is for the whole header........change the background-color to see the effects*/
+	border-color: #f76008;
+	background-color: hsl(240, 48%, 5%);
+}
+.navbar-toggle{					/*This is for the menu icon on the right side........change the background-color to see the effects*/
+	border-color: #0fc3fa;
+	background-color: #d0d0e2;
+}
+.logo{							/*Fix the width and the height of the logo on the top-left corner*/
+	border: 3px solid #127daf;
+	width: 15%;
+	height: auto;
+    float:left;
+    padding: 2px;
+}
+.header1{
+	padding-top: 60px;
+	padding-right: 20px;
+}
+
+h6{
+    font-family:sans-serif;
+    color:#090931;
+    font-weight: bold;
+  }
+.cj{
+    text-align: left;
+}

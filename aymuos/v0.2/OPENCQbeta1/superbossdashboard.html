@@ -1,20 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>COE Dashboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- BOOTSTRAP AND MATERIALIZE LIBRARIES-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="te.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+    	<!-- Compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    	<!-- Compiled and minified JavaScript -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- end of bootstrap materialize libraries//  create provision for user css-->       
+
 </head>
 <body>
-    <div class="card-panel">
-    <span class="blue-text text-darken-2">This is a card panel with dark blue text</span>
-  </div>
+
+<div class="some">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				<img class="logo" border="50" src="logo.png" width="20" height="20" alt="Avatar"></img>  <!--This is the image for top left icon -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<!--This is the heading which is on the left side-->
+					<font face="verdana" color="white" size="6.5px" > COE Dashboard</font> 
+					<!-- Here you can add any more heading which is to be included on the left side-->
+						
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+					
+						<!--These are the heading which is on the right side -->
+						<!--Span tag is used for including the icon which is beside "Account"/"logout" string  -->
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+						<li><a href="logout-student.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+						<!-- Here you can add any more heading which is to be included on the right side-->
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	
+	<div class="container">
 
 
+    <div class="row valign-wrapper">
+      <div class="col s12">
+          <div class="card white darken-3 z-depth-5">
+            <div class="card-content red-text darken-4">
+                <span class="card-title">COE CONTROL CENTER</span>
+            </div>
+          </div>
+      </div>
+    </div>  
+    <!-- COe Cards Ends here-->
+
+
+
+
+	<div class="row">
+  <div class="col s12 ">
+          <div class="card teal darken-3 z-depth-5">
+            <div class="card-content lime-text darken-4">
+                <span class="card-title"><p class="cj">Examination Control</p></span>
+                  <!-- inside the Card-->
+                      <a class="waves-effect brown darken-1 col s6 waves-light btn"><i class="material-icons left">assessment</i>VIEW RUNNING EXAMS</a>
+                      <a class="col s3"> </a>
+                     <a class="waves-effect red col s3 waves-light btn"><i class="material-icons left">highlight_off</i>CLOSE ALL EXAMS</a>
+                      <!--<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">highlight_off</i></a> -->
+                      <!-- @rashed include the following line when no exams are running  -->
+                      <!--<a class="btn disabled">Button</a> -->
+            </div>
+          </div>
+      </div>
+      </div>
+	
+
+  <!-- second part of the page-->
+
+  <div class="row">
+  <div class="col s12 ">
+          <div class="card teal darken-3 z-depth-5">
+            <div class="card-content lime-text darken-4">
+                <span class="card-title"><p class="cj">Subject code edits section</p></span>
+                  <!-- inside the Card-->
+                      <a class="waves-effect deep-purple darken-4 col s4 waves-light btn"><i class="material-icons left">assessment</i>AVAILABLE EXAMS</a>
+                      <a class="col s1"> </a>
+                      <a class="waves-effect pink col s3 z-depth-4 waves-light btn"><i class="material-icon left">explore</i>Subject codes</a>
+                     <a class="col s1"> </a>
+                     <a class="waves-effect red col s3 waves-light btn"><i class="material-icons left">highlight_off</i>Subject code-wise assigned teachers</a>
+                      
+            </div>
+          </div>
+      </div>
+      </div>
+	</div>
 </body>
-</html>
