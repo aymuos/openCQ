@@ -1,0 +1,48 @@
+This is the tree diagram for better understanding
+
+
+
+				
+					master.html (Teacher Logins here)
+						|
+						|
+						|	
+					       \|/       <--------------------------------------------------------------------------
+					select_code.php										   |
+ 		(Teacher selects course/paper here. Teacher even can add new course/code here.)  --------------------------> add_course.php
+						|							(adds a new course corresponding to the teacher)
+						|										
+						|
+					       \|/
+					    enter.php
+                (Here the course/subject code selected by the teacher is saved in the session)
+						|
+						|
+						|
+					       \|/
+					master-dashboard.php
+				       (Dashboard for teacher)
+
+Instructions:
+
+1. select_code.php:
+Here the teacher selects the course. Teacher can even add new course here.
+Proceed to the else part directly.
+
+2. enter.php:
+The selected Teacher course is saved in the session for future use.
+Please proceed to the else part.
+
+
+3. add_course.php:
+Here new course is added corresponding to the teacher.
+Proceed to the else part directly.
+
+4. server_send_code.php:
+Course/paper code will be provided here, simply print the course/paper name.
+
+5. select_code.php:
+Simply copy paste it to the main branch of the project.
+
+6. master-dashboard.php:
+Simply copy paste it to the main branch of the project.
