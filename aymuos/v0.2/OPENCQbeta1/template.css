@@ -1,6 +1,7 @@
 
 body{
-	background-color: hsl(287, 37%, 93%);	/*Background colour for body*/
+	background-color: hsl(287, 37%, 93%);
+	text-align: center;	/*Background colour for body*/
 }
 .some{							/*Background style for the header*/
 	border-color: #73cf27;
@@ -104,7 +105,7 @@ body{
 		}*/
 
 	
- .container {
+ .container{
 		/* width: 700px; */
 		/*background-color: #ffeb99; */
 	} 
@@ -125,3 +126,8 @@ body{
 
 
 }
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+  }
