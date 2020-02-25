@@ -1,0 +1,329 @@
+
+body{
+    /*background-color: #a6a6a6;	/*Background colour for body*/
+    background-image: url('xyz.jpg');
+	padding-bottom: 150px;
+}
+.some{							/*Background style for the header*/
+	border-color: #ff884d;
+	background-color: #ff884d;
+}
+.navbar{						/*This is for the whole header........change the background-color to see the effects*/
+	
+	border-color: #ff884d;
+	background-color: #ff884d;
+}
+.navbar-toggle{					/*This is for the menu icon on the right side........change the background-color to see the effects*/
+	border-color: #ff884d;
+	background-color: #ff884d;
+}
+
+.logo{							/*Fix the width and the height of the logo on the top-left corner*/
+	border: 8px solid #ff884d;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+.header1{
+	padding-top: 60px;
+}
+.id1{
+	text-align: center;
+	padding-top: 40px;
+}
+
+.link{
+	color: #ffffff;
+}
+
+.link:hover{
+	opacity: 0.7;
+}
+
+.div-button{
+	padding-left: 70px;
+	position: fixed;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.btn-down{
+	width: 180px;
+}
+
+.button{
+	border-radius: 100px;
+	width: 60px;
+	height: 60px;
+}
+.button:hover{
+	width: 70px;
+	height: 70px;
+	transform: translateX(-4px);
+}
+.button:focus{
+	outline: 0;
+}
+.button:active{
+	outline: 0;
+	border: none;
+}
+
+
+.div-preview{
+	padding-left: 280px;
+	padding-bottom: 80px;
+	padding-top: 80px;
+}
+	
+
+.foot{
+	text-align: center;
+	margin-top: 125px;
+	padding-top: 10px;
+	background-color: #ff884d;
+	padding-bottom: 10px;
+}
+.next{
+		padding-left: 400px;
+}
+
+.check-box{
+	height: 30px;
+}
+
+
+.card{
+	padding-top: 20px;
+	border-radius: 40px;
+	margin-left: 320px;
+	width: 1000px;
+	background-color: #ff9999;
+	opacity: 0.94;
+	background-image: linear-gradient(to bottom right, #ff9999, #8080ff);
+}
+
+hr{
+	width: 90%;
+}
+
+
+
+
+.code{
+	position: fixed;
+    float: left;
+    padding-left: 50px;
+    text-align: center;
+}
+
+.name{
+    font-size: 18;
+}
+
+.well{
+    height: 90px;
+    border-radius: 25px;
+    width:200px;
+	opacity: 1;
+}
+
+.name2{
+    height: 110px;
+}
+
+
+
+
+
+.question_area{
+	padding-left: 20px;
+	padding-top: 20px;
+    padding-right: 20px;
+    width: 1000px;
+	display: inline-block;
+}
+
+.qa_question{
+	padding-top: 0px;
+    width: 700px;
+	float: right;
+}
+
+.chapter{
+    border-radius: 8px;
+	float: left;
+}
+
+
+
+.counter{
+    background-color: #99e699;
+    height: 130px;
+    border-color: #29a329;
+}
+
+.box{
+	border-radius: 4px;
+    width: 30px;
+    text-align: center;
+}
+
+
+.modal-body-question{
+	padding-left: 40px;
+}
+
+
+
+.boxer{
+	width: 95%;
+	height: 200px;
+}
+
+
+.image{
+    border-radius: 200px;
+    width: 50px;
+}
+
+.delete{
+	padding-top: 25px;
+    float: right;
+}
+
+
+
+.question_name{
+	padding-top: 10px;
+	font-size: 15;
+	width: 500px;
+	height: 85px;
+	border-color: #f2f2f2;
+	background-color: #f2f2f2;
+	resize: none;
+}
+
+textarea{
+	border: none;
+}
+
+
+textarea[type=text]:focus{
+  outline: none;     /* oranges! yey */
+}
+.header{
+	text-align: center;
+	color: #ffffff;
+}
+.modal-footer{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.del-form-control{
+	text-align: center;
+	width: 400px;
+	height: 40px;
+	border-radius: 10px;
+}
+
+.modal-body{
+	padding-top: 70px;
+	text-align: center;
+	height: 300px;
+}
+.table{
+	margin-left: 10%;
+	width: 80%;
+}
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	
+	
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is made small (i.e width of the browser is between
+	700px and 601px*/
+	
+	
+	/*Uncomment the following line and try to change the width of the browser*/
+	/*body{
+		background-color: red;	
+	}*/
+	
+ .container { 
+		width: 400px;
+		background-color: #ffeb99:
+	}
+ .logo{
+		border: 8px solid #ff7733;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	.navbar-toggle{					/*This is for the menu icon on the right side........change the background-color to see the effects*/
+		border-color: #ff7733;
+		background-color: #ff7733;
+		background-image: none;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	
+	
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is made very small (i.e width of the browser is below
+	600px. That is for mobile phone screen*/
+	
+	
+	/*Uncomment the following line and try to change the width of the browser*/
+	/*body{
+		background-color: green;	
+	}*/	
+	
+	
+ .container { 
+		width: 350px;
+		background-color: #ff7733;
+	}
+ .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+ .header1{
+		padding-top: 10px;
+	}					
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+
+	/*Changes that are made within this block will only take place if the 
+	width of the browser is large (i.e width of the browser is greater than
+	1200px.....That is for desktop screen*/
+		
+		
+		/*Uncomment the following line and try to change the width of the browser*/
+		/*body{
+			background-color: blue;	
+		}*/
+
+	
+ .container {
+		width: 700px;
+		background-color: #ff7733;
+	} 
+}
+
+
+
+
+
+
+

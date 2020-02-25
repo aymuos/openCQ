@@ -63,7 +63,7 @@ else {
 		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'">Modify a question</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-ques.php\'">Delete a question</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'view-result.php\'">View Result</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'test-dashboard.php\'">Test dashboard</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'teacher_test_view.php\'">Test dashboard</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'">Password Reset</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'select_code.php\'">Change Subject / Course</button>
 	</div>

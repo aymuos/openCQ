@@ -46,3 +46,62 @@ Simply copy paste it to the main branch of the project.
 
 6. master-dashboard.php:
 Simply copy paste it to the main branch of the project.
+
+
+
+
+Tree diagram:
+
+					master-dashboard.php (Teacher's Dashboard)
+						|
+						|
+						|	
+					       \|/       
+					test-dashboard.php										   |
+ 		(Teacher will view previous tests and even can create new test)  
+						|							
+						|										
+						|
+					       \|/
+			            test-dashboard-create.php
+                (Here teacher just gives the description and date for the examination)
+						|
+						|
+						|
+					       \|/
+					question-paper.php
+				   (Teachers add questions here)
+
+						|
+						|
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	|						|					|						|
+       \|/					       \|/				       \|/					       \|/
+    question_paper2.php				question_paper3.php			preview_question_paper.php			question_paper_submit.php
+(here teacher selects new question	(deletes the selected question from		(Teachers can see the created			(Teacher finally submits
+from a particular chapter)		question paper)					question paper)						question paper).
+	|
+	|
+       \|/
+question_paper_update.php
+(updates the database with the 
+selected questions)
+
+
+
+please open all the php files and make necessary changes as mentioned in the comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
