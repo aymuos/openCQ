@@ -286,7 +286,7 @@ echo '
 
 
 
-<!-- Modal for adding new question-->
+<!-- Modal for adding new question asking for chapters-->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
@@ -331,6 +331,17 @@ echo '
       </div>
       <div class="modal-body-question">
         <textarea id="p1" class="boxer" type="text" placeholder="Problem Statement......" name="problem-statement" disabled></textarea><br><br>
+		<img id="img_disp" class="image_class" src="';
+		
+		$ct=1;
+		if($ct==1){
+			//Put the image url in this echo statement if the question has an image.....else echo nothing.
+			echo 'https://i.imgur.com/9OQ7z99.jpg';
+		}
+		
+		
+		echo '">
+		
 			<p id="opt1"></p>
 			<p id="opt2"></p>
 			<p id="opt3"></p>
