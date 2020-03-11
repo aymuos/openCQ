@@ -1,0 +1,20 @@
+1.add-a-ques.php:
+Here the question details are taken from the user. New question can be added or am existing question is modified. Please read the comments and proceed. Image feature is added also.
+
+
+2.upload.php:
+Here all the details of the problem is given including the image details.
+
+
+
+3.delete_image_server.php:
+If the user wants to delete the image then this file is called.
+Simply delete all the image corresponding to this question (if the question exists in the database. Else do nothing)
+
+
+
+4.add-a-ques3.php:
+Sends a confirnmation to user that the question has been saved.
+
+5.upload (folder):
+Contains all the uploaded images.
