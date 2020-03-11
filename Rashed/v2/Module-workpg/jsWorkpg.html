@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<title>This is an exam page</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="jsWorkpg.css">
+		<script>
+			var ok=1;
+			var elem = document.documentElement;
+			var myVar;   
+			var full_screen = 0;
+			var change_window = 0;
+			
+			//This function makes the screen to go full mode
+			function openFullscreen() {
+				ok=1;
+				document.getElementById("initial_message").style.display = "none";
+				if(full_screen == 0)
+					document.getElementById("exam_page").style.display = "block";
+				if (elem.requestFullscreen) {
+					elem.requestFullscreen();
+				} else if (elem.mozRequestFullScreen) { /* Firefox */
+					elem.mozRequestFullScreen();
+				} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+					elem.webkitRequestFullscreen();
+				} else if (elem.msRequestFullscreen) { /* IE/Edge */
+					elem.msRequestFullscreen();
+				}
+				full_screen = 1;
+			}
+			
+			
+			//This screen checks whether the window is in full screen or not every second
+			$(document).ready(function(){
+				myVar = setInterval("showTime()", 1000);
+			});
+	
+	
+			//Checks if the window is in full screen or not and prints the necessary messages
+			function showTime(){
+				if (!document.hasFocus() && full_screen == 1 && change_window == 0) {
+					document.getElementById("exam_page").style.display = "none";
+					change_func();
+					change_window = 1;
+				}
+				else if (!document.hasFocus() && full_screen == 1 && change_window == 1) {
+					final_func();
+				}
+				if(full_screen == 1){
+					if (!window.screenTop && !window.screenY) {
+						document.getElementById("exam_page").style.display = "none";
+						document.getElementById("warning_message").style.display = "block";
+						if(ok == 1){
+							timeout();
+							ok=0;
+						}
+					}
+					else{
+						document.getElementById("warning_message").style.display = "none";
+						clearInterval(variable);
+						document.getElementById("time").innerHTML = 6;
+						document.getElementById("exam_page").style.display = "block";
+					}
+				}
+			}
+	
+			
+			//This function runs the down counter
+			function timeout(){
+				variable = setInterval("down_counter()", 1000);		
+			}
+			
+			//Displays counter in reverse manner
+			function down_counter(){
+				var x = document.getElementById("time").innerHTML;
+				
+				if(x == 0){
+					clearInterval(variable);
+					final_func();
+				}
+				else{
+					document.getElementById("time").innerHTML = x-1;
+				}
+			}
+			
+			//Displays Thankyou message
+			function final_func(){
+				document.getElementById("warning_message").style.display = "none";
+				document.getElementById("exam_page").style.display = "none";
+				document.getElementById("final_message").style.display = "block";
+				full_screen = 0;
+			}
+	
+			//Displays a warning if the window is changed
+			function change_func(){
+				alert("WARNING: Changing window again will automatically end your exam!");
+			}
+	
+			//Prevents up down etc arrow  key
+			$(document).keydown(function(e) {
+				if(e.which >= 37 && e.which <= 40){
+					e.preventDefault();
+				}
+			});
+			
+			
+			//Prevents F5 refresh
+			$(document).ready(function() {
+				$(window).keydown(function(event){
+					if(event.keyCode == 116) {
+						event.preventDefault();
+						return false;
+					}
+				});
+			});
+			
+			
+			
+	
+		</script>
+	</head>
+	<body>
+		<div id="initial_message" class="initial">
+			<label>You have to go Full Screen mode Immediately.</label><br>
+			<button type="button" onclick="openFullscreen()">Go Full Screen</button>
+		</div>
+		
+		<div id="exam_page" style="display: none;">
+			<label>Here will be questions and answers</label>
+			<input type="text">
+		</div>
+		
+		<div id="warning_message" class="initial" style="display: none;">
+			<label>Please return to the Full Screen mode within </label><label id="time" style="color: red;">6</label><label> secs.</label><br>
+			<button type="button" onclick="openFullscreen()">Go Full Screen</button>
+		</div>
+		
+		<div id="final_message" class="initial" style="display: none;">
+			<label>Thankyou! Your response has been submitted.</label><br>
+		</div>
+		
+		<div id="change_message" class="initial" style="display: none;">
+			<label>Please return to your Exam page!</label><br>
+		</div>
+	</body>
+</html>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
