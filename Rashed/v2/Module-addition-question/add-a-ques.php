@@ -250,9 +250,18 @@ echo '
 	
 	$len = 5;	//"len" contains the total no of chapters to be displayed.
 	for($i = 1; $i <= $len ; $i+=1){		
-		echo '<option ';
+		echo '<option value="';
 		
 		
+		
+		//Print the chapter id here.......
+		echo $i+5;
+		
+		
+		
+		
+		
+		echo '" ';
 		
 		
 		
