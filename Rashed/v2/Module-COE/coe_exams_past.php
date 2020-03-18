@@ -120,6 +120,7 @@ echo '
 		
 		
 		
+		
 		for($i=0;$i<10;$i++){
 		
 		echo '
@@ -177,9 +178,20 @@ echo '
           echo '
         </tbody>
       </table>
+	  ';
 	  
+	  
+		$ct=0;	//If there is no test to display then satisfy the if condition.
+		if($ct == 1){
+			echo '<br><p style="font-size: 20;">No Exams to display.</p>';
+		}
 			
-				<button class="btn waves-effect waves-light red" onclick="window.location.href = \'coe_dashboard.php\'">Back<i class="material-icons left" >navigate_before</i></button>
+			
+			
+			
+			
+		//Rest of the part remains same.
+		echo '		<button class="btn waves-effect waves-light red" onclick="window.location.href = \'coe_dashboard.php\'">Back<i class="material-icons left" >navigate_before</i></button>
 				
                </div>
               </div>

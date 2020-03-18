@@ -252,9 +252,20 @@ echo '
           echo '
         </tbody>
       </table>
+	  ';
 	  
+	  
+		$ct=0;	//If there is no test to display then satisfy the if condition.
+		if($ct == 1){
+			echo '<br><p style="font-size: 20;">No Exams Running.</p>';
+		}
 			
-				<button class="btn waves-effect waves-light" onclick="window.location.href = \'coe_dashboard.php\'">Back<i class="material-icons left" >navigate_before</i></button>
+			
+			
+			
+			
+		//Rest of the part remains same.
+		echo '<button class="btn waves-effect waves-light" onclick="window.location.href = \'coe_dashboard.php\'">Back<i class="material-icons left" >navigate_before</i></button>
 				<a class="btn waves-effect waves-light btn-cancel" href="#modal1">STOP ALL
 				<i class="material-icons right">cancel</i></a>
                </div>
