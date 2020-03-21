@@ -256,7 +256,7 @@ echo '
 	echo '
 	<div class="div-preview">
 		<button class="btn btn-danger btn-down" onclick="window.location.href = \'master-dashboard.php\'">Back</button>
-		<button class="btn btn-primary btn-down" onclick=" window.open(\'preview_question_paper.php\',\'_blank\')">Preview Question Paper</button>
+		<button class="btn btn-primary btn-down" onclick=" window.open(\'preview_question_paper.php?ti=1\',\'_blank\')">Preview Question Paper</button>
 		<button class="btn btn-success btn-down" onclick="submit()"';
 		
 		
@@ -296,14 +296,34 @@ echo '
         <h4 class="modal-title"><b>Please select a chapter</b></h4>
       </div>
       <div class="modal-body">
-        <select class="del-form-control" id="select_ch">
-			<option>This is chapter 1</option>
-			<option>This is chapter 2</option>
-			<option>This is chapter 3</option>
-			<option>This is chapter 4</option>
-			<option>This is chapter 5</option>
-			<option>This is chapter 6</option>
-			<option>This is chapter 7</option>
+        <select class="del-form-control" id="select_ch">';
+		
+		
+		for($i = 0; $i<=10 ;$i++){
+		
+		echo '
+			<option value="';
+			
+			
+			//Echo chapter id here.........
+			echo '999';
+			
+			
+			
+			echo '">';
+			
+			
+			//Echo chapter;s name here........
+			echo 'This is chapter 1';
+			
+			
+			
+			echo '</option>';
+			
+			
+			
+		}
+			echo '
 		</select>
       </div>
       <div class="modal-footer">
