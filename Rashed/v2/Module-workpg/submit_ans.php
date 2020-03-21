@@ -5,7 +5,7 @@
 	
 	
 	
-	$len = 3;
+	$len = 3;	//Put the no of question here.......
 	for($i=1;$i<=$len;$i++){
 		$ques_id = $_GET["qid".$i];		//This is the question id
 		$opt_id = $_GET["opt".$i];		//This is the option id. If this is 0 then no option is clicked.
