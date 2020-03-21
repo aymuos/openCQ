@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//This is the main test page........Please proceed as commented
+
+
 if ( isset($_SESSION['loggedin']) == false ){
 echo ' 
 
