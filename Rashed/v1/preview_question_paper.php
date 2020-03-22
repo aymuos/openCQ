@@ -27,6 +27,12 @@ echo '
 ';
 }
 else {
+	
+	
+	$test_id = $_GET["ti"];		//This is the test id......
+	
+	
+	
 	echo '
 	<html>
 		<head>
@@ -100,7 +106,26 @@ else {
 					
 					
 					
-					echo '<br>
+				
+					
+					
+					$img = 1;
+					if($img==1){
+						echo '<img src="';
+						
+						
+						//Put the image url here.............
+						echo 'https://i.imgur.com/9OQ7z99.jpg';
+						
+						
+						echo '" style="max-width: 600px;padding-top: 15px;padding-bottom: 20px;">';
+						
+					}
+					
+					
+					echo '
+					<br>
+					
 					&emsp;a) ';
 					
 					
