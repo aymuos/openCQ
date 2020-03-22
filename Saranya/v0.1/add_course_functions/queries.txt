@@ -1,0 +1,3 @@
+SELECT id FROM subject WHERE id = ? LIMIT 1
+
+INSERT INTO allocation(subject_id,teacher_id) VALUES(?,?)

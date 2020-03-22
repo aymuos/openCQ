@@ -1,10 +1,9 @@
 <?php
 
-//This file saves the subject/course code selected from existing course code already enrolled by the 
-//teacher.Save this in the session so that whenever any change
-//is made to the database then the subject code is retrived from the session.
+//This file adds new subject/course code selected by the 
+//teacher.
 //Proceed to the else part directly.
-
+include 'db_connection.php';
 
 session_start();
 if ( isset($_SESSION['loggedinmaster']) == false ){
@@ -27,16 +26,23 @@ echo '
 ';
 }
 else {
-	
-	$code = $_POST["subject-code"];		//This is the course code selected by the teacher...
+	$conn = OpenCon();
+	$code = $_GET["cn"];		//This has the new course code.....Add it to the database
 	//echo $code;
+	try{
+		$query = "INSERT INTO allocation(subject_id,teacher_id) VALUES (?,?)";
+		execute($conn,$query,"ss",[$code,$_SESSION['usernamemaster']],$stmt);
+		close($stmt);
+	}
+	catch(Exception $e){
+		report($e);
+	}
 	
-	$_SESSION["sub_code"] = $code;
 	
 	
 	//uncomment these lines
 	//Simply redirects to master dashboard
-	//header("Location: master-dashboard.php");
+	header("Location: select_code.php");
 	
 }
 

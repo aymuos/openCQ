@@ -3,6 +3,10 @@
 //This file will add the question to the database.
 //please proceed to the else part directly.
 
+include 'db_connection.php';
+
+include 'add-a-question_functions.php';
+
 session_start();
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 

@@ -1,0 +1,5 @@
+SELECT id,name FROM chapter;
+
+SELECT name,url,chapter_id FROM question WHERE id = 9
+
+SELECT name,url,is_right FROM choice WHERE question_id = 9

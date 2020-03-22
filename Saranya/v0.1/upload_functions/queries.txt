@@ -1,0 +1,12 @@
+DELETE FROM  question WHERE id = '3'
+
+
+INSERT INTO question(name,chapter_id) VALUES('abcd','9')
+
+SELECT id FROM chapter WHERE name = 'Optics'
+
+SELECT LAST_INSERT_ID() FROM question
+
+INSERT INTO choice(name,is_right,question_id) VALUES ('pqrs','1',4),('erty','0',4),('jooe','0',4),('uiop','0',4)
+
+UPDATE question SET url = 'abrakidabra.png' WHERE id = '4';

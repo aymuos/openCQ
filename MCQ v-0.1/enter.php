@@ -36,7 +36,7 @@ else {
 	
 	//uncomment these lines
 	//Simply redirects to master dashboard
-	//header("Location: master-dashboard.php");
+	header("Location: master-dashboard.php");
 	
 }
 

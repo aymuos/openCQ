@@ -4,9 +4,9 @@
 	$chname = $_POST["chapter-name"]; 			//This is the chapter name
 	$statement = $_POST["problem-statement"];	//This has the problem statement
 	$co = $_POST["correct"];					//This is the correct option
-	$ico = $_POST["incorrect1"];				//This is the incorrect option 1
-	$ico = $_POST["incorrect2"];				//This is the incorrect option 2
-	$ico = $_POST["incorrect3"];				//This is the incorrect option 2
+	$ico1 = $_POST["incorrect1"];				//This is the incorrect option 1
+	$ico2 = $_POST["incorrect2"];				//This is the incorrect option 2
+	$ico3 = $_POST["incorrect3"];				//This is the incorrect option 2
 	$var = $_POST["x"];							//if '$var' is 0 then it means that user has just uploaded the image...if 1 then user has finished the whole question.
 	$id = $_POST["ques_id"];					//This contains the question id. if it is empty then it is a new question
 	
@@ -75,7 +75,7 @@
 	}
 
 
-
+	
 
 
 

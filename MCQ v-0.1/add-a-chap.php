@@ -1,21 +1,19 @@
 <?php
+
+
+//This page simply takes the chapter's name and sends it to add-a-chap2.php
+//Back end developers need not alter this file.
+include 'db_connection.php';
+
 session_start();
-
-
-
-
-//user can create a new test using this file.
-//Proceed to the else part directly.
-
-
 if ( isset($_SESSION['loggedinmaster']) == false ){
 echo ' 
 <html>
 <head>
-	<title>Oops!!!</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Oops!!!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
 <body>
 	<div class="well-lg">
@@ -29,31 +27,23 @@ echo '
 }
 else {
 	echo '
+
+
 <html>
 <head>
-<title>Test Dashboard</title>
+<title>Add a Chapter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="destroy.css">
-		<style>
-			table, th, td {
-				background-color: white;
-			}
-		</style>
-		<script>
-			function next(x){
-				window.location.href = "question_paper.php?test_id=" + x;
-			}
-		</script>
 </head>
-<body id="page10">
+<body id="page7">
 	<div class="some" >
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-				<img class="logo" border="50" src="logo.png" alt="Avatar"></img>
+				<img class="logo" border="50" src="data/avatar.png" alt="Avatar"></img>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -66,61 +56,55 @@ else {
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-						<li><a href="master.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+						<li><a href="logout-master.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
 	
-	<h1><b>Test Dashboard</b></h1>
+	<h1><b>Add a Chapter</b></h1>
 	
 
+	
 <div class="container">
-	<form class="form-inline">
-	<label style="float: left;">Test Id : &emsp;</label><input name="ti" style="float: left;" value="';
-	
-	
-	
-	
-	
-	//Put newly generated test id in this echo statement
-	echo "Test";
-
-	
-
-	
-	
-	echo '" readonly>
-	<input class="inpdate" name="date" type="date">
-	<label class="inpdate">Date : &emsp;</label><br><br><br>
-	<label style="float: left;">Test Description :</label><br>
-	<textarea name="desc"></textarea><br><br><br>
-	
-	
-	
-	
-	
+  <form class="form-inline" method="post"  action="add-a-chap2.php">
+    <div class="form-group">
+      <label>Chapter\'s Name <span style="color:red;">*</span></label>
+      <input type="text" class="form-control" name="chapter-name" required >
+    </div>
 	<div class="button-container">
-		<button type="button" class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
-		<button type="button" class="btn btn-primary" onclick="next(';
-		
-		
-		//Put test id here..............
-		echo 'Test';
-		
-		
-		
-		echo ')">Next</button>
+		<button class="btn btn-danger" onclick="location.href=\'master-dashboard.php\'">Cancel</button>
+		<button type="submit" class="btn btn-success">Add</button>
 	</div>
-	</form>
+  </form>
 </div>
-
 </body>
 </html>
 
+
+
 ';
+
 
 }
 
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

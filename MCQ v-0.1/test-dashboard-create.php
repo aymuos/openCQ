@@ -6,6 +6,8 @@ session_start();
 
 //user can create a new test using this file.
 //Proceed to the else part directly.
+include 'db_connection.php';
+
 
 
 if ( isset($_SESSION['loggedinmaster']) == false ){
@@ -81,11 +83,27 @@ else {
 	<label style="float: left;">Test Id : &emsp;</label><input name="ti" style="float: left;" value="';
 	
 	
-	
+	$conn = OpenCon();
+
+	$subject_id = $_SESSION['sub_code'];
+	$teacher_id = $_SESSION['usernamemaster'];
+	$time = time();
+
+	try{
+		$query = "INSERT INTO exam(subject_id,teacher_id,create_time) VALUES (?,?,?)";
+		execute($conn,$query,"ssi",[$subject_id,$teacher_id,$time],$stmt);
+		$id = $conn->insert_id;
+		close($stmt);
+
+
+	}
+	catch(Exception $e){
+		report($e);
+	}
 	
 	
 	//Put newly generated test id in this echo statement
-	echo "Test";
+	echo $id;
 
 	
 
@@ -107,7 +125,7 @@ else {
 		
 		
 		//Put test id here..............
-		echo 'Test';
+		echo $id;
 		
 		
 		

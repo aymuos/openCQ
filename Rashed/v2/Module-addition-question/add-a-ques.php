@@ -28,7 +28,7 @@ echo '
 }
 else {
 
-
+	
 	if(isset($_GET["ques_id"])){
 		$id = $_GET["ques_id"];		//If this condition is satisfied then it means that there is a question 
 	}								//with same question id hence display the questions/options/image link 
