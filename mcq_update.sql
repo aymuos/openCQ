@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2020 at 01:01 PM
+-- Generation Time: Mar 22, 2020 at 08:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -19,221 +19,188 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mcq`
+-- Database: `newmcq`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chapters`
+-- Table structure for table `allocation`
 --
 
-CREATE TABLE `chapters` (
-  `chapter_id` varchar(200) NOT NULL,
-  `chapter` varchar(200) NOT NULL
+CREATE TABLE `allocation` (
+  `subject_id` varchar(10) NOT NULL,
+  `teacher_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `chapters`
+-- Dumping data for table `allocation`
 --
 
-INSERT INTO `chapters` (`chapter_id`, `chapter`) VALUES
-('android', 'Android'),
-('c++', 'C++'),
-('maths', 'Maths'),
-('movies', 'Movies'),
-('physics', 'Physics');
+INSERT INTO `allocation` (`subject_id`, `teacher_id`) VALUES
+('ES145', 'root'),
+('PS4', '24');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `choices`
+-- Table structure for table `attempt_choice`
 --
 
-CREATE TABLE `choices` (
-  `question_id` varchar(200) NOT NULL,
-  `choice_id` varchar(200) NOT NULL,
-  `choice` varchar(200) NOT NULL,
-  `is_right` enum('0','1') NOT NULL
+CREATE TABLE `attempt_choice` (
+  `student_id` varchar(100) NOT NULL,
+  `exam_choice_id` bigint(20) UNSIGNED NOT NULL,
+  `is_marked` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `choices`
+-- Dumping data for table `attempt_choice`
 --
 
-INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
-('(x-a)*(x-b)*(x-c)...*(x-z)=?wherex>0andx>a,b,c,..,z', '0', '0', '1'),
-('(x-a)*(x-b)*(x-c)...*(x-z)=?wherex>0andx>a,b,c,..,z', '<0', '<0', '0'),
-('(x-a)*(x-b)*(x-c)...*(x-z)=?wherex>0andx>a,b,c,..,z', '>0', '>0', '0'),
-('(x-a)*(x-b)*(x-c)...*(x-z)=?wherex>0andx>a,b,c,..,z', '>=0', '>=0', '0'),
-('anacgeneratorworksduethechangein', 'magneticflux', 'magnetic flux', '1'),
-('anacgeneratorworksduethechangein', 'magneticfluxdensity', 'magnetic flux density', '0'),
-('anacgeneratorworksduethechangein', 'materialofcoil', 'material of coil', '0'),
-('anacgeneratorworksduethechangein', 'timeofrotationofcoil', 'time of rotation of coil', '0'),
-('androidisbasedonwhichkernel', 'linux', 'Linux', '1'),
-('androidisbasedonwhichkernel', 'mac', 'Mac', '0'),
-('androidisbasedonwhichkernel', 'redhat', 'Redhat', '0'),
-('androidisbasedonwhichkernel', 'windows', 'Windows', '0'),
-('androidwebbrowserisbasedon', 'chrome', 'Chrome', '0'),
-('androidwebbrowserisbasedon', 'firefox', 'Firefox', '0'),
-('androidwebbrowserisbasedon', 'open-sourcewebkit', 'Open-source Webkit', '1'),
-('androidwebbrowserisbasedon', 'safari', 'Safari', '0'),
-('canaclassbeimmutableinandroid?', 'can\'tmaketheclassasfinalclass', 'Can\'t make the class as final class', '0'),
-('canaclassbeimmutableinandroid?', 'no,itcan\'t', 'No, it can\'t', '0'),
-('canaclassbeimmutableinandroid?', 'noneoftheabove', 'None of the above', '0'),
-('canaclassbeimmutableinandroid?', 'yes,classcanbeimmutable', 'Yes, Class can be immutable', '1'),
-('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'armstrongeffect', 'Armstrong effect', '0'),
-('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'bohreffect', 'Bohr effect', '0'),
-('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'magleveffect', 'Maglev effect', '0'),
-('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'starkeffect', 'Stark effect', '1'),
-('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'bothhavethesamespeed', 'Both have the same speed', '0'),
-('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'depends', 'Depends', '0'),
-('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'neutron', 'Neutron', '0'),
-('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'positron', 'Positron', '1'),
-('firstdigitof(1!+2!+...+100!)is', '0', '0', '0'),
-('firstdigitof(1!+2!+...+100!)is', '2', '2', '0'),
-('firstdigitof(1!+2!+...+100!)is', '3', '3', '1'),
-('firstdigitof(1!+2!+...+100!)is', '9', '9', '0'),
-('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million604', '14 million  604', '0'),
-('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million605', '14 million 605', '1'),
-('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million606', '14 million 606', '0'),
-('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', '14million607', '14 million 607', '0'),
-('howmanyorientationsdoesandroidsupport?', '10', '10', '0'),
-('howmanyorientationsdoesandroidsupport?', '2', '2', '0'),
-('howmanyorientationsdoesandroidsupport?', '4', '4', '1'),
-('howmanyorientationsdoesandroidsupport?', 'noneoftheabove', 'None of the above', '0'),
-('howtokillanactivityinandroid?', 'bothfinish()andfinishactivity(intrequestcode)', 'both finish() and finishActivity(int requestCode)', '1'),
-('howtokillanactivityinandroid?', 'finish()', 'finish()', '0'),
-('howtokillanactivityinandroid?', 'finishactivity(intrequestcode)', 'finishActivity(int requestCode)', '0'),
-('howtokillanactivityinandroid?', 'noneoftheabove', 'none of the above', '0'),
-('howtostoreheavystructureddatainandroid?', 'cursor', 'Cursor', '0'),
-('howtostoreheavystructureddatainandroid?', 'noneoftheabove', 'None of the above', '0'),
-('howtostoreheavystructureddatainandroid?', 'sharedpreferences', 'Shared Preferences', '0'),
-('howtostoreheavystructureddatainandroid?', 'sqlitedatabase', 'SQlite database ', '1'),
-('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingasiflooselyboundbridgeisnotbrokenbytheresonancecausedbythefootstepsoflargenumberofp', 'To prevent breaking as if loosely bound bridge is not broken  by the resonance caused by the footste', '1'),
-('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingaslotofmovementmaycausethecoefficientofrigidityofwoodmayreduce', 'To prevent breaking as lot of movement may cause the coefficient of rigidity of wood may reduce', '0'),
-('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingaswoodismadeofcellulose', 'To prevent breaking as wood is made of cellulose', '0'),
-('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'topreventbreakingofthebridgebyincreasedweightofthepeople', 'To prevent breaking of the bridge by increased weight of the people', '0'),
-('nameofthepresentgraphicsapiusedinandroid9andabove?', 'directx', 'DirectX', '0'),
-('nameofthepresentgraphicsapiusedinandroid9andabove?', 'metal', 'Metal', '0'),
-('nameofthepresentgraphicsapiusedinandroid9andabove?', 'openglapi', 'OpenGL API', '0'),
-('nameofthepresentgraphicsapiusedinandroid9andabove?', 'vulkanapi', 'Vulkan API', '1'),
-('nametheelementthattonystarkdiscovered?', 'adamantium', 'Adamantium', '0'),
-('nametheelementthattonystarkdiscovered?', 'gold', 'Gold', '0'),
-('nametheelementthattonystarkdiscovered?', 'palladium', 'Palladium', '0'),
-('nametheelementthattonystarkdiscovered?', 'vibranium', 'Vibranium', '1'),
-('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'atomhasasingleelectronsystem', 'atom has a single electron system', '1'),
-('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'atomisareducer', 'atom is a reducer', '0'),
-('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'hasamultielectronsystem', 'has a multi electron system', '0'),
-('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'iftheatomhasnoneutron', 'if the atom has no neutron', '0'),
-('numberoftrailingzerosin100!is', '10', '10', '0'),
-('numberoftrailingzerosin100!is', '24', '24', '1'),
-('numberoftrailingzerosin100!is', '26', '26', '0'),
-('numberoftrailingzerosin100!is', '30', '30', '0'),
-('opticalfiberisadevicebasedontheprincipleof', 'noneofthese', 'none of these', '0'),
-('opticalfiberisadevicebasedontheprincipleof', 'scattering', 'scattering', '0'),
-('opticalfiberisadevicebasedontheprincipleof', 'totalinternalreflection', 'total internal reflection', '1'),
-('opticalfiberisadevicebasedontheprincipleof', 'totalinternalrefraction', 'total internal refraction', '0'),
-('pitchisapropertyof', 'amplitude', 'Amplitude', '0'),
-('pitchisapropertyof', 'beat', 'Beat', '0'),
-('pitchisapropertyof', 'frequency', 'Frequency', '1'),
-('pitchisapropertyof', 'interference', 'Interference', '0'),
-('runtimepolymorphismisdoneusing', 'friendfunction', 'Friend function', '0'),
-('runtimepolymorphismisdoneusing', 'functionoverloading', 'Function overloading', '0'),
-('runtimepolymorphismisdoneusing', 'virtualclasses', 'Virtual classes', '0'),
-('runtimepolymorphismisdoneusing', 'virtualfunctions', 'Virtual functions', '1'),
-('thedefaultaccessspecifierfortheclassmembersis', 'noneoftheabove', 'None of the above', '0'),
-('thedefaultaccessspecifierfortheclassmembersis', 'private', 'private', '1'),
-('thedefaultaccessspecifierfortheclassmembersis', 'protected', 'protected', '0'),
-('thedefaultaccessspecifierfortheclassmembersis', 'public', 'public', '0'),
-('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', '-hfo(fo=thresholdfrequency)', '-hfo (fo= threshold frequency)', '1'),
-('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', 'hf(f=frequencyoftheappliedradiation)', 'hf(f= frequency of the applied radiation)', '0'),
-('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', 'kineticenergyofthereleasedelectrons', 'Kinetic energy of the released electrons', '0'),
-('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', 'noneoftheabove', 'None of the above', '0'),
-('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'auto_ptr', 'auto_ptr', '0'),
-('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'noneoftheabove', 'none of the above', '0'),
-('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'p', 'p', '0'),
-('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'this', 'this', '1'),
-('whatisbroadcastreceiverinandroid?', 'itwilldobackgroundfunctionalitiesasservices', 'It will do background functionalities as services', '0'),
-('whatisbroadcastreceiverinandroid?', 'itwillpassthedatabetweenactivities', 'It will pass the data between activities', '0'),
-('whatisbroadcastreceiverinandroid?', 'itwillreactonbroadcastannouncements', 'It will react on broadcast announcements', '1'),
-('whatisbroadcastreceiverinandroid?', 'noneoftheabove', 'None of the above', '0'),
-('whatisthefullformofshield?', 'strategichomelandimposition,enforcementandlogisticdivision', 'Strategic Homeland Imposition, Enforcement and Logistic Division', '0'),
-('whatisthefullformofshield?', 'strategichomelandintervention,enforcementandlogisticdivision', 'Strategic Homeland Intervention, Enforcement and Logistic Division', '1'),
-('whatisthefullformofshield?', 'strategichomelandintervention,extortingandlogisticdivision', 'Strategic Homeland Intervention, Extorting and Logistic Division', '0'),
-('whatisthefullformofshield?', 'strategichomelandinvestigation,enforcementandlogisticdivision', 'Strategic Homeland Investigation, Enforcement and Logistic Division', '0'),
-('whatisthefullformofstl?', 'noneoftheabove.', 'None of the above.', '0'),
-('whatisthefullformofstl?', 'standardtemplatelibrary.', 'Standard template library.', '1'),
-('whatisthefullformofstl?', 'standardtopicslibrary.', 'Standard topics library.', '0'),
-('whatisthefullformofstl?', 'systemtemplatelibrary.', 'System template library.', '0'),
-('whatisthenameofblackwidows\'sister?', 'melina', 'Melina', '0'),
-('whatisthenameofblackwidows\'sister?', 'natalia', 'Natalia', '0'),
-('whatisthenameofblackwidows\'sister?', 'noneoftheabove', 'None of the above', '0'),
-('whatisthenameofblackwidows\'sister?', 'yelena', 'Yelena', '1'),
-('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'erikkillmonger', 'Erik killmonger', '1'),
-('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'klawkillmonger', 'Klaw killmonger', '0'),
-('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'noneoftheabove', 'None of the above', '0'),
-('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'zhurikillmonger', 'Zhuri killmonger', '0'),
-('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'compileerror', 'Compile error', '0'),
-('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'fine', 'Fine', '0'),
-('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'nine', 'Nine', '1'),
-('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'runtimeerror', 'Runtime error', '0'),
-('whatisthepackagenameofhttpclientinandroid?', 'com.android.json', 'com.android.JSON', '0'),
-('whatisthepackagenameofhttpclientinandroid?', 'com.json', 'com.json', '0'),
-('whatisthepackagenameofhttpclientinandroid?', 'org.apache.http.client', 'org.apache.http.client', '1'),
-('whatisthepackagenameofhttpclientinandroid?', 'org.json', 'org.json', '0'),
-('whatistheunitdigitof(1!+2!+3!+...+100!)?', '3', '3', '1'),
-('whatistheunitdigitof(1!+2!+3!+...+100!)?', '5', '5', '0'),
-('whatistheunitdigitof(1!+2!+3!+...+100!)?', '7', '7', '0'),
-('whatistheunitdigitof(1!+2!+3!+...+100!)?', '9', '9', '0'),
-('whatistransientdatainandroid?', 'logicaldata', 'Logical data', '1'),
-('whatistransientdatainandroid?', 'permanentdata', 'Permanent data', '0'),
-('whatistransientdatainandroid?', 'securedata', 'Secure data', '0'),
-('whatistransientdatainandroid?', 'temporarydata', 'Temporary data', '0'),
-('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'denmark', 'Denmark', '0'),
-('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'iceland', 'Iceland', '0'),
-('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'norway', 'Norway', '1'),
-('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'sweden', 'Sweden', '0'),
-('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'kolkata', 'Kolkata', '1'),
-('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'london', 'London', '0'),
-('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'nairobi', 'Nairobi', '0'),
-('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'newyork', 'NewYork', '0'),
-('whichcoloroflightraysgetsscatteredthemost?', 'blue', 'blue', '1'),
-('whichcoloroflightraysgetsscatteredthemost?', 'green', 'green', '0'),
-('whichcoloroflightraysgetsscatteredthemost?', 'red', 'red', '0'),
-('whichcoloroflightraysgetsscatteredthemost?', 'violet', 'violet', '0'),
-('whichfeatureoftheoopsgivestheconceptofre-usability?', 'abstraction', 'Abstraction', '0'),
-('whichfeatureoftheoopsgivestheconceptofre-usability?', 'encapsulation', 'Encapsulation', '0'),
-('whichfeatureoftheoopsgivestheconceptofre-usability?', 'inheritance', 'Inheritance', '1'),
-('whichfeatureoftheoopsgivestheconceptofre-usability?', 'noneoftheabove.', 'None of the above.', '0'),
-('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'finish()', 'finish()', '0'),
-('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'getgps().', 'getGPS().', '0'),
-('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'getgpsstatus()', 'getGPSStatus()', '0'),
-('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', 'onproviderdisable()', 'onProviderDisable()', '1'),
-('whichoperatorcannotbeoverloadedinc++?', '+', '+', '0'),
-('whichoperatorcannotbeoverloadedinc++?', '=', '=', '0'),
-('whichoperatorcannotbeoverloadedinc++?', '==', '==', '0'),
-('whichoperatorcannotbeoverloadedinc++?', 'new', 'new', '1'),
-('whohasthesuperpowerattheendofstrangerthingsseason3?', 'eleven', 'Eleven', '0'),
-('whohasthesuperpowerattheendofstrangerthingsseason3?', 'lucas', 'Lucas', '0'),
-('whohasthesuperpowerattheendofstrangerthingsseason3?', 'mike', 'Mike', '0'),
-('whohasthesuperpowerattheendofstrangerthingsseason3?', 'none', 'None', '1'),
-('whoisthefatherofnatasharomanoff?', 'adrikromanoff', 'Adrik Romanoff', '0'),
-('whoisthefatherofnatasharomanoff?', 'ivanromanoff', 'Ivan Romanoff', '1'),
-('whoisthefatherofnatasharomanoff?', 'mikhailromanoff', 'Mikhail Romanoff', '0'),
-('whoisthefatherofnatasharomanoff?', 'viratkohli', 'Virat Kohli', '0'),
-('whoisthefatherofthanos?', 'a\'lars', 'A\'lars', '1'),
-('whoisthefatherofthanos?', 'kronos', 'Kronos', '0'),
-('whoisthefatherofthanos?', 'thena', 'Thena', '0'),
-('whoisthefatherofthanos?', 'zuras', 'Zuras', '0'),
-('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemisdesignedontheprincipleofforcemultipier', 'pulley system is designed on the principle of force multipier', '0'),
-('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemmainlyreducestheweightoftheobjectbeinglifted', 'pulley system mainly reduces the weight of the object being lifted', '0'),
-('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'pulleysystemworksontheprincipleoffriction', 'pulley system works on the principle of friction', '0'),
-('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'weuseourownweightasaforcetopulltheobject', 'we use our own weight as a force to pull the object', '1'),
-('workisformofenergywhichisdependenton', 'momentumofthebody', 'momentum of the body', '1'),
-('workisformofenergywhichisdependenton', 'speedofthebody', 'speed of the body', '0'),
-('workisformofenergywhichisdependenton', 'typeofbody(flexibleorrigid)', 'type of body ( flexible or rigid)', '0'),
-('workisformofenergywhichisdependenton', 'workisanindependentformofenergy', 'work is an independent form of energy', '0');
+INSERT INTO `attempt_choice` (`student_id`, `exam_choice_id`, `is_marked`) VALUES
+('18', 37, '0'),
+('18', 38, '0'),
+('18', 39, '0'),
+('18', 40, '0'),
+('18', 41, '0'),
+('18', 42, '0'),
+('18', 43, '0'),
+('18', 44, '0'),
+('18', 45, '0'),
+('18', 46, '0'),
+('18', 47, '0'),
+('18', 48, '0'),
+('19', 37, '1'),
+('19', 38, '0'),
+('19', 39, '0'),
+('19', 40, '0'),
+('19', 41, '0'),
+('19', 42, '0'),
+('19', 43, '0'),
+('19', 44, '0'),
+('19', 45, '0'),
+('19', 46, '0'),
+('19', 47, '0'),
+('19', 48, '0'),
+('20', 37, '0'),
+('20', 38, '0'),
+('20', 39, '0'),
+('20', 40, '0'),
+('20', 41, '0'),
+('20', 42, '0'),
+('20', 43, '0'),
+('20', 44, '0'),
+('20', 45, '0'),
+('20', 46, '0'),
+('20', 47, '0'),
+('20', 48, '0'),
+('24', 37, '1'),
+('24', 38, '0'),
+('24', 39, '0'),
+('24', 40, '0'),
+('24', 41, '0'),
+('24', 42, '1'),
+('24', 43, '0'),
+('24', 44, '0'),
+('24', 45, '0'),
+('24', 46, '1'),
+('24', 47, '0'),
+('24', 48, '0'),
+('30', 37, '1'),
+('30', 38, '0'),
+('30', 39, '0'),
+('30', 40, '0'),
+('30', 41, '0'),
+('30', 42, '1'),
+('30', 43, '0'),
+('30', 44, '0'),
+('30', 45, '0'),
+('30', 46, '0'),
+('30', 47, '1'),
+('30', 48, '0'),
+('41', 37, '0'),
+('41', 38, '0'),
+('41', 39, '0'),
+('41', 40, '0'),
+('41', 41, '0'),
+('41', 42, '0'),
+('41', 43, '0'),
+('41', 44, '0'),
+('41', 45, '0'),
+('41', 46, '0'),
+('41', 47, '0'),
+('41', 48, '0'),
+('root', 37, '1'),
+('root', 38, '0'),
+('root', 39, '0'),
+('root', 40, '0'),
+('root', 41, '0'),
+('root', 42, '0'),
+('root', 43, '0'),
+('root', 44, '1'),
+('root', 45, '1'),
+('root', 46, '0'),
+('root', 47, '0'),
+('root', 48, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chapter`
+--
+
+CREATE TABLE `chapter` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `subject_id` varchar(10) NOT NULL,
+  `teacher_id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chapter`
+--
+
+INSERT INTO `chapter` (`id`, `name`, `subject_id`, `teacher_id`) VALUES
+(104, 'qwerty', 'ES145', 'root'),
+(105, 'corona', 'ES145', 'root'),
+(106, 'deadline khub headache diche', 'ES145', 'root'),
+(107, 'Fun', 'ES145', 'root');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `choice`
+--
+
+CREATE TABLE `choice` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `url` varchar(300) NOT NULL DEFAULT '-1',
+  `is_right` enum('0','1') NOT NULL,
+  `question_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `choice`
+--
+
+INSERT INTO `choice` (`id`, `name`, `url`, `is_right`, `question_id`) VALUES
+(123, 'Abella Ranger', '-1', '1', 20),
+(124, 'Soumya', '-1', '0', 20),
+(125, ' Aymuos ', '-1', '0', 20),
+(126, 'Dino James', '-1', '0', 20),
+(127, '0', '-1', '1', 21),
+(128, '1', '-1', '0', 21),
+(129, ' 10', '-1', '0', 21),
+(130, '11', '-1', '0', 21),
+(131, 'Dettol', '-1', '1', 22),
+(132, 'Savlon', '-1', '0', 22),
+(133, ' Mercury', '-1', '0', 22),
+(134, 'Water', '-1', '0', 22),
+(135, 'Jessa Rhodes', '-1', '1', 23),
+(136, 'Katana Kombat', '-1', '0', 23),
+(137, '  Milly Esha', '-1', '0', 23),
+(138, 'Leila', '-1', '0', 23);
 
 -- --------------------------------------------------------
 
@@ -242,116 +209,177 @@ INSERT INTO `choices` (`question_id`, `choice_id`, `choice`, `is_right`) VALUES
 --
 
 CREATE TABLE `exam` (
-  `exam_id` int(10) UNSIGNED NOT NULL,
-  `is_active` enum('0','1','2') NOT NULL,
-  `num` int(11) NOT NULL,
-  `description` varchar(200) DEFAULT NULL,
-  `user_date` varchar(100) DEFAULT NULL
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subject_id` varchar(10) NOT NULL,
+  `teacher_id` varchar(100) NOT NULL,
+  `is_active` enum('0','1','2','3') NOT NULL DEFAULT '0',
+  `description` varchar(100) DEFAULT '',
+  `create_time` bigint(20) UNSIGNED NOT NULL,
+  `start_time` bigint(20) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`id`, `subject_id`, `teacher_id`, `is_active`, `description`, `create_time`, `start_time`) VALUES
+(1524284, 'ES145', '24', '3', '', 1584780248, 1584872523),
+(1524286, 'ES145', 'root', '0', '', 1584819682, 0),
+(1524287, 'ES145', 'root', '0', '', 1584819689, 0),
+(1524288, 'ES145', 'root', '0', '', 1584821909, 0),
+(1524289, 'ES145', 'root', '0', '', 1584852800, 0),
+(1524290, 'ES145', 'root', '0', '', 1584855377, 0),
+(1524291, 'ES145', 'root', '0', '', 1584856771, 0),
+(1524292, 'ES145', 'root', '0', '', 1584856914, 0),
+(1524293, 'ES145', 'root', '0', '', 1584857689, 0),
+(1524294, 'ES145', 'root', '0', '', 1584858035, 0),
+(1524295, 'ES145', 'root', '0', '', 1584858295, 0),
+(1524296, 'ES145', 'root', '3', '', 1584864329, 1584872523),
+(1524297, 'ES145', 'root', '0', '', 1584864986, 0),
+(1524298, 'ES145', 'root', '0', '', 1584864992, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_choices`
+-- Table structure for table `exam_choice`
 --
 
-CREATE TABLE `exam_choices` (
-  `user_id` varchar(15) NOT NULL,
-  `exam_id` int(10) UNSIGNED NOT NULL,
-  `question` varchar(500) NOT NULL,
-  `choice` varchar(200) NOT NULL,
-  `is_marked` enum('0','1') NOT NULL DEFAULT '0',
-  `is_right` enum('0','1') NOT NULL,
-  `cchoice` varchar(200) NOT NULL
+CREATE TABLE `exam_choice` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `exam_question_id` bigint(20) UNSIGNED NOT NULL,
+  `is_right` enum('0','1') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_choice`
+--
+
+INSERT INTO `exam_choice` (`id`, `name`, `url`, `exam_question_id`, `is_right`) VALUES
+(25, 'Abella Ranger', '-1', 27, '1'),
+(26, 'Soumya', '-1', 27, '0'),
+(27, ' Aymuos ', '-1', 27, '0'),
+(28, 'Dino James', '-1', 27, '0'),
+(29, '0', '-1', 28, '1'),
+(30, '1', '-1', 28, '0'),
+(31, ' 10', '-1', 28, '0'),
+(32, '11', '-1', 28, '0'),
+(33, 'Dettol', '-1', 29, '1'),
+(34, 'Savlon', '-1', 29, '0'),
+(35, ' Mercury', '-1', 29, '0'),
+(36, 'Water', '-1', 29, '0'),
+(37, 'Abella Ranger', '-1', 30, '1'),
+(38, 'Soumya', '-1', 30, '0'),
+(39, ' Aymuos ', '-1', 30, '0'),
+(40, 'Dino James', '-1', 30, '0'),
+(41, '0', '-1', 31, '1'),
+(42, '1', '-1', 31, '0'),
+(43, ' 10', '-1', 31, '0'),
+(44, '11', '-1', 31, '0'),
+(45, 'Dettol', '-1', 32, '1'),
+(46, 'Savlon', '-1', 32, '0'),
+(47, ' Mercury', '-1', 32, '0'),
+(48, 'Water', '-1', 32, '0'),
+(49, 'Abella Ranger', '-1', 33, '1'),
+(50, 'Soumya', '-1', 33, '0'),
+(51, ' Aymuos ', '-1', 33, '0'),
+(52, 'Dino James', '-1', 33, '0'),
+(53, '0', '-1', 34, '1'),
+(54, '1', '-1', 34, '0'),
+(55, ' 10', '-1', 34, '0'),
+(56, '11', '-1', 34, '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_marks`
+-- Table structure for table `exam_mark`
 --
 
-CREATE TABLE `exam_marks` (
-  `user_id` varchar(15) NOT NULL,
-  `exam_id` int(10) UNSIGNED NOT NULL,
-  `question` varchar(500) NOT NULL,
-  `marks` int(11) NOT NULL DEFAULT 0
+CREATE TABLE `exam_mark` (
+  `student_id` varchar(100) NOT NULL,
+  `exam_question_id` bigint(20) UNSIGNED NOT NULL,
+  `mark` int(11) NOT NULL DEFAULT 0,
+  `shuffle` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_mark`
+--
+
+INSERT INTO `exam_mark` (`student_id`, `exam_question_id`, `mark`, `shuffle`) VALUES
+('18', 30, 0, '2.0.3.1'),
+('18', 31, 0, '1.2.3.0'),
+('18', 32, 0, '2.3.1.0'),
+('19', 30, 1, '2.3.1.0'),
+('19', 31, 0, '0.1.2.3'),
+('19', 32, 0, '1.3.2.0'),
+('20', 30, 0, '1.2.3.0'),
+('20', 31, 0, '0.3.2.1'),
+('20', 32, 0, '1.2.3.0'),
+('24', 30, 1, '1.3.2.0'),
+('24', 31, 0, '0.1.2.3'),
+('24', 32, 0, '1.0.2.3'),
+('30', 30, 1, '2.1.3.0'),
+('30', 31, 0, '0.3.2.1'),
+('30', 32, 0, '3.1.0.2'),
+('41', 30, 0, '2.0.1.3'),
+('41', 31, 0, '0.1.2.3'),
+('41', 32, 0, '0.2.3.1'),
+('root', 30, 1, '3.0.1.2'),
+('root', 31, 0, '3.0.1.2'),
+('root', 32, 1, '0.1.2.3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam_questions`
+-- Table structure for table `exam_question`
 --
 
-CREATE TABLE `exam_questions` (
-  `user_id` varchar(15) NOT NULL,
-  `exam_id` int(10) UNSIGNED NOT NULL,
-  `question` varchar(500) NOT NULL,
-  `question_id` int(11) DEFAULT NULL,
-  `cquestion` varchar(200) NOT NULL
+CREATE TABLE `exam_question` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `url` varchar(300) NOT NULL DEFAULT '-1',
+  `exam_id` bigint(20) UNSIGNED NOT NULL,
+  `chapter_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_question`
+--
+
+INSERT INTO `exam_question` (`id`, `name`, `url`, `exam_id`, `chapter_name`) VALUES
+(27, 'who is she?', 'uploads/20.jpg', 1524295, 'qwerty'),
+(28, 'test question', '', 1524295, 'qwerty'),
+(29, 'what is this', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAYAAACKAxD9AAAgAElEQVR4AeydBXRd15X3lTaTdmbaybSZYtqmaRomJ2YGycwUc+yY7cTMbMvMzJYZxMzMzCwLLFlMFj7W0+9b+8rPUbPapl87ieVZPmtd3af78J79P5v3PmY860MH6AEjtGKkBYNyyGM5aAWj0YhGp0ZtVKFFjYZmGqmjlip0GJRD06pBpW+mWdeEzqDGqHyogYZWaJKjBZpbQGNowWBswWg00Nragl5dBaiVH9', 1524295, 'qwerty'),
+(30, 'who is she?', 'uploads/20.jpg', 1524296, 'qwerty'),
+(31, 'test question', '', 1524296, 'qwerty'),
+(32, 'what is this', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAYAAACKAxD9AAAgAElEQVR4AeydBXRd15X3lTaTdmbaybSZYtqmaRomJ2YGycwUc+yY7cTMbMvMzJYZxMzMzCwLLFlMFj7W0+9b+8rPUbPapl87ieVZPmtd3af78J79P5v3PmY860MH6AEjtGKkBYNyyGM5aAWj0YhGp0ZtVKFFjYZmGqmjlip0GJRD06pBpW+mWdeEzqDGqHyogYZWaJKjBZpbQGNowWBswWg00Nragl5dBaiVH9', 1524296, 'qwerty'),
+(33, 'who is she?', 'uploads/20.jpg', 1524298, 'qwerty'),
+(34, 'test question', '', 1524298, 'qwerty');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questions`
+-- Table structure for table `question`
 --
 
-CREATE TABLE `questions` (
-  `question_id` varchar(200) NOT NULL,
-  `question` varchar(500) NOT NULL,
-  `chapter_id` varchar(200) NOT NULL
+CREATE TABLE `question` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `url` varchar(1000) NOT NULL DEFAULT '-1',
+  `chapter_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `questions`
+-- Dumping data for table `question`
 --
 
-INSERT INTO `questions` (`question_id`, `question`, `chapter_id`) VALUES
-('(x-a)*(x-b)*(x-c)...*(x-z)=?wherex>0andx>a,b,c,..,z', '(x-a)*(x-b)*(x-c)...*(x-z)=? Where x>0 And x>a,b,c,..,z\r\n  ', 'maths'),
-('anacgeneratorworksduethechangein', 'An AC generator works due the change in ', 'physics'),
-('androidisbasedonwhichkernel', 'Android Is Based On Which Kernel', 'android'),
-('androidwebbrowserisbasedon', 'Android Web Browser Is Based On ', 'android'),
-('canaclassbeimmutableinandroid?', 'Can a class be immutable in android ?\r\n ', 'android'),
-('deviationofelectronicspectrallinesinanexternalelectricfieldiscalled', 'Deviation of electronic spectral lines in an external electric field is called', 'physics'),
-('duringalpharadiationsplitting,thenucleusissplitinto1positronand1neutronthusoutofthesetwowhichparticl', 'During alpha radiation splitting , the nucleus is split into 1 positron and 1 neutron thus out of these two which particle has more velocity of emission than the other', 'physics'),
-('firstdigitof(1!+2!+...+100!)is', 'First digit of (1! + 2! + . . . + 100!) is ', 'maths'),
-('howmanyalternatefuturesdiddrstrangesawfortheoutcomeofcomingconflictwiththanos?', 'How many alternate futures did Dr strange saw for the outcome of coming conflict with Thanos ?', 'movies'),
-('howmanyorientationsdoesandroidsupport?', ' How many orientations does android support?', 'android'),
-('howtokillanactivityinandroid?', 'How to kill an activity in Android?', 'android'),
-('howtostoreheavystructureddatainandroid?', ' How to store heavy structured data in android?', 'android'),
-('inoldendayswoodbridgestocrossmountainswerenevermadetightlyboundoneachsideforlargenumberofpeopletopas', 'In olden days wood bridges to cross mountains were never made tightly bound on each side for large number of people to pass. It was done so as', 'physics'),
-('nameofthepresentgraphicsapiusedinandroid9andabove?', 'Name of the present Graphics API used in Android 9 and above ?', 'android'),
-('nametheelementthattonystarkdiscovered?', 'Name the element that Tony stark discovered?', 'movies'),
-('neilbohr\'stheoryofthestructureofatomisonlyvalidif', 'Neil Bohr\'s theory of the structure of atom is only valid if', 'physics'),
-('numberoftrailingzerosin100!is', 'Number of trailing zeros in 100! is ', 'maths'),
-('opticalfiberisadevicebasedontheprincipleof', 'Optical fiber is a device based on the principle of', 'physics'),
-('pitchisapropertyof', 'Pitch is a property of', 'physics'),
-('runtimepolymorphismisdoneusing', ' Runtime polymorphism is done using ', 'c++'),
-('thedefaultaccessspecifierfortheclassmembersis', 'The default access specifier for the class members is', 'c++'),
-('thegraphofphotoelectriceffectonametalisastraightlinehavingaconstantof', 'The graph of photoelectric effect on a metal is a straight line having a constant of', 'physics'),
-('thepointerwhichstoresalwaysthecurrentactiveobjectaddressis__', 'The pointer which stores always the current active object address is __', 'c++'),
-('whatisbroadcastreceiverinandroid?', 'What is broadcast receiver in android?', 'android'),
-('whatisthefullformofshield?', 'What is the full form of SHIELD?', 'movies'),
-('whatisthefullformofstl?', 'What is the full form of STL ?\r\n ', 'c++'),
-('whatisthenameofblackwidows\'sister?', 'What is the name of black widows\' sister?', 'movies'),
-('whatisthenameoft\'challa\'scousinwhofoughtwithhimforthethrone?', 'What is the name of T\'challa\'s cousin who fought with him for the throne?\r\n ', 'maths'),
-('whatistheoutputofthefollowingprogram?#include<iostream>usingnamespacestd;main(){chars[]=\"fine\";*s=\'n', 'What is the output of the following program?\r\n\r\n#include<iostream>\r\n\r\nusing namespace std;\r\nmain() {\r\n   char s[] = \"Fine\";\r\n  *s = \'N\';\r\n   \r\n   cout<<s<<endl;\r\n}', 'c++'),
-('whatisthepackagenameofhttpclientinandroid?', 'What is the package name of HTTP client in android?', 'android'),
-('whatistheunitdigitof(1!+2!+3!+...+100!)?', 'What is the unit digit of ( 1! + 2! + 3 ! + . . . + 100! ) ?', 'maths'),
-('whatistransientdatainandroid?', 'What is transient data in android?', 'android'),
-('wheredidthorsettledownwiththerestoftheasgardiansaftertheinitialsnap?', 'Where did Thor settle down with the rest of the Asgardians after the initial snap?', 'movies'),
-('wherewasbrucebannerhidingwhentheshieldtriedtosummonhiminthefirstavengermovie?', 'Where was Bruce Banner hiding when the SHIELD tried to summon him in the first Avenger movie?', 'movies'),
-('whichcoloroflightraysgetsscatteredthemost?', 'Which color of light rays gets scattered the most ?', 'physics'),
-('whichfeatureoftheoopsgivestheconceptofre-usability?', 'Which feature of the OOPS gives the concept of re-usability?', 'c++'),
-('whichmethodisusedtofindgpsenabledordisabledpro-grammaticallyinandroid?', ' Which method is used to find GPS enabled or disabled pro-grammatically in android?', 'android'),
-('whichoperatorcannotbeoverloadedinc++?', 'Which operator can not be overloaded in C++ ?', 'c++'),
-('whohasthesuperpowerattheendofstrangerthingsseason3?', 'Who has the superpower at the end of Stranger Things Season 3 ?', 'movies'),
-('whoisthefatherofnatasharomanoff?', 'Who is the father of Natasha Romanoff?', 'movies'),
-('whoisthefatherofthanos?', 'Who is the father of Thanos ?', 'movies'),
-('whydoesthepulleysysteminmachineshelpsustoreduceoureffortofliftingobjects?', 'Why does the pulley system in machines helps us to reduce our effort of lifting objects ?', 'physics'),
-('workisformofenergywhichisdependenton', 'Work is form of energy which is dependent on', 'physics');
+INSERT INTO `question` (`id`, `name`, `url`, `chapter_id`) VALUES
+(20, 'who is she?', 'uploads/20.jpg', 104),
+(21, 'test question', '', 104),
+(22, 'what is this', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAYAAACKAxD9AAAgAElEQVR4AeydBXRd15X3lTaTdmbaybSZYtqmaRomJ2YGycwUc+yY7cTMbMvMzJYZxMzMzCwLLFlMFj7W0+9b+8rPUbPapl87ieVZPmtd3af78J79P5v3PmY860MH6AEjtGKkBYNyyGM5aAWj0YhGp0ZtVKFFjYZmGqmjlip0GJRD06pBpW+mWdeEzqDGqHyogYZWaJKjBZpbQGNowWBswWg00Nragl5dBaiVH9DS9nVtM9qqA0PjMzO7Zs/ML/1bP9TYBgITwVtahEhGWlu+BocCilZBBCDX5RDwaEHdpEenNiJ0+4vnNEBzq/z5+mhtoMVYh95Yg66lGo2hCgN69LSg0ulpUhtoVOlp1Arc9OiUL/lbP7xjXX/2gWCaT6GZidCmcws0aRvR6jUYDa0K4WkC6oFHQB0YBRAmcMjZAOigtRkMDS3QWA2qOtA2glEFrdrHKNLTip4G+RiNHsGZ8v3Gto9T00q98mGmH9ixz888EHSt2ici4C8IKkQVQDwewhXaBIes3zbxIau5nmYaaKaeJh5RrxzNNKN6fAjZhVnIoWCkBbTCSZqhuaENW3p5wvTCegOtzS3CoJT3mL6/o5+ffSCgVQirzLxpNYt4NhgQkMgQggu5KyghTZuAa7EdJ6L3s9FjBYvuzGX+zdl8cW0mc6/NZPGtL1jt8CXbPdexx38Lx2NucCHJGptsT4JLosloyKWqpQYtWgxoFcFgVFiIHgw60ClfDqIw6NshsYMj4f8EEITQQniR86IbyIoXhVCIX2WoIKowjPO+p1h+bRFTL4xh3DULxtuYM97RnM8dJyvHHKfPmO88lUVuM/jS43OWe3/BKp95TLg3gsnWo5hpPYYFNpNYaTeNzQ5zsHRewH6XRVwPv4pPvhcxtVFk67OoowYVDag1ddAifOTZGM88EISFa1rUCh', 104),
+(23, 'Who is She?', 'uploads/23.jpg', 106);
 
 -- --------------------------------------------------------
 
@@ -360,140 +388,300 @@ INSERT INTO `questions` (`question_id`, `question`, `chapter_id`) VALUES
 --
 
 CREATE TABLE `student` (
-  `user_id` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `department` varchar(50) NOT NULL,
-  `year` set('1','2','3','4') NOT NULL
+  `id` varchar(100) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `stream` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `registration` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `year` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`user_id`, `password`, `name`, `department`, `year`) VALUES
-('GCECTB-R17-3018', '171130110018', 'Rashed Mehdi', 'CSE', '3'),
-('GCECTB-R17-3019', '171130110019', 'Rishav Banerjee', 'CSE', '3'),
-('GCECTB-R17-3024', '171130110024', 'Saranya Naha Roy', 'CSE', '3'),
-('GCECTB-R17-3035', '171130110035', 'Soumya Mukherjee', 'CSE', '3'),
-('root', 'root', 'root', 'root', '3');
+INSERT INTO `student` (`id`, `name`, `stream`, `password`, `registration`, `email`, `year`) VALUES
+('18', 'Rashed', 'CSE', 'root', NULL, NULL, NULL),
+('19', 'Rishav', 'CSE', 'root', NULL, NULL, NULL),
+('20', 'Lucifer', 'CSE', 'root', NULL, NULL, NULL),
+('24', 'Saranya', 'CSE', 'root', NULL, NULL, NULL),
+('30', 'Soumya', 'CSE', 'root', NULL, NULL, NULL),
+('41', 'crush', 'CT', 'root', NULL, NULL, NULL),
+('root', 'root', 'CSE', 'root', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `syllabus`
+-- Table structure for table `student_allocation`
 --
 
-CREATE TABLE `syllabus` (
-  `exam_id` int(10) UNSIGNED NOT NULL,
-  `chapter` varchar(200) NOT NULL,
-  `cchapter` varchar(200) NOT NULL
+CREATE TABLE `student_allocation` (
+  `student_id` varchar(100) NOT NULL,
+  `exam_id` bigint(20) UNSIGNED NOT NULL,
+  `is_active` enum('0','1') NOT NULL,
+  `shuffle` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_allocation`
+--
+
+INSERT INTO `student_allocation` (`student_id`, `exam_id`, `is_active`, `shuffle`) VALUES
+('18', 1524296, '1', '0.2.1'),
+('19', 1524296, '1', '0.2.1'),
+('20', 1524296, '1', '2.1.0'),
+('24', 1524296, '0', '0.1.2'),
+('30', 1524296, '0', '2.0.1'),
+('41', 1524296, '0', '1.2.0'),
+('root', 1524296, '0', '2.0.1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+CREATE TABLE `subject` (
+  `id` varchar(10) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `UG` enum('0','1') NOT NULL,
+  `department` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`id`, `name`, `UG`, `department`) VALUES
+('ES145', 'English', '0', 'CSE'),
+('PS4', 'GAME', '1', 'CSE'),
+('WE782', 'IPL', '1', 'CSE');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `id` varchar(100) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `password` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`id`, `name`, `password`) VALUES
+('19', 'Rishav', 'root'),
+('24', 'Saranya', 'root'),
+('root', 'root', 'root');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `chapters`
+-- Indexes for table `allocation`
 --
-ALTER TABLE `chapters`
-  ADD PRIMARY KEY (`chapter_id`);
+ALTER TABLE `allocation`
+  ADD PRIMARY KEY (`subject_id`,`teacher_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
 
 --
--- Indexes for table `choices`
+-- Indexes for table `attempt_choice`
 --
-ALTER TABLE `choices`
-  ADD PRIMARY KEY (`question_id`,`choice_id`);
+ALTER TABLE `attempt_choice`
+  ADD PRIMARY KEY (`student_id`,`exam_choice_id`),
+  ADD KEY `exam_choice_id` (`exam_choice_id`);
+
+--
+-- Indexes for table `chapter`
+--
+ALTER TABLE `chapter`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `subject_id` (`subject_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
+
+--
+-- Indexes for table `choice`
+--
+ALTER TABLE `choice`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `question_id` (`question_id`);
 
 --
 -- Indexes for table `exam`
 --
 ALTER TABLE `exam`
-  ADD PRIMARY KEY (`exam_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `subject_id` (`subject_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
 
 --
--- Indexes for table `exam_choices`
+-- Indexes for table `exam_choice`
 --
-ALTER TABLE `exam_choices`
-  ADD PRIMARY KEY (`user_id`,`exam_id`,`question`,`choice`),
+ALTER TABLE `exam_choice`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `exam_question_id` (`exam_question_id`);
+
+--
+-- Indexes for table `exam_mark`
+--
+ALTER TABLE `exam_mark`
+  ADD PRIMARY KEY (`student_id`,`exam_question_id`),
+  ADD KEY `exam_question_id` (`exam_question_id`);
+
+--
+-- Indexes for table `exam_question`
+--
+ALTER TABLE `exam_question`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `exam_id` (`exam_id`);
 
 --
--- Indexes for table `exam_marks`
+-- Indexes for table `question`
 --
-ALTER TABLE `exam_marks`
-  ADD PRIMARY KEY (`user_id`,`exam_id`,`question`),
-  ADD KEY `exam_id` (`exam_id`);
-
---
--- Indexes for table `exam_questions`
---
-ALTER TABLE `exam_questions`
-  ADD PRIMARY KEY (`user_id`,`exam_id`,`question`),
-  ADD KEY `exam_id` (`exam_id`);
-
---
--- Indexes for table `questions`
---
-ALTER TABLE `questions`
-  ADD PRIMARY KEY (`question_id`),
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `chapter_id` (`chapter_id`);
 
 --
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `syllabus`
+-- Indexes for table `student_allocation`
 --
-ALTER TABLE `syllabus`
-  ADD PRIMARY KEY (`exam_id`,`chapter`);
+ALTER TABLE `student_allocation`
+  ADD PRIMARY KEY (`student_id`,`exam_id`),
+  ADD KEY `exam_id` (`exam_id`);
+
+--
+-- Indexes for table `subject`
+--
+ALTER TABLE `subject`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teacher`
+--
+ALTER TABLE `teacher`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chapter`
+--
+ALTER TABLE `chapter`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+
+--
+-- AUTO_INCREMENT for table `choice`
+--
+ALTER TABLE `choice`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+
+--
+-- AUTO_INCREMENT for table `exam`
+--
+ALTER TABLE `exam`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1524299;
+
+--
+-- AUTO_INCREMENT for table `exam_choice`
+--
+ALTER TABLE `exam_choice`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- AUTO_INCREMENT for table `exam_question`
+--
+ALTER TABLE `exam_question`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `choices`
+-- Constraints for table `allocation`
 --
-ALTER TABLE `choices`
-  ADD CONSTRAINT `choices_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`question_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `allocation`
+  ADD CONSTRAINT `allocation_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `allocation_ibfk_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `exam_choices`
+-- Constraints for table `attempt_choice`
 --
-ALTER TABLE `exam_choices`
-  ADD CONSTRAINT `exam_choices_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `exam_choices_ibfk_2` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `attempt_choice`
+  ADD CONSTRAINT `attempt_choice_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attempt_choice_ibfk_2` FOREIGN KEY (`exam_choice_id`) REFERENCES `exam_choice` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `exam_marks`
+-- Constraints for table `chapter`
 --
-ALTER TABLE `exam_marks`
-  ADD CONSTRAINT `exam_marks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `exam_marks_ibfk_2` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `chapter`
+  ADD CONSTRAINT `chapter_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `chapter_ibfk_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `exam_questions`
+-- Constraints for table `choice`
 --
-ALTER TABLE `exam_questions`
-  ADD CONSTRAINT `exam_questions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `student` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `exam_questions_ibfk_3` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `choice`
+  ADD CONSTRAINT `choice_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `questions`
+-- Constraints for table `exam`
 --
-ALTER TABLE `questions`
-  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`chapter_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `exam`
+  ADD CONSTRAINT `exam_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `exam_ibfk_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `syllabus`
+-- Constraints for table `exam_choice`
 --
-ALTER TABLE `syllabus`
-  ADD CONSTRAINT `syllabus_ibfk_1` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`exam_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `exam_choice`
+  ADD CONSTRAINT `exam_choice_ibfk_1` FOREIGN KEY (`exam_question_id`) REFERENCES `exam_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `exam_mark`
+--
+ALTER TABLE `exam_mark`
+  ADD CONSTRAINT `exam_mark_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `exam_mark_ibfk_2` FOREIGN KEY (`exam_question_id`) REFERENCES `exam_question` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `exam_question`
+--
+ALTER TABLE `exam_question`
+  ADD CONSTRAINT `exam_question_ibfk_1` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `question`
+--
+ALTER TABLE `question`
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`chapter_id`) REFERENCES `chapter` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `student_allocation`
+--
+ALTER TABLE `student_allocation`
+  ADD CONSTRAINT `student_allocation_ibfk_1` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `student_allocation_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
