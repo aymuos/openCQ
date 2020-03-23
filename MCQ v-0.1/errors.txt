@@ -1,1 +1,5 @@
-connectedconnected
+connectedconnectedDuplicate entry 'NY478-root' for key 'PRIMARY' Line: 30
+MySQL server has gone away Line: 30
+MySQL server has gone away Line: 30
+MySQL server has gone away Line: 30
+connectedconnectedconnectedconnected

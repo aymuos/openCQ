@@ -32,7 +32,7 @@ else {
 
 	$id = $_GET["q"];	//Question id to be deleted
 	//echo $id;
-	
+	$conn = OpenCon();
 	try{
 		$query = "DELETE FROM exam_question WHERE id = ?";
 		execute($conn,$query,"i",[$id],$stmt);

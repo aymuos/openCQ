@@ -47,7 +47,7 @@ if($password === $mpass){
     $_SESSION['usernamemaster'] = $username;
     $is_master = 1;
     #echo "Connected Successfully";
-    header('location: master-dashboard.php');
+    header('location: select_code.php');
 }
 else {
     header('location: testm.php'); 
