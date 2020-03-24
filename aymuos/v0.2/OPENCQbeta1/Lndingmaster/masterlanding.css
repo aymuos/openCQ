@@ -1,6 +1,7 @@
 body{
     background-image:url("bglanding.jpg");
     background-color:hsl(348, 100%, 99%);
+    background-size: 1600px;
 }
 .box{
   /* Basic styling and alignment */
