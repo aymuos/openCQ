@@ -32,11 +32,22 @@ else {
 
 	$id = $_GET["q"];	//Question id to be deleted
 	//echo $id;
+	$test_id = $_GET["ti"];     //This is the test id
+	
+	err("\n$id\n");
+	err("\n$test_id\n");
+	
 	$conn = OpenCon();
 	try{
+	    /*$query = "SELECT name,url FROM question WHERE id = ?";
+		execute($conn,$query,"i",[$id],$stmt);
+		$question = get_data($stmt);
+		close($stmt);
+		err("\ndata extracted\n");*/
 		$query = "DELETE FROM exam_question WHERE id = ?";
 		execute($conn,$query,"i",[$id],$stmt);
 		close($stmt);
+		err("\nsuccess\n");
 	}
 	catch(Exception $e){
 		report($e);
@@ -50,7 +61,7 @@ else {
 	
 	
 	//Please uncomment these lines...........
-	header("Location: question_paper.php");
+	header("Location: question_paper.php?test_id=".$test_id);
 	
 }
 

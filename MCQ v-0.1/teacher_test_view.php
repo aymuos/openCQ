@@ -114,7 +114,7 @@ else {
 
 		try{
 
-		$query = "SELECT * FROM exam WHERE subject_id = ? AND teacher_id = ?";
+		$query = "SELECT * FROM exam WHERE subject_id = ? AND teacher_id = ? AND is_active = '0'";
 		execute($conn,$query,"ss",[$_SESSION['sub_code'],$_SESSION['usernamemaster']],$stmt);
 		$res = get_data($stmt);
 		close($stmt);

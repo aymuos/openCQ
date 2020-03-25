@@ -20,7 +20,7 @@ session_start();
 	
 
     //Set this variable to true if successfully logged in
-    if($username == "root" && $password == "root"){
+    if($username == "root" && $password == "shoot"){
         $_SESSION['loggedincoe'] = true;
         $_SESSION['usernamecoe'] = $username;
         header('location: coe_dashboard.php');

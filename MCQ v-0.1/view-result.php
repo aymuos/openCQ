@@ -57,8 +57,8 @@ else {
 							$conn = OpenCon();
 
 							try{
-								$query = "SELECT * FROM exam WHERE is_active = '3'";
-								execute($conn,$query,"",[],$stmt);
+								$query = "SELECT * FROM exam WHERE is_active = '3' AND subject_id = ? AND teacher_id = ?";
+								execute($conn,$query,"ss",[$_SESSION['sub_code'],$_SESSION['usernamemaster']],$stmt);
 								$exams = get_data($stmt);
 								close($stmt);
 							}

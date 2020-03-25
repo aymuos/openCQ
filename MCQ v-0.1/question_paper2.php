@@ -107,10 +107,10 @@ echo '
     <div class="well name2">
         <p class="name"><b>Paper Name</b><br> Data Sructure and Algorithm Design</p>
     </div>
-		<div class="well counter">
+		<!-- <div class="well counter">
             <p class="name"><b>Questions Selected</b><br></p>
             <input class="box" type="text" value="8" readonly>
-	</div>
+	</div> -->
     <div class="div-button">
 		<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="func()">Preview</button> -->
     </div>
@@ -157,7 +157,7 @@ echo '
 				
 				
 				echo '</td>
-				<td style="text-align: center"><input class="check-box" name="opt" type="checkbox" value="hello"></td>
+				<td style="text-align: center"><input class="check-box" name="opt" type="checkbox" value="'.$value['id'].'"></td>
 			</tr>';
 			
 			

@@ -14,7 +14,7 @@ include 'server_send_code_functions.php';
 	$name = findName($conn,$code);
 	
 	//Put the paper/course/subject name here...
-	echo 'You have selected '.$name;
+	echo $name;
 
 	CloseCon($conn);
 

@@ -199,7 +199,7 @@ else {
 					<a href="#" class="brand-logo center ">OpenCQ test Platform</a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li> <a class="waves-effect waves-light btn grey darken-4" onclick="submit_paper()">
-					SUBMIT <i class="material-icons right">navigate_next</i></a></li>
+					END <i class="material-icons right">navigate_next</i></a></li>
 					</ul>
 					<div class="tlogo" style=" ">
 						<img class="logo" src="logo256.png" width="100%" alt="Avatar"></img>  
@@ -318,7 +318,7 @@ else {
 	<div id="test'.$ct.'">
 		<div class="card-content">
 			<div><b>Question '.$ct.' :</b></div>
-			<input id="ques_id1" type="text" value="';
+			<input id="ques_id'.$ct.'" type="text" value="';
 			
 			
 			

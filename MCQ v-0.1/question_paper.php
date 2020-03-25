@@ -58,7 +58,7 @@ echo '
 			}
 			function delete_func(ques_id){
 				if (confirm("Are you sure you want to delete this question?")) {
-					window.location.href = "question_paper3.php?q=" + encodeURIComponent(ques_id);
+					window.location.href = "question_paper3.php?ti='.$test_id.'&q=" + encodeURIComponent(ques_id);
 				}
 			}
 			function submit(){
@@ -302,7 +302,7 @@ echo '
 	echo '
 	<div class="div-preview">
 		<button class="btn btn-danger btn-down" onclick="window.location.href = \'master-dashboard.php\'">Back</button>
-		<button class="btn btn-primary btn-down" onclick=" window.open(\'preview_question_paper.php\',\'_blank\')">Preview Question Paper</button>
+		<button class="btn btn-primary btn-down" onclick=" window.open(\'preview_question_paper.php?ti='.$test_id.'\',\'_blank\')">Preview Question Paper</button>
 		<button class="btn btn-success btn-down" onclick="submit()"';
 		
 		

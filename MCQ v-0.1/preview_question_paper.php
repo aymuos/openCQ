@@ -33,14 +33,14 @@ else {
 	
 	$conn = OpenCon();
 	try{
-		$query = "SELECT * FROM subject WHERE id =?";
-		execute($conn,$query,"s",[$_SESSION['sub_code']],$stmt);
-		$subject = get_data($stmt);
-		close($stmt);
 
 		$query = "SELECT * FROM exam WHERE id = ?";
 		execute($conn,$query,"i",[$test_id],$stmt);
 		$exam = get_data($stmt);
+		close($stmt);
+		$query = "SELECT * FROM subject WHERE id =?";
+		execute($conn,$query,"s",[$exam[0]['subject_id']],$stmt);
+		$subject = get_data($stmt);
 		close($stmt);
 
 		$query = "SELECT id,name,url FROM exam_question WHERE exam_id = ?";
@@ -88,7 +88,7 @@ else {
 					
 					
 					//Echo the Sem number............
-					echo 'Jani Na';
+					echo '';
 					
 					
 					echo ' / Code - ';

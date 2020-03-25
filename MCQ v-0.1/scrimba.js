@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded",function(){
             duration: 200
             
         });
-    })
+    });
 
 
 //following js for back-to-top button
@@ -59,7 +59,7 @@ function save_opt(q_num,q_id){
 	var radios = document.getElementsByName("option"+q_num);
 	var id = 0;
 	for(var i = 0 ; i<radios.length ; i++){
-		if(radios[i].checked == true){
+		if(radios[i].checked === true){
 			id = radios[i].value;
 		}
 	}
@@ -92,11 +92,11 @@ function onTimerElapsed(){
 	var sec = document.getElementById("secs").innerHTML ;
 	sec++;
 	sec = sec%60;
-	if(sec == 0){
+	if(sec === 0){
 		var min = document.getElementById("mins").innerHTML ;
 		min++;
 		min = min%60;
-		if(min == 0){
+		if(min === 0){
 			var hr = document.getElementById("hrs").innerHTML ;
 			hr++;
 			document.getElementById("hrs").innerHTML = hr;
@@ -122,7 +122,7 @@ var change_window = 0;
 function openFullscreen() {
 	ok=1;
 	document.getElementById("initial_message").style.display = "none";
-	if(full_screen == 0){
+	if(full_screen === 0){
 		document.getElementById("exam_page").style.display = "block";
 		document.getElementById("initial-head").style.display = "none";
 	}
@@ -144,7 +144,7 @@ $(document).ready(function(){
 	myVar = setInterval("showTime()", 1000);
 });
 
-function isFullscreen(){ return 1 >= outerHeight - innerHeight };
+function isFullscreen(){ return 1 >= outerHeight - innerHeight }
 
 
 //Checks if the window is in full screen or not and prints the necessary messages
@@ -209,7 +209,7 @@ function final_func(){
 function change_func(){
 	alert("WARNING: Changing window again will automatically end your exam!");
 }
-		//Prevents up down etc arrow  key
+//Prevents up down etc arrow  key
 $(document).keydown(function(e) {
 	if(e.which >= 37 && e.which <= 40){
 		e.preventDefault();
@@ -238,6 +238,7 @@ $(document).keydown(function (event) {
 			
 
 //Prevents right click
+
 $(document).bind("contextmenu",function(e){
   return false;
 });

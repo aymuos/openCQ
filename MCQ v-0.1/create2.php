@@ -15,7 +15,7 @@ $conn = OpenCon();
 try{
 
 
-	$query = "INSERT INTO student(user_id, password, name, stream, year, email, registration) VALUES (?,?,?,?,?,?,?)";
+	$query = "INSERT INTO student(id, password, name, stream, year, email, registration) VALUES (?,?,?,?,?,?,?)";
 	execute($conn,$query,"sssssss",[$roll,$psw,$name,$dept,$year,$email,$reg],$stmt);
 
 	close($stmt);

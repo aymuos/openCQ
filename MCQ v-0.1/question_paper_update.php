@@ -58,20 +58,23 @@ else {
 		if($_GET["q".$i] != -1){
 			//Add this question to the db.....
 			$ques_id = $_GET["q".$i];
+			err($ques_id);
+			//echo $ques_id;
 			//exit("hamba");
 			try{
 				$conn->autocommit(FALSE);
 
 				$query = "INSERT INTO exam_question(name,url,exam_id,chapter_name) VALUES (?,?,?,?)";
-				execute($conn,$query,"ssss",[$value['name'],$value['url'],$test_id,$r[0]['name']],$stmt);
+				execute($conn,$query,"ssis",[$value['name'],$value['url'],$test_id,$r[0]['name']],$stmt);
 				$idd = $conn->insert_id;
+				err('<br>'."insert id = ".$idd.'<br>');
 				close($stmt);
-
+                err("question inserted");
 				$query = "SELECT * FROM choice WHERE question_id = ? ORDER BY is_right DESC";
 				execute($conn,$query,"i",[$value['id']],$stmt);
 				$choice = get_data($stmt);
 				close($stmt);
-
+				err("searched thor");
 				//exit("hamba");
 				$query = "INSERT INTO exam_choice(name,url,exam_question_id,is_right) VALUES (?,?,?,'1')";
 				execute($conn,$query,"ssi",[$choice[0]['name'],$choice[0]['url'],$idd],$stmt);
@@ -88,8 +91,8 @@ else {
 				$query = "INSERT INTO exam_choice(name,url,exam_question_id,is_right) VALUES (?,?,?,'0')";
 				execute($conn,$query,"ssi",[$choice[3]['name'],$choice[3]['url'],$idd],$stmt);
 				close($stmt);
-
-
+				
+                err("there are 4 brothers");
 				$conn->autocommit(TRUE);
 
 
@@ -98,7 +101,7 @@ else {
 			{
 				$conn->rollback();
 				report($e);
-
+                //echo "hello";
 			
 			}
 			$i = $i + 1;
