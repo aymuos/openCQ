@@ -220,7 +220,7 @@ echo '
 			$hambacount = 0;
 			foreach($exam_question as $v){
 				$query = "SELECT * FROM exam_mark WHERE student_id = ? AND exam_question_id = ?";
-				execute($conn,$query,"is",[$result[0]['id'],$v['id']],$stmt);
+				execute($conn,$query,"si",[$result[0]['id'],$v['id']],$stmt);
 				$mark = get_data($stmt);
 				close($stmt);
 				if($mark[0]['mark']==1){
