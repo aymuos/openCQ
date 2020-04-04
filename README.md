@@ -17,4 +17,4 @@ Tools used:
  
  # INTERNET NETWORK CONNECTION WILL BE APPRECIATED ALTHOUGH NOT ABSOLUTELY NECESSARY
  
- 
+ We have tried to use minimalistic material design language with traces of neumorphism ui in this platform.
