@@ -58,13 +58,13 @@ else {
 	<div class="button-container">
 	<div class="btn-group-vertical">
 		<button type="button" class="btn btn-primary " onclick="location.href=\'add-a-chap.php\'">Add a chapter</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-chap.php\'">Delete a chapter</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-chap.php\'" disabled>Delete a chapter</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'add-a-ques.php\'">Add a question</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'">Modify a question</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-ques.php\'">Delete a question</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'mod-a-ques.php\'" disabled>Modify a question</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'del-a-ques.php\'" disabled>Delete a question</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'view-result.php\'">View Result</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'teacher_test_view.php\'">Test dashboard</button>
-		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'">Password Reset</button>
+		<button type="button" class="btn btn-primary" onclick="location.href=\'resetpsswd.php\'" disabled>Password Reset</button>
 		<button type="button" class="btn btn-primary" onclick="location.href=\'select_code.php\'">Change Subject / Course</button>
 	</div>
 	</div>

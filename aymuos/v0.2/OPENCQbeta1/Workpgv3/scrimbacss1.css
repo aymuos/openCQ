@@ -66,3 +66,9 @@
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+
+.tlogo{
+	width: 100px;
+	background-color: red !important;
+}

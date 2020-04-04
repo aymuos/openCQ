@@ -46,6 +46,8 @@
 		}
 		//exit("hamba");
 		$conn->autocommit(TRUE);
+		echo "answer is saved successfully";
+		
 	}
 	catch(Exception $e){
 		$conn->rollback();

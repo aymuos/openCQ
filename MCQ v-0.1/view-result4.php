@@ -155,7 +155,7 @@ else {
 		
 		
 		//Please put the students name here...........
-		echo $student[0]['id'];
+		echo $student[0]['name'];
 		
 		
 		 echo '</font></b></p>
@@ -251,7 +251,7 @@ echo '<div id="form_wrapper">';
 		
 		
 		
-		$img = 0;		//if there is an image then this if condition is satisfied...
+		$img = 1;		//if there is an image then this if condition is satisfied...
 		if($img == 1){
 			echo '<img style="max-width: 800;" src="';
 			
@@ -260,7 +260,7 @@ echo '<div id="form_wrapper">';
 			echo $value['url'];
 			
 			
-			echo '>';
+			echo '">';
 			
 		}
 		
@@ -299,8 +299,6 @@ echo '<div id="form_wrapper">';
 		execute($conn,$query,"si",[$student_id,$p[1]['id']],$stmt);
 		$atm = get_data($stmt);
 		close($stmt);
-		//Do not do anything
-		echo '</textarea><br><br><form><input type="radio"'; 
 				
 				
 		//If option 1 has to be marked then please put a condition in the if statement that is true.
@@ -332,8 +330,7 @@ echo '<div id="form_wrapper">';
 		execute($conn,$query,"si",[$student_id,$p[2]['id']],$stmt);
 		$atm = get_data($stmt);
 		close($stmt);
-		//Do not do anything
-		echo '</textarea><br><br><form><input type="radio"'; 
+
 				
 				
 		//If option 1 has to be marked then please put a condition in the if statement that is true.
@@ -366,7 +363,6 @@ echo '<div id="form_wrapper">';
 				$atm = get_data($stmt);
 				close($stmt);
 				//Do not do anything
-				echo '</textarea><br><br><form><input type="radio"'; 
 						
 						
 				//If option 1 has to be marked then please put a condition in the if statement that is true.

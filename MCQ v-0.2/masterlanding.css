@@ -1,0 +1,43 @@
+body{
+    background-image:url("bglanding.jpg");
+    background-color:hsl(348, 100%, 99%);
+    background-size: 1600px;
+}
+.box{
+  /* Basic styling and alignment */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:100px;
+  border-radius:40px;
+  width:950px;
+  height:550px;
+    /* Basic styling and alignment */
+  /* For Neumorphism Effect */
+  background-color:#E0E5EC;
+box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.5);
+    /* For Neumorphism Effect */
+}
+
+/*neumorphism box ends */
+p{
+    line-height: .95;
+    color: hsl(177, 69%, 10%);
+    font-weight: 90;
+    font-size: 50px;
+    padding-top: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
+
+
+.buttons-placement{
+      padding-top:120px;
+      padding-right: 20px;
+      justify-content: center;
+      
+  }
