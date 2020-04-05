@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add teacher</title>
+    
+    <link rel="icon" href="brandinglogo.png" type="image/icon type">
+    <script >
+       (function($){
+ 
+  $(function(){
+ 
+    // Plugin initialization
+ 
+    $('select').not('.disabled').formSelect();
+ 
+  });
+ 
+})(jQuery); // end of jQuery name space
+ 
+    
+    
+    </script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+    <link rel="stylesheet" href="teacher-csses.css" type="text/css">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+ <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+</head>
+<body>
+
+     
+    <nav>
+    <div class="row">
+    <div class="nav-wrapper light-blue darken-4 col s12">
+      <a href="#" class="brand-logo">     Teacher Section</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Back to previous page </a></li>
+        
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+
+
+  <!--navigation bar ends-->
+  <div id="centering">
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card wide white z-depth-5">
+        <div class="card-content  indigo-text">
+          <span class="card-title center"><h4>Enter Faculty Details</h4></span>
+          
+<!--bhetorer maal-->
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+      <div class="input-field col s2">
+      <i class="material-icons prefix">label</i>
+          <input placeholder="(Mr/Mrs/Dr/Prof)" id="honortitle" type="text" class="validate">
+          <label for="last_name">Honorifics</label>
+        </div>
+        <div class="input-field col s5">
+        <i class="material-icons prefix">face</i>
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s5">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+    
+
+    <!--following code horizontal space take 6 r6 e brak koreche first 6 ta kaaj korche but drop down ta kaaj korche na-->
+<div class="row">
+        <div class="input-field col s6">
+                <i class="material-icons prefix">business_center</i>
+            <input placeholder="Professor/Assistant Professor/Head of the Department/Teaching Asssistant/ Visiting Faculty " id="designation" type="text" class="validate">
+            <label for="designation">Designation</label>
+        </div>
+    
+        <!--<div class="input-field col s6">
+        <label>Select Stream</label>
+               <select class=”browser-default”>
+                  <option value = "" disabled selected>Streams</option>
+                  <option value = "1">CSE</option>
+                  <option value = "2">CT</option>
+                  <option value = "3">IT</option>
+                  <option value = "4">General Science</option>
+               </select>
+    
+        </div>-->
+<!--eta kaaj korche na// probably kono jquery initialization korte heb-->
+ <!--eta cholbe <div class="input-field col s6">
+                <i class="material-icons prefix"></i>
+            <input placeholder="CSE/IT/CT/GS" id="stream" type="text" class="validate">
+            <label for="stream">Stream</label>
+        </div> -->
+
+        <div class=" inline col s6">
+    Choose Stream:
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>IT     </span>
+      </label>
+      <label>
+        <input  name="group1" type="radio" />
+        <span>CSE   </span>
+      </label>
+   
+      <label>
+        <input  name="group1" type="radio"  />
+        <span>CT   </span>
+      </label>
+      <label>
+        <input name="group1" type="radio" />
+        <span>General Science    </span>
+      </label>
+</div>
+</div>
+
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">house</i>
+          <input placeholder="Enter full address " id="address" type="text" class="validate">
+          <label for="address">Address</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s6">
+        <i class="material-icons prefix">alternate_email</i>
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+          <span class="helper-text" data-error="wrong format" data-success="Success"></span>
+        </div>
+
+        <div class="input-field col s6">
+        <i class="material-icons prefix">local_phone</i>
+        <input placeholder="Contact Number" id="phoneno" type="tel" class="validate"pattern="[0-9]{10}"        >
+        <label for="phoneno">Contact Number</label>
+        <span class="helper-text" data-error="wrong format" data-success="Success"></span>
+      </div>
+    </form>
+  </div>
+
+        </div>
+        <div class="card-action center">
+         <a class="waves-effect waves-light red accent-3 center z-depth-4 btn"><i class="material-icons right">refresh</i>Refresh Entries</a> 
+
+         <a onclick="M.toast({html: 'Password saved succesfully!  :)',classes:'rounded'})" class="waves-effect waves-light teal darken-4 center z-depth-4 btn "><i class="material-icons right">save</i>Save & Continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>       
+</body>
+</html>
