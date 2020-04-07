@@ -10,7 +10,7 @@ function OpenCon()
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
- $db = "id12989433_newmcq";
+ $db = "newmcq";
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
  if($conn->connect_error){
  	exit("Error in connecting to database");
@@ -61,7 +61,10 @@ function CloseCon(&$conn)
  function report($e){
  	err($e->getMessage()." Line: ".strval($e->getLine())."\n");
  }
- function get_user(){
+ function get_student(){
  	return $_SESSION['username'];
+ }
+ function get_teacher(){
+	 return $_SESSION['usernamemaster'];
  }
 ?>

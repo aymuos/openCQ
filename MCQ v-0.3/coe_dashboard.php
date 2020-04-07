@@ -84,8 +84,10 @@ echo '
 						<div class="card-content lime-text darken-4">
 							<!-- <span class="card-title"><p class="cj">Examination Control</p></span> -->
 							<!-- inside the Card-->
-							<a class="waves-effect brown darken-1 col s6 waves-light btn" href="coe_exams_present.php"><i class="material-icons left">assessment</i>VIEW RUNNING EXAMS</a>
-							<a class="col s3"> </a>
+							<a class="waves-effect brown darken-1 col s4 waves-light btn" href="coe_exams_present.php"><i class="material-icons left">assessment</i>VIEW RUNNING EXAMS</a>
+								<a class="col s1"> </a>
+							<a class="waves-effect green col s3 waves-light btn" href="coe_exams_past.php"><i class="material-icons left">highlight_off</i>Past Exams</a>
+								<a class="col s1"> </a>
 							<a class="btn waves-effect red col s3 waves-light " href="#modal1" >
 								<i class="material-icons left">highlight_off</i>CLOSE ALL EXAMS</a>
 							<!--<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">highlight_off</i></a> -->
@@ -107,11 +109,12 @@ echo '
 							<!-- inside the Card-->
 							<a class="waves-effect deep-purple darken-4 col s4 waves-light btn" href="coe_exams_future.php">
 								<i class="material-icons left">assessment</i>AVAILABLE EXAMS</a>
+								
 							<a class="col s1"> </a>
 							<a class="waves-effect pink col s3 z-depth-4 waves-light btn" href="coe_availablesubcodes.php">
 								<i class="material-icons left" >explore</i>Subject codes</a>
 							<a class="col s1"> </a>
-							<a class="waves-effect red col s3 waves-light btn" href="coe_exams_past.php"><i class="material-icons left">highlight_off</i>Past Exams</a>
+							<a class="waves-effect blue col s3 waves-light btn" href="add-teacher.php"><i class="material-icons left">highlight_off</i>Add Teacher</a>
 						</div>
 					</div>
 				</div>

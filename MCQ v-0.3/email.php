@@ -44,8 +44,7 @@ try {
            <img src="https://i.imgur.com/hjW89nr.jpg" alt="logo" width="460" height="345">
            <p>
                Here is your drive link <a href = "https://drive.google.com/folderview?id=1eCWyOYfo3CrmBcSxG5HTWTj7rESTMesO">drive</a> 
-               //<br>
-               //This mail has been sent by this script <a href = "www.google.com">code</a>
+               
            </p>
        </body>
    </html>
