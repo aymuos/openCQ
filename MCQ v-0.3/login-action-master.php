@@ -17,7 +17,7 @@ $conn = OpenCon();
 $username=$_POST['uname']; 
 $password=$_POST['psw']; 
 try{
-    $query = "SELECT id,password FROM teacher WHERE id = ? LIMIT 1";
+    $query = "SELECT id,password,isFirstLogin FROM teacher WHERE id = ? LIMIT 1";
     execute($conn,$query,"s",[$username],$stmt);
     $res = get_data($stmt);
     close($stmt);
@@ -47,6 +47,13 @@ if($password === $mpass){
     $_SESSION['usernamemaster'] = $username;
     $is_master = 1;
     #echo "Connected Successfully";
+	if($res[0]['isFirstLogin'] == 1){
+		$query = "UPDATE `teacher` SET `isFirstLogin` = 0 WHERE id = ?";
+		execute($conn,$query,"s",[$username],$stmt);
+		close($stmt);
+		header('location: teacher-details.php');
+	}
+	else 
     header('location: select_code.php');
 }
 else {
@@ -55,3 +62,6 @@ else {
 
 #CloseCon($conn);
 ?>
+
+
+
