@@ -99,7 +99,17 @@ echo '
       <a href="#" class="brand-logo">     Change Faculty Password</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 		<li><a href="teacher-details.php">Account</a></li>
-        <li><a href="master-dashboard.php">Dashboard</a></li>
+        <li><a href="';
+		
+		
+		
+		if(isset($_SESSION["sub_code"]))
+			echo 'master-dashboard.php';
+		else echo 'select_code.php';
+		
+		
+		
+		echo '">Dashboard</a></li>
         
             </ul>
         </div>

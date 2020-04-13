@@ -101,6 +101,14 @@ else {
 						M.Toast.dismissAll();
 						var str = this.responseText;
 						M.toast({html: str,classes:\'rounded\'});
+						document.getElementById("honortitle").readOnly = true;
+						document.getElementById("first_name").readOnly = true;
+						document.getElementById("last_name").readOnly = true;
+						document.getElementById("designation").readOnly = true;
+						document.getElementById("group1").disabled = true;
+						document.getElementById("address").readOnly = true;
+						document.getElementById("email").readOnly = true;
+						document.getElementById("phoneno").readOnly = true;
 					}
 				};
 				xhttp.open("POST", "update_teacher_details.php", true);
@@ -114,6 +122,26 @@ else {
 										+ "&email=" + encodeURIComponent(email)
 										+ "&phoneno=" + encodeURIComponent(phoneno));
 			}
+			
+			
+			
+			
+			function editDetails(){
+				M.toast({html: \'You can edit the details now! :)\',classes:\'rounded\'});
+				document.getElementById("honortitle").readOnly = false;
+				document.getElementById("first_name").readOnly = false;
+				document.getElementById("last_name").readOnly = false;
+				document.getElementById("designation").readOnly = false;
+				document.getElementById("group1").disabled = false;
+				document.getElementById("address").readOnly = false;
+				document.getElementById("email").readOnly = false;
+				document.getElementById("phoneno").readOnly = false;
+			}
+			
+			
+			
+			
+			
 		</script>
 </head>
 <body>
@@ -125,7 +153,19 @@ else {
       <a href="#" class="brand-logo">     Teacher Section</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 		<li><a href="change-teacher-password.php">Change Password</a></li>
-        <li><a href="select_code.php">Dashboard </a></li>
+        <li><a href="';
+		
+		
+		
+		
+		if(isset($_SESSION["sub_code"]))
+			echo 'master-dashboard.php';
+		else echo 'select_code.php';
+		
+		
+		
+		
+		echo '">Dashboard </a></li>
         
             </ul>
         </div>
@@ -148,7 +188,7 @@ else {
       <div class="row">
       <div class="input-field col s2">
       <i class="material-icons prefix">label</i>
-          <input placeholder="(Mr/Mrs/Dr/Prof)" id="honortitle" type="text" class="validate" value="'.$details['hontitle'].'">
+          <input placeholder="(Mr/Mrs/Dr/Prof)" id="honortitle" type="text" class="validate" value="'.$details['hontitle'].'" readonly>
           <label for="last_name">Honorifics</label>
         </div>
         <div class="input-field col s5">
@@ -162,7 +202,7 @@ else {
 
 		  echo $details['name'];
 		  
-		  echo '">
+		  echo '" readonly>
           <label for="first_name">First Name</label>
         </div>
         <div class="input-field col s5">
@@ -173,7 +213,7 @@ else {
 		  echo $details['lastname'];
 		  
 		  
-		  echo '">
+		  echo '" readonly>
           <label for="last_name">Last Name</label>
         </div>
       </div>
@@ -190,13 +230,13 @@ else {
 			echo $details['designation'];
 			
 			
-			echo '">
+			echo '" readonly>
             <label for="designation">Designation</label>
         </div>
     
         <div class="input-field col s6">
         <!-- <label style="color: #000000;">Select Stream : </label> -->
-               <select id="group1" class="browser-default" style="margin-left: 100px;width: 450px">
+               <select id="group1" class="browser-default" style="margin-left: 100px;width: 450px" disabled>
                   <option value = "" disabled'; 
 				  
           $ct = 1;
@@ -208,7 +248,7 @@ else {
 				  
 				  
 				  
-				  echo '>--------------------Please Select the Stream--------------------</option>
+				  echo ' disabled>--------------------Please Select the Stream--------------------</option>
                   <option value = "CSE"';
 				  
 				  
@@ -299,7 +339,7 @@ else {
 		
 			
 
-		  echo'">
+		  echo'" readonly>
           <label for="address">Address</label>
         </div>
       </div>
@@ -314,7 +354,7 @@ else {
 		  
 		  
 		  
-		  echo '">
+		  echo '" readonly>
           <label for="email">Email</label>
           <span class="helper-text" data-error="wrong format" data-success="Success"></span>
         </div>
@@ -328,7 +368,7 @@ else {
 		echo $details['contact'];
 		
 		
-		echo '">
+		echo '" readonly>
         <label for="phoneno">Contact Number</label>
         <span class="helper-text" data-error="wrong format" data-success="Success"></span>
       </div>
@@ -338,7 +378,7 @@ else {
         </div>
         <div class="card-action center">
          <!-- <a class="waves-effect waves-light red accent-3 center z-depth-4 btn"><i class="material-icons right">refresh</i>Refresh Entries</a>  -->
-
+		 <a onclick="editDetails()" class="waves-effect waves-light blue darken-4 center z-depth-4 btn "><i class="material-icons right">edit</i>Edit Details</a>
          <a onclick="saveDetails()" class="waves-effect waves-light teal darken-4 center z-depth-4 btn "><i class="material-icons right">save</i>Save & Continue</a>
         </div>
       </div>
