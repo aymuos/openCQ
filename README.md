@@ -15,6 +15,14 @@ Tools used:
  3.Popular Web Browsers
  
  
- # INTERNET NETWORK CONNECTION WILL BE APPRECIATED ALTHOUGH NOT ABSOLUTELY NECESSARY
+ # INTERNET NETWORK CONNECTION needed to load styles 
  
- We have tried to use minimalistic material design language with traces of neumorphism ui in this platform.
+ We have tried to use minimalistic material design language and traces of neumorphism ui in this platform.
+
+Created by:
+    Rashed Mehdi(rash42)
+    Rishav Banerjee(rishUV)
+    Saranya Naha Roy(asarynal)
+    Soumya Mukherjee(aymuos)
+    
+    R2S2|A2R2

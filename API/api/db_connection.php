@@ -4,20 +4,14 @@ function OpenCon()
 	 
 	 
 	 
-	 
-	 
-	 
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
- $db = "newmcq";
+ $db = "opencq";
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
  if($conn->connect_error){
  	exit("Error in connecting to database");
  }
-
-
-
 $conn->set_charset("utf8mb4");
  #echo "Connected Successfully";
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
