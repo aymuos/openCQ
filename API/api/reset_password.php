@@ -1,7 +1,7 @@
 <?php
 	require('library.php');
 	require('receiver_header.php');
-	
+
 
 
 	if(!isset($_POST["key"])){
@@ -20,9 +20,9 @@
 		echo json_encode($arr);
 		exit();
 	}
-	else if(!isset($_POST["password"])){
+	else if(!isset($_POST["new_password"])){
 		$status = 'FAIL';
-		$comment = 'undefined parameter: password';
+		$comment = 'undefined parameter: new_password';
 		$arr = array( 	'status' => $status,
 						'comment' => $comment);
 		echo json_encode($arr);
@@ -39,7 +39,7 @@
 	else{
 		$sender_key = $_POST['key'];
 		$sender_username = $_POST['username'];
-		$sender_password = $_POST['password'];
+		$sender_new_password = $_POST['new_password'];
 		$sender_category = $_POST['category'];
 		if($sender_key != $key){
 			$status = 'FAIL';
@@ -66,14 +66,14 @@
 			echo json_encode($arr);
 			exit();
 		}
-		
-		
-		
 		try{
 			Query::init();
-			$q = new Query("SELECT * FROM ".$profile." WHERE username = ? AND isActive = '1'","s");
-			$q->execute([$sender_username]);
-			$student = $q->data();
+			$query = "SELECT * FROM ".$profile." WHERE username = ? AND isActive = '1'";
+			$q1 = new Query($query,"s");
+			$q1->execute([$sender_username]);
+			$student = $q1->data();
+			
+
 			if(!$student){
 				$status = 'FAIL';
 				$comment = 'incorrect username: ';
@@ -82,27 +82,17 @@
 				echo json_encode($arr);
 				exit();
 			}
-			else if($student[0]['password'] != $sender_password){
-				$status = 'FAIL';
-				$comment = 'incorrect password';
-				$arr = array( 	'status' => $status,
-								'comment' => $comment);
-				echo json_encode($arr);
-				exit();
-			}
 			else{
-				if($student[0]['isFirstLogin'] == '1'){
-					$resp = 'yes';
-					$q = new Query("UPDATE ".$profile." SET `isFirstLogin` = '0' WHERE username = ? AND isActive = '1'","s");
-					$q->execute([$sender_username]);
-				}
-				else
-					$resp = 'no';
+				$query = "UPDATE ".$profile." SET password = ? WHERE username = ? AND isActive = '1'";
+				$q1 = new Query($query,"ss");
+				$q1->execute([$sender_new_password,$sender_username]);
+				
+				
 				$status = 'OK';
-				$comment = 'login successful';
+				$comment = 'password updated successfully';
 				$arr = array( 	'status' => $status,
-								'comment' => $comment,
-								'is first login' => $resp);
+								'comment' => $comment
+								);
 				echo json_encode($arr);
 				exit();
 			}
