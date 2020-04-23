@@ -2,6 +2,6 @@
 
 //This should be present.
 header("Content-Type:application/json");
-$key = "hJxBHbjbJBJUbdjkHldcsjbBVD";
+define("key","SaranyaIs100%PornStar");
 
 ?>
