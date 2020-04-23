@@ -1,4 +1,6 @@
 <?php
+
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 class Query{
     public static $conn;
@@ -101,7 +103,7 @@ class Query{
     }
 
     public function __destruct(){
-        $this->stmt->close();
+        if($this->stmt != null) $this->stmt->close();
     }
 
     public static function destroy(){
@@ -114,6 +116,7 @@ function err($e){
     error_log($e,3,"errors.txt");
 }
 function report($e){
+
     err("----------ERROR----------\n");
     $error = $e->getCode();
     $message = $e->getMessage();
@@ -131,6 +134,41 @@ function report($e){
 
 function noSpace($a){
 	return strtolower(preg_replace('/\s/','',$a));
+}
+
+function checkSet($parameters,$type=0){
+    if($type==0){
+        $check = $_GET;
+    }
+    else{
+        $check = $_POST;
+    }
+    foreach($parameters as $key){
+        if(isset($check["$key"])){
+
+        }
+        else{
+            return [0,"undefined parameter: $key"];
+        }
+    }
+    return [1,""];
+}
+
+function wordXP(string $word){
+    return '('.preg_quote(strtolower($word),'/').')';
+}
+
+function XP(string $word){
+    $word = ltrim($word);
+    $word = rtrim($word);
+    $arr = preg_split("/(\s)+/",$word,null,PREG_SPLIT_NO_EMPTY);
+    // var_dump($arr);
+    foreach($arr as &$value){
+        $value = wordXP($value);
+
+    }
+    //var_dump($arr);
+    return '^(\\s)*'.implode('(\\s)+',$arr).'(\\s)*$';
 }
 
 ?>

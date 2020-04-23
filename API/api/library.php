@@ -154,5 +154,21 @@ function checkSet($parameters,$type=0){
     return [1,""];
 }
 
+function wordXP(string $word){
+    return '('.preg_quote(strtolower($word),'/').')';
+}
+
+function XP(string $word){
+    $word = ltrim($word);
+    $word = rtrim($word);
+    $arr = preg_split("/(\s)+/",$word,null,PREG_SPLIT_NO_EMPTY);
+    // var_dump($arr);
+    foreach($arr as &$value){
+        $value = wordXP($value);
+
+    }
+    //var_dump($arr);
+    return '^(\\s)*'.implode('(\\s)+',$arr).'(\\s)*$';
+}
 
 ?>
