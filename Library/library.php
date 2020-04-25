@@ -171,4 +171,112 @@ function XP(string $word){
     return '^(\\s)*'.implode('(\\s)+',$arr).'(\\s)*$';
 }
 
+// class Question{
+//     public $id;
+//     public $weight;
+//     public $value;
+//     public function __construct($id,$value="",$weight=0){
+//         $this->id = $id;
+//         $this->weight = $weight;
+//         $this->value = $value;
+//     }
+
+// }
+
+// class Choice extends Question{
+//     public $isRight;
+//     public $isMarked;
+//     public __construct($id,$value="",$weight=0,$isRight=0,$isMarked=0){
+//         $this->id=$id;
+
+//     }
+// }
+
+// function qdata($id){
+//     $statement="";
+//     $choice = [];
+
+  
+  
+//     for($i=1;$i<=)
+// }
+
+function checkValid($key,$id){
+    if($id==""){
+        return [0,"incorrect $key: $id"];
+    }
+    for($i=0;$i<strlen($id);$i++){
+        $c = $id[$i];
+        $ass = ord($c);
+        // echo "$ass\n";
+        if($ass<48 || $ass>57){
+            return [0,"incorrect $key: $id"];
+        }
+
+    }
+    return [1,""];
+}
+
+
+function stripText($text, $tags = '', $invert = FALSE) {
+
+    preg_match_all('/<(.+?)[\s]*\/?[\s]*>/si', trim($tags), $tags);
+    //  var_dump($tags);
+    $tags = array_unique($tags[1]);
+    
+    if(is_array($tags) AND count($tags) > 0) {
+      if($invert == FALSE) {
+          
+        return strip_tags(preg_replace('@<(?!(?:'. implode('|', $tags) .')\b)(\w+)\b.*?>@si', '', $text));
+      }
+      else {
+          
+        return strip_tags(preg_replace('@<('. implode('|', $tags) .')\b.*?>@si', '', $text));
+      }
+    }
+    elseif($invert == FALSE) {
+      return strip_tags(preg_replace('@<(\w+)\b.*?>@si', '', $text));
+    }
+    return strip_tags($text);
+  }
+
+function weigh($str){
+    
+    $text = stripText($str,'<img>',TRUE);
+    
+    $text = strtolower(trim($text));
+    //echo $text;
+    $arr = preg_split("/(\s)+/",$text,null,PREG_SPLIT_NO_EMPTY);
+    // var_dump($arr);
+    $all = 0;
+    $both=0;
+    foreach($arr as $value){
+        if($value=='none'){
+            return 50;
+        }
+        else if($value=='all'){
+            $all=1;
+        }
+        else if($value=='both'){
+            $both=1;
+        }
+    }
+    if($all==1){
+        return 30;
+    }
+    if($both==1){
+        return 20;
+    }
+    return 0;
+}
+
+// echo weigh('
+// <h1 style="text-align: center; ">
+//   Hi, I\'m Textbox.io!</h1>
+// <p>all of the above</p>
+// <img src="none"></img>
+
+// ')
+ 
+
 ?>
