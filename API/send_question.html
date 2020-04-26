@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="textboxio/textboxio/textboxio.js"></script>
+	<style>
+		#editableDiv {
+    margin:10px 0;
+    height: 400px;
+	width: 90%;
+}
+
+#option1, #option2, #option3, #option4 {
+    margin:10px 0;
+    height: 300px;
+	width: 90%;
+}
+
+
+	</style>
+	<script>
+		
+	</script>
+</head>
+<body>
+  <h1 style="text-align: center">Sample script to send Question</h1>
+  <form style="padding-left:10%;" method="post" action="send_ques.php" enctype="multipart/form-data">
+	
+	<h3>Question Statement:</h3>
+	<textarea id="editableDiv" name="statement">
+		Please enter the question here.
+	</textarea>
+	<br><br>
+	
+	
+	<h3>Correct Answer:</h3>
+	<textarea id="option1" name="ac">
+		Please enter the correct option here.
+	</textarea>
+	<br><br>
+	
+	
+	<h3>Incorrect Answer 1:</h3>
+	<textarea id="option2" name="wa1">
+		Please enter the  incorrect option 1 here.
+	</textarea>
+	<br><br>
+	
+	
+	<h3>Incorrect Answer 2:</h3>
+	<textarea id="option3" name="wa2">
+		Please enter the incorrect option 2 here.
+	</textarea>
+	<br><br>
+	
+	
+	<h3>Incorrect Answer 3:</h3>
+	<textarea id="option4" name="wa3">
+		Please enter the  incorrect option 3 here.
+	</textarea>
+	<br><br>
+	<button type="submit">Submit</button>
+  </form>
+  <script type="text/javascript">
+  var config = {
+    images : {
+        editing : {
+				preferredWidth : 1050
+			}
+		}
+	};
+    var divEditorProblem = textboxio.replace('#editableDiv',config);
+	var option1 = textboxio.replace('#option1');
+	var option2 = textboxio.replace('#option2');
+	var option3 = textboxio.replace('#option3');
+	var option4 = textboxio.replace('#option4');
+	
+	
+
+  </script>
+  
+  
+
+  
+</body>
+</html>
