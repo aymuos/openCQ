@@ -2,8 +2,9 @@
 Web Solution for online MCQ test. Question db will be provided by the user from which pre-designated  number of questions will be selected at random ,subject to some user-specified condition. .
 Web Technologies and tools used:
 1. HTML5
-2. CSS3
-    a.Bootstrap
+2. CSS3 
+
+    a.MD Bootstrap
     b.Materialize CSS libraries
 3. PHP
 4. Javascript
