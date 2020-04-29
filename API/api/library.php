@@ -171,4 +171,273 @@ function XP(string $word){
     return '^(\\s)*'.implode('(\\s)+',$arr).'(\\s)*$';
 }
 
+// class Question{
+//     public $id;
+//     public $weight;
+//     public $value;
+//     public function __construct($id,$value="",$weight=0){
+//         $this->id = $id;
+//         $this->weight = $weight;
+//         $this->value = $value;
+//     }
+
+// }
+
+// class Choice extends Question{
+//     public $isRight;
+//     public $isMarked;
+//     public __construct($id,$value="",$weight=0,$isRight=0,$isMarked=0){
+//         $this->id=$id;
+
+//     }
+// }
+
+// function qdata($id){
+//     $statement="";
+//     $choice = [];
+
+  
+  
+//     for($i=1;$i<=)
+// }
+
+function checkValid($parameter){
+    foreach($parameter as $key=>$value){
+        if(gettype($value)==="integer"){
+            continue;
+        }
+        if(gettype($value)!="string"){
+            return [0,"incorrect $key: "];
+        }
+        if($value==""){
+            return [0,"incorrect $key: $value"];
+        }
+        for($i=0;$i<strlen($value);$i++){
+            $c = $value[$i];
+            $ass = ord($c);
+            if($ass<48 || $ass>57){
+                return [0,"incorrect $key: $value"];
+            }
+        }
+    }
+    return [1,""];
+}
+
+function validateKey($key){
+    if($key!=key){
+        $result['status']='FAIL';
+        $result['comment']="incorrect key: $key";
+        echo json_encode($result);
+        exit();
+    }
+}
+
+function stripText($text, $tags = '', $invert = FALSE) {
+
+    preg_match_all('/<(.+?)[\s]*\/?[\s]*>/si', trim($tags), $tags);
+    //  var_dump($tags);
+    $tags = array_unique($tags[1]);
+    
+    if(is_array($tags) AND count($tags) > 0) {
+      if($invert == FALSE) {
+          
+        return strip_tags(preg_replace('@<(?!(?:'. implode('|', $tags) .')\b)(\w+)\b.*?>@si', '', $text));
+      }
+      else {
+          
+        return strip_tags(preg_replace('@<('. implode('|', $tags) .')\b.*?>@si', '', $text));
+      }
+    }
+    elseif($invert == FALSE) {
+      return strip_tags(preg_replace('@<(\w+)\b.*?>@si', '', $text));
+    }
+    return strip_tags($text);
+  }
+
+function weigh($str){
+    
+    $text = stripText($str,'<img>',TRUE);
+    
+    $text = strtolower(trim($text));
+    //echo $text;
+    $arr = preg_split("/(\s)+/",$text,null,PREG_SPLIT_NO_EMPTY);
+    // var_dump($arr);
+    $all = 0;
+    $both=0;
+    foreach($arr as $value){
+        if($value=='none'){
+            return 50;
+        }
+        else if($value=='all'){
+            $all=1;
+        }
+        else if($value=='both'){
+            $both=1;
+        }
+    }
+    if($all==1){
+        return 30;
+    }
+    if($both==1){
+        return 20;
+    }
+    return 0;
+}
+// define("bank","C:\\Users\\SARANYA\\Desktop\\S\\projects\\api\\questionBank\\");
+
+class Option{
+    public $number;
+    public $st;
+    public $weight;
+    public $isMarked;
+    public function __construct($qid,$number){
+        $this->number = $number;
+        $this->isMarked = FALSE;
+        $number++;
+        $filename = $qid."_".$number.".txt";
+        $location = bank;
+        $file = $location.$filename;
+        if(file_exists($file)){
+            $st=file_get_contents($file);
+            $arr = explode("\n",$st,2);
+            $this->weight=intval($arr[0]);
+            $this->st=$arr[1];
+        }
+        else{
+            $this->weight=0;
+            $this->st="";
+        }
+        // $st = file_get_contents($file);
+        // if($st===FALSE){
+        //     $this->weight=0;
+        //     $this->st="";
+        // }
+        // else{
+        //     $arr = explode("\n",$st,2);
+        //     $this->weight=intval($arr[0]);
+        //     $this->st=$arr[1];
+        // }
+        
+    }
+    public function __toString(){
+        return $this->st;
+    }
+    public static function cmpOption($c1,$c2){
+        $cw1 = $c1->weight;
+        $cw2 = $c2->weight;
+        if($cw1==$cw2){
+            return 0;
+        }
+        return ($cw1>$cw2)?+1:-1;
+    }
+}
+
+class Question{
+    public $id;
+    public $st;
+    public $weight;
+    public $options;
+    public function __construct($id){
+        $this->id=$id;
+        $this->weight=0;
+        $filename = bank.$id."_1.txt";
+        // exit($filename);
+        $this->st = (file_exists($filename))?file_get_contents($filename):"";
+        // $st = file_get_contents($filename);
+        // $this->st = ($st===FALSE)?"":$st;
+        $choices = [];
+        $choices[]=new Option($id,1);
+        $choices[]=new Option($id,2);
+        $choices[]=new Option($id,3);
+        $choices[]=new Option($id,4);
+        usort($choices,array('Option','cmpOption'));
+        $this->options = $choices; 
+    }
+    public function __toString(){
+        return $this->st;
+    }
+    public function correct(){
+        $i=1;
+        foreach($this->options as $value){
+            if($value->number==1){
+                return [$value,$i];
+            }
+            $i=$i+1;
+        }
+    }
+    public function incorrect(){
+        $mask = $this->correct()[1];
+        $result = [];
+        for($i=1;$i<=4;$i=$i+1){
+            if($i!=$mask){
+                $result[]=[$this->options[$i-1],$i];
+            }
+        }
+        return $result;
+    }
+    public function marked(){
+        $i=1;
+        foreach($this->options as $value){
+            if($value->isMarked==TRUE){
+                return [$value,$i];
+            }
+            $i=$i+1;
+        }
+        return ["",0];
+    }
+    public function attempt($num){
+        $opt = $this->marked();
+        if($opt[1]!=0){
+
+            $opt[0]->isMarked=FALSE;
+        }
+        if($num!=0){
+            $this->options[$num-1]->isMarked=TRUE;
+        }
+    }
+    public function opRandom(){
+        shuffle($this->options);
+    }
+}
+
+// define("exam","C:\\Users\\SARANYA\\Desktop\\S\\projects\\api\\exam\\");
+function saveAttempt($stid,$eid,$attemptQuestion,$attemptOption){
+    $file = exam.$stid."_".$eid.".txt";
+
+
+        $file = fopen($file,"r+");
+        $result = fseek($file,$attemptQuestion-1);
+        // $result[$attemptQuestion-1]=$attemptOption;
+        fwrite($file,$attemptOption);
+        fclose($file);
+
+
+}
+
+function getAttempt($stid,$eid){
+    $file = exam.$stid."_".$eid.".txt";
+    $attempt = file_get_contents($file);
+    return $attempt; 
+}
+// echo getAttempt(3,3);
+// define("bank","C:\\Users\\SARANYA\\Desktop\\S\\projects\\api\\questionBank\\");
+// $question = new Question(1);
+// echo $question."\n";
+// echo $question->options[0]."\n";
+// echo $question->options[1]."\n";
+// echo $question->options[2]."\n";
+// echo $question->options[3]."\n";
+// echo $question->correct()[0]."\n";
+// echo $question->correct()[1]."\n";
+// var_dump($question->incorrect());
+
+
+// echo weigh('
+// <h1 style="text-align: center; ">
+//   Hi, I\'m Textbox.io!</h1>
+// <p>all of the above</p>
+// <img src="none"></img>
+
+// ')
+
 ?>

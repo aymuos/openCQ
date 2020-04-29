@@ -1,5 +1,5 @@
 <?php
-
+include 'db_connection.php';
 include 'receiver_header.php';
 
 
@@ -66,8 +66,15 @@ if(isset($_GET["address"])){
 						'phone' => $_GET['phone']);*/
 	echo json_encode($arr); // {"a":1,"b":2,"c":3,"d":4,"e":5}
 }
+else if($_SERVER['REQUEST_METHOD']==='POST'){
+	$input = file_get_contents('php://input');
+	err($input."\n");
+	err($_POST['address']."\n"); 
+	$out = array('status' => 'got the post request');
+	echo json_encode($out);
+}
 else{
-	echo "Fail";
+	echo json_encode(array("status"=>'failed'));
 }
 
 ?>
