@@ -114,7 +114,6 @@
 			$arr = array( 	'status' => $status,
 							'comment' => $comment);
 			echo json_encode($arr);
-			exit();
 		}
 		finally{
 			Query::destroy();
