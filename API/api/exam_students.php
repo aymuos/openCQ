@@ -63,7 +63,8 @@ function selection(){
         student.email,
         student.registration,
         student.contactNo,
-        student.departmentCode
+        student.departmentCode,
+        marksheet.submitted
         ";
     }
     else{
@@ -75,7 +76,8 @@ function selection(){
         student.email,
         student.registration,
         student.contactNo,
-        student.departmentCode
+        student.departmentCode,
+        marksheet.submitted
         ";
     }
     return $select;
@@ -135,6 +137,7 @@ try{
         $body['email']=$row['email'];
         $body['registration']=$row['registration'];
         $body['contactNumber']=$row['contactNo'];
+        $body['submitted']=$row['submitted'];
         $result['result'][]=$body;
     }
     echo json_encode($result);

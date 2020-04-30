@@ -1,5 +1,5 @@
 <?php
 $_POST['key']=key;
-    $_POST['username']="Having fun";
-    $_POST['password']="lol";
-    $_POST['examId']="3";
+    $_POST['username']="root";
+    $_POST['password']="shoot";
+    $_POST['examId']="2";

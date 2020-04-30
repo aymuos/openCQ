@@ -10,14 +10,14 @@ function set(){
         exit();
     }
 }
-function validateKey($key){
-    if($key!=key){
-        $result['status']='FAIL';
-        $result['comment']="incorrect key: $key";
-        echo json_encode($result);
-        exit();
-    }
-}
+// function validateKey($key){
+//     if($key!=key){
+//         $result['status']='FAIL';
+//         $result['comment']="incorrect key: $key";
+//         echo json_encode($result);
+//         exit();
+//     }
+// }
 function validateSubject($sid){
     $query= "SELECT id FROM subject 
     WHERE id=? AND subjectCode=? AND isActive='1' LIMIT 1";
