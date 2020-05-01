@@ -28,8 +28,7 @@ function validateUser(){
 }
 
 function validateExam($id){
-    $query = "SELECT id FROM
-    exam WHERE id=?  AND isActive='1' LIMIT 1";
+    $query = "SELECT id FROM exam WHERE id=?  AND isActive='1' LIMIT 1";
     $q = new Query($query,"i");
     $q->execute([$id]);
     $exist = $q->data();

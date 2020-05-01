@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 function func(){
 	M.toast({html: 'please Wait&nbsp;! :)',classes: 'rounded'});
 	document.getElementById("iun").style.opacity = "0";
@@ -43,12 +36,12 @@ function func(){
 					}
 				}
 				else{
-					document.getElementById("myForm").submit();
+					window.location.href = "coe_dashboard.php";
 				}
             }
         };
-    xhttp.open("POST", "api/login.php", true);
+    xhttp.open("POST", "coe-login2.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("key=SherlockNeedsWatson&username="+encodeURIComponent(uname)+"&password="+encodeURIComponent(pass)+"&category=0");
+    xhttp.send("username="+encodeURIComponent(uname)+"&password="+encodeURIComponent(pass));
 	 
 }

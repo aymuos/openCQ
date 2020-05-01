@@ -31,7 +31,7 @@ function validityUser(){
     $user = $_GET['username'];
     if($user!="ALL"){
 
-        $query = "SELECT id FROM teacher WHERE username=? ORDER BY id DESC LIMIT 1";
+        $query = "SELECT id,name FROM teacher WHERE username=? ORDER BY id DESC LIMIT 1";
         $q = new Query($query,"s");
         $q->execute([$user]);
         $exist = $q->data();
@@ -41,6 +41,7 @@ function validityUser(){
             echo json_encode($result);
             exit();
         }
+        $GLOBALS['nameOfTheTeacher']=$exist[0]['name'];
         return $exist[0]['id'];
     }
     return "ALL";
@@ -48,7 +49,7 @@ function validityUser(){
 function validityCode(){
     $code = $_GET['code'];
     if($code!="ALL"){
-        $query = "SELECT id FROM subject WHERE subjectCode=? ORDER BY id DESC LIMIT 1";
+        $query = "SELECT id,paperName FROM subject WHERE subjectCode=? ORDER BY id DESC LIMIT 1";
         $q = new Query($query,"s");
         $q->execute([$code]);
         $exist = $q->data();
@@ -58,6 +59,7 @@ function validityCode(){
             echo json_encode($result);
             exit();
         }
+        $GLOBALS['paperName']=$exist[0]['paperName'];
         return $exist[0]['id'];
     }
     return "ALL";
@@ -146,13 +148,13 @@ function decodeStatus($status){
 }
 try{
     Query::init();
-    // $_GET['key']=key;
-    // $_GET['username']="BB";
-    // $_GET['examStatus']="ALL";
-    // $_GET['examId']="ALL";
-    // $_GET['batchPassoutYear']="ALL";
-    // $_GET['stream']="ALL";
-    // $_GET['code']="MU250";
+    //$_GET['key']=key;
+    //$_GET['username']="ALL";
+    //$_GET['examStatus']="ALL";
+    //$_GET['examId']="ALL";
+    //$_GET['batchPassoutYear']="ALL";
+    //$_GET['stream']="ALL";
+    //$_GET['code']="MU250";
     set();
     $input =(object)($_GET);
     validateKey($input->key);
@@ -196,7 +198,7 @@ try{
     else{
         $sid = 'exam.subjectID';
         $table = $table." INNER JOIN subject ON exam.subjectID=subject.id";
-        $selection = $selection.",subject.subjectCode AS code";
+        $selection = $selection.",subject.subjectCode AS code,subject.paperName AS paperName ";
     }
     if($input->username!="ALL"){
         $uid = '?';
@@ -206,7 +208,7 @@ try{
     else{
         $uid = 'exam.teacherID';
         $table = $table." INNER JOIN teacher ON exam.teacherID=teacher.id"; 
-        $selection = $selection.",teacher.username AS user";
+        $selection = $selection.",teacher.username AS user,teacher.name AS name ";
     }
 
     if($input->batchPassoutYear!="ALL"){
@@ -252,7 +254,9 @@ try{
         $body['stream']=validateStream($row['stream']);
         $body['examStatus']=decodeStatus($row['status']);
         $body['code']=($input->code!="ALL")?$input->code:$row['code'];
-        $body['created by']=($input->username!="ALL")?$input->username:$row['user'];
+        $body['paperName']=($input->code!="ALL")?$paperName:$row['paperName'];
+        $body['createdBy']=($input->username!="ALL")?$input->username:$row['user'];
+        $body['createdByName']=($input->username!="ALL")?$nameOfTheTeacher:$row['name'];
         $result['result'][]=$body;
     }
     echo json_encode($result);
