@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Teacher Dashboard</title>
   <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/brandinglogo.png" type="image/x-icon">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Google Fonts Roboto -->
@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="css/tdbhome.css">
+  
+   
 </head>
 <body>
 
@@ -28,16 +30,16 @@
     <a class="navbar-brand" href="#">
       <img src="img/logo256.png" height="30" alt="GCECT">
     </a>
-  <a class="navbar-brand" href="#">Subject Choice </a>
+  <a class="navbar-brand text-wrap font-weight-bold" href="#"><h2>Subject Choice </h2></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <form class="form-inline my-2 my-lg-0 ml-auto">
-    <button class="btn btn-sm align-right elegant-color-dark lime-text btn-rounded " type="button"><i class="fas fa-lg mr-3 fa-sign-out-alt"></i>LOGOUT</button>
+    <button class="btn btn-lg align-right elegant-color-dark white-text font-weight-bolder " type="button"><i class="fas fa-lg mr-3 fa-sign-out-alt"></i>LOGOUT</button>
   </form>
-  
+
 </nav>
 
 <div class="bc-icons-2">
@@ -54,14 +56,14 @@
 
 <!-- navigation bar stuff ends here-->
 
-<footer class="fixed-bottom font-small blue-grey lighten-5 ">
+<footer class="fixed-bottom font-small blue-grey lighten-5 sticky-bottom mt-5 ">
   <div class="footer-copyright text-center py-3">© 2020 OpenCQ:
     <a href="#"></a>
   </div>
 </footer>
 <!-- page contents-->
 
-<div class="container" style="height:1100px;">
+<div class="container" >
   <div class="row mt-5 pt-5">
       <div class="col text-center">
           <h2 class="tname" id="tname">Welcome, Faculty X</h2>
@@ -73,27 +75,57 @@
 <!--Text Portion ends-->
 
 <!--need to implement html templating-->
-<div class="grid">
-    <div class="grid-item col-md-3 mb-4">
-        <div class="card">
-          <div class="card-header">
-                Featured
-          </div>
-          <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#!" class="btn btn-primary btn-sm">Button</a>
-          </div>
-        </div>
+<!-- 1st card-->
+<div class="card w-50 p-3 mt-4 mx-auto">
+  <div class="card-header">
+    Subject Details
+  </div>
+  <div class="card-body ">
+    <h3 class="card-title ">Subject Code</h5>
+    <p class="card-text">Subject Name</p>
+    <a href="#" class="btn btn-primary">Continue</a>
+    <div class="text-right">
+    <button class="btn btn-danger btn-rounded ">DELETE SUBJECT <i class="far fa-trash-alt"></i></button>
       </div>
   </div>
+</div>
+<!-- 1st card ends-->
+
+<div class="card w-50 p-3 mt-4 mb-4 mx-auto">
+  <div class="card-header">
+    Subject Details
+  </div>
+  <div class="card-body">
+    <h3 class="card-title ">Subject Code</h5>
+    <p class="card-text">Subject Name</p>
+    <a href="#" class="btn btn-primary">Continue</a>
+    <div class="text-right">
+    <button class="btn btn-danger btn-rounded "> DELETE SUBJECT <i class="fas fa-trash-alt"></i></button>
+      </div>
+  </div>
+</div>
+
+  <!--
+  <div class="card">
+    
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+  -->
 
 
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-lg red">
-      <i class="fas fa-pencil-alt"></i>
-    </a>
-</div>div>
+<div class="text-right mt-5 mb-5 ml-4 mr-4  ">
+    <button type="button" class="btn btn-rounded btn-blue">EDIT SUBJECTS <i class="far fa-edit"></i></button>
+ </div>
+
+
+ 
   
   <!-- Endproject here-->
 
