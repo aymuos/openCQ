@@ -39,7 +39,7 @@ $data = array(		"key" => key,
 				);
 $result = send_get_request($url,$data);
 
-echo $result;
+//echo $result;
 
 $ans = json_decode($result);
 

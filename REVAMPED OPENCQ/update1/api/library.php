@@ -330,6 +330,9 @@ class Option{
         }
         return ($cw1>$cw2)?+1:-1;
     }
+    public function food($f){
+        $this->weight = $this->weight+$f;
+    }
 }
 
 class Question{
@@ -396,7 +399,11 @@ class Question{
         }
     }
     public function opRandom(){
-        shuffle($this->options);
+        $this->options[0]->food(mt_rand()%10);
+        $this->options[1]->food(mt_rand()%10);
+        $this->options[2]->food(mt_rand()%10);
+        $this->options[3]->food(mt_rand()%10);
+        usort($options,array('Option','cmpOption'));
     }
 }
 

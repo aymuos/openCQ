@@ -62,7 +62,7 @@ echo '
 		
 		
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
 		
 		
 	
@@ -79,21 +79,22 @@ echo '
         $(".modal").modal();
     });
 	
-	function start_test_all(){
-		window.location.href = "coe_exams_start.php?ti=-1";
-	}
-	function start_test(ti){
-		if(confirm("Are you sure you want to start the exam?")){
-			window.location.href = "coe_exams_start.php?ti=" + ti;
+	function delete_exam(cid){
+		if(confirm("Are you sure you want to delete the exam?") == true){
+			$.get("delete_exam.php?id="+cid, function(data, status){
+				var obj = jQuery.parseJSON(data);
+				if(obj.status == "FAIL"){
+					M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+				}
+				else{
+					location.reload();
+				}
+			});
 		}
+		
+		
 	}
-	function view_test(ti){
-		window.open("preview_question_paper.php?ti=" + ti, \'_blank\');
-	}
-	function view_test_students(ti){
-		document.getElementById("never_mind").value=ti;
-		document.getElementById("myForm").submit();
-	}
+	
 </script>
 	</head>
 	<body>
@@ -108,11 +109,11 @@ echo '
 		</div>
 	
 	
-    <div class="container z-depth-5 grey-blue darken-4" style="background-color: #e6e6e6;">
+    <div class="container z-depth-5 grey-blue darken-4" style="background-color: #e6e6e6;width: 90%">
       <h2 class="header center cyan-text">PAST EXAMINATIONS</h2>
     <div class="container inner-card">
       <div class = "row">
-         <div class = "col s12">
+         <div class = "col s12" >
             <div class = "card-panel ">
                <div class = "card-content" >
                   <!-- <span class = "card-title card-large s12"><h3 class="runningexams"> EXAMINATIONS</h3></span> -->
@@ -121,13 +122,16 @@ echo '
 	<table class="highlight centered highlight" >
         <thead>
           <tr>
-              <th>UG/PG</th>
+              
               <th>Sub Code</th>
-              <th>Paper Name</th>
+			  <th>Paper Name</th>
+              <th>Stream</th>
+			  <th>Batch</th>
               <th>Instructor</th>
 			  <th>Date</th>
               <th> Question Paper </th>
 			  <th> View Students </th>
+			  <th>Delete</th>
               
           </tr> 
         </thead>
@@ -148,6 +152,14 @@ echo '
 			echo '</td>
             <td>';	
 			
+			
+			echo $ans->result[$ct-1]->paperName;
+			
+			echo '</td><td>';
+			
+			
+			
+			
 			for($i=0;$i<count($ans->result[$ct-1]->stream);$i++)
 			//Print the subject code here..........
 			echo $ans->result[$ct-1]->stream[$i].' ';
@@ -160,7 +172,7 @@ echo '
 			
 			//Put the paper name here...............
 			echo $ans->result[$ct-1]->batchPassoutYear-4;
-			echo ' - ';
+			echo '-';
 			echo $ans->result[$ct-1]->batchPassoutYear;
 			
 			
@@ -191,7 +203,7 @@ echo '
 			
 			
 			//Put the test id here...........
-			echo $value['id'];
+			echo $ans->result[$ct-1]->id;
 			
 			
 			echo '\')"><i class="material-icons">assignment</i></a></td>
@@ -203,12 +215,24 @@ echo '
 			
 			
 			//Put the test id here...........
-			echo $value['id'];
+			echo $ans->result[$ct-1]->id;
 			
 			
 			echo '\')">
 			<i class="material-icons">people</i></a></td>
-
+			
+			
+			
+			<td>
+			<a class="btn-floating btn-small waves-effect pulse waves-light red" onclick="delete_exam(\'';
+			
+			
+			//Put the test id here...........
+			echo $ans->result[$ct-1]->id;
+			
+			
+			echo '\')">
+			<i class="material-icons">delete</i></a></td>
 
 			</tr>
 		  

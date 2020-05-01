@@ -87,13 +87,14 @@ try{
     set();
     $input = (object)($_POST);
     validateUser();
+    $time = time();
     if($input->examId!="ALL"){
 
         $sid = validateExam($input->examId);
         validateActivation($sid);
-        $query = "UPDATE exam SET isActive='1' WHERE id=?";
-        $q = new Query($query,"i");
-        $q->execute([$input->examId]);
+        $query = "UPDATE exam SET startTime=?,isActive='1' WHERE id=?";
+        $q = new Query($query,"ii");
+        $q->execute([$time,$input->examId]);
         $result['status']='OK';
         $result['comment']="exam has been started";
         echo json_encode($result);
@@ -101,9 +102,9 @@ try{
     }
     else{
         validateActivation();
-        $query = "UPDATE exam SET isActive='1' WHERE isCoeVisible='1' AND isActive='2'";
-        $q = new Query($query);
-        $q->execute();
+        $query = "UPDATE exam SET startTime=?,isActive='1' WHERE isCoeVisible='1' AND isActive='2'";
+        $q = new Query($query,"i");
+        $q->execute([$time]);
         $result['status']='OK';
         $result['comment']="exam has been started";
         echo json_encode($result);

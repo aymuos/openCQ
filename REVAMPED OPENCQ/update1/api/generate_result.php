@@ -132,10 +132,25 @@ function updateResult($attempts,$questions){
                         return -1;
                     }
                 });
-                shuffle($opt);
+                $opt[0][0]=$opt[0][0]+mt_rand()%10;
+                $opt[1][0]=$opt[1][0]+mt_rand()%10;
+                $opt[2][0]=$opt[2][0]+mt_rand()%10;
+                $opt[3][0]=$opt[3][0]+mt_rand()%10;
+                usort($opt,function ($a,$b){
+                    if($a[0]>$b[0]){
+                        return +1;
+                    }
+                    else if($a[0]==$b[0]){
+                        return 0;
+                    }
+                    else{
+                        return -1;
+                    }
+                });
                 if($attempt[$i]!=0){
                     if($opt[$attempt[$i]-1][1]==1){
                         $cmp++;
+                        // echo "voila!!\n";
                     }
                 }
                 $i++;

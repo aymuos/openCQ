@@ -51,6 +51,7 @@ echo '
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
+						alert(this.responseText);
 						var res = JSON.parse(this.responseText);
 						if(res.status == "FAIL"){
 							M.toast({html: res.comment+"! :(",classes: \'rounded\'});
