@@ -148,13 +148,13 @@ function decodeStatus($status){
 }
 try{
     Query::init();
-    //$_GET['key']=key;
-    //$_GET['username']="ALL";
-    //$_GET['examStatus']="ALL";
-    //$_GET['examId']="ALL";
-    //$_GET['batchPassoutYear']="ALL";
-    //$_GET['stream']="ALL";
-    //$_GET['code']="MU250";
+    // $_GET['key']=key;
+    // $_GET['username']="ALL";
+    // $_GET['examStatus']="ALL";
+    // $_GET['examId']="ALL";
+    // $_GET['batchPassoutYear']="ALL";
+    // $_GET['stream']="ALL";
+    // $_GET['code']="MU250";
     set();
     $input =(object)($_GET);
     validateKey($input->key);

@@ -1,7 +1,7 @@
 <?php
 require('library.php');
 require('receiver_header.php');
-function checkValid($parameter){
+function checkvValid($parameter){
     foreach($parameter as $key=>$regex){
         $value = $_POST["$key"];
         if(preg_match($regex,$value)){
@@ -43,7 +43,7 @@ if($_POST['key']!=key){
 }
 $parameter['category']='/^(0|1|2)$/';
 
-$valid = checkValid($parameter);
+$valid = checkvValid($parameter);
 
 if($valid[0]==0){
     $result['status']="FAIL";

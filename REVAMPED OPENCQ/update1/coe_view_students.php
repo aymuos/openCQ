@@ -38,7 +38,7 @@ $data = array(		"key" => key,
 				);
 $result = send_get_request($url,$data);
 
-echo $result;
+//echo $result;
 
 $ans = json_decode($result);
 
@@ -105,8 +105,11 @@ echo '
 		str+=data["registration no"] + "</td><td>";
 		str+=data["email"] + "</td><td>";
 		str+=data["contact no"] + "</td><td>";
-		str+= \'<button class="btn-floating btn-small waves-effect pulse waves-light blue darken-4" onclick="restart_test()"><i class="material-icons">arrow_downward</i></button>\' + "</td><td>";
-		str+= \'<button class="btn-floating btn-small waves-effect pulse waves-light red darken-1" onclick="restart_test()"><i class="material-icons">cancel</i></button></td></tr>\';
+		str+= "<button class=\'btn-floating btn-small waves-effect pulse waves-light blue darken-4\' onclick=\'year_lag(\"";
+		str+=data["username"];
+		str+= "\")\'><i class=\'material-icons\'>arrow_downward</i></button>" + "</td><td>";
+		str+= "<button class=\'btn-floating btn-small waves-effect pulse waves-light red darken-1\' onclick=\'delete_student(\"";
+		str+=data["username"] + "\")\'><i class=\'material-icons\'>cancel</i></button></td></tr>";
 		return str;
 	}
 
@@ -135,8 +138,66 @@ echo '
 	});
 	
 	
+	function year_lag(x){
+		if(confirm("The pass out year of the corresponding student will increase by 1. Do you want to continue?")==true){
+		$.get("year_lag_student.php?username="+encodeURIComponent(x), function(data, status){
+			var obj = jQuery.parseJSON(data);
+			if(obj.status == "FAIL"){
+				M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+			}
+			else{
+				M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+				var stream = $("#stream").children("option:selected").val();
+				var join = $("#join").children("option:selected").val();
+				var pass = $("#pass").children("option:selected").val();
+				$.get("get_student_info.php?stream="+stream+"&join="+join+"&pass="+pass, function(data, status){
+					var obj = jQuery.parseJSON(data);
+					if(obj.status == "FAIL"){
+						M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+					}
+					else{
+						var str = "";
+						for(i=0;i<obj.result.length;i++){
+							str += prepare(obj.result[i]);
+						}
+						$("#tableBody").html(str);
+					}
+				});
+			}
+		});
+		}
+	}
 	
 	
+	function delete_student(x){
+		if(confirm("The corresponding student will be deleted. Do you want to continue?")==true){
+		$.get("delete_student.php?username="+encodeURIComponent(x), function(data, status){
+			var obj = jQuery.parseJSON(data);
+			if(obj.status == "FAIL"){
+				M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+			}
+			else{
+				M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+				var stream = $("#stream").children("option:selected").val();
+				var join = $("#join").children("option:selected").val();
+				var pass = $("#pass").children("option:selected").val();
+				$.get("get_student_info.php?stream="+stream+"&join="+join+"&pass="+pass, function(data, status){
+					var obj = jQuery.parseJSON(data);
+					if(obj.status == "FAIL"){
+						M.toast({html: obj.comment+"! :(",classes: \'rounded\'});
+					}
+					else{
+						var str = "";
+						for(i=0;i<obj.result.length;i++){
+							str += prepare(obj.result[i]);
+						}
+						$("#tableBody").html(str);
+					}
+				});
+			}
+		});
+		}
+	}
 	
 	
 	
@@ -303,10 +364,10 @@ echo '
 			
 			
 			
-			echo '</td><td><button class="btn-floating btn-small waves-effect pulse waves-light blue darken-4" onclick="restart_test()"><i class="material-icons">arrow_downward</i></button>';
+			echo '</td><td><button class="btn-floating btn-small waves-effect pulse waves-light blue darken-4" onclick="year_lag(\''.$ans->result[$ct-1]->{'username'}.'\')"><i class="material-icons">arrow_downward</i></button>';
 		  
 		  
-		  echo '</td><td><button class="btn-floating btn-small waves-effect pulse waves-light red darken-1" onclick="restart_test()"><i class="material-icons">cancel</i></button>
+		  echo '</td><td><button class="btn-floating btn-small waves-effect pulse waves-light red darken-1" onclick="delete_student(\''.$ans->result[$ct-1]->{'username'}.'\')"><i class="material-icons">cancel</i></button>
           </td></tr>';
 		  
 		
@@ -337,8 +398,8 @@ echo '
 			
 			
 		//Rest of the part remains same.
-		echo '<button class="btn waves-effect waves-light red" onclick="window.location.href = \'coe_exams_present.php\'">Back<i class="material-icons left" >navigate_before</i></button>
-				<button class="btn waves-effect waves-light blue" onclick="window.location.href = \'coe_exams_present.php\'">Add<i class="material-icons right" >person_add</i></button>
+		echo '<button class="btn waves-effect waves-light red" onclick="window.location.href = \'coe_dashboard.php\'">Back<i class="material-icons left" >navigate_before</i></button>
+				<button class="btn waves-effect waves-light blue">Add<i class="material-icons right" >person_add</i></button>
                </div>
               </div>
              </div>

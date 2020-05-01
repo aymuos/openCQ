@@ -85,11 +85,11 @@ function marksheetData($stid){
 
 try{
     Query::init();
-    // $_POST['key']=key;
-    // $_POST['username']="root";
-    // $_POST['password']="shoot";
-    // $_POST['studentUsername']="Having fun";
-    // $_POST['examId']="3";
+    $_POST['key']=key;
+    $_POST['username']="root";
+    $_POST['password']="shoot";
+    $_POST['studentUsername']="Having fun";
+    $_POST['examId']="3";
     set();
     $input = (object)($_POST);
     $stid = validateUser();

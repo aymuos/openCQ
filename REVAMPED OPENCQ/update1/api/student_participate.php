@@ -44,11 +44,11 @@ function validateExam($id){
 function validateParticipation($stid){
     $exam = $_POST['examId'];
     $query = "SELECT examId FROM marksheet WHERE examId=? AND studentId=? 
-    AND submitted='0' LIMIT 1";
+    AND submitted='1' LIMIT 1";
     $q = new Query($query,"ii");
     $q->execute([$exam,$stid]);
     $info = $q->data();
-    if(!$info){
+    if($info){
         $result['status']='FAIL';
         $result['comment']="further submission is not allowed";
         echo json_encode($result);
@@ -62,9 +62,9 @@ function validateParticipation($stid){
 try{
     Query::init();
     // $_POST['key']=key;
-    // $_POST['username']="Having fun";
-    // $_POST['password']="lol";
-    // $_POST['examId']="3";
+    // $_POST['username']="loream ipsum";
+    // $_POST['password']="load test";
+    // $_POST['examId']="6";
     set();
     $input = (object)($_POST);
     $stid = validateUser();
@@ -81,9 +81,12 @@ try{
 
     $qshuffle = mt_rand();
     $file = exam.$stid."_".$input->examId.".txt";
-    $file = fopen($file,"w");
-    fwrite($file,$attempt);
-    fclose($file);
+    if(!file_exists($file)){
+
+        $file = fopen($file,"w");
+        fwrite($file,$attempt);
+        fclose($file);
+    }
     $query = "INSERT IGNORE INTO marksheet(examId,studentId,questionShuffle,
     attempts,marks) VALUES (?,?,?,?,0)";
     $q = new Query($query,"iiis");

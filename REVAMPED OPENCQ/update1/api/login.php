@@ -41,7 +41,7 @@
 		$sender_username = $_POST['username'];
 		$sender_password = $_POST['password'];
 		$sender_category = $_POST['category'];
-		if($sender_key != key){
+		if($sender_key != $key){
 			$status = 'FAIL';
 			$comment = 'incorrect key: ';
 			$arr = array( 	'status' => $status,

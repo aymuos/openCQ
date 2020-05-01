@@ -1,7 +1,7 @@
 <?php
 	require('library.php');
 	require('receiver_header.php');	
-	$valid = checkSet(['key','subject_code','new_paper_name'],1);
+	$valid = checkSet(['key','username','password','subject_code'],1);
 	if($valid[0]==0){
 		$arr = array(	'status' => 'FAIL',
 						'comment' => $valid[1]
@@ -13,7 +13,6 @@
 	$sender_username = $_POST["username"];
 	$sender_password = $_POST["password"];
 	$sender_code = $_POST['subject_code'];
-	$sender_name = $_POST['new_paper_name'];
 	if($sender_key != $key){
 		$arr = array(	'status' => 'FAIL',
 						'comment' => 'incorrect key: '.$sender_key

@@ -1,8 +1,18 @@
 <?php
 	require('library.php');
 	require('receiver_header.php');
-	
-	
+	// $_POST['key']=key;
+	// $_POST['username']="";
+	// $_POST['password']="";
+	// $_POST['sub_code']="";
+	// $_POST['chapter_id']="";
+	// $_POST['st']="";
+	// $_POST['ac']="";
+	// $_POST['wa1']="";
+
+	// $_POST['wa2']="";
+	// $_POST['wa3']="";
+	// $_POST['wa4']="";
 	
 	$valid = checkSet(['key','username','password','sub_code','chapter_id','st','ac','wa1','wa2','wa3'],1);
 	if($valid[0]==0){

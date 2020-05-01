@@ -22,7 +22,7 @@ function queryBuild($input){
     }
     return [$query,$types,$arr];
 }
-function checkValid($key,$id){
+function checkvValid($key,$id){
     if($id==""){
         return [0,"incorrect $key: $id"];
     }
@@ -59,7 +59,7 @@ if($input->key!=key){
     exit();
 }
 
-$valid = checkValid('teacherId',$input->teacherId);
+$valid = checkvValid('teacherId',$input->teacherId);
 
 if($valid[0]==0){
     $result['status']='FAIL';
@@ -69,7 +69,7 @@ if($valid[0]==0){
 }
 
 if($input->subjectId!="ALL"){
-    $valid = checkValid('subjectId',$input->subjectId);
+    $valid = checkvValid('subjectId',$input->subjectId);
     if($valid[0]==0){
         $result['status']='FAIL';
         $result['comment']=$valid[1];

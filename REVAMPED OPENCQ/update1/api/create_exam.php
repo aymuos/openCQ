@@ -11,14 +11,14 @@ function set(){
         exit();
     }
 }
-function validateKey($key){
-    if($key!=key){
-        $result['status']='FAIL';
-        $result['comment']="incorrect key: $key";
-        echo json_encode($result);
-        exit();
-    }
-}
+// function validateKey($key){
+//     if($key!=key){
+//         $result['status']='FAIL';
+//         $result['comment']="incorrect key: $key";
+//         echo json_encode($result);
+//         exit();
+//     }
+// }
 function validateUser($username,$password){
     $query = "SELECT id FROM teacher WHERE username=? AND password=?
     AND isActive='1'";

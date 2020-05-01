@@ -11,7 +11,7 @@ $result['status']="";
 // $parameter['username']=0;
 // $parameter['password']=1;
 
-$check1 = checkSet(['key','username','password'],1);
+$check1 = checkSet(['key','username','password','studentUsername'],1);
 
 if($check1[0]===0){
     $result['status']="FAIL";
@@ -22,7 +22,7 @@ if($check1[0]===0){
 $k = $_POST['key'];
 $u = $_POST['username'];
 $p = $_POST['password'];
-$s = $_POST["stream"];
+$uname = $_POST['studentUsername'];
 
 if($_POST['key'] != key){
     $value = $k;
@@ -35,25 +35,44 @@ if($_POST['key'] != key){
 try{
     Query::init();
 
-    $query = "SELECT id FROM teacher WHERE username=? AND isActive='1' LIMIT 1";
-
-    $q = new Query($query,"s");
+	$query = "SELECT * FROM coe WHERE username=? AND isActive='1' LIMIT 1";
+	$q = new Query($query,"s");
     $q->execute([$u]);
     $data = $q->data();
-    if($data){
+	if(!$data){
+		$result['status']="FAIL";
+        $result['comment']="incorrect username: $u";
+        echo json_encode($result);
+        exit();
+	}
+	else if($data[0]['password'] != $p){
+		$result['status']="FAIL";
+        $result['comment']="incorrect password";
+        echo json_encode($result);
+        exit();
+	}
+
+
+
+    $query = "SELECT * FROM student WHERE username=? AND isActive='1' LIMIT 1";
+
+    $q = new Query($query,"s");
+    $q->execute([$uname]);
+    $data = $q->data();
+    if(!$data){
         $result['status']="FAIL";
-        $result['comment']="username: $u already exists";
+        $result['comment']="username: $uname does not exists";
         echo json_encode($result);
         exit();
     }
 
 
-    $query = "INSERT INTO teacher(username,password,departmentCode) VALUES (?,?,?)";
-    $q = new Query($query,"sss");
-    $q->execute([$u,$p,$s]);
+    $query = "UPDATE student SET passOutYear = ? WHERE id = ?";
+    $q = new Query($query,"ii");
+    $q->execute([$data[0]['passOutYear']+1,$data[0]['id']]);
 
     $result['status']="OK";
-    $result['comment']="teacher added successfully";
+    $result['comment']="Changes are made successfully";
     echo json_encode($result);
     
     // try{

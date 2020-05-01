@@ -9,7 +9,7 @@ require('receiver_header.php');
 // $_POST['joining_year']="2017";
 // $_POST['email']="a@b.com";
 // $_POST['contact_no']="7856";
-function checkValid($parameter){
+function checkvValid($parameter){
     foreach($parameter as $key=>$regex){
         $value = $_POST["$key"];
         if(preg_match($regex,$value)){
@@ -30,7 +30,7 @@ if($st[0]===0){
 }
 $parameter['department']="/^(CSE|CT|IT|1)$/";
 $parameter['joining_year'] = "/^((1)|(20\d\d))$/";
-$st = checkValid($parameter);
+$st = checkvValid($parameter);
 if($st[0]===0){
     $result['status']="FAIL";
     $result['comment']=$st[1];
