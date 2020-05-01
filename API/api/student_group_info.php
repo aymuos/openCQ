@@ -57,7 +57,14 @@ function queryStudentGroupInfo($stream,$bpy,$jy){
         $types.="s";
         $place[]=$jy;
     }
-
+    if($clause == 0){
+        $query.=" WHERE";
+        $clause=1;
+    }
+    else{
+        $query.=" AND";
+    }
+    $query.=" isActive = '1'";
     return [$query,$types,$place];
 
     
