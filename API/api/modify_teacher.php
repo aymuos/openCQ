@@ -11,7 +11,7 @@ require('receiver_header.php');
 // $_POST['address']="14 Luis Road, Goragacha";
 // $_POST['email']="DarK-ness@light.lit";
 // $_POST['contact_no']="7890458202";
-function checkValid($parameter){
+function checkvValid($parameter){
     foreach($parameter as $key=>$regex){
         $value = $_POST["$key"];
         if(preg_match($regex,$value)){
@@ -42,7 +42,7 @@ if($st[0]===0){
 }
 $parameter['department']="/^(CSE|CT|IT|BSEH|1)$/";
 //$parameter['joining_year'] = "/^((1)|(20\d\d))$/";
-$st = checkValid($parameter);
+$st = checkvValid($parameter);
 if($st[0]===0){
     $result['status']="FAIL";
     $result['comment']=$st[1];

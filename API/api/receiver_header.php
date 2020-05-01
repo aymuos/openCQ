@@ -6,6 +6,7 @@ define("key","SherlockNeedsWatson");
 
 define("bank","questionBank/");
 define("exam","exam/");
+$key = key;
 // define("bank","questionBank");
 
 ?>
