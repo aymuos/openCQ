@@ -1,0 +1,68 @@
+//card structure
+
+<div class="card-content">
+                <span class="card-title activator black-text text-darken-4">Click to access more 
+                    <i class="material-icons right">menu_open</i></span>
+                      <p><h3><blockquote>QUESTION BANK SECTION</blockquote></h3></p>
+                      <h6 style="font-style: italic;"> Expand to add , modify or delete chapters or questions </h6>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">SCROLL TO SEE MORE<i class="material-icons right">close</i></span>
+
+                  <!-- INSIDE REVEAL -->
+
+                  <ul class="collection">
+    <li class="collection-item avatar">
+     <i class="material-icons circle blue darken-4">add_box</i>
+      <span class="title"><p class="thick">Add a Chapter</p></span>
+      <p>Use this to add a new chapter from your subject <br>
+      </p>
+      <button class="btn waves-effect waves-light right secondary-content blue darken-4 white-text" href="tdbaddquestion.html" type="submit" name="action">GO 
+    <i class="material-icons right">send</i>
+  </button>
+      <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle red darken-4">remove</i>
+     <span class="title"><p class="thick">Delete a Chapter</p></span>
+      <p>Use this to remove a previously included chapter from the database <br>
+      </p>
+      <button class="btn waves-effect waves-light right secondary-content red darken-4 white-text" href="tdbaddquestion.html" type="submit" name="action">GO 
+    <i class="material-icons right">send</i>
+  </button>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle green ">control_point</i>
+      <span class="title"><p class="thick">Add Question </p></span>
+      <p>Use this to add questions to a previously included chapter<br>
+      </p>
+      <button class="btn waves-effect waves-light right secondary-content green white-text" href="tdbaddquestion.html" type="submit" name="action">GO 
+    <i class="material-icons right">send</i>
+  </button>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle cyan accent-4">build</i>
+      <span class="title"><p class="thick">Modify a question</p></span>
+      <p>Use this to modify previously added questions to an included chapter<br>
+      </p>
+      <button class="btn waves-effect waves-light right secondary-content cyan accent-4 white-text" href="tdbaddquestion.html" type="submit" name="action">GO 
+    <i class="material-icons right">send</i>
+  </button>
+    </li>
+
+    <li class="collection-item avatar">
+      <i class="material-icons circle red">delete_forever</i>
+      <span class="title"><p class="thick">Delete a question</p></span>
+      <p>Use this to delete previously added questions from an included chapter<br>
+      </p>
+      <button class="btn waves-effect waves-light right secondary-content red white-text" href="tdbaddquestion.html" type="submit" name="action">GO 
+    <i class="material-icons right">send</i>
+  </button>
+    </li>
+  </ul>
+
+
+                    <p>Refreshing the page will return you to the original section </p>
+            </div>
+        </div>
+      </div>
