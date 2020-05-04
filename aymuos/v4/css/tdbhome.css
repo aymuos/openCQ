@@ -56,3 +56,57 @@ h1 {
 	 padding: 10px;
 	 padding-left: 30px;
  }
+
+
+
+ /*for tdb home*/
+ .gradient1{
+	background: rgb(1,9,159);
+	background: linear-gradient(90deg, rgba(1,9,159,1) 0%, rgba(82,245,154,1) 97%);
+ }
+ .gradient2{
+	background: rgb(2,3,27);
+	background: linear-gradient(90deg, rgba(2,3,27,1) 0%, rgba(115,10,34,1) 100%);
+ }
+
+.gibpadding{
+	
+    padding-top: 50px;
+	padding-right:30px;
+	padding-bottom: 50px;
+    padding-left:80px;
+
+}
+
+.gibpadding2{
+	padding-top: 10px;
+	padding-right: 30px;
+}
+
+.gradient3{
+	background: rgb(2,3,27);
+background: linear-gradient(14deg, rgba(2,3,27,1) 34%, rgba(17,72,11,1) 76%);
+}
+
+.heightadjustnav2{
+	height: 40px;
+line-height: 30px;
+}
+.leftpad{
+	padding-left: 20px;
+}
+
+.cardpad{
+	padding-top:70px;
+	
+}
+
+p.thick {
+	font-weight: bold;
+  }
+
+/* main body gradient colour */
+.gradient4{
+	background: rgb(70,32,232);
+	background: radial-gradient(circle, rgba(70,32,232,1) 0%, rgba(226,139,121,1) 76%, rgba(255,57,0,1) 100%); 
+}
