@@ -1,5 +1,5 @@
 <?php
-$_POST['key']=key;
-    $_POST['username']="root";
-    $_POST['password']="shoot";
-    $_POST['examId']="2";
+$_GET['key']=key;
+$_GET['stream']="CSE";
+$_GET['joining_year']="1";
+$_GET['batch_passout_year']="1";

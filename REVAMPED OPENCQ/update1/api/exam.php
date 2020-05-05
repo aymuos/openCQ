@@ -4,7 +4,7 @@ require('library.php');
 
 function set(){
     $valid = checkSet(['key','username','examStatus','examId','code','batchPassoutYear',
-    'stream']);
+    'stream','visible']);
     if($valid[0]==0){
         $result['status']='FAIL';
         $result['comment']=$valid[1];
@@ -88,6 +88,15 @@ function validateBatch($batch){
         exit();
     }
 }
+function validateVisible(){
+    $v = $_GET['visible'];
+    if($v<0 || $v>1){
+        $result['status']='FAIL';
+        $result['comment']="incorrect visible: $v";
+        echo json_encode($result);
+        exit();
+    }
+}
 function validateStream($stream){
     if($stream=="ALL"){
         return;
@@ -154,7 +163,8 @@ try{
     // $_GET['examId']="ALL";
     // $_GET['batchPassoutYear']="ALL";
     // $_GET['stream']="ALL";
-    // $_GET['code']="MU250";
+    // $_GET['code']="ALL";
+    // $_GET['visible']="ALL";
     set();
     $input =(object)($_GET);
     validateKey($input->key);
@@ -162,6 +172,9 @@ try{
     $sub = validityCode();
     validateBatch($input->batchPassoutYear);
     validateStream($input->stream);
+    if($input->visible!="ALL"){
+        validateVisible();
+    }
     $types="";
     $inArr=[];
     $table = "exam";
@@ -227,12 +240,16 @@ try{
     else{
         $stream = 'exam.streamCodeNumber';
     }
-
     $query = "SELECT $selection FROM $table WHERE 
     exam.id=$exam AND exam.batchPassOutYear=$passout
     AND exam.streamCodeNumber=$stream AND
     exam.isActive=$status AND exam.subjectID = $sid AND exam.teacherID = $uid";
-
+    if($input->visible=='0'){
+        $query = $query." AND exam.isCoeVisible='1'";
+    }
+    else if($input->visible=='1'){
+        $query = $query." AND exam.isTeacherVisible='1'";
+    }
     $q = new Query($query,$types);
     $q->execute($inArr);
     $info = $q->data();

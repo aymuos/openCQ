@@ -22,7 +22,6 @@ if($check1[0]===0){
 $k = $_POST['key'];
 $u = $_POST['username'];
 $p = $_POST['password'];
-$s = $_POST["stream"];
 
 if($_POST['key'] != key){
     $value = $k;
@@ -48,9 +47,9 @@ try{
     }
 
 
-    $query = "INSERT INTO teacher(username,password,departmentCode) VALUES (?,?,?)";
-    $q = new Query($query,"sss");
-    $q->execute([$u,$p,$s]);
+    $query = "INSERT INTO teacher(username,password) VALUES (?,?)";
+    $q = new Query($query,"ss");
+    $q->execute([$u,$p]);
 
     $result['status']="OK";
     $result['comment']="teacher added successfully";
