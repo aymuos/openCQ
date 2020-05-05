@@ -4,7 +4,7 @@
 	session_start();
 	$username=$_POST['username']; 
 	$password=$_POST['password']; 
-	$url="localhost/update1/api/login.php";
+	$url=location."login.php";
 	$data = array(	"key" => key,
 					"username" => $username,
 					"password" => $password,

@@ -1,0 +1,7 @@
+.error{
+    background-color: red;
+    margin: 100px auto;   
+}
+.error h2{
+    text-align: center;
+}

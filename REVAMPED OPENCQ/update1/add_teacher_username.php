@@ -30,7 +30,7 @@ else {
 
 
 
-$url="localhost/update1/api/add_teacher.php";
+$url=location."add_teacher.php";
 $data = array(		"key" => key,
 					"username" => $_POST["uname"],
 					"password" => $_POST["psw"],

@@ -30,7 +30,7 @@ else {
 
 	
 
-$url="localhost/update1/api/student_group_info.php";
+$url=location."student_group_info.php";
 $data = array(		"key" => key,
 					"stream" => 1,
 					"batch_passout_year" => 1,
