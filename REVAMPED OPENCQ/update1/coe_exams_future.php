@@ -28,15 +28,14 @@ echo '
 }
 else {
 
-$url=location."exam.php";
+$url="localhost/update1/api/exam.php";
 $data = array(		"key" => key,
 					"username" => 'ALL',
 					"examStatus" => '2',
 					"examId" => 'ALL',
 					"code" => 'ALL',
 					"batchPassoutYear" => 'ALL',
-					"stream" => 'ALL',
-					"visible"=> '0'
+					"stream" => 'ALL'
 				);
 $result = send_get_request($url,$data);
 

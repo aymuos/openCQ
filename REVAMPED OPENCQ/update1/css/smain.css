@@ -1,0 +1,32 @@
+#wholepagewrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 50%;
+  left: 45%;
+}
+p{
+    font-family: arial;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 10px;
+    /*color: #ffb31a;*/
+	color: orange;
+    height: 0;
+}
+#iun, #pwd{
+	opacity: 0;
+}
+.card{
+	padding-bottom: 50px;
+}
+body{
+	background-color: #fff0e6;
+}
+.heading{
+
+}

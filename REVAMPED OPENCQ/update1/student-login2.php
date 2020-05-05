@@ -4,19 +4,19 @@
 	session_start();
 	$username=$_POST['username']; 
 	$password=$_POST['password']; 
-	$url="localhost/update1/api/login.php";
+	$api_name="login.php";
 	$data = array(	"key" => key,
 					"username" => $username,
 					"password" => $password,
-					"category" => '0',
+					"category" => '2',
 				);
 	
-	$result = send_post_request($url,$data);
+	$result = send_post_request($url.$api_name,$data);
 	$ans = json_decode($result);
 	if($ans->{'status'} == "OK"){
-		$_SESSION['loggedincoe'] = true;
-		$_SESSION['usernamecoe'] = $username;
-		$_SESSION['passwordcoe'] = $password;
+		$_SESSION['loggedinstudent'] = true;
+		$_SESSION['usernamestudent'] = $username;
+		$_SESSION['passwordstudent'] = $password;
 	}
 	echo $result;
 ?>

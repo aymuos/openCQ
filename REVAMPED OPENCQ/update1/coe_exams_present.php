@@ -29,7 +29,7 @@ echo '
 else {
 
 	
-$url=location."exam.php";
+$url="localhost/update1/api/exam.php";
 $data = array(		"key" => key,
 					"username" => 'ALL',
 					"examStatus" => '1',
@@ -37,11 +37,11 @@ $data = array(		"key" => key,
 					"code" => 'ALL',
 					"batchPassoutYear" => 'ALL',
 					"stream" => 'ALL',
-					"visible"=>'0'
+					"visible" => 'ALL'
 				);
 $result = send_get_request($url,$data);
 
-//echo $result;
+echo $result;
 
 $ans = json_decode($result);
 

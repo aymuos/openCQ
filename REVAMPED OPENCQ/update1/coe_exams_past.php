@@ -25,25 +25,22 @@ echo '
 </html>
 ';
 }
-else 
-{
-$url=location."exam.php";
+else {
+$url="localhost/update1/api/exam.php";
 $data = array(		"key" => key,
 					"username" => 'ALL',
 					"examStatus" => '3',
 					"examId" => 'ALL',
 					"code" => 'ALL',
 					"batchPassoutYear" => 'ALL',
-					"stream" => 'ALL',
-					"visible" => '0'
+					"stream" => 'ALL'
 				);
 $result = send_get_request($url,$data);
 
-// echo $result;
+echo $result;
 
 $ans = json_decode($result);
-// var_dump($ans);
-// exit();
+
 
 echo '
 <html>
