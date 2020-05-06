@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+		
+            
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  
+	  <style>
+		.total{
+			width: 95%;
+			background: aqua;
+			margin: auto;
+			padding: 10px;
+		}
+		.custom-left{
+			width: 30px;
+			background: red;
+			float: left;
+		}
+		.custom-right{
+			margin-left: 30px;
+			background: black;
+		}
+		.total:hover{
+			cursor: pointer;
+		}
+	  </style>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script>
+		$(document).ready(function(){
+			$("#test").click(function(){
+				// action goes here!!
+				console.log($("#45").is(":checked"));
+				$("#45").prop("checked",true);
+			});
+		});
+	  
+	  </script>
+	  
+    </head>
+
+    <body>
+		<form action="#">
+    <p>
+      <label>
+        <input class="with-gap"name="group1" type="radio" checked />
+        <span>Red<img src="img/logo256.png"/></span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio" />
+        <span>Yellow<img src="img/logo256.png"/></span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio"  />
+        <span>Green<img src="img/logo256.png"/></span>
+      </label>
+    </p>
+	
+	
+	
+	
+	<div class="total" id="test">
+		<div class="custom-left">
+			<label>
+				<input id="45" class="with-gap" name="group1" type="radio"  />
+				<span></span>
+			</label>
+		</div>
+		<div class="custom-right" ><img src="img/logo256.png"/></div>
+	</div>
+
+  
+  
+  
+  
+  </form>
+      <!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+  </html>

@@ -97,17 +97,36 @@ try{
         $q->execute([$time,$input->examId]);
         $result['status']='OK';
         $result['comment']="exam has been started";
-        echo json_encode($result);
+		$myfile = fopen("live/$input->examId", "w");
+		fwrite($myfile,"1");
+        fclose($myfile);
+		echo json_encode($result);
 
     }
     else{
         validateActivation();
+		
+		$query = "SELECT id from exam WHERE isCoeVisible='1' AND isActive='2'";
+        $q = new Query($query);
+        $q->execute();
+		$data = $q->data();
+		for($i=0;$i<count($data);$i++){
+			$myfile = fopen("live/".$data[$i]['id'], "w");
+			fwrite($myfile,"1");
+			fclose($myfile);
+		}
+		
         $query = "UPDATE exam SET startTime=?,isActive='1' WHERE isCoeVisible='1' AND isActive='2'";
         $q = new Query($query,"i");
         $q->execute([$time]);
+		
+		
+				
         $result['status']='OK';
         $result['comment']="exam has been started";
-        echo json_encode($result);
+        
+		
+		echo json_encode($result);
     }
 
     // try{

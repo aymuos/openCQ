@@ -35,7 +35,8 @@ $data = array(		"key" => key,
 					"examId" => 'ALL',
 					"code" => 'ALL',
 					"batchPassoutYear" => 'ALL',
-					"stream" => 'ALL'
+					"stream" => 'ALL',
+					"visible" => 'ALL'
 				);
 $result = send_get_request($url,$data);
 

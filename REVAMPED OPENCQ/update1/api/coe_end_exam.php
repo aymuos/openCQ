@@ -56,15 +56,29 @@ try{
     if($input->examId!="ALL"){
 
         validateExam($input->examId);
+		
+		unlink("live/".$input->examId);
+		
+		
         $query = "UPDATE exam SET isActive='3' WHERE id=?";
         $q = new Query($query,"i");
         $q->execute([$input->examId]);
         $result['status']='OK';
         $result['comment']="exam has been ended";
+		
         echo json_encode($result);
 
     }
     else{
+		
+		$query = "SELECT id from exam WHERE isCoeVisible='1' AND isActive='1'";
+        $q = new Query($query);
+        $q->execute();
+		$data = $q->data();
+		for($i=0;$i<count($data);$i++){
+			unlink("live/".$data[$i]['id']);
+		}
+		
         $query = "UPDATE exam SET isActive='3' WHERE   isActive='1'";
         $q = new Query($query);
         $q->execute();
