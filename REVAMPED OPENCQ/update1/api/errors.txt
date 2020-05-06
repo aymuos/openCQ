@@ -392,3 +392,36 @@ error stack:
 #2 C:\Users\SARANYA\Desktop\S\projects\api\generate_result.php(155): validityExams(Array)
 #3 {main}
 ----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------

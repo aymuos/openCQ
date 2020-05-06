@@ -25,7 +25,7 @@ function validateUser(){
         echo json_encode($result);
         exit();
     }
-    $query= "SELECT MAX(id) AS stid FROM student WHERE username=?";
+    $query= "SELECT id AS stid FROM student WHERE username=? AND isActive='1'";
     $q = new Query($query,"s");
     $q->execute([$stuser]);
     $info = $q->data();

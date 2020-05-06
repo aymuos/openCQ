@@ -7,8 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {
-        edge:left,
+    var instances = M.Sidenav.init(elems, { 
         draggable:true,
         inDuration:250,
         outDuration:200
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded",function(){
         });
     });
 
-
+/*
 //following js for back-to-top button
 //Get the button:
 mybutton = document.getElementById("myBtn");
@@ -45,7 +44,7 @@ function scrollFunction() {
   } else {
     mybutton.style.display = "none";
   }
-}
+}*/
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
@@ -54,27 +53,33 @@ function topFunction() {
 } 
 
 
-function save_opt(q_num,q_id){
-	
-	var radios = document.getElementsByName("option"+q_num);
-	var id = 0;
-	for(var i = 0 ; i<radios.length ; i++){
-		if(radios[i].checked === true){
-			id = radios[i].value;
-		}
+function save_opt(q_num){
+	M.toast({html: 'Saving Answer!  :)',classes: 'rounded'});
+	var ans=0;
+	for(i=1;i<5;i++){
+		if($("#iq"+q_num+"o"+i).is(":checked")==true)ans=i;
 	}
-	//alert(id);
-	var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200) {
+	$.get('student_save_answer.php?q='+q_num+'&o='+ans,function (data, textStatus){  // success callback
+		M.Toast.dismissAll();
+		console.log(data);
+		var res = JSON.parse(data);
+		
+		if(res.status == "FAIL"){
+			if(res.comment == 'further submission is not allowed'){
+				//The exam is over
+				closeFullscreen();
+				final_func();
+			}
+			else
+			M.toast({html: res.comment+"! :(",classes: 'rounded'});
+		}
+		else{
 			save_color_tab(q_num);
-			document.getElementById("trt"+q_num).innerHTML = this.responseText;
-			setTimeout(function(){ document.getElementById("trt"+q_num).innerHTML = "" ; }, 3000);
-      }
-    };
-    xmlhttp.open("GET", "save_ans.php?qid=" + q_id + "&opt="+id, true);
-    xmlhttp.send();
+			M.toast({html: 'Answer successfully saved! :)',classes: 'rounded'});
+		}
+    });
 }
+	
 
 function color_tab(id){
 	//alert(document.getElementById("tab"+id).style.backgroundColor);
@@ -170,7 +175,7 @@ function showTime(){
 		}
 		else{
 			document.getElementById("warning_message").style.display = "none";
-			clearInterval(variable);
+			//clearInterval(variable);
 			document.getElementById("time").innerHTML = 6;
 			document.getElementById("exam_page").style.display = "block";
 			document.getElementById("initial-head").style.display = "none";
@@ -218,14 +223,14 @@ $(document).keydown(function(e) {
 
 
 //Prevents F5 refresh
-/*$(document).ready(function() {
+$(document).ready(function() {
 $(window).keydown(function(event){
 		if(event.keyCode == 116) {
 			event.preventDefault();
 			return false;
 		}
 	});
-});*/
+});
 
 //Prevents F12
 $(document).keydown(function (event) {
@@ -238,10 +243,10 @@ $(document).keydown(function (event) {
 			
 
 //Prevents right click
-/*
+
 $(document).bind("contextmenu",function(e){
   return false;
-});*/
+});
 
 
 /* Close fullscreen */
@@ -275,31 +280,35 @@ $(elem).attr('unselectable','on')
 	 
 
 function submit_paper(){
-	len = document.getElementById("no_ques").value;
 	closeFullscreen();
 	final_func();
-	var i;
-	var str = "submit_ans.php?";
-	var xmid = document.getElementById("xmid").value;
-	str = str + "exam_id=" + xmid ;
-	for(i=1;i<=len;i++){
-		str = str + "&qid" + i + "=" + document.getElementById("ques_id"+i).value;
-		var radios = document.getElementsByName("option"+i);
-		var id = 0;
-		for(var j = 0 ; j<radios.length ; j++){
-			if(radios[j].checked == true){
-				id = radios[j].value;
-			}
-		}
-		str = str + "&opt" + i + "=" + id;
-	}
-	//alert(str);
-	var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200) {
-			//alert(this.responseText);
-      }
-    };
-    xmlhttp.open("GET", str, true);
-    xmlhttp.send();
+	$.get('student_submit_ans.php',function (data, textStatus){  // success callback
+    });
 }
+
+
+$(document).ready(function(){
+	$(".total").click(function(){
+		//alert($(this).attr("id"));
+		$("#"+"i"+$(this).attr("id")).prop("checked",true);
+	});
+	
+});
+
+var responseTimer = setInterval(responseCheck, 5000);
+
+function responseCheck() {
+	$.get('is_live.php',function (data, textStatus){		// success callback
+		console.log(data);
+		var res = JSON.parse(data);
+		//M.toast({html: res.comment+"! :(",classes: 'rounded'});
+		if(res.status == "OK" && res.comment == "exam has ended"){
+			document.getElementById("initial_message").style.display = "none";
+			closeFullscreen();
+			final_func();
+		}
+    });
+}
+
+
+
