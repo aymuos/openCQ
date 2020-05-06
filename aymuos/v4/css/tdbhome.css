@@ -119,3 +119,15 @@ background-size: 50px 50px;
 .subcardsize{
 	height: 100px;
 }
+/*textbox stuff*/
+#editableDiv {
+    margin:10px 0;
+    height: 300px;
+	width: 100%;
+}
+
+#option1, #option2, #option3, #option4 {
+    margin:10px 0;
+    height: 300px;
+	width:100%;
+}
