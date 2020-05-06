@@ -27,8 +27,8 @@ function validateUser(){
     return $exist[0]['id'];
 }
 function validateExam($id){
-    $query = "SELECT id FROM
-    exam WHERE id=?  AND isActive='1' LIMIT 1";
+    $query = "SELECT * FROM
+    exam WHERE id=? LIMIT 1";
     $q = new Query($query,"i");
     $q->execute([$id]);
     $exist = $q->data();
@@ -38,6 +38,13 @@ function validateExam($id){
         echo json_encode($result);
         exit();
     }
+	if($exist[0]['isActive'] != '1'){
+		$result['status']='FAIL';
+        $result['comment']="further submission is not allowed";
+        echo json_encode($result);
+        exit();
+	}
+		
     
 }
 function validateParticipation($stid){
@@ -92,7 +99,7 @@ try{
         $body['option2']=$question->options[1]->st;
         $body['option3']=$question->options[2]->st;
         $body['option4']=$question->options[3]->st;
-        $body['marked option']="option".$attempt[$i];
+        $body['marked option']=$attempt[$i];
         // var_dump($body);
         $i++;
         $result['result'][]=$body;

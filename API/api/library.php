@@ -403,7 +403,7 @@ class Question{
         $this->options[1]->food(mt_rand()%10);
         $this->options[2]->food(mt_rand()%10);
         $this->options[3]->food(mt_rand()%10);
-        usort($options,array('Option','cmpOption'));
+        usort($this->options,array('Option','cmpOption'));
     }
 }
 
