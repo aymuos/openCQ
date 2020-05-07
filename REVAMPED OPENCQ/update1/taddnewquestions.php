@@ -297,7 +297,7 @@ if (!isset($_SESSION['loggedinteacher'])){
 	},
     images : {
         editing : {
-				preferredWidth : 1000
+				preferredWidth : 900
 			}
 		}
 	};

@@ -14,7 +14,7 @@ function func(){
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 				M.Toast.dismissAll();
-				//alert(this.responseText);
+				console.log(this.responseText);
                 var res = JSON.parse(this.responseText);
 				var stm = 'incorrect username: '+ uname;
 				

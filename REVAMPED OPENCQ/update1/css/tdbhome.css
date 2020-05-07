@@ -156,3 +156,10 @@ background-size: 50px 50px;
 .custom-right{
 	margin-left: 30px;
 }
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 50%;
+  left: 45%;
+}
