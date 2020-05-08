@@ -7,11 +7,7 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-<<<<<<< HEAD
-	padding-bottom: 2000px;
-=======
 	padding-bottom: 100px;
->>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 }
 
 h1 {
@@ -134,8 +130,6 @@ background-size: 50px 50px;
     margin:10px 0;
     height: 300px;
 	width:100%;
-<<<<<<< HEAD
-=======
 }
 
 .modal{
@@ -168,5 +162,4 @@ background-size: 50px 50px;
   right: auto !important;
   bottom: 50%;
   left: 45%;
->>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 }
