@@ -4,6 +4,12 @@
 	
 	
 	
+	$_POST['key']=key;
+	$_POST['username']="Ben Tennyson";
+	$_POST['password']="AlienX";
+	$_POST['sub_code']="MU250";
+	$_POST['chapter_id']="32";
+	$_POST['new_chapter_name']="abcd     efg    hij    ";
 	$valid = checkSet(['key','username','password','sub_code','new_chapter_name','chapter_id'],1);
 	if($valid[0]==0){
 		$arr = array(	'status' => 'FAIL',
@@ -80,10 +86,21 @@
 						$status = 'FAIL';
 						$comment = 'incorrect chapter_id: ';
 						$arr = array( 	'status' => $status,
-										'comment' => $comment.$sender_chapterId);
+						'comment' => $comment.$sender_chapterId);
 						echo json_encode($arr);
 					}
 					else{
+						// echo XP($sender_newChapterName);
+						$query = "SELECT id FROM chapter WHERE LOWER(name) REGEXP ? AND isActive='1'";
+						$q = new Query($query,"s");
+						$q->execute([XP($sender_newChapterName)]);
+						$exist = $q->data();
+						if($exist){
+							$error['status']='FAIL';
+							$error['comment']="chapter $sender_newChapterName already exists";
+							echo json_encode($error);
+							exit();
+						}
 						$q = new Query("UPDATE chapter SET name = ? WHERE id = ?","si");
 						$q->execute([$sender_newChapterName,$sender_chapterId]);
 						$status = 'OK';
