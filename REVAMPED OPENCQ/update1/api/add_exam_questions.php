@@ -119,6 +119,7 @@ function validateChapters($combined,$sid,$tid){
 }
 
 function validateQuestions($combined){
+//	echo 'hello';
     $questions = [];
     foreach($combined as $pair){
         $questions[]=$pair[1];
@@ -132,24 +133,28 @@ function validateQuestions($combined){
     $q->execute($questions);
     $res = $q->stmt->get_result()->fetch_all(MYSQLI_NUM);
     
+//	var_dump($res);
+//	echo 'ada';
+//	var_dump($combined);
+	
     $left = array_udiff($combined,$res,function($a,$b){
-        if($a[0]===$b[0] && $a[1]===$b[1]){
+        if((int)$a[0]===$b[0] && (int)$a[1]===$b[1]){
             return 0;
         }
-        else if($a[0]>$b[0]){
+        else if((int)$a[0]>$b[0]){
             return +1;
         }
-        else if($a[0]===$b[0] && $a[1]>$b[1]){
+        else if((int)$a[0]===$b[0] && (int)$a[1]>$b[1]){
             return +1;
         }
-        else if($a[0]<$b[0]){
+        else if((int)$a[0]<$b[0]){
             return -1;
         }
         else{
             return -1;
         }
     });
-    // var_dump($left);
+  //   var_dump($left);
     // exit();
     if($left){
         $left = array_values($left);
@@ -165,15 +170,17 @@ function validateQuestions($combined){
 
 try{
     Query::init();
-    // $_POST['key']=key;
-    // $_POST['username']="BB";
-    // $_POST['password']="AtoZ";
-    // $_POST['examId']="2";
-    // $_POST['code']="OP780";
-    // $_POST['questions']=[[6,8],[6,9],[7,10],[7,11]];
+     //$_POST['key']=key;
+     //$_POST['username']="GCECT/F/00001";
+     //$_POST['password']="987";
+     //$_POST['examId']="1";
+     //$_POST['code']="CS502";
+    //$_POST['questions']=[[1,1]];
     $_POST = json_decode(file_get_contents('php://input'),TRUE);
-    set();
+    //var_dump($_POST);
+	set();
     $input = (object)($_POST);
+	//var_dump($input);
     validateKey($input->key);
     $result = validateExam($input->examId);
     $sid = $result[0];

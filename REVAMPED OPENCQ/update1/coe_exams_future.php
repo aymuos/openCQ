@@ -204,7 +204,7 @@ $ans = json_decode($result);
 			
 			for($i=0;$i<count($ans->result[$ct-1]->stream);$i++)
 			//Print the subject code here..........
-			echo $ans->result[$ct-1]->stream[$i].' ';
+			echo $ans->result[$ct-1]->stream[$j].' ';
 			
 			
 			echo '</td>

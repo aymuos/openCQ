@@ -2,7 +2,11 @@
 define("key","SherlockNeedsWatson");
 
 
+<<<<<<< HEAD
 define("location","http://localhost:8080/update1/api/");
+=======
+define("location","http://localhost/update1/api/");
+>>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 
 
 function send_post_request($url,$data,$content=0){

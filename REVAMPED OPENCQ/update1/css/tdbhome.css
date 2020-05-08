@@ -7,7 +7,11 @@
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<<<<<<< HEAD
 	padding-bottom: 2000px;
+=======
+	padding-bottom: 100px;
+>>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 }
 
 h1 {
@@ -130,4 +134,39 @@ background-size: 50px 50px;
     margin:10px 0;
     height: 300px;
 	width:100%;
+<<<<<<< HEAD
+=======
+}
+
+.modal{
+	width: 90%;
+	max-height: 100%; 
+	top: 0% !important;
+	bottom: auto !important;
+}
+
+.modal-footer{
+	text-align: center !important;
+	padding-bottom: 100px !important;
+}
+
+.total{
+	width: 100%;
+	margin: 2px;
+	padding: 10px;
+}
+.custom-left{
+	width: 30px;
+	float: left;
+}
+.custom-right{
+	margin-left: 30px;
+}
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 50%;
+  left: 45%;
+>>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 }

@@ -38,8 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
       outDuration:200,
       preventScrolling:true,
       dismissible:true,
+<<<<<<< HEAD
       startingTop:'4%'
       endingTop:'10%'
+=======
+>>>>>>> 15af29ac9be395a8a33ca08e3554cea5942f6643
 
     });
   });
