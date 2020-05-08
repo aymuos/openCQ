@@ -29,7 +29,7 @@ echo '
 else {
 	$test_id = $_GET['ti'];
 	if($test_id == '-1')$test_id = 'ALL';
-	$url="localhost/update1/api/coe_end_exam.php";
+	$url=location."coe_end_exam.php";
 	$data = array(		"key" => key,
 						"username" => $_SESSION['usernamecoe'],
 						"password" => $_SESSION['passwordcoe'],

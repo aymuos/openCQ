@@ -26,11 +26,12 @@ echo '
 </html>
 ';
 }
-else {
+else
+ {
 
 	
 
-$url="localhost/update1/api/teacher_group_info.php";
+$url=location."teacher_group_info.php";
 $data = array(		"key" => key,
 					"stream" => 1,
 					"batch_passout_year" => 1,
@@ -41,6 +42,8 @@ $result = send_get_request($url,$data);
 //echo $result;
 
 $ans = json_decode($result);
+// var_dump($ans);
+// exit();
 
 echo '
 

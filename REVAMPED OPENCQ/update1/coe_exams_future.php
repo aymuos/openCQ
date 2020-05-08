@@ -28,7 +28,7 @@ echo '
 }
 else {
 
-$url="localhost/update1/api/exam.php";
+$url=location."exam.php";
 $data = array(		"key" => key,
 					"username" => 'ALL',
 					"examStatus" => '2',
@@ -36,7 +36,7 @@ $data = array(		"key" => key,
 					"code" => 'ALL',
 					"batchPassoutYear" => 'ALL',
 					"stream" => 'ALL',
-					"visible" => 'ALL'
+					"visible"=> '0'
 				);
 $result = send_get_request($url,$data);
 

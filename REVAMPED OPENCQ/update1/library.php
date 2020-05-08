@@ -403,7 +403,7 @@ class Question{
         $this->options[1]->food(mt_rand()%10);
         $this->options[2]->food(mt_rand()%10);
         $this->options[3]->food(mt_rand()%10);
-        usort($options,array('Option','cmpOption'));
+        usort($this->options,array('Option','cmpOption'));
     }
 }
 
@@ -426,6 +426,13 @@ function getAttempt($stid,$eid){
     $attempt = file_get_contents($file);
     return $attempt; 
 }
+
+function varDumpToString($var) {
+    ob_start();
+    var_dump($var);
+    $result = ob_get_clean();
+    return $result;
+ }
 // echo getAttempt(3,3);
 // define("bank","C:\\Users\\SARANYA\\Desktop\\S\\projects\\api\\questionBank\\");
 // $question = new Question(1);

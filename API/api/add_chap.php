@@ -87,8 +87,11 @@
 						$q->execute([$sender_chapterName,$subject_id,$teacher_id]);
 						$status = 'OK';
 						$comment = 'chapter added successfully';
+						
 						$arr = array( 	'status' => $status,
-										'comment' => $comment);
+										'comment' => $comment,
+										'id' => Query::insertId()
+									);
 						echo json_encode($arr);
 					}
 				}

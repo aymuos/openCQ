@@ -29,7 +29,7 @@
 		// var_dump($out2);
 
 
-			$_SESSION['teachername']=$out2->name;
+		$_SESSION['teachername']=$out2->name;
 	}
 
 	echo $result;

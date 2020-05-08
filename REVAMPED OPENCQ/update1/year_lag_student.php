@@ -30,7 +30,7 @@ else {
 
 
 
-$url="localhost/update1/api/year_lag.php";
+$url=location."year_lag.php";
 $data = array(		"key" => key,
 					"username" => $_SESSION["usernamecoe"],
 					"password" => $_SESSION["passwordcoe"],

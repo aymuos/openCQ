@@ -30,7 +30,7 @@ else {
 
 
 
-$url="localhost/update1/api/delete_subcode.php";
+$url=location."delete_subcode.php";
 $data = array(		"key" => key,
 					"username" => $_SESSION["usernamecoe"],
 					"password" => $_SESSION["passwordcoe"],

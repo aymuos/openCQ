@@ -30,7 +30,7 @@ else {
 
 	
 
-$url="localhost/update1/api/teacher_group_info.php";
+$url=location."teacher_group_info.php";
 $data = array(		"key" => key,
 					"stream" => $_GET["stream"]
 				);

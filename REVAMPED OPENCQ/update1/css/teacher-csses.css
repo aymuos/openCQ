@@ -1,6 +1,7 @@
 
 body{
-
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(24,119,232,1) 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     justify-content: center;
 }
@@ -8,10 +9,6 @@ body{
     width: 800px;
     margin: 0 auto;
     padding-top: 100px;
-	margin-left: 500px;
-	margin-right: auto;
-	padding-left: 500px;
-	background-color: red;
 }
 
 font-big{

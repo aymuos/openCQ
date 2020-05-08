@@ -19,7 +19,6 @@ function change(){
 
 
 function prepare(key){
-	key.sort();
 	var str = "";
 
 	for(i=0;i<key.length;i++){
@@ -30,7 +29,6 @@ function prepare(key){
 		if(obj[key[i]][1] == 1)str+="checked";
 		str += "><label  class=\"rio\"  for=\"" + key[i] + "\">" + key[i] + " (" + obj[key[i]][0] + ")" + "</label></div>";
 	}
-	// console.log(str);
 	$("#long-list").html(str);
 	$('input[type=checkbox]').addClass("custom-control-input");
 	$(".moscow").each(function(){
@@ -47,7 +45,6 @@ document.getElementById("inp").addEventListener("click", function() {
 	var keys = Object.keys(obj);
 	document.getElementById("search-box").value = "";
 	prepare(keys);
-	
 	document.getElementById("lister").style.display = "block";
 	console.log('keydown pressedsdsd');
 });
@@ -61,10 +58,10 @@ function func(){
 function reload_list(){
 	var n = $("#search-box").val();
 	var arr = [];
-	var entries = Object.entries(obj);
-	for(i=0;i<entries.length;i++){
-		if(entries[i][0].toLowerCase().includes(n.toLowerCase()) || entries[i][1][0].toLowerCase().includes(n.toLowerCase())){
-			arr.push(entries[i][0]);
+	var keys = Object.keys(obj);
+	for(i=0;i<keys.length;i++){
+		if(keys[i].startsWith(n.toUpperCase()) == true){
+			arr.push(keys[i]);
 		}
 	}
 	prepare(arr);
@@ -98,5 +95,6 @@ function tick(x){
 		}
 		document.getElementById("inp").value = ans; 
 	}
+
 }
 

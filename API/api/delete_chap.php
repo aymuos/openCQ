@@ -4,7 +4,7 @@
 	
 	
 	
-	$valid = checkSet(['key','username','password','sub_code','new_chapter_name','chapter_id'],1);
+	$valid = checkSet(['key','username','password','sub_code','chapter_id'],1);
 	if($valid[0]==0){
 		$arr = array(	'status' => 'FAIL',
 						'comment' => $valid[1]
@@ -17,7 +17,7 @@
 	$sender_code = $_POST['sub_code'];
 	$sender_password = $_POST['password'];
 	$sender_chapterId= $_POST['chapter_id'];
-	$sender_newChapterName = $_POST["new_chapter_name"];
+	// $sender_newChapterName = $_POST["new_chapter_name"];
 						
 	if($sender_key != $key){
 		$arr = array(	'status' => 'FAIL',

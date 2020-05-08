@@ -35,7 +35,7 @@ echo '
 else {
 	
 
-	$url="localhost/update1/api/all_subjects.php";
+	$url=location."all_subjects.php";
 	$data = array(	"key" => key,);
 	
 	$result = send_get_request($url,$data);

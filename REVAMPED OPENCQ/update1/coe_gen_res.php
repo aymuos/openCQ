@@ -28,7 +28,7 @@ echo '
 }
 else {
 
-	$url="localhost/update1/api/generate_result.php";
+	$url=location."generate_result.php";
 	$data = array(		"key" => key,
 						"username" => $_SESSION['usernamecoe'],
 						"password" => $_SESSION['passwordcoe'],

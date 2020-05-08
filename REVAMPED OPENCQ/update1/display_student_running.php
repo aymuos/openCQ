@@ -30,7 +30,7 @@ else {
 
 	
 $test_id = $_GET['ti'];
-$url="localhost/update1/api/exam_students.php";
+$url=location."exam_students.php";
 $data = array(		"key" => key,
 					"username" => $_SESSION['usernamecoe'],
 					"password" => $_SESSION['passwordcoe'],

@@ -5,7 +5,7 @@ const heading = document.querySelector('h2.tname');
 let catcher = {};
 main.addEventListener('click',async(e)=>{
     try{
-
+        
         if(e.target.tagName=="BUTTON"){
                 
             codeToDelete = e.target.parentElement.parentElement.firstElementChild.textContent;
@@ -30,6 +30,32 @@ main.addEventListener('click',async(e)=>{
             }
             else{
                 throw new Error(`${data.comment}`);
+            }
+        }
+        else if(e.target.tagName == 'A'){
+            let temp = e.target.parentElement.children;
+            let code = temp[0].textContent;
+            let paper = temp[1].textContent;
+            let response = await fetch('redirectChapter.php',
+            {
+                method:"POST",
+                body: JSON.stringify({code: code,paper: paper}),
+                headers:{
+                    "Content-Type": "application/json"
+                }   
+            });
+            if(response.status!=200){
+                throw new Error('can not fetch data');
+            }
+            // catcher = await response.text();
+            let data = await response.json();
+            // catcher = data;
+            if(data.status=="OK"){
+                // catcher = "success";
+                window.location.href = 'tselectchapter.php';
+            }
+            else{
+                throw new Error('session error');
             }
         }
     }
@@ -147,7 +173,7 @@ class Codes{
                 <div class="card-body ">
                   <h3 class="card-title ">${element}</h5>
                   <p class="card-text">${codes.disp[element]}</p>
-                  <a href="#" class="btn btn-primary">Continue</a>
+                  <a class="btn btn-primary">Continue</a>
                   <div class="text-right">
                   <button class="btn btn-danger btn-rounded ">DELETE SUBJECT <i class="far fa-trash-alt"></i></button>
                     </div>

@@ -22,32 +22,51 @@ function queryBuild($input){
     }
     return [$query,$types,$arr];
 }
-function checkvValid($key,$id){
-    if($id==""){
-        return [0,"incorrect $key: $id"];
-    }
-    for($i=0;$i<strlen($id);$i++){
-        $c = $id[$i];
-        $ass = ord($c);
-        // echo "$ass\n";
-        if($ass<48 || $ass>57){
-            return [0,"incorrect $key: $id"];
-        }
 
-    }
-    return [1,""];
-}
 
-// $_GET['key']=key;
-// $_GET['teacherId']="2";
-// $_GET['subjectId']="2";
+$_GET['key']=key;
+$_GET['username']="Ben TennySon";
+$_GET['code']="ALL";
 
-$valid = checkSet(['key','teacherId','subjectId']);
+$valid = checkSet(['key','username','code']);
 if($valid[0]==0){
     $result['status']='FAIL';
     $result['comment']=$valid[1];
     echo json_encode($result);
     exit();
+}
+
+function validateUser(){
+    $username = $_GET['username'];
+    $query = "SELECT id FROM teacher WHERE username=? AND isActive='1'";
+    $q = new Query($query,"s");
+    $q->execute([$username]);
+    $exist = $q->data();
+    if(!$exist){
+        $result['status']='FAIL';
+        $result['comment']="incorrect username/password: $username";
+        echo json_encode($result);
+        exit();
+    }
+    $tid = $exist[0]['id'];
+    return $tid;
+}
+
+function validateCode(){
+    $code = $_GET['code'];
+    $query = "SELECT id FROM subject WHERE 
+    subjectCode=? AND isActive='1'";
+    $q = new Query($query,"s");
+    $q->execute([$code]);
+    $exist = $q->data();
+    if(!$exist){
+        $result['status']='FAIL';
+        $result['comment']="incorrect code: $code";
+        echo json_encode($result);
+        exit();
+    }
+    $sid = $exist[0]['id'];
+    return $sid;
 }
 
 $input = (object)($_GET);
@@ -59,71 +78,37 @@ if($input->key!=key){
     exit();
 }
 
-$valid = checkvValid('teacherId',$input->teacherId);
-
-if($valid[0]==0){
-    $result['status']='FAIL';
-    $result['comment']=$valid[1];
-    echo json_encode($result);
-    exit();
-}
-
-if($input->subjectId!="ALL"){
-    $valid = checkvValid('subjectId',$input->subjectId);
-    if($valid[0]==0){
+function validateAllocation($sid,$tid){
+    $username = $_GET['username'];
+    $code = $_GET['code'];
+    $query = "SELECT subjectID FROM subject_under_teacher
+    WHERE subjectID=? AND teacherId=? LIMIT 1";
+    $q = new Query($query,"ii");
+    $q->execute([$sid,$tid]);
+    $exist = $q->data();
+    if(!$exist){
         $result['status']='FAIL';
-        $result['comment']=$valid[1];
+        $result['comment']="teacher $username has not undertaken subject $code";
         echo json_encode($result);
         exit();
     }
 }
+
+
+
 
 
 try{
     Query::init();
+    $tid = validateUser();
+    $sid = "ALL";
+    if($input->code != "ALL"){
+        $sid = validateCode();
 
-    $query = "SELECT id
-    FROM teacher
-    WHERE id=? AND isActive='1' LIMIT 1";
-
-    $q = new Query($query,"i");
-    $q->execute([$input->teacherId]);
-    $exist = $q->data();
-    if(!$exist){
-        $result['status']='FAIL';
-        $result['comment']="incorrect teacherId: $input->teacherId";
-        echo json_encode($result);
-        exit();
+        validateAllocation($sid,$tid);
     }
-    if($input->subjectId!="ALL"){
-        $query = "SELECT id FROM subject 
-        WHERE id=? AND isActive='1' LIMIT 1";
-
-        $q = new Query($query,"i");
-        $q->execute([$input->subjectId]);
-        $exist = $q->data();
-        if(!$exist){
-            $result['status']='FAIL';
-            $result['comment']="incorrect subjectId: $input->subjectId";
-            echo json_encode($result);
-            exit();
-        }
-
-        $query = "SELECT subjectID 
-        FROM subject_under_teacher
-        WHERE subjectID=? AND teacherId=? LIMIT 1";
-
-        $q = new Query($query,'ii');
-        $q->execute([$input->subjectId,$input->teacherId]);
-        $exist = $q->data();
-        if(!$exist){
-            $result['status']='FAIL';
-            $result['comment']="teacher $input->teacherId has not undertaken subject $input->subjectId";
-            echo json_encode($result);
-            exit();
-        }
-
-    }
+    $input->subjectId = $sid;
+    $input->teacherId = $tid;
 
     $query= queryBuild($input);
     $q = new Query($query[0],$query[1]);

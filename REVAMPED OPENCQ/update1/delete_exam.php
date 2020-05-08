@@ -30,7 +30,7 @@ else {
 
 
 
-$url="localhost/update1/api/coe_delete_exam.php";
+$url=location."coe_delete_exam.php";
 $data = array(		"key" => key,
 					"username" => $_SESSION["usernamecoe"],
 					"password" => $_SESSION["passwordcoe"],

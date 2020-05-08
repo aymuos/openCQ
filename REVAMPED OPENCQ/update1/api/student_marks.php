@@ -3,7 +3,7 @@ require('receiver_header.php');
 require('library.php');
 
 function set(){
-    $valid = checkSet(['key','username','password','examId','stream'],1);
+    $valid = checkSet(['key','username','password','examId','stream','category'],1);
     if($valid[0]==0){
         $result['status']='FAIL';
         $result['comment']=$valid[1];
@@ -21,11 +21,22 @@ function validateStream(){
         exit();
     }
 }
-function validateExam($id){
+function validateExam($id,$tid){
+    $types="i";
+    $arr = [$id];
     $query = "SELECT isActive FROM
-    exam WHERE id=?  AND isActive = '4' LIMIT 1";
-    $q = new Query($query,"i");
-    $q->execute([$id]);
+    exam WHERE id=?  AND isActive = '4'";
+    if($_POST['category']=="1"){
+        $query = $query . " AND teacherID=?";
+        $types = $types."i";
+        $arr[]=$tid;
+    }
+
+        $query = $query . " LIMIT 1";
+
+
+    $q = new Query($query,$types);
+    $q->execute($arr);
     $exist = $q->data();
     if(!$exist){
         $result['status']='FAIL';
@@ -35,9 +46,21 @@ function validateExam($id){
     }
 }
 function validateUser(){
+    if($_POST['category']=="0"){
+        $table = 'coe';
+    }
+    else if($_POST['category']=="1"){
+        $table = 'teacher';
+    }
+    else{
+        $result['status']='FAIL';
+        $result['comment']="incorrect category: ".$_POST['category'];
+        echo json_encode($result);
+        exit();
+    }
     $user = $_POST['username'];
     $pass = $_POST['password'];
-    $query = "SELECT id FROM coe WHERE username=? AND password=? AND isActive='1' 
+    $query = "SELECT id FROM $table WHERE username=? AND password=? AND isActive='1' 
     LIMIT 1";
     $q = new Query($query,"ss");
     $q->execute([$user,$pass]);
@@ -48,20 +71,21 @@ function validateUser(){
         echo json_encode($result);
         exit();
     }
-
+    return $exist[0]['id'];
 }
 
 try{
     Query::init();
     // $_POST['key']=key;
-    // $_POST['username']="root";
-    // $_POST['password']="shoot";
+    // $_POST['username']="Ben Tennyson";
+    // $_POST['password']="AlienX";
     // $_POST['stream']="ALL";
-    // $_POST['examId']="3";
+    // $_POST['examId']="5";
+    // $_POST['category']="1";
     set();
     $input = (object)($_POST);
-    validateUser();
-    validateExam($input->examId);
+    $tid = validateUser();
+    validateExam($input->examId,$tid);
     if($input->stream!="ALL"){
         validateStream();
     }

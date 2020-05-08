@@ -1,7 +1,18 @@
-.error{
-    background-color: red;
-    margin: 100px auto;   
+textarea.modifyChapter{
+    background-color: #ffffff;
 }
-.error h2{
-    text-align: center;
+textarea.addChapter{
+    background-color: #ffffff;
 }
+textarea.modifyChapter{
+    display: none
+}
+div.chapter > span{
+    display: block;
+}
+div.edit > textarea{
+    display: inline;
+}
+div.edit > span{
+    display: none !important;
+} 

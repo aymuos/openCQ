@@ -28,6 +28,9 @@ function validateUser(){
 }
 
 function generateQuestions($exams){
+    if(!$exams){
+        return [];
+    }
     $questions = [];
     $clause = implode(',',array_fill(0,count($exams),"?"));
     $types = str_repeat('i',count($exams));
@@ -50,6 +53,9 @@ function generateQuestions($exams){
 }
 
 function validityExams($arr){
+    if(!$arr){
+        return;
+    }
     $clause = implode(',',array_fill(0,count($arr),"?"));
     $types = str_repeat('i',count($arr));
     $query = "SELECT id FROM exam WHERE id IN ($clause) AND isActive IN ('3','4')";
@@ -164,6 +170,9 @@ function updateResult($attempts,$questions){
 }
 
 function updateExam($arr){
+    if(!$arr){
+        return;
+    }
     $clause = implode(',',array_fill(0,count($arr),"?"));
     $types = str_repeat('i',count($arr));
     $query = "UPDATE exam SET isActive='4' WHERE id IN ($clause) AND isActive='3'";
@@ -174,14 +183,15 @@ function updateExam($arr){
 
 try{
     Query::init();
-    // $_POST['key']=key;
-    // $_POST['username']="root";
-    // $_POST['password']="shoot";
+    $_POST['key']=key;
+    $_POST['username']="root";
+    $_POST['password']="shoot";
     set();
     validateUser();
     try{
         Query::tStart();
         $arrt= generateAttempts();
+        // exit();
         $attempts = $arrt[0];
         $files = $arrt[1];
         $exams = array_keys($attempts);

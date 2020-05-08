@@ -30,7 +30,7 @@ else {
 
 
 
-$url="localhost/update1/api/delete_teacher.php";
+$url=location."delete_teacher.php";
 $data = array(		"key" => key,
 					"username" => $_GET["username"],
 				);

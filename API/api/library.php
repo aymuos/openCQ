@@ -426,6 +426,12 @@ function getAttempt($stid,$eid){
     $attempt = file_get_contents($file);
     return $attempt; 
 }
+function varDumpToString($var) {
+    ob_start();
+    var_dump($var);
+    $result = ob_get_clean();
+    return $result;
+ }
 // echo getAttempt(3,3);
 // define("bank","C:\\Users\\SARANYA\\Desktop\\S\\projects\\api\\questionBank\\");
 // $question = new Question(1);
