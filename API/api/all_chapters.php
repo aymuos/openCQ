@@ -24,9 +24,9 @@ function queryBuild($input){
 }
 
 
-$_GET['key']=key;
-$_GET['username']="Ben TennySon";
-$_GET['code']="ALL";
+// $_GET['key']=key;
+// $_GET['username']="Ben TennySon";
+// $_GET['code']="ALL";
 
 $valid = checkSet(['key','username','code']);
 if($valid[0]==0){

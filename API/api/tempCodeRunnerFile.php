@@ -1,5 +1,7 @@
 <?php
-$_GET['key']=key;
-$_GET['stream']="CSE";
-$_GET['joining_year']="1";
-$_GET['batch_passout_year']="1";
+$_POST['key']=key;
+	$_POST['username']="Ben Tennyson";
+	$_POST['password']="AlienX";
+	$_POST['sub_code']="MU250";
+	$_POST['chapter_id']="32";
+	$_POST['new_chapter_name']="abcd     efg    hij    ";

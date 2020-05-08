@@ -7,9 +7,9 @@
 	// $_POST['key']=key;
 	// $_POST['username']="Ben Tennyson";
 	// $_POST['password']="AlienX";
-	// $_POST['sub_code']="MU250";
-	// $_POST['chapter_id']="32";
-	// $_POST['new_chapter_name']="abcd     efg    hij    ";
+	// $_POST['sub_code']="CS502";
+	// $_POST['chapter_id']="53";
+	// $_POST['new_chapter_name']="hello   ";
 	$valid = checkSet(['key','username','password','sub_code','new_chapter_name','chapter_id'],1);
 	if($valid[0]==0){
 		$arr = array(	'status' => 'FAIL',
@@ -90,15 +90,16 @@
 						echo json_encode($arr);
 					}
 					else{
+						// echo $sender_chapterId;
 						// echo XP($sender_newChapterName);
-						$query = "SELECT id FROM chapter WHERE LOWER(name) REGEXP ? AND isActive='1'";
-						$q = new Query($query,"s");
-						$q->execute([XP($sender_newChapterName)]);
+						$query = "SELECT id FROM chapter WHERE  subjectID=? AND teacherId=? AND LOWER(name) REGEXP ? AND id <> ? AND  isActive='1'";
+						$q = new Query($query,"iisi");
+						$q->execute([$subject_id,$teacher_id,XP($sender_newChapterName),$sender_chapterId]);
 						$exist = $q->data();
 						if($exist){
-							$error['status']='FAIL';
-							$error['comment']="chapter $sender_newChapterName already exists";
-							echo json_encode($error);
+							$arror['status']='FAIL';
+							$arror['comment']="chapter $sender_newChapterName already exists";
+							echo json_encode($arror);
 							exit();
 						}
 						$q = new Query("UPDATE chapter SET name = ? WHERE id = ?","si");
