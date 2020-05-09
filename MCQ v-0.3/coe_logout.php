@@ -26,7 +26,7 @@ echo '
 }
 else {
 	
-	
+	session_destroy();
 	//Uncomment this line
 	header("Location: coe-login.html");
 	

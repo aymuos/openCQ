@@ -1,0 +1,44 @@
+.present-exam{
+	padding-top: 100px;
+}
+.heads{
+	
+	
+	background: orange;
+	text-align: center;
+	font-size: 32px;
+	color: #ffffff;
+	margin-bottom: 50px;
+}
+
+
+.modal{
+	width: 50%;
+	max-height: 100%; 
+	top: 10% !important;
+	bottom: auto !important;
+}
+
+#modal2{
+	top: 30% !important;
+}
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 50%;
+  left: 45%;
+}
+
+.total{
+	width: 100%;
+	margin: auto;
+	padding: 10px;
+}
+.custom-left{
+	width: 30px;
+	float: left;
+}
+.custom-right{
+	margin-left: 30px;
+}

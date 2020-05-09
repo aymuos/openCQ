@@ -1,0 +1,459 @@
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(122): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(158): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(122): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(158): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(123): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(159): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(124): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(160): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(124): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(160): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(124): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\api\questions.php(160): apiValidation()
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'isAactive' in 'where clause'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT subjecti...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(45): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(200): validateChapter(1)
+#3 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(277): apiValidation()
+#4 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'code' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT code FRO...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(72): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(206): validateSubject(NULL)
+#3 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(277): apiValidation()
+#4 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'code' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT code FRO...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(72): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(206): validateSubject(NULL)
+#3 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(277): apiValidation()
+#4 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'code' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT code FRO...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(72): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(206): validateSubject(3)
+#3 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(277): apiValidation()
+#4 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 17
+error code = 2002
+error message = No connection could be made because the target machine actively refused it.
+
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(17): mysqli->__construct('localhost', 'root', '', 'opencq')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(329): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'subject.code' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT question...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(319): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\questions.php(394): dataAll(4)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(9): Query->execute()
+#2 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(66): validateUser('BB', 'AtoZ')
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive='1'' at line 2
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id,subje...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(31): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(67): validateCodes(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'subjecID' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('INSERT IGNORE I...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(89): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'subjecCode' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id,subje...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(38): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\take_subjects.php(74): validateCodes(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'subjectId' in 'where clause'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(25): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(169): validateSubject(6)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND subjectID = ? 
+    AND teacherId=? AND isActive='1'' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(108): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(172): validateChapters(Array, 6, 4)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND subjectID = ? 
+    AND teacherId=? AND isActive='1'' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(108): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(172): validateChapters(Array, 6, 4)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND subjectID = ? 
+    AND teacherId=? AND isActive='1'' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(108): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(172): validateChapters(Array, 6, 4)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive='1'' at line 2
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT chapterI...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(141): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(173): validateQuestions(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive='1'' at line 2
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT chapterI...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(136): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\add_exam_questions.php(168): validateQuestions(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'exam.description' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT \r\n    ex...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\exam.php(211): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''2' WHERE id=?' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('UPDATE exam SET...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\submit_exam.php(101): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'examId' in 'where clause'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('UPDATE exam SET...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\coe_delete_exam.php(57): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 59
+error code = 1062
+error message = Duplicate entry '3-3' for key 'PRIMARY'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\student_participate.php(71): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 59
+error code = 1062
+error message = Duplicate entry '3-3' for key 'PRIMARY'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\student_participate.php(71): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'exam_id' in 'where clause'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT question...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\question_paper.php(74): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM exam 
+        INNER JOIN marksheet ON exam.id=marksheet.examId 
+        I' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT  FROM ex...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\exam_students.php(120): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM exam 
+        INNER JOIN marksheet ON exam.id=marksheet.examId 
+        I' at line 10
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT exam.id,...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\exam_students.php(123): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'syudent.passOutYear' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT exam.id,...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\exam_students.php(123): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'student.department' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT exam.id,...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\exam_students.php(123): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 10
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT student....')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\student_marks.php(94): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 59
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(59): mysqli_stmt->execute()
+#1 C:\Users\SARANYA\Desktop\S\projects\api\student_marks.php(94): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1054
+error message = Unknown column 'examId' in 'field list'
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT examId,q...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\generate_result.php(36): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\generate_result.php(78): generateQuestions(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\Users\SARANYA\Desktop\S\projects\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive='3'' at line 1
+error stack: 
+#0 C:\Users\SARANYA\Desktop\S\projects\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 C:\Users\SARANYA\Desktop\S\projects\api\generate_result.php(56): Query->execute(Array)
+#2 C:\Users\SARANYA\Desktop\S\projects\api\generate_result.php(155): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND isActive IN ('3','4')' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(57): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\generate_result.php(188): validityExams(Array)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = E:\explorer\XAMPP\xam\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND subjectID = ? 
+    AND teacherId=? AND isActive='1'' at line 1
+error stack: 
+#0 E:\explorer\XAMPP\xam\htdocs\update1\api\library.php(51): mysqli->prepare('SELECT id FROM ...')
+#1 E:\explorer\XAMPP\xam\htdocs\update1\api\add_exam_questions.php(103): Query->execute(Array)
+#2 E:\explorer\XAMPP\xam\htdocs\update1\api\add_exam_questions.php(184): validateChapters(NULL, 3, 1)
+#3 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-=1 WHERE id=?' at line 1
+error stack: 
+#0 C:\xampp\htdocs\update1\api\library.php(51): mysqli->prepare('UPDATE chapter ...')
+#1 C:\xampp\htdocs\update1\api\delete_question.php(149): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\update1\api\library.php
+error in line = 51
+error code = 1064
+error message = You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-=1 WHERE id=?' at line 1
+error stack: 
+#0 C:\xampp\htdocs\update1\api\library.php(51): mysqli->prepare('UPDATE chapter ...')
+#1 C:\xampp\htdocs\update1\api\delete_question.php(149): Query->execute(Array)
+#2 {main}
+----------ERROR----------

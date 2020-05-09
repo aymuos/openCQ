@@ -1,0 +1,43 @@
+.paper{
+	padding-top: 50px;
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 100px;
+}
+.head{
+	text-align: center;
+}
+.text{
+	font-size: 17;
+}
+hr{
+	border-color: #000000;
+}
+
+img{
+	max-width: 500px;
+}
+
+.total{
+	width: 100%;
+	margin: auto;
+	padding: 10px;
+}
+.custom-left{
+	width: 30px;
+	float: left;
+}
+.custom-right{
+	margin-left: 30px;
+}
+
+.start{
+	margin-bottom: 100px;
+}
+
+@media print{
+	button{
+		display: none;
+	}
+}
