@@ -254,8 +254,8 @@ function stripText($text, $tags = '', $invert = FALSE) {
     return strip_tags($text);
   }
 
-function weigh($str){
-    
+function weigh($str){   
+    $str = htmlspecialchars_decode($str);
     $text = stripText($str,'<img>',TRUE);
     
     $text = strtolower(trim($text));
