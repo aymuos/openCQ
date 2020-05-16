@@ -1,0 +1,5 @@
+0
+&lt;span style=&quot;color: rgba(0, 0, 0, 0.84); font-family: &amp;quot;Comic Sans MS&amp;quot;; font-size: 16px; text-align: left; background-color: rgb(255, 255, 255); float: none; display: inline;&quot;&gt;The program has a runtime error because the array element x[0] is not defined.&lt;/span&gt;
+
+                    
+	                  

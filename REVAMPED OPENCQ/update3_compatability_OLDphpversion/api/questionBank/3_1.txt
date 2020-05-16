@@ -1,0 +1,7 @@
+
+    &lt;p style=&quot;margin: 0cm 0cm 8pt; line-height: 107%; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:12.0pt;line-height:107%;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;Truth table of the following expression &lt;/span&gt;&lt;/b&gt;&lt;b&gt;&lt;span style=&quot;font-size:12.0pt;line-height:107%;font-family:'Times New Roman', serif;color:black;background:white;&quot;&gt;(A. B)' = A' + B'&lt;/span&gt;&lt;/b&gt;&lt;/p&gt;
+  
+
+
+		          
+	            

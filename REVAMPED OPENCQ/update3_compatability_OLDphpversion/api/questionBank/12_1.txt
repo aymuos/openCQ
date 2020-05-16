@@ -1,0 +1,4 @@
+&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;&amp;nbsp;Choose the correct JavaScript syntax to change the content of the following HTML code.&lt;/span&gt;
+
+		          
+	            

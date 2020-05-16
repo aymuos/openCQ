@@ -1,0 +1,4 @@
+50
+&lt;a href=&quot;https://www.php.net/manual/en/function.htmlspecialchars.php&quot;&gt;https://www.php.net/manual/en/function.htmlspecialchars.php&lt;/a&gt;
+
+&lt;br /&gt;none

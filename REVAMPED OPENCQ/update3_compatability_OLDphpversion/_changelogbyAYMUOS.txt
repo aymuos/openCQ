@@ -1,0 +1,4 @@
+---------------Changes made by @aymuos in version 1a---------------
+
+1.Created student-details.html  Added 2 buttons top right
+

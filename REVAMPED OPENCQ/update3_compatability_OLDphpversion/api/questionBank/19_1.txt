@@ -1,0 +1,3 @@
+&lt;p&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;question&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;&lt;a href=&quot;https://www.php.net/manual/en/function.htmlspecialchars.php&quot;&gt;https://www.php.net/manual/en/function.htmlspecialchars.php&lt;/a&gt;
+
+&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;

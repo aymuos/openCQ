@@ -1,0 +1,80 @@
+0
+
+    &lt;p style=&quot;margin: 0cm 0cm 8pt; line-height: 107%; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;line-height:107%;font-family:'Times New Roman', serif;color:black;background:white;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+    &lt;table style=&quot;border-collapse:collapse;border:none;&quot; class=&quot;MsoTableGrid&quot; border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+      &lt;tbody&gt;&lt;tr&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;A&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;B&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;(A.B)’&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;(A’ + B)’&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;width:112.7pt;border:solid windowtext 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width:112.7pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;&quot; width=&quot;150&quot; valign=&quot;top&quot;&gt;
+          &lt;p style=&quot;margin: 0cm 0cm 0.0001pt; line-height: normal; font-size: 11pt; font-family: Calibri, sans-serif;&quot;&gt;&lt;span style=&quot;font-size:12.0pt;font-family:'Comic Sans MS';color:black;background:white;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  
+
+
+		            
+	            
