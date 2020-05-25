@@ -1,0 +1,101 @@
+[14-May-2020 20:32:30 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 33
+[16-May-2020 06:44:20 UTC] PHP Notice:  Undefined property: stdClass::$comment in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_view_students.php on line 313
+[16-May-2020 06:44:28 UTC] PHP Notice:  Undefined property: stdClass::$comment in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_view_students.php on line 313
+[16-May-2020 06:44:58 UTC] PHP Notice:  Undefined property: stdClass::$comment in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_view_students.php on line 313
+[16-May-2020 09:38:24 UTC] PHP Notice:  Undefined index: passwordstudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_update_student_details.php on line 13
+[16-May-2020 09:41:19 UTC] PHP Notice:  Undefined index: passwordstudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_update_student_details.php on line 13
+[16-May-2020 11:13:27 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 35
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 262
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$name in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 277
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$designation in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 294
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$department in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 307
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$address in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 400
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$email in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 416
+[16-May-2020 11:13:28 UTC] PHP Notice:  Undefined property: stdClass::$contact no in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_teacher_details.php on line 431
+[17-May-2020 09:02:14 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:14 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 09:02:17 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 09:02:17 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:31 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 09:02:31 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:38 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:38 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 09:02:41 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 09:02:41 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:48 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 09:02:48 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 10:33:05 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/coe_view_teachers.php on line 60
+[17-May-2020 13:15:53 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:15:53 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:16:01 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:16:01 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:16:03 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:16:03 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:16:16 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:16:16 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:16:33 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:16:33 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:17:01 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:17:01 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[17-May-2020 13:17:50 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/fetchCodes.php on line 24
+[17-May-2020 13:17:50 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/findingNimo.php on line 31
+[18-May-2020 18:21:39 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[18-May-2020 18:21:39 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[18-May-2020 18:23:12 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[18-May-2020 18:23:12 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[18-May-2020 18:23:25 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[18-May-2020 18:23:25 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[18-May-2020 18:29:33 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[18-May-2020 18:29:33 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[18-May-2020 18:30:05 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[18-May-2020 18:30:05 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[19-May-2020 20:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function htmlspecialchar_decode() in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_modify_question.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_modify_question.php on line 355
+[19-May-2020 20:07:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function htmlspecialchar_decode() in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_modify_question.php:355
+Stack trace:
+#0 {main}
+  thrown in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_modify_question.php on line 355
+[20-May-2020 05:15:55 UTC] PHP Notice:  Undefined index: usernamestudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/update_student_details.php on line 9
+[20-May-2020 05:15:55 UTC] PHP Notice:  Undefined index: passwordstudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/update_student_details.php on line 10
+[20-May-2020 05:16:31 UTC] PHP Notice:  Undefined index: usernamestudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/update_student_details.php on line 9
+[20-May-2020 05:16:31 UTC] PHP Notice:  Undefined index: passwordstudent in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/update_student_details.php on line 10
+[20-May-2020 05:59:51 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 5
+[20-May-2020 05:59:51 UTC] PHP Notice:  Undefined index: passwordteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 6
+[20-May-2020 05:59:51 UTC] PHP Notice:  Undefined index: examId in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 11
+[20-May-2020 05:59:51 UTC] PHP Notice:  Undefined index: code in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 12
+[20-May-2020 06:01:21 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 5
+[20-May-2020 06:01:21 UTC] PHP Notice:  Undefined index: passwordteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 6
+[20-May-2020 06:01:21 UTC] PHP Notice:  Undefined index: examId in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 11
+[20-May-2020 06:01:21 UTC] PHP Notice:  Undefined index: code in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 12
+[20-May-2020 06:01:27 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 5
+[20-May-2020 06:01:27 UTC] PHP Notice:  Undefined index: passwordteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 6
+[20-May-2020 06:01:27 UTC] PHP Notice:  Undefined index: examId in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 11
+[20-May-2020 06:01:27 UTC] PHP Notice:  Undefined index: code in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 12
+[20-May-2020 06:02:40 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 5
+[20-May-2020 06:02:40 UTC] PHP Notice:  Undefined index: passwordteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 6
+[20-May-2020 06:02:40 UTC] PHP Notice:  Undefined index: examId in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 11
+[20-May-2020 06:02:40 UTC] PHP Notice:  Undefined index: code in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 12
+[20-May-2020 08:07:19 UTC] PHP Notice:  Undefined index: username in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 8
+[20-May-2020 08:07:19 UTC] PHP Notice:  Undefined index: password in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher-login2.php on line 9
+[22-May-2020 05:26:02 UTC] PHP Notice:  Undefined index: usernameteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 5
+[22-May-2020 05:26:02 UTC] PHP Notice:  Undefined index: passwordteacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 6
+[22-May-2020 05:26:02 UTC] PHP Notice:  Undefined index: code in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/get_group_marks_info.php on line 12
+[23-May-2020 06:29:04 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbhomeV2.php on line 31
+[23-May-2020 06:29:50 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 36
+[23-May-2020 06:29:50 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 37
+[23-May-2020 06:29:52 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 36
+[23-May-2020 06:29:52 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 37
+[23-May-2020 06:29:57 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 36
+[23-May-2020 06:29:57 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 37
+[23-May-2020 06:35:03 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 45
+[23-May-2020 06:35:03 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 46
+[23-May-2020 06:35:11 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 45
+[23-May-2020 06:35:11 UTC] PHP Notice:  Undefined index: lastActiveTeacher in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/tdbselectsubjectv1.php on line 46
+[23-May-2020 07:12:08 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_view_question.php on line 36
+[23-May-2020 07:12:31 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/taddnewquestions.php on line 32
+[23-May-2020 07:13:17 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_view_question.php on line 36
+[23-May-2020 07:14:06 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_view_question.php on line 36
+[23-May-2020 07:16:05 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/taddnewquestions.php on line 32
+[23-May-2020 07:21:36 UTC] PHP Warning:  Use of undefined constant timeOut - assumed 'timeOut' (this will throw an Error in a future version of PHP) in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/teacher_test_dashboard.php on line 33

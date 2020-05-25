@@ -1,0 +1,12 @@
+0
+&lt;pre class=&quot;tCont active hljs javascript&quot; style=&quot;margin: 0px; padding: 10px; display: block; overflow-x: auto; background-color: rgb(243, 245, 246); font-family: 'SF Mono', Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; line-height: 1.55em; font-size: 12px; color: rgb(57, 70, 78);&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;color: rgb(227, 136, 0);&quot;&gt;var&lt;/span&gt; divEditor = textboxio.replace(&lt;span class=&quot;hljs-string&quot; style=&quot;color: rgb(42, 171, 81);&quot;&gt;'#editableDiv'&lt;/span&gt;);
+
+&lt;span class=&quot;hljs-keyword&quot; style=&quot;color: rgb(227, 136, 0);&quot;&gt;var&lt;/span&gt; newContent = &lt;span class=&quot;hljs-string&quot; style=&quot;color: rgb(42, 171, 81);&quot;&gt;'&amp;lt;h1&amp;gt;Content set with editor.content.set()&amp;lt;/h1&amp;gt;'&lt;/span&gt;;
+
+&lt;span class=&quot;hljs-built_in&quot; style=&quot;color: rgb(141, 68, 235);&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;hljs-string&quot; style=&quot;color: rgb(42, 171, 81);&quot;&gt;'setContentButton'&lt;/span&gt;).onclick = &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;color: rgb(227, 136, 0);&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot; style=&quot;color: rgb(141, 68, 235);&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;hljs-comment&quot; style=&quot;color: rgb(171, 184, 198);&quot;&gt;// Set editor content&lt;/span&gt;
+    divEditor.content.set(newContent);
+};&lt;/pre&gt;
+
+                    
+	                  

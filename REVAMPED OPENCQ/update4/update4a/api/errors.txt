@@ -1,0 +1,90 @@
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 179
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`teacher`, CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(179): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_teacher.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 1452
+error message = Cannot add or update a child row: a foreign key constraint fails (`cct_o_exam`.`student`, CONSTRAINT `student_ibfk_1` FOREIGN KEY (`departmentCode`) REFERENCES `department` (`code`) ON UPDATE CASCADE)
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_student.php(52): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php
+error in line = 181
+error code = 2031
+error message = No data supplied for parameters in prepared statement
+error stack: 
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php(181): mysqli_stmt->execute()
+#1 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/coe_modify_student.php(93): Query->execute(Array)
+#2 {main}
+----------ERROR----------
