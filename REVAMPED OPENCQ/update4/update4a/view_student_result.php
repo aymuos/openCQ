@@ -274,7 +274,7 @@ $api_name="marksheet.php";
 //	echo $_SESSION["viewExamId"].'dfgdgf';
 	$data = send_post_request(location.$api_name,$data);
 	$questions = json_decode($data);
-//	echo $data;
+	echo $data;
 	$len = 0;
 	if($questions->status == "OK")
 	$len = count($questions->result);
@@ -311,7 +311,18 @@ echo ' <div class="card">
 	  
 	  for($i=1;$i<=$len;$i++){
 		echo '<div id="test'.$i.'" style="margin-bottom: 100px;">
-			<div><b>Question '.$i.' :</b></div><blockquote>
+			<div class="row">
+				<div class="col s7">
+					<b>Question '.$i.' :</b>
+				</div>
+				<div class="col s5">
+					<b>[Correct : </b>'.($questions->result[$i-1]->{'marks when correct'}).' marks , <b>Incorrect : </b>'.($questions->result[$i-1]->{'marks when wrong'}).' marks<b>]</b>
+				</div>
+			</div>
+			
+			
+			
+			<blockquote>
 			<div>'.htmlspecialchars_decode($questions->result[$i-1]->question).'</div></blockquote>
 			
 			<br>
@@ -400,6 +411,17 @@ echo ' <div class="card">
 				<div class="custom-right" ><b>Correct option : </b>'.htmlspecialchars_decode($questions->result[$i-1]->{$str}).'</div>
 			</div>
 			
+			
+			<div style="margin-left: 40px">';
+			if($questions->result[$i-1]->status == "AC"){
+				echo '<b>Marks : </b>'.($questions->result[$i-1]->{'marks when correct'});
+			}
+			else{
+				echo '<b>Marks : </b>'.($questions->result[$i-1]->{'marks when wrong'});
+			}
+
+			echo '
+			</div>
 			
 			
 			

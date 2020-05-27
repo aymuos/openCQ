@@ -1,6 +1,8 @@
 <?php
 require('receiver_header.php');
 require('library.php');
+$dcm = 0;
+$dwm = 0;
 function set(){
     $valid = checkSet(['key','username','password','category','examId'],1);
     if($valid[0]==0){
@@ -56,7 +58,7 @@ function validateExam($teacher=0){
         return $exist[0]['subjectID'];
     }
     else{
-        $query = "SELECT id,subjectID FROM exam WHERE id=? AND isTeacherVisible='1' AND 
+        $query = "SELECT id,subjectID,defaultCorrectMarks,defaultWrongMarks FROM exam WHERE id=? AND isTeacherVisible='1' AND 
         teacherId=? LIMIT 1";
         $q = new Query($query,"ii");
         $q->execute([$exam,$teacher]);
@@ -67,6 +69,10 @@ function validateExam($teacher=0){
             echo json_encode($result);
             exit();
         }
+		global $dcm;
+		global $dwm;
+		$dcm = $exist[0]['defaultCorrectMarks'];
+		$dwm = $exist[0]['defaultWrongMarks'];
         return $exist[0]['subjectID'];
     }
 }
@@ -74,10 +80,10 @@ function validateExam($teacher=0){
 try{
     Query::init();
     // $_POST['key']=key;
-    // $_POST['username']="BB";
-    // $_POST['password']="AtoZ";
+    // $_POST['username']="grey";
+    // $_POST['password']="umbrella";
     // $_POST['category']="0";
-    // $_POST['examId']="3";
+    // $_POST['examId']="6";
     set();
     $input = (object)($_POST);
     validateKey($input->key);
@@ -91,7 +97,9 @@ try{
 
     $query = "SELECT question.id AS qid,
     chapter.id AS cid,
-    chapter.name AS cname 
+    chapter.name AS cname,
+    exam_questions.marks_when_correct AS marks_when_correct, 
+    exam_questions.marks_when_wrong AS marks_when_wrong 
     FROM exam_questions INNER JOIN question 
     ON exam_questions.questionId = question.id INNER JOIN 
     chapter ON question.chapterId = chapter.id WHERE exam_questions.examId=?";
@@ -104,6 +112,10 @@ try{
     $result['result']=[];
     foreach($info as $value){
         $body['id']=$value['qid'];
+		$body['default correct marks'] = $dcm;
+		$body['default wrong marks'] = $dwm;
+        $body['marks when correct']=$value['marks_when_correct'];
+        $body['marks when wrong']=$value['marks_when_wrong'];
         $question = new Question($value['qid']);
         $body['problemStatement']=$question->st;
         $body['correctOption'] = $question->correct()[0]->st;

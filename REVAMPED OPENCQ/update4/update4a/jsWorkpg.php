@@ -228,7 +228,22 @@ else {
 	  
 	  for($i=1;$i<=$len;$i++){
 		echo '<div id="test'.$i.'">
-			<div><b>Question '.$i.' :</b></div><blockquote>
+			<div class="row">
+				<div class="col s8">
+					<b>Question '.$i.' :</b>
+				</div>
+				<div class="col s4">
+					<b>[Correct : </b>'.($questions->result[$i-1]->{'marks when correct'}).' marks , <b>Incorrect : </b>'.($questions->result[$i-1]->{'marks when wrong'}).' marks<b>]</b>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			<blockquote>
 			<div>'.htmlspecialchars_decode($questions->result[$i-1]->question).'</div></blockquote>
 			
 			<br>

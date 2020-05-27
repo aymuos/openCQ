@@ -297,6 +297,13 @@ if(!isset($_GET['e'])){
 				<div class="custom-right">'.htmlspecialchars_decode($ans->result[$i]->incorrectOption3).'</div>
 			</div>
         </div>
+		<div class="row">
+			<div class="col s8">
+			</div>
+			<div class="col s4">
+				[<b>Correct: </b> '.($ans->result[$i]->{'marks when correct'}).' marks , <b>Incorrect: </b>'.($ans->result[$i]->{'marks when wrong'}).' marks ]
+			</div>
+		</div>
     </div>';
 		
 		

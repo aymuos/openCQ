@@ -63,12 +63,23 @@ function validateParticipation($stid){
     return $info[0]['questionShuffle'];
 }
 
+class ExamQuestion{
+    public $questionId;
+    public $marks_when_correct;
+    public $marks_when_wrong;
+    public function __construct($id,$marks_when_correct,$marks_when_wrong){
+        $this->questionId = $id;
+        $this->marks_when_correct = $marks_when_correct;
+        $this->marks_when_wrong = $marks_when_wrong;
+    }
+}
+
 try{
     Query::init();
     // $_POST['key']=key;
-    // $_POST['username']="Having fun";
-    // $_POST['password']="lol";
-    // $_POST['examId']="3";
+    // $_POST['username']="black";
+    // $_POST['password']="root";
+    // $_POST['examId']="7";
     set();
     $input = (object)($_POST);
     $stid = validateUser();
@@ -76,30 +87,34 @@ try{
     validateExam($input->examId);
     $seed = validateParticipation($stid);
     mt_srand($seed);
-    $query = "SELECT questionId FROM exam_questions WHERE examId=? ORDER BY questionId";
+    $query = "SELECT questionId,marks_when_correct,marks_when_wrong FROM exam_questions WHERE examId=? ORDER BY questionId";
     $q = new Query($query,"i");
     $q->execute([$input->examId]);
     $data = $q->data();
     $questions = [];
     foreach($data as $row){
-        $questions[]=$row['questionId'];
+        $questions[]=new ExamQuestion($row['questionId'],$row['marks_when_correct'],$row['marks_when_wrong']);
     }
     shuffle($questions);
     $result['status']='OK';
     $result['result']=[];
     
     $attempt = getAttempt($stid,$input->examId);
+    // $attempt = "0000000000";
     $i=0;
     foreach($questions as $question){
-        $question = new Question($question);
-        $question->opRandom();
+        $questionData = new Question($question->questionId);
+        $questionData->opRandom();
         // $question.attempt($attempt[$i]);
-        $body['question']=$question->st;
-        $body['option1']=$question->options[0]->st;
-        $body['option2']=$question->options[1]->st;
-        $body['option3']=$question->options[2]->st;
-        $body['option4']=$question->options[3]->st;
+        // $body['id']=$question->questionId;
+        $body['question']=$questionData->st;
+        $body['option1']=$questionData->options[0]->st;
+        $body['option2']=$questionData->options[1]->st;
+        $body['option3']=$questionData->options[2]->st;
+        $body['option4']=$questionData->options[3]->st;
         $body['marked option']='option'.$attempt[$i];
+        $body['marks when correct']=$question->marks_when_correct;
+        $body['marks when wrong']=$question->marks_when_wrong;
         // var_dump($body);
         $i++;
         $result['result'][]=$body;
