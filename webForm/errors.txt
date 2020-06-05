@@ -1,0 +1,93 @@
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\web form\library.php
+error in line = 139
+error code = 2002
+error message = No connection could be made because the target machine actively refused it.
+
+error stack: 
+#0 C:\xampp\htdocs\projects\web form\library.php(139): mysqli->__construct('localhost', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\web form\upload.php(22): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\web form\library.php
+error in line = 139
+error code = 2002
+error message = No connection could be made because the target machine actively refused it.
+
+error stack: 
+#0 C:\xampp\htdocs\projects\web form\library.php(139): mysqli->__construct('localhost', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\web form\upload.php(22): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\web form\library.php
+error in line = 139
+error code = 2002
+error message = No connection could be made because the target machine actively refused it.
+
+error stack: 
+#0 C:\xampp\htdocs\projects\web form\library.php(139): mysqli->__construct('localhost', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\web form\upload.php(23): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 139
+error code = 2006
+error message = MySQL server has gone away
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(139): mysqli->__construct('localhost:8080', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\webForm\recieve.php(9): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 139
+error code = 2006
+error message = MySQL server has gone away
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(139): mysqli->__construct('localhost:8080', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\webForm\recieve.php(9): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 139
+error code = 2006
+error message = MySQL server has gone away
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(139): mysqli->__construct('localhost:8080', 'root', '', 'opencq')
+#1 C:\xampp\htdocs\projects\webForm\recieve.php(9): Query::init()
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 173
+error code = 1146
+error message = Table 'opencq.form_student' doesn't exist
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(173): mysqli->prepare('SELECT rollNo,n...')
+#1 C:\xampp\htdocs\projects\webForm\recieve.php(76): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 173
+error code = 1146
+error message = Table 'opencq.form_student' doesn't exist
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(173): mysqli->prepare('SELECT rollNo,n...')
+#1 C:\xampp\htdocs\projects\webForm\recieve.php(76): Query->execute(Array)
+#2 {main}
+----------ERROR----------
+----------ERROR----------
+error in file = C:\xampp\htdocs\projects\webForm\library.php
+error in line = 173
+error code = 1146
+error message = Table 'opencq.form_student' doesn't exist
+error stack: 
+#0 C:\xampp\htdocs\projects\webForm\library.php(173): mysqli->prepare('SELECT rollNo,n...')
+#1 C:\xampp\htdocs\projects\webForm\receive.php(82): Query->execute(Array)
+#2 {main}
+----------ERROR----------

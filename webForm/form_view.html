@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Examination Form - GCECT</title>
+	<style>
+		.card-main{
+			margin-top: 50px;
+			background-color: #ffffff;
+			border-style: solid;
+			border-width: thin;
+			padding-top: 40px;
+			padding-bottom: 50px;
+			margin-bottom: 50px;
+		}
+		@media only screen and (max-width: 600px) {
+			.container{
+				width: 95%;
+			}
+			.s2{
+				width: 105px !important;
+			}
+			.off{
+				width: 0px !important;
+			}
+			.s8{
+				width: 200px !important;
+			}
+			.line{
+				width: 90% !important;
+			}
+			.s6{
+				width: 200px !important;
+			}
+			.btn{
+				margin-left: 180%;
+			}
+		}
+	</style>
+</head>
+<body style="background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(144,236,251,1) 100%);">
+     <nav>
+    <div class="nav-wrapper light-blue darken-2 z-depth-4">
+      <a href="#" class="brand-logo left"style="padding-left:1.7rem">GCECT Examination</a>
+      
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <!-- <button class="waves-effect waves-light black btn submit" disabled><i class="material-icons right">play_for_work</i>SUBMIT</button> -->
+      </ul>
+    </div>
+  </nav>
+  
+  
+	<div class="container">
+		<div class="row" style="padding-top: 70px">
+			<div class="col s1 off">
+			</div>
+			<div class="col s2 center" style="padding-top: 25px">
+				<span>
+					<strong>Enter Roll No:</strong>
+				</span>
+			</div>
+			<form>
+				<div class="input-field col s6">
+					<input id="last_name" type="text" class="validate" spellcheck="false">
+					<label for="last_name">Roll No</label>
+				</div>
+				<div class="col s2">
+					<button type="submit" class="btn green" style="margin-top: 20px">
+						Go
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container error">
+		<div class="row">
+			<div class="col s12 center">
+				<span style="font-size: 32px">
+					This is an error message!
+				</span>
+			</div>
+		
+		</div>
+	</div>
+	
+	
+	<div class="container card-main result">
+		<div class="row">
+			<div class="col s12 center">
+				<span style="font-size: 24px">
+					<strong>Government College of Engineering & Ceramic Technology</strong>
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 center">
+				<span>
+					An Autonomous Institute Affiliated Under Makaut
+				</span>
+			</div>
+		</div>
+		<hr style="width: 80%">
+		<main>
+
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2">
+					<span>
+						<strong>Name :</strong>
+					</span>
+				</div>
+				<div class="col s8">
+					<span>
+						Tony Stark
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2">
+					<span>
+						<strong>Examination:</strong>
+					</span>
+				</div>
+				<div class="col s8 ">
+					<span>
+						B.Tech 8<sup>th</sup> Semester
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2">
+					<span>
+						<strong>Stream :</strong>
+					</span>
+				</div>
+				<div class="col s8">
+					<span>
+						CSE
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2">
+					<span>
+						<strong>Roll No :</strong>
+					</span>
+				</div>
+				<div class="col s8">
+					<span>
+						GCECTB-R17-3018
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2">
+					<span>
+						<strong>Registration No :</strong>
+					</span>
+				</div>
+				<div class="col s8">
+					<span>
+						171130110018
+					</span>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s8 line">
+					<span><strong>
+						Have you already filled the form in offline mode and submitted the document by paying requisite fees in academic section of college? :</strong>
+					</span>
+					&emsp;
+					<span class="confirm"><strong>
+						Yes </strong>
+					</span>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Compulsory Paper 1 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Paper 1 this is a long paper yo ojkdsodfj osjf sof sodfj sofj
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Compulsory Paper 2 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Paper 2
+					</span>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Elective Paper 1 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Elective Paper 1
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off" >
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Elective Paper 2 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Elective Paper 2
+					</span>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Backlog Paper 1 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Backlog Paper 1
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Backlog Paper 2 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Backlog Paper 2
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 off">
+				</div>
+				<div class="col s2.5">
+					<span>
+						<strong>Backlog Paper 3 :</strong>
+					</span>
+				</div>
+				<div class="col s7.5">
+					<span>
+						Backlog Paper 3
+					</span>
+				</div>
+			</div>
+		</main>
+		</div>
+		
+	
+	
+	<script src="form_view.js"></script>
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
