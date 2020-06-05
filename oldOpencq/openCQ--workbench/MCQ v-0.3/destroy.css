@@ -1,0 +1,1591 @@
+
+
+
+body#page3{
+	background-color: #ffeb99;
+	
+}
+#page3 .some{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page3 .navbar{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page3 .navbar-toggle{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page3 .logo{
+	border: 8px solid #000066;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page3 .myform{
+	display: block;
+    text-align: center;
+	padding-top: 100px;
+
+}
+form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+	background-color: white;
+}
+
+/* Style inputs, select elements and textareas */
+#page3 input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+#page3 label {
+  padding: 12px 12px 12px 0;
+
+}
+
+/* Style the submit button */
+#page3 input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+
+/* Clear floats after the columns */
+#page3 .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#page3 .hello{
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+/*For medium size screen*/
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page3 .container {
+		width: 400px;
+		background-color: #f2f2f2;
+		}
+	#page3 .logo{
+		border: 8px solid #000066;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+}
+
+
+/*For small size screen*/
+@media only screen and (max-width : 600px) {	
+	#page3 .container { 
+		width: 325px;
+		background-color: #f2f2f2;
+	}
+	#page3 .myform{
+		display: block;
+		text-align: center;
+		padding-top: 50px;
+	}
+}
+
+
+/*For large size screen*/
+@media only screen and (min-width : 1200px) {
+	#page3 .container {
+		width: 500px;
+		background-color: #f2f2f2;
+	}
+}
+#page3 .head{
+	text-align: center;
+	font-family: serif;
+	color: red;
+}
+#page3 .head1{
+	font-size: 7;
+}
+
+
+
+
+
+
+body#page4{
+	background-color: #ffeb99;
+	
+}
+#page4 .some{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page4 .navbar{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page4 .navbar-toggle{
+	border-color: #000066;
+	background-color: #000066;
+}
+#page4 .logo{
+	border: 8px solid #000066;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page4 .header1{
+	padding-top: 60px;
+}
+#page4 .id1{
+	text-align: center;
+	padding-top: 40px;
+}
+#page4 .selection{		
+	padding-top: 20px;
+	text-align: center;
+}
+#page4 .del-form-control{
+	border-radius: 10px;
+	height: 45px;
+	width: 300px;
+}
+#page4 .output{
+	padding-top: 30px;
+	text-align: left;
+	padding-left: 120px;
+}
+#page4 .box{
+	width: 300px;
+}
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page4 .container { 
+		width: 400px;
+		background-color: #ffeb99:
+	}
+	#page4 .logo{
+		border: 8px solid #000066;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page4 .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+	#page4 .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+	#page4 .header1{
+		padding-top: 10px;
+	}					
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#page4 .container {
+		width: 700px;
+		background-color: #ffeb99;
+	} 
+}
+
+
+
+
+
+
+
+
+
+body#page5{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page5 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page5 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page5 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page5 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page5 .header1{
+	padding-top: 60px;
+}
+#page5 .id1{
+	text-align: center;
+	padding-top: 40px;
+}
+
+#page5 .button-container{
+	padding-top:30px;
+	text-align: center;
+	background-color: #ffeb99;
+}
+#page5 .btn{
+	width: 500px;
+	height: 50px;
+	border-color: #ffffff;
+}
+
+#page5 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+#page5 .btn-primary{
+	background-color: #990000;
+}
+
+
+#page5 .btn:hover {opacity: 0.7;}
+
+#page5 .btn:active {
+
+  transform: translateY(2px);
+}
+
+
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page5 .container { 
+		width: 400px;
+		background-color: #ffeb99:
+	}
+	#page5 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page5 .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+	#page5 .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+	#page5 .header1{
+		padding-top: 10px;
+	}
+	#page5 .btn{
+		width: 350px;
+		height: 50px;
+		border-color: #ffffff;
+	}
+	#page5 h1{
+		padding-top: 0px;
+		text-align: center;
+		color: #990000;
+		font-family: serif;
+		font-size: 20;
+	}
+	#page5 .button-container{
+		padding-top:10px;
+		padding-bottom:20px;
+		text-align: center;
+		background-color: #ffeb99;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#page5 .container {
+		width: 700px;
+		background-color: #ffeb99;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page6{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page6 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page6 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page6 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page6 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page6 .header1{
+	padding-top: 60px;
+}
+#page6 .id1{
+	text-align: center;
+	padding-top: 40px;
+}
+
+#page6 .button-container{
+	padding-top:30px;
+	text-align: center;
+	background-color: #ffeb99;
+}
+#page6 .btn{
+	width: 500px;
+	height: 50px;
+	border-color: #ffffff;
+}
+
+#page6 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+#page6 .btn-primary{
+	background-color: #990000;
+}
+
+
+#page6 .btn:hover {opacity: 0.7;}
+
+#page6 .btn:active {
+
+  transform: translateY(2px);
+}
+
+
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page6 .container { 
+		width: 400px;
+		background-color: #ffeb99:
+	}
+	#page6 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page6 .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+	#page6 .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+	#page6 .header1{
+		padding-top: 10px;
+	}
+	#page6 .btn{
+		width: 350px;
+		height: 50px;
+		border-color: #ffffff;
+	}
+	#page6 h1{
+		padding-top: 0px;
+		text-align: center;
+		color: #990000;
+		font-family: serif;
+		font-size: 20;
+	}
+	#page6 .button-container{
+		padding-top:10px;
+		padding-bottom:20px;
+		text-align: center;
+		background-color: #ffeb99;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#page6 .container {
+		width: 700px;
+		background-color: #ffeb99;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page7{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page7 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page7 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page7 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page7 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page7 .header1{
+	padding-top: 60px;
+}
+#page7 .id1{
+	text-align: center;
+	padding-top: 40px;
+}
+
+
+
+#page7 .form-inline{
+	padding-top: 75px;
+	background-color: #ffeb99;
+	text-align: center;
+}
+
+
+#page7 .btn{
+	text-align: center;
+	width: 80px;
+}
+
+#page7 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+#page7 .btn-primary{
+	background-color: #990000;
+}
+
+
+#page7 .btn:hover {opacity: 0.8;}
+
+
+
+#page7 .container{
+	float: center;
+	text-align: center;
+}
+
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page7 .container { 
+		width: 400px;
+		background-color: #ffeb99;
+		text-align: center;
+	}
+	#page7 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page7 .form-inline {
+		float:center;
+		width: 400px;
+		text-align: center;
+	}
+	#page7 .form-control {
+		width: 400px;
+		text-align: left;
+	}
+	#page7 .form-group {
+		text-align: center;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page7 .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+	#page7 .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+	#page7 .header1{
+		padding-top: 10px;
+	}
+	#page7 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page7 h1{
+		padding-top: 0px;
+		text-align: center;
+		color: #990000;
+		font-family: serif;
+		font-size: 20;
+	}
+	#page7 .button-container{
+		padding-top:10px;
+		padding-bottom:20px;
+		text-align: center;
+		background-color: #ffeb99;
+	}
+	#page7 .form-inline {
+		float:center;
+		width: 300px;
+		text-align: center;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#page7 .container {
+		width: 1200px;
+		background-color: #ffeb99;
+	}
+	#page7 .form-control {
+		width: 650px;
+		text-align: left;
+
+	}
+	#page7 .form-inline {
+		float:center;
+		width: 800px;
+		text-align: center;
+	}
+	#page7 .button-container{
+		padding-top:20px;
+		padding-bottom:20px;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page8{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page8 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page8 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page8 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page8 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page8 .header1{
+	padding-top: 60px;
+}
+#page8 .id1{
+	text-align: center;
+	padding-top: 40px;
+}
+
+
+
+#page8 .form-inline{
+	padding-top: 75px;
+	background-color: #ffeb99;
+	text-align: center;
+}
+
+
+#page8 .btn{
+	text-align: center;
+	width: 80px;
+}
+
+#page8 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+#page8 .btn-primary{
+	background-color: #990000;
+}
+
+
+#page8 .btn:hover {opacity: 0.8;}
+
+
+
+#page8 .container{
+	float: center;
+	text-align: center;
+}
+#page8 .button-container{
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align: center;
+	display: inline-block;
+}
+
+#page8 .del-form{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top:50px;
+	width: 500px;
+	background-color: #ffeb99;
+}
+
+#page8 .del-form-control{
+	
+	float: center;
+	width: 500px;
+	background-color: #ffffff;
+}
+#page8 .idd{
+	padding-top:25px;
+	text-align: center;
+	background-color: #ffeb99;
+}
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page8 .container { 
+		margin-left: auto;
+		margin-right: auto;
+		width: 400px;
+		background-color: #ffeb99;
+		text-align: center;
+	}
+	#page8 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page8 .form-inline {
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#page8 .form-control {
+		width: 300px;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#page8 .form-group {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#page8 .del-form-control {
+		width: 400px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page8 .container { 
+		width: 350px;
+		background-color: #ffeb99;
+	}
+	#page8 .id1{
+		text-align: center;
+		padding-top: 40px;	
+	}		
+	#page8 .header1{
+		padding-top: 10px;
+	}
+	#page8 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page8 h1{
+		padding-top: 0px;
+		text-align: center;
+		color: #990000;
+		font-family: serif;
+		font-size: 20;
+	}
+	#page8 .button-container{
+		padding-top:10px;
+		padding-bottom:20px;
+		text-align: center;
+		background-color: #ffeb99;
+	}
+	#page8 .form-inline {
+		float:center;
+		width: 300px;
+		text-align: center;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+	#page7 .container {
+		width: 1200px;
+		background-color: #ffeb99;
+	}
+	#page8 .form-control {
+		width: 650px;
+		text-align: left;
+
+	}
+	#page8 .form-inline {
+		float:center;
+		width: 800px;
+		text-align: center;
+	}
+	#page8 .button-container{
+		padding-top:20px;
+		padding-bottom:20px;
+		text-align: center;
+		display: inline-block;
+	}
+}
+
+
+
+@media only screen and (max-width : 600px) {
+		#page8 .del-form{
+		margin-left: auto;
+		margin-right: auto;
+		width: 350px;
+	}
+	#page8 .del-form-control{	
+		float: center;
+		width: 300px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page9{
+	background-color: #ffeb99;
+	
+}
+
+#page9 .check{
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+
+#page9 .image_class{
+	padding-bottom: 20px;
+}
+
+
+/*purple's code is #000066*/
+
+#page9 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page9 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page9 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page9 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page9 .header1{
+	padding-top: 60px;
+}
+#page9 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+
+#page9 .container{
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#page9 .form-inline{
+	text-align: center;
+	width: 800px;
+	background-color: #ffeb99;
+}
+#page9 .del-form-control{
+	text-align: center;
+	width: 800px;
+}
+#page9 .ques{
+	padding-top:10px;
+	background-color: ffeb99;
+	text-align: left;
+	width: 800px;
+}
+#page9 .box{
+	overflow:hidden;
+	text-align: left;
+	width: 100%;
+}
+
+#page9 .modal-box{
+	padding-left: 0px;
+	border: none;
+}
+#page9 .modal-box:active{
+	border: none;
+}
+
+#page9 .opt{
+	margin-left:auto;
+	width: 150px;
+}
+#page9 .ans{
+
+	padding-top:10px;
+	text-align: left;
+	padding-bottom:10px;
+	background-color: #ffeb99;
+	width: 800px;
+}
+#page9 .image_upload{
+	padding-top: 0px;
+	text-align: left;
+	padding-bottom:10px;
+	background-color: #ffeb99;
+	width: 800px;
+}
+
+#page9 .tans{
+	text-align: left;
+	padding-bottom:20px;
+	background-color: #ffeb99;
+	width: 800px;
+}
+#page9 .btn{
+	width: 100px;
+}
+#page9 .modal-footer{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#page9 .btn-img{
+	font-size: 15px;
+	width: 150px;
+}
+#page9 .iconic{
+	font-size: 20px;
+}
+#page9 .paste_img{
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	margin-top: 25px;
+	display: block;
+	background-color: #ffffff;
+}
+#page9 .message{
+	color: #a6a6a6;
+	font-size: 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#page9 .final_image{
+}
+
+
+#page9 .modal-body{
+	padding: 30px;
+}
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page9 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page9 .form-inline{
+		text-align: center;
+		width: 600px;
+	}
+	#page9 .del-form-control{
+		text-align: center;
+		width: 300px;
+	}
+	#page9 .tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page9 .box{
+		text-align: left;
+	}
+	#page9 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page9 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page9 .form-group{
+		text-align: left;
+		width: 200px;
+	}
+	#page9 .box{
+		text-align: left;
+	}
+	#page9 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page9 .tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page9 .container{
+		padding-top: 00px;
+		width: 350px;
+	}
+	#page9 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 320px;
+		/*background-color: lightblue;*/
+	}
+	#page9 .del-form-control{
+		background-color: white;
+		text-align: left;
+		width: 320px;
+	}
+	#page9 h1{
+		font-size: 25;
+		padding-top: 00px;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	#page9 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 800px;
+	}
+	#page9 .del-form-control{
+		text-align: center;
+		width: 500px;
+	}
+	#page9 .modal{
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page10{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page10 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page10 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page10 .header1{
+	padding-top: 60px;
+}
+#page10 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+
+#page10 .container{
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#page10 .form-inline{
+	text-align: center;
+	width: 800px;
+	background-color: #ffeb99;
+}
+#page10 .del-form-control{
+	text-align: center;
+	width: 800px;
+}
+
+
+
+#page10 .btn{
+	width: 100px;
+}
+#page10 .button-container{
+	padding-top: 25px;
+}
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page10 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page10 .form-inline{
+		text-align: center;
+		width: 600px;
+	}
+	#page10 .del-form-control{
+		text-align: center;
+		width: 300px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page10 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page10 .form-group{
+		text-align: left;
+		width: 200px;
+	}
+	#page10 .container{
+		padding-top: 00px;
+		width: 350px;
+	}
+	#page10 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 320px;
+		/*background-color: lightblue;*/
+	}
+	#page10 .del-form-control{
+		background-color: white;
+		text-align: left;
+		width: 320px;
+	}
+	#page10 h1{
+		font-size: 25;
+		padding-top: 00px;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	#page10 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 800px;
+	}
+	#page10 .del-form-control{
+		text-align: center;
+		width: 500px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body#page11{
+	background-color: #ffeb99;
+	
+}
+
+/*purple's code is #000066*/
+
+#page11 .some{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .navbar{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .navbar-toggle{
+	border-color: #990000;
+	background-color: #990000;
+}
+#page11 .logo{
+	border: 8px solid #990000;
+	width: 15%;
+	height: auto;
+	float:left;
+}
+#page11 .header1{
+	padding-top: 60px;
+}
+#page11 h1{
+	padding-top: 30px;
+	text-align: center;
+	color: #990000;
+	font-family: serif;
+}
+
+#page11 .container{
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#page11 .form-inline{
+	text-align: center;
+	width: 800px;
+	background-color: #ffeb99;
+}
+#page11 .del-form-control{
+	text-align: center;
+	width: 800px;
+}
+
+#page11 .btn{
+	width: 100px;
+}
+
+#page11 .button-container{
+	text-align: center;
+}
+#page11 .table-hover{
+	cursor: pointer;
+}
+
+
+.inpdate{
+	float: right;
+}
+
+
+
+
+@media only screen and (max-width : 700px) and (min-width : 601px) {
+	#page11 .logo{
+		border: 8px solid #990000;
+		width: 7%;
+		height: auto;
+		float:left;
+	}
+	#page11 .form-inline{
+		text-align: center;
+		width: 600px;
+	}
+	#page11 .del-form-control{
+		text-align: center;
+		width: 300px;
+	}
+	#page11 .tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11 .box{
+		text-align: left;
+		width: 600px;
+		height: 100px;
+	}
+	#page11 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+}
+
+
+@media only screen and (max-width : 600px) {
+	#page11 .btn{
+		height: 40px;
+		border-color: #ffffff;
+	}
+	#page11 .form-group{
+		text-align: left;
+		width: 200px;
+	}
+	#page11 .box{
+		text-align: left;
+		width: 320px;
+		height: 100px;
+	}
+	#page11 .ans{
+		padding-top:10px;
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11	.tans{
+		text-align: left;
+		background-color: #ffeb99;
+		width: 200px;
+	}
+	#page11 .container{
+		padding-top: 00px;
+		width: 350px;
+	}
+	#page11 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 320px;
+		/*background-color: lightblue;*/
+	}
+	#page11 .del-form-control{
+		background-color: white;
+		text-align: left;
+		width: 320px;
+	}
+	#page11 h1{
+		font-size: 25;
+		padding-top: 00px;
+	}
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	#page11 .form-inline{
+		padding-top: 10px;
+		text-align: center;
+		width: 800px;
+	}
+	#page11 .del-form-control{
+		text-align: center;
+		width: 500px;
+	}
+}
+
+
+

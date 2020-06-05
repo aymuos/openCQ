@@ -18,7 +18,7 @@ Tools used:
  
  # INTERNET NETWORK CONNECTION needed to load styles 
  
- We have tried to use minimalistic material design language and traces of neumorphism ui in this platform.
+ We have tried to use minimalistic material design language in this platform.
 
 Created by:
     Rashed Mehdi(rash42)

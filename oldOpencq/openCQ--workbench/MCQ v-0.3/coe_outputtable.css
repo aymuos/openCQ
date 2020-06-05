@@ -1,0 +1,120 @@
+body{
+    background: rgb(2,0,36);
+	background: linear-gradient(90deg, #7cf7f0 0%, hsl(73, 91%, 71%) 35%, rgb(232, 237, 238) 100%);/*Background colour for body*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.heading{
+	background-color: red;
+	font-family:sans-serif;
+	padding-top: 10px;
+	background-color: #000000;
+	height: 75px;
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+	margin-bottom: 50px;
+	border-bottom-left-radius: 50px 25px;
+}
+
+
+
+.left-logo{
+	padding-left: 20px;
+	float: left;
+	text-align: left;
+	padding-top: 0px;
+	height: 40px;
+}
+.ing{
+	height: 50px;;
+}
+.right-logo{
+	float:right;
+	padding-top: 30px;
+	color: #ffffff;
+	padding-right: 30px;
+}
+
+.ing2{
+	font-size: 16;
+	opacity: 0.7;
+	text-decoration: none;
+	color: #ffffff;
+	
+}
+.ing2:hover{
+	color: #ffffff;
+	opacity: 1;
+	cursor: hand;
+	text-decoration: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(231, 243, 239);
+    backface-visibility: hidden;
+  }
+  .Neur {
+    border-spacing: 5px;
+    border: 2px;
+    border-style: none;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  h2{
+	  display: none;
+    background-color: navy;
+    color: white;
+    text-align:center;
+    margin:7px 7px;
+    text-shadow:none;
+    border-style: solid;
+    border-color: crimson;
+    border-radius: 15px 50px; /*for assymetrical boders*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+.ffq{
+    align-content: center;
+    align-self: center;
+}
+.crjk{
+    text-align: center;
+    text-decoration: underline;
+    color: brown;
+}
+td {
+    cursor: pointer;
+}
+.btn{
+	width: 90px;
+	height: 40px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.btn:hover{
+	opacity: 0.9;
+}
+.btn-danger{
+	background-color: #ff3333;
+	color: white;
+	border: #ff3333;
+}
+.btn-success{
+	background-color: #2eb82e;
+	color: white;
+	border: #2eb82e;
+}
+
+.head{
+	display: none;
+}
+.writing{
+	color: #ffffff;
+	font-size: 40px;
+}
