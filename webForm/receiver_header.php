@@ -2,7 +2,7 @@
 
 //This should be present.
 header("Content-Type:application/json");
-define("key","SherlockNeedsWatson");
+define("key","topSecret");
 
 define("bank","questionBank/");
 define("exam","exam/");
