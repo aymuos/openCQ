@@ -1,6 +1,6 @@
 <?php
 
-define("key","SherlockNeedsWatson");
+define("key","topSecret");
 define("timeOut","1800");
 
 define("location","http://gcectonlineexam.scientificvoyage.net/update1/api/");
