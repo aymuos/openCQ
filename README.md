@@ -1,6 +1,9 @@
 # openCQ
 
-![OPENCQ_LOGO] (https://github.com/aymuos/openCQ/blob/master/REVAMPED%20OPENCQ/update4/update4a/img/brandinglogo.png)
+![alt text] (https://github.com/aymuos/openCQ/blob/master/REVAMPED%20OPENCQ/update4/update4a/img/brandinglogo.png)
+
+
+
 Web Solution for online MCQ test. Question db will be provided by the user from which pre-designated  number of questions will be selected at random ,subject to some user-specified condition. .
 Web Technologies and tools used:
 1. HTML5
