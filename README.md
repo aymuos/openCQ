@@ -1,7 +1,6 @@
 # openCQ
 
-![alt text] (https://github.com/aymuos/openCQ/blob/master/REVAMPED%20OPENCQ/update4/update4a/img/brandinglogo.png)
-
+![logo](https://user-images.githubusercontent.com/30471777/92546852-31dcc680-f271-11ea-85b8-57174dba7423.png)
 
 
 Web Solution for online MCQ test. Question db will be provided by the user from which pre-designated  number of questions will be selected at random ,subject to some user-specified condition. .
