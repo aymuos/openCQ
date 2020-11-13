@@ -13,6 +13,8 @@ Web Technologies and tools used:
 3. PHP
 4. Javascript
 5. JQuery
+6. Apache Webserver
+7. Textbox.io under Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license
 
 Tools used:
  1. XAMPP - Web Server Solution
