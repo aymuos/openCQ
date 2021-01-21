@@ -1,0 +1,107 @@
+[14-May-2020 20:08:16 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:08:19 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:09:30 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:16:30 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:21:36 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:21:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:21:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:24:00 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[14-May-2020 20:31:17 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/teacher_group_info.php on line 56
+[16-May-2020 09:42:21 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 178
+[16-May-2020 10:56:41 UTC] PHP Notice:  Undefined variable: sender_password_coe in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/change_password.php on line 104
+[16-May-2020 10:57:17 UTC] PHP Notice:  Undefined variable: sender_password_coe in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/change_password.php on line 104
+[16-May-2020 12:12:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php:134
+Stack trace:
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php(192): validateQuestions(Array)
+#1 {main}
+  thrown in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 134
+[16-May-2020 12:14:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php:134
+Stack trace:
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php(192): validateQuestions(Array)
+#1 {main}
+  thrown in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 134
+[16-May-2020 12:20:43 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php:135
+Stack trace:
+#0 /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php(195): validateQuestions(Array)
+#1 {main}
+  thrown in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 135
+[16-May-2020 12:21:47 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:21:47 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:21:54 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:21:54 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:23:03 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:23:03 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:23:16 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:23:16 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:23:56 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:23:56 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:25:10 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:25:10 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:25:59 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:26:00 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:26:07 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:26:07 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:26:40 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:26:40 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 147
+[16-May-2020 12:27:33 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:27:33 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 148
+[16-May-2020 12:28:25 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:28:25 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 148
+[16-May-2020 12:30:12 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:30:12 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 148
+[16-May-2020 12:30:12 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 150
+[16-May-2020 12:30:56 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 144
+[16-May-2020 12:30:56 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 148
+[16-May-2020 12:30:56 UTC] PHP Notice:  Undefined offset: 0 in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/add_exam_questions.php on line 150
+[02-Jun-2020 20:04:22 UTC] PHP Notice:  Undefined index: semester in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 31
+[02-Jun-2020 20:06:35 UTC] PHP Notice:  Undefined index: semester in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 31
+[02-Jun-2020 20:07:42 UTC] PHP Notice:  Undefined index: semester in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 31
+[03-Jun-2020 01:21:02 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 28
+[03-Jun-2020 01:21:53 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 28
+[03-Jun-2020 01:24:00 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/upload.php on line 28
+[03-Jun-2020 13:18:14 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of elements in type definition string doesn't match number of bind variables in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 178
+[05-Jun-2020 11:05:29 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:29 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:38 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:40 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:41 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:54 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:05:55 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:27:07 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:27:22 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:28:47 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:28:56 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:28:57 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:29:19 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:29:20 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:29:22 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:29:46 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:30:40 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:31:13 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:31:24 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:31:28 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:34:56 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:34:57 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:54:23 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:54:46 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:57:36 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 11:58:48 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 12:00:07 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 12:00:46 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 23
+[05-Jun-2020 12:02:23 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 24
+[05-Jun-2020 12:02:24 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 24
+[05-Jun-2020 12:02:29 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 24
+[05-Jun-2020 12:02:31 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 24
+[05-Jun-2020 12:02:33 UTC] PHP Parse error:  syntax error, unexpected '...' (T_ELLIPSIS), expecting ']' in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/recieve.php on line 24
+[05-Jun-2020 12:38:32 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:38:33 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279
+[05-Jun-2020 12:46:44 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:46:44 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279
+[05-Jun-2020 12:46:47 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:46:47 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279
+[05-Jun-2020 12:47:24 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:47:24 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279
+[05-Jun-2020 12:51:02 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:51:02 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279
+[05-Jun-2020 12:51:11 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 275
+[05-Jun-2020 12:51:11 UTC] PHP Notice:  Array to string conversion in /home/hfcppehxguoz/public_html/gcectonlineexam.scientificvoyage.net/update1/api/library.php on line 279

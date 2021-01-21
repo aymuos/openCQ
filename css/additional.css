@@ -1,0 +1,18 @@
+textarea.modifyChapter{
+    background-color: #ffffff;
+}
+textarea.addChapter{
+    background-color: #ffffff;
+}
+textarea.modifyChapter{
+    display: none
+}
+div.chapter > span{
+    display: block;
+}
+div.edit > textarea{
+    display: inline;
+}
+div.edit > span{
+    display: none !important;
+} 

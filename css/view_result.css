@@ -1,0 +1,44 @@
+.not-display{
+	display: none;
+}
+
+
+@media print {
+	
+
+nav,.leftpad, .display, .heads, .btn{
+	display: none;
+}
+
+table{
+	margin-top: 30px;
+}
+
+table, th, td {
+  border: 1px solid black;
+
+}
+table{
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+td{
+	text-align: center;
+	  padding: 0px;
+}
+
+.not-display{
+	text-align: center;
+	display: block;
+	margin-bottom: 30px;
+}
+
+h4{
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+}

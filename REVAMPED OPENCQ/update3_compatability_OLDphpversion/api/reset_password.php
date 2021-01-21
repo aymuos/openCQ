@@ -3,7 +3,6 @@
 	require('receiver_header.php');
 
 
-
 	if(!isset($_POST["key"])){
 		$status = 'FAIL';
 		$comment = 'undefined parameter: key';	

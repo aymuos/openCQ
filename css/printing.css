@@ -1,0 +1,41 @@
+.not-display{
+	display: none;
+}
+
+
+
+@media print{
+	
+h6{
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 20px;
+}
+
+.center{
+	text-align: center;
+}
+.not-display{
+	display: block;
+}	
+.display{
+	display: none;
+}
+
+.lberlin{
+	display: inline-block;
+	margin-bottom: 20px;
+	width: 700px;
+}
+.rberlin{
+	display: inline-block;
+
+}
+
+.btn{
+	display: none;
+}
+
+	
+}

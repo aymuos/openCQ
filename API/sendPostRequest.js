@@ -1,14 +1,19 @@
-data = {id:120,
-    name:"tutoialswebsite",
-    address:"Sultanpur, New Delhi",
-    phone: 999999999
+const pre = document.querySelector('pre');
+data = {
+    key:"SaranyaIs100%PornStar",
+    username:"soumyamukherjee",
+    old_password:"root",
+    new_password:"iWantToMarryDani",
+    category:"2",
+
 };
 sendData = xwwwfurlenc(data);
 // console.log(sendData);
-url = "http://localhost/opencq/api/receiver.php";
+url = "http://localhost:8080/opencq/api/change_password.php";
 
 sendPostRequest(url,data).then(result=>{
     console.log(result);
+    pre.textContent = JSON.stringify(result,null,4);
 });
 
 async function sendPostRequest(url,data){

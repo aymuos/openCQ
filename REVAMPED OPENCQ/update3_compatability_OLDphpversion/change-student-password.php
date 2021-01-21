@@ -8,7 +8,7 @@
 
 
 session_start();
-if ( isset($_SESSION['loggedinteacher']) == false ){
+if ( isset($_SESSION['loggedinstudent']) == false ){
 echo ' 
 <html>
 <head>
@@ -21,7 +21,7 @@ echo '
 <body>
 	<div class="well-lg">
 		<div class="alert alert-danger">
-			<p class="text-center">Please <a href="student-login2.php">Login</a> first</p>
+			<p class="text-center">Please <a href="smain.html">Login</a> first</p>
 		</div>
 	</div>
 </body>
@@ -40,8 +40,8 @@ echo '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change password</title>
     <link rel="icon" href="img/brandinglogo.png" type="image/icon type">
-        <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
-    <link rel="stylesheet" href="teacher-csses.css" type="text/css">
+        <!--<link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>-->
+    <link rel="stylesheet" href="css/teacher-csses.css" type="text/css">
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="css/materialize.min.css">
 
@@ -71,11 +71,11 @@ echo '
 				document.getElementById("new_password").style.borderColor = "#9e9e9e";
         document.getElementById("new_password").style.boxShadow = "none";
         fetch(
-          \'changePassword.php\',
+          \'studentChangePassword.php\',
           {
             method: "POST",
             body: JSON.stringify({
-              category: "1",
+              category: "2",
               old_password: old_password,
               new_password: new_password
             }),
@@ -101,7 +101,7 @@ echo '
               throw new Error(`${data.comment}`);
             }
             else{
-              location.href = "student-login2.php";
+              location.href = "smain.html";
             }
           } 
 

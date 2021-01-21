@@ -1,12 +1,16 @@
-data = {id:120,
-    name:"tutoialswebsite",
-    address:"Sultanpur, New Delhi",
-    phone: 999999999
+const pre = document.querySelector('pre');
+
+data = {
+    key:"SaranyaIs100%PornStar",
+    stream:"1",
+    batch_passout_year:"1",
+    joining_year:"1"
 };
-url = "http://localhost/opencq/api/receiver.php";
+url = "http://localhost:8080/opencq/api/student_group_info.php";
 
 sendGetRequest(url,data).then(result=>{
     console.log(result);
+    pre.textContent = JSON.stringify(result,null,4);
 });
 // console.log(result);
 async function sendGetRequest(url,data){
@@ -23,12 +27,13 @@ async function sendGetRequest(url,data){
             return null;
         }
         else{
+            console.log(success);
             return success.json();
         }
     },fail=>{
         return null;
     }).then(res=>{
         return res;
-    });
+    }).catch(err=>console.log(err));
     return result;  
 }
